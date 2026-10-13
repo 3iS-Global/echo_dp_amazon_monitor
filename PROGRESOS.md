@@ -68,3 +68,12 @@ AMZ-20261006-001 (7.442 familias + 517 personas — Porto Velho).
 - Pestañas más compactas en pantallas angostas para que quepan las tres.
 - **Provisional**: queda como tarea pendiente su integración nativa en el visor
   (ver "Tareas pendientes").
+
+### Documentación — 2026-10-13
+- Panel de metodología del visor (botón "i", ES/PT/EN): nuevas secciones
+  "Población afectada reportada (Progreso 1)", "Monitoreo climático
+  (Progreso 2)" e "Historial de versiones".
+- Bitácora agregada a las guías técnica y no técnica (carpeta local
+  `Amazon_Monitor/Claude outputs/`).
+- Regla: cada nuevo Progreso se registra en este archivo, en el panel "i" del
+  visor y en ambas guías.
