@@ -39,3 +39,10 @@ con su commit marcado `Progreso N:` y una etiqueta git `progreso-N`.
 
 **Carga inicial**: AMZ-20260902-001 (7.323 personas, parcial — Eirunepé) y
 AMZ-20261006-001 (7.442 familias + 517 personas — Porto Velho).
+
+### Corrección 1.1 — 2026-10-13
+- El workflow "Reconstruir agregados" también se disparaba al empujar la
+  etiqueta `progreso-1` y fallaba ("You are not currently on a branch").
+  Ahora solo corre en pushes a `main`, usa un grupo de concurrencia y hace
+  `git pull --rebase` antes del push. La reconstrucción del Progreso 1 sí se
+  completó en la corrida de la rama (commit 221b797).

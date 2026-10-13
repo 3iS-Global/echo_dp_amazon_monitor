@@ -15,6 +15,10 @@ name: Reconstruir agregados desde Events/
 
 on:
   push:
+    # Solo la rama main: sin este filtro, empujar una etiqueta (p. ej. progreso-1)
+    # tambien dispara el workflow, que corre en "detached HEAD" y falla al hacer push.
+    branches:
+      - main
     paths:
       - "Events/**"
       - "Impacts/**"
@@ -22,6 +26,11 @@ on:
 
 permissions:
   contents: write  # necesario para que el workflow pueda hacer commit y push
+
+# Evita que dos reconstrucciones simultaneas (p. ej. dos pushes seguidos) choquen al hacer push.
+concurrency:
+  group: rebuild-aggregates
+  cancel-in-progress: false
 
 jobs:
   rebuild:
@@ -49,5 +58,6 @@ jobs:
             echo "Sin cambios que publicar hoy."
           else
             git commit -m "Reconstruccion automatica de agregados ($(date -u +'%Y-%m-%d %H:%M UTC'))"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
