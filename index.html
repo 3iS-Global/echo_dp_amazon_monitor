@@ -138,11 +138,27 @@
     </div>
 </div>
 
+<div id="eventFilterRow" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+  <span style="font-size:12px;color:var(--3is-teal-deep);font-weight:600" data-i18n="eventFilter"></span>
+  <select id="eventFilter" style="flex:1;min-width:220px;max-width:640px;padding:5px 8px;border:1px solid var(--3is-cyan);border-radius:var(--radius);font-size:12px;color:var(--3is-teal-deep);background:#fff"></select>
+</div>
+
 <div id="infoPanel" style="display:none;background:var(--3is-aqua-tint);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1rem;font-size:13px;color:var(--3is-teal-deep);line-height:1.6"></div>
 
 <div id="alertBanner" style="display:none;align-items:center;gap:10px;background:#FDECEA;border:1px solid #E24B4A;border-radius:var(--radius);padding:10px 14px;margin-bottom:1rem;font-size:13px;color:#8A1F1F;font-weight:600"></div>
 
 <div id="stats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:1.25rem"></div>
+
+<!-- Progreso 1: KPI de poblacion afectada reportada (suma dinamica segun filtros) -->
+<div id="impactSection" style="border:1px solid var(--3is-gray);border-radius:var(--radius);padding:1rem;margin-bottom:1.25rem;background:#fff">
+  <p style="font-weight:700;font-size:14px;color:var(--3is-navy);margin:0 0 10px" data-i18n="impactTitle"></p>
+  <div id="impactKpis" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px"></div>
+  <p style="font-size:11px;color:var(--text-muted);margin:8px 0 0" data-i18n="impactNote"></p>
+  <details id="impactDetailWrap" style="margin-top:8px;font-size:12px">
+    <summary id="impactDetailSummary" style="cursor:pointer;color:var(--3is-teal-deep);font-weight:600"></summary>
+    <div id="impactTable" style="overflow-x:auto;margin-top:8px"></div>
+  </details>
+</div>
 
 <div style="display:flex;gap:1.25rem;align-items:stretch;flex-wrap:wrap">
   <div style="flex:2;min-width:320px">
@@ -154,6 +170,7 @@
     <p style="font-size:12px;color:var(--text-muted);margin:2px 0 0" data-i18n="sstNote"></p>
     <p id="dataSources" style="font-size:12px;color:var(--text-muted);margin:8px 0 0"></p>
     <p id="lastUpdated" style="font-size:12px;color:var(--text-muted);margin:2px 0 0;font-weight:500"></p>
+    <p id="progressTag" style="font-size:11px;color:var(--text-muted);margin:2px 0 0" data-i18n="progressTag"></p>
   </div>
   <div style="flex:1;min-width:260px;display:flex;flex-direction:column;border:1px solid var(--3is-gray);border-radius:var(--radius);padding:1rem;background:#fafafa">
     <p style="font-weight:700;font-size:14px;color:var(--3is-navy);margin:0 0 10px" data-i18n="alertsPanel"></p>
@@ -183,7 +200,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 const DICT = {
-  es: { title:"Mapa de riesgos — Cuenca amazónica", subtitle:"Eventos activos por amenaza y prioridad", mapNote:"Mapa base OpenStreetMap. Datos: base propia de eventos verificados (ver lista a la derecha).",
+  es: { impactTitle:"Población afectada reportada", kpiPersons:"Personas afectadas", kpiFamilies:"Familias afectadas", kpiDeaths:"Fallecidos", kpiInjuries:"Heridos", kpiDisplaced:"Desplazados", kpiEvacuated:"Evacuados", kpiCoverage:"Eventos con cifras", impactNote:"Suma de la última cifra reportada por cada evento filtrado (fuentes oficiales o medios citados). No incluye proyecciones ni estimaciones; las familias no se convierten a personas; puede haber solapamiento entre eventos del mismo territorio. * = incluye cifras parciales.", impactDetail:"Detalle por evento", eventFilter:"Evento", allEvents:"Todos los eventos", impactLbl:"Afectados reportados", persons:"personas", families:"familias", deathsLbl:"fallecidos", injuredLbl:"heridos", displacedLbl:"desplazados", evacuatedLbl:"evacuados", partial:"parcial", noImpact:"Sin cifras reportadas en la selección actual.", eventsWithFig:"eventos con cifra", colEvent:"Evento", colPlace:"País · tipo", colAsOf:"Fecha cifra", colSource:"Fuente", progressTag:"Progreso 1 (13-10-2026): KPI de población afectada reportada, filtrable por país, tipo de evento y evento.", title:"Mapa de riesgos — Cuenca amazónica", subtitle:"Eventos activos por amenaza y prioridad", mapNote:"Mapa base OpenStreetMap. Datos: base propia de eventos verificados (ver lista a la derecha).",
     total:"Eventos", red:"Alertas rojas", countries:"Países afectados",
     firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"activas", alertBannerView:"Ver detalle ↓", alertBannerClear:"Ver todos ×", exportCsv:"Exportar CSV", firmsTimelineLive:"En vivo",
     all:"Todos", FLOOD:"Inundación", EXTREME_RAIN:"Lluvia extrema", DROUGHT:"Sequía", WILDFIRE:"Incendio forestal", EARTHQUAKE:"Sismo", LANDSLIDE:"Deslizamiento", DEFORESTATION:"Deforestación", FLASH_FLOOD:"Inundación repentina", EXTREME_HEAT:"Calor extremo", SEVERE_STORM:"Tormenta severa",
@@ -211,7 +228,7 @@ const DICT = {
       <p style="margin:4px 0 0">Este monitor apoya "Strengthening Response Capacity in the Amazon Basin", financiado por la Comisión Europea (DG ECHO), implementado del 01/06/2026 al 31/05/2028 por un consorcio liderado por Diakonie Katastrophenhilfe (DKH) junto con World Vision, 3iS y PREDES. Cobertura: Bolivia, Brasil, Colombia, Ecuador, Perú y Venezuela.</p>
       <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88;font-size:11px;font-weight:700;text-align:center">Desarrollado por:</p>
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` },
-  pt: { title:"Mapa de riscos — Bacia amazônica", subtitle:"Eventos ativos por perigo e prioridade", mapNote:"Mapa base OpenStreetMap. Dados: base própria de eventos verificados (ver lista à direita).",
+  pt: { impactTitle:"População afetada reportada", kpiPersons:"Pessoas afetadas", kpiFamilies:"Famílias afetadas", kpiDeaths:"Óbitos", kpiInjuries:"Feridos", kpiDisplaced:"Deslocados", kpiEvacuated:"Evacuados", kpiCoverage:"Eventos com números", impactNote:"Soma do último número reportado para cada evento filtrado (fontes oficiais ou veículos citados). Não inclui projeções nem estimativas; famílias não são convertidas em pessoas; pode haver sobreposição entre eventos do mesmo território. * = inclui números parciais.", impactDetail:"Detalhe por evento", eventFilter:"Evento", allEvents:"Todos os eventos", impactLbl:"Afetados reportados", persons:"pessoas", families:"famílias", deathsLbl:"óbitos", injuredLbl:"feridos", displacedLbl:"deslocados", evacuatedLbl:"evacuados", partial:"parcial", noImpact:"Sem números reportados na seleção atual.", eventsWithFig:"eventos com número", colEvent:"Evento", colPlace:"País · tipo", colAsOf:"Data do número", colSource:"Fonte", progressTag:"Progresso 1 (13-10-2026): KPI de população afetada reportada, filtrável por país, tipo de evento e evento.", title:"Mapa de riscos — Bacia amazônica", subtitle:"Eventos ativos por perigo e prioridade", mapNote:"Mapa base OpenStreetMap. Dados: base própria de eventos verificados (ver lista à direita).",
     total:"Eventos", red:"Alertas vermelhos", countries:"Países afetados",
     firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"ativos", alertBannerView:"Ver detalhe ↓", alertBannerClear:"Ver todos ×", exportCsv:"Exportar CSV", firmsTimelineLive:"Ao vivo",
     all:"Todos", FLOOD:"Inundação", EXTREME_RAIN:"Chuva extrema", DROUGHT:"Seca", WILDFIRE:"Incêndio florestal", EARTHQUAKE:"Terremoto", LANDSLIDE:"Deslizamento", DEFORESTATION:"Desmatamento", FLASH_FLOOD:"Inundação repentina", EXTREME_HEAT:"Calor extremo", SEVERE_STORM:"Tempestade severa",
@@ -239,7 +256,7 @@ const DICT = {
       <p style="margin:4px 0 0">Este monitor apoia o "Strengthening Response Capacity in the Amazon Basin", financiado pela Comissão Europeia (DG ECHO), implementado de 01/06/2026 a 31/05/2028 por um consórcio liderado pela Diakonie Katastrophenhilfe (DKH), junto com World Vision, 3iS e PREDES. Cobertura: Bolívia, Brasil, Colômbia, Equador, Peru e Venezuela.</p>
       <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88;font-size:11px;font-weight:700;text-align:center">Desenvolvido por:</p>
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` },
-  en: { title:"Risk map — Amazon Basin", subtitle:"Active events by hazard and priority", mapNote:"Base map: OpenStreetMap. Data: our own base of verified events (see list on the right).",
+  en: { impactTitle:"Reported affected population", kpiPersons:"People affected", kpiFamilies:"Families affected", kpiDeaths:"Deaths", kpiInjuries:"Injured", kpiDisplaced:"Displaced", kpiEvacuated:"Evacuated", kpiCoverage:"Events with figures", impactNote:"Sum of the latest figure reported for each filtered event (official sources or cited media). Excludes projections and estimates; families are not converted to people; events in the same area may overlap. * = includes partial figures.", impactDetail:"Breakdown by event", eventFilter:"Event", allEvents:"All events", impactLbl:"Reported affected", persons:"people", families:"families", deathsLbl:"deaths", injuredLbl:"injured", displacedLbl:"displaced", evacuatedLbl:"evacuated", partial:"partial", noImpact:"No reported figures in the current selection.", eventsWithFig:"events with figures", colEvent:"Event", colPlace:"Country · type", colAsOf:"Figure date", colSource:"Source", progressTag:"Progress 1 (2026-10-13): reported affected population KPI, filterable by country, event type and event.", title:"Risk map — Amazon Basin", subtitle:"Active events by hazard and priority", mapNote:"Base map: OpenStreetMap. Data: our own base of verified events (see list on the right).",
     total:"Events", red:"Red alerts", countries:"Countries affected",
     firms24hStat:"FIRMS hotspots (24h)", frpMaxStat:"Max FRP (24h)", alertBannerActive:"active", alertBannerView:"View details ↓", alertBannerClear:"View all ×", exportCsv:"Export CSV", firmsTimelineLive:"Live",
     all:"All", FLOOD:"Flood", EXTREME_RAIN:"Extreme rain", DROUGHT:"Drought", WILDFIRE:"Wildfire", EARTHQUAKE:"Earthquake", LANDSLIDE:"Landslide", DEFORESTATION:"Deforestation", FLASH_FLOOD:"Flash flood", EXTREME_HEAT:"Extreme heat", SEVERE_STORM:"Severe storm",
@@ -394,6 +411,7 @@ let currentLang = "es";
 let activeCountry = null;
 let activeHazard = null;
 let activePriority = null;
+let activeEventId = null; // Progreso 1: filtro por evento puntual
 let dateFrom = null;
 let dateTo = null;
 
@@ -432,6 +450,15 @@ function inDateRange(e){
   if (dateTo && d > dateTo) return false;
   return true;
 }
+// Progreso 1: getFiltered() = filtros base (pais/tipo/prioridad/fechas/cuenca)
+// + filtro opcional por evento puntual. getFilteredBase() alimenta el selector
+// de eventos, para que la lista de eventos se ajuste a los demas filtros.
+function getFiltered(){
+  var base = getFilteredBase();
+  if (!activeEventId) return base;
+  return base.filter(function(e){ return e.id === activeEventId; });
+}
+
 function computeRedAlertCount(){
   // Igual que getFiltered(), pero ignorando activePriority a proposito: el
   // banner debe seguir mostrando cuantas alertas rojas hay (segun pais/fecha
@@ -440,6 +467,7 @@ function computeRedAlertCount(){
   return EVENTS.filter(function(e){
     if (activeCountry && e.country !== activeCountry) return false;
     if (activeHazard && e.hazard !== activeHazard) return false;
+    if (activeEventId && e.id !== activeEventId) return false;
     if (!inDateRange(e)) return false;
     if (typeof e.lat === 'number' && typeof e.lon === 'number' && !isNaN(e.lat) && !isNaN(e.lon)) {
       if (!pointInBasin(e.lat, e.lon)) return false;
@@ -448,7 +476,7 @@ function computeRedAlertCount(){
   }).length;
 }
 
-function getFiltered(){
+function getFilteredBase(){
   return EVENTS.filter(function(e){
     if (activeCountry && e.country !== activeCountry) return false;
     if (activeHazard && e.hazard !== activeHazard) return false;
@@ -687,6 +715,103 @@ function renderAlertBanner(redCount){
   }
 }
 
+// ===== Progreso 1: poblacion afectada reportada =====
+var IMPACT_METRICS = [
+  ['affectedPersons','kpiPersons','persons'],
+  ['affectedFamilies','kpiFamilies','families'],
+  ['deaths','kpiDeaths','deathsLbl'],
+  ['injuries','kpiInjuries','injuredLbl'],
+  ['displaced','kpiDisplaced','displacedLbl'],
+  ['evacuated','kpiEvacuated','evacuatedLbl']
+];
+function isNum(v){ return typeof v === 'number' && isFinite(v); }
+function fmtNum(n){
+  var loc = currentLang === 'en' ? 'en-US' : (currentLang === 'pt' ? 'pt-BR' : 'es-CO');
+  try { return new Intl.NumberFormat(loc).format(n); } catch (err) { return String(n); }
+}
+function escHtml(v){
+  return String(v == null ? '' : v).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; });
+}
+function hasImpactFigure(e){
+  return !!(e.impact && IMPACT_METRICS.some(function(m){ return isNum(e.impact[m[0]]); }));
+}
+function impactSummary(e){
+  if (!hasImpactFigure(e)) return '';
+  var parts = [];
+  IMPACT_METRICS.forEach(function(m){
+    var v = e.impact[m[0]];
+    if (isNum(v)) parts.push(fmtNum(v) + ' ' + t(m[2]));
+  });
+  return parts.join(' · ') + (e.impact.scope === 'PARTIAL' ? ' (' + t('partial') + ')' : '');
+}
+function renderEventFilter(){
+  var sel = document.getElementById('eventFilter');
+  if (!sel) return;
+  var base = getFilteredBase().slice().sort(function(a,b){
+    var da = a.eventDate || a.firstDetected || '', db = b.eventDate || b.firstDetected || '';
+    return db.localeCompare(da) || (b.id || '').localeCompare(a.id || '');
+  });
+  // Si los otros filtros ya excluyen el evento elegido, se vuelve a "Todos".
+  if (activeEventId && !base.some(function(e){ return e.id === activeEventId; })) activeEventId = null;
+  sel.innerHTML = '';
+  var all = document.createElement('option');
+  all.value = ''; all.textContent = t('allEvents') + ' (' + base.length + ')';
+  sel.appendChild(all);
+  base.forEach(function(e){
+    var o = document.createElement('option');
+    var title = (e.title && (e.title[currentLang] || e.title.es)) || '';
+    if (title.length > 80) title = title.slice(0, 77) + '…';
+    o.value = e.id;
+    o.textContent = e.id + ' · ' + countryLabel(e.country) + ' · ' + hazardLabel(e.hazard) + ' — ' + title;
+    sel.appendChild(o);
+  });
+  sel.value = activeEventId || '';
+}
+function renderImpactKpis(filtered){
+  var wrap = document.getElementById('impactKpis');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  IMPACT_METRICS.forEach(function(m){
+    var sum = 0, n = 0, partial = false;
+    filtered.forEach(function(e){
+      var v = e.impact ? e.impact[m[0]] : null;
+      if (isNum(v)) { sum += v; n++; if (e.impact.scope === 'PARTIAL') partial = true; }
+    });
+    var card = document.createElement('div');
+    card.className = 'stat-card';
+    card.title = n + ' ' + t('eventsWithFig');
+    card.innerHTML = '<p>' + t(m[1]) + '</p><p>' + (n ? fmtNum(sum) + (partial ? '*' : '') : '—') + '</p>';
+    wrap.appendChild(card);
+  });
+  var withFig = filtered.filter(hasImpactFigure);
+  var cov = document.createElement('div');
+  cov.className = 'stat-card';
+  cov.innerHTML = '<p>' + t('kpiCoverage') + '</p><p>' + withFig.length + ' / ' + filtered.length + '</p>';
+  wrap.appendChild(cov);
+
+  var sum = document.getElementById('impactDetailSummary');
+  if (sum) sum.textContent = t('impactDetail') + ' (' + withFig.length + ')';
+  var tbl = document.getElementById('impactTable');
+  if (!tbl) return;
+  if (!withFig.length) { tbl.innerHTML = '<p style="margin:0;color:var(--text-muted)">' + t('noImpact') + '</p>'; return; }
+  var th = 'style="text-align:left;padding:4px 8px;border-bottom:1px solid var(--3is-gray);color:var(--3is-navy);white-space:nowrap"';
+  var td = 'style="padding:4px 8px;border-bottom:1px solid var(--3is-gray);white-space:nowrap"';
+  var tdn = 'style="padding:4px 8px;border-bottom:1px solid var(--3is-gray);text-align:right;white-space:nowrap"';
+  var html = '<table style="border-collapse:collapse;width:100%;font-size:12px"><thead><tr>' +
+    '<th ' + th + '>' + t('colEvent') + '</th>' +
+    '<th ' + th + '>' + t('colPlace') + '</th>' +
+    IMPACT_METRICS.map(function(m){ return '<th ' + th.replace('text-align:left','text-align:right') + '>' + t(m[1]) + '</th>'; }).join('') +
+    '<th ' + th + '>' + t('colAsOf') + '</th><th ' + th + '>' + t('colSource') + '</th></tr></thead><tbody>';
+  withFig.slice().sort(function(a,b){ return (a.id || '').localeCompare(b.id || ''); }).forEach(function(e){
+    var src = e.impact.sourceUrl ? '<a href="' + escHtml(e.impact.sourceUrl) + '" target="_blank" rel="noopener" style="color:var(--3is-cyan)">' + escHtml(e.impact.source || t('source')) + ' ↗</a>' : escHtml(e.impact.source || '');
+    html += '<tr><td ' + td + '>' + escHtml(e.id) + (e.impact.scope === 'PARTIAL' ? ' <span style="color:var(--text-muted)">(' + t('partial') + ')</span>' : '') + '</td>' +
+      '<td ' + td + '>' + countryLabel(e.country) + ' · ' + hazardLabel(e.hazard) + '</td>' +
+      IMPACT_METRICS.map(function(m){ var v = e.impact[m[0]]; return '<td ' + tdn + '>' + (isNum(v) ? fmtNum(v) : '—') + '</td>'; }).join('') +
+      '<td ' + td + '>' + escHtml(e.impact.asOf || '') + '</td><td ' + td + '>' + src + '</td></tr>';
+  });
+  tbl.innerHTML = html + '</tbody></table>';
+}
+
 function renderStats(filtered){
   var wrap = document.getElementById('stats');
   wrap.innerHTML = '';
@@ -721,6 +846,7 @@ function eventPopupHtml(e){
     '<p style="margin:0 0 4px;font-weight:700;color:var(--3is-navy)">'+title+'</p>'+
     '<p style="margin:0 0 6px;color:var(--text-muted)">'+countryLabel(e.country)+' · '+hazardLabel(e.hazard)+' · <span style="color:'+PRIORITY_COLOR[e.priority]+';font-weight:600">'+t(e.priority)+'</span></p>'+
     '<p style="margin:0 0 6px">'+desc+'</p>'+
+    (hasImpactFigure(e) ? '<p style="margin:0 0 6px;color:var(--3is-teal-deep);font-weight:600">'+t('impactLbl')+': '+impactSummary(e)+'</p>' : '')+
     '<p style="margin:0 0 4px;color:var(--text-muted)">'+t('updated')+': '+e.lastUpdated+'</p>'+
     (srcHtml ? '<p style="margin:0">'+t('source')+': '+srcHtml+'</p>' : '') +
   '</div>';
@@ -991,6 +1117,7 @@ function renderList(filtered){
         '<span style="font-size:12px;color:var(--text-muted)">'+hazardLabel(e.hazard)+' · '+t('eventDateLbl')+' '+(e.eventDate||e.firstDetected)+(e.lastUpdated ? ' · '+t('updatedLbl')+' '+e.lastUpdated : '')+'</span>'+
         '</div>'+
         '<p style="margin:0 0 4px;font-size:13px;font-weight:600;color:var(--3is-navy)">'+title+'</p>'+
+        (hasImpactFigure(e) ? '<p style="margin:0 0 4px;font-size:12px;color:var(--3is-teal-deep)">'+t('impactLbl')+': '+impactSummary(e)+'</p>' : '')+
         (srcHtml ? '<p style="margin:0;font-size:11px">'+srcHtml+'</p>' : '');
       card.onclick = function(){
         if (typeof e.lat === 'number' && typeof e.lon === 'number' && map) {
@@ -1079,11 +1206,13 @@ function showTab(name){
 }
 
 function renderAll(){
+  renderEventFilter();
   var filtered = getFiltered();
   renderCountryFilters();
   renderHazardFilters();
   renderLegend();
   renderStats(filtered);
+  renderImpactKpis(filtered);
   renderMarkers(filtered);
   renderList(filtered);
   renderFirmsMarkers();
@@ -1186,7 +1315,8 @@ function exportEventsCsv(){
   var filtered = getFiltered();
   var cols = ['id','country','hazard','priority','status','basinStatus','verification',
     'eventDate','firstDetected','lastUpdated','updateCount','lat','lon','coordAccuracy',
-    'title','primarySourceUrl'];
+    'title','primarySourceUrl',
+    'affectedPersons','affectedFamilies','deaths','injuries','displaced','evacuated','impactScope','impactAsOf','impactSourceUrl'];
   var rows = [cols.join(',')];
   filtered.forEach(function(e){
     var title = (e.title && (e.title[currentLang] || e.title.es)) || e.id;
@@ -1197,6 +1327,8 @@ function exportEventsCsv(){
       (typeof e.lat === 'number' ? e.lat : ''), (typeof e.lon === 'number' ? e.lon : ''),
       e.coordAccuracy, title, primaryUrl
     ];
+    var im = e.impact || {};
+    row = row.concat([im.affectedPersons, im.affectedFamilies, im.deaths, im.injuries, im.displaced, im.evacuated, im.scope, im.asOf, im.sourceUrl]);
     rows.push(row.map(csvEscape).join(','));
   });
   var csvContent = '﻿' + rows.join('\r\n');
@@ -1231,6 +1363,17 @@ function wireControls(){
     renderAll();
   });
   document.getElementById('exportCsvBtn').addEventListener('click', exportEventsCsv);
+  document.getElementById('eventFilter').addEventListener('change', function(ev){
+    activeEventId = ev.target.value || null;
+    renderAll();
+    if (!map) return;
+    var sel = activeEventId ? EVENTS.filter(function(x){ return x.id === activeEventId; })[0] : null;
+    if (sel && typeof sel.lat === 'number' && typeof sel.lon === 'number') {
+      map.setView([sel.lat, sel.lon], 7);
+    } else {
+      zoomToFilteredEvents(activeCountry ? countryZoomBounds(activeCountry) : null);
+    }
+  });
 }
 
 function wireTabs(){

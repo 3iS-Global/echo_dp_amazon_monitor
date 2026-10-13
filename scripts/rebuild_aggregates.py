@@ -23,6 +23,20 @@ import sys
 from datetime import date, datetime, timedelta, timezone
 
 EVENTS_DIR = "Events"
+# Progreso 1: cifras de impacto REPORTADAS, estructuradas, una por evento
+# (Impacts/<EVENT_ID>.json). Archivo opcional: si un evento no lo tiene, se
+# considera "sin cifras reportadas". No altera el esquema de 50 columnas.
+IMPACTS_DIR = "Impacts"
+IMPACT_KEYS = [
+    "EVENT_ID", "AS_OF_DATE", "DEATHS", "INJURIES", "AFFECTED_PERSONS",
+    "AFFECTED_FAMILIES", "DISPLACED_PERSONS", "EVACUATED_PERSONS", "SCOPE",
+    "SOURCE", "SOURCE_URL", "NOTES",
+]
+IMPACT_NUMERIC = [
+    "DEATHS", "INJURIES", "AFFECTED_PERSONS", "AFFECTED_FAMILIES",
+    "DISPLACED_PERSONS", "EVACUATED_PERSONS",
+]
+IMPACT_SCOPES = ("PARTIAL", "CONSOLIDATED")
 ENDED_RETENTION_DAYS = 90
 
 # Las 50 columnas del esquema, EN ESTE ORDEN EXACTO. Cualquier archivo de
@@ -82,6 +96,60 @@ def load_events():
     return events
 
 
+def load_impacts(event_ids):
+    """Lee y valida Impacts/AMZ-*.json. Cada numero debe ser entero >= 0 o
+    null (null = no reportado; 0 = reportado como cero). Aborta con exit(1)
+    ante cualquier archivo invalido, igual que load_events."""
+    impacts = {}
+    for p in sorted(glob.glob(os.path.join(IMPACTS_DIR, "AMZ-*.json"))):
+        with open(p, encoding="utf-8") as fh:
+            try:
+                d = json.load(fh)
+            except json.JSONDecodeError as e:
+                print(f"ERROR: {p} no es JSON valido: {e}", file=sys.stderr)
+                sys.exit(1)
+        errs = []
+        missing = set(IMPACT_KEYS) - set(d.keys())
+        extra = set(d.keys()) - set(IMPACT_KEYS)
+        if missing:
+            errs.append(f"faltan claves {sorted(missing)}")
+        if extra:
+            errs.append(f"sobran claves {sorted(extra)}")
+        eid = d.get("EVENT_ID")
+        if os.path.basename(p) != f"{eid}.json":
+            errs.append("EVENT_ID no coincide con el nombre del archivo")
+        if eid not in event_ids:
+            errs.append(f"EVENT_ID {eid} no existe en {EVENTS_DIR}/")
+        for k in IMPACT_NUMERIC:
+            v = d.get(k)
+            if v is not None and (isinstance(v, bool) or not isinstance(v, int) or v < 0):
+                errs.append(f"{k} debe ser entero >= 0 o null (recibido {v!r})")
+        if d.get("SCOPE") not in IMPACT_SCOPES:
+            errs.append(f"SCOPE debe ser uno de {IMPACT_SCOPES}")
+        if errs:
+            print(f"ERROR: {p} no es valido: " + "; ".join(errs), file=sys.stderr)
+            sys.exit(1)
+        impacts[eid] = d
+    return impacts
+
+
+def impact_obj(d):
+    if not d:
+        return None
+    return {
+        "asOf": d["AS_OF_DATE"],
+        "deaths": d["DEATHS"],
+        "injuries": d["INJURIES"],
+        "affectedPersons": d["AFFECTED_PERSONS"],
+        "affectedFamilies": d["AFFECTED_FAMILIES"],
+        "displaced": d["DISPLACED_PERSONS"],
+        "evacuated": d["EVACUATED_PERSONS"],
+        "scope": d["SCOPE"],
+        "source": d["SOURCE"],
+        "sourceUrl": d["SOURCE_URL"],
+    }
+
+
 def quarter_of(event_id):
     """AMZ-YYYYMMDD-NNN -> (YYYY, trimestre 1-4), segun los 8 digitos de
     fecha del propio EVENT_ID (nunca cambia aunque el evento se seguir
@@ -122,7 +190,7 @@ def sources_of(d):
     return out
 
 
-def build_events_json(events, today):
+def build_events_json(events, today, impacts=None):
     """Un objeto por evento vigente: todos los que no esten ENDED, mas los
     ENDED cuyo LAST_UPDATED_DATE este dentro de los ultimos 90 dias. Un
     ENDED con mas de 90 dias sin actualizar se excluye de events.json (su
@@ -174,6 +242,7 @@ def build_events_json(events, today):
                 "en": d["NOTES_EN"],
             },
             "sources": sources_of(d),
+            "impact": impact_obj((impacts or {}).get(d["EVENT_ID"])),
         })
     return out
 
@@ -212,7 +281,9 @@ def main():
     write_json("index.json", index)
     print(f"index.json: {len(index)} eventos")
 
-    events_json = build_events_json(events, today)
+    impacts = load_impacts({d["EVENT_ID"] for d in events})
+    print(f"Impacts/: {len(impacts)} eventos con cifras reportadas")
+    events_json = build_events_json(events, today, impacts)
     write_json("events.json", events_json)
     print(f"events.json: {len(events_json)} eventos vigentes de {len(events)} historicos")
 

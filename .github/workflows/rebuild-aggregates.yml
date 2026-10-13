@@ -17,6 +17,7 @@ on:
   push:
     paths:
       - "Events/**"
+      - "Impacts/**"
   workflow_dispatch: {}
 
 permissions:

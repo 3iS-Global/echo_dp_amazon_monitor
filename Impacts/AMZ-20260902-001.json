@@ -1,0 +1,14 @@
+{
+  "EVENT_ID": "AMZ-20260902-001",
+  "AS_OF_DATE": "2026-09-14",
+  "DEATHS": null,
+  "INJURIES": null,
+  "AFFECTED_PERSONS": 7323,
+  "AFFECTED_FAMILIES": null,
+  "DISPLACED_PERSONS": null,
+  "EVACUATED_PERSONS": null,
+  "SCOPE": "PARTIAL",
+  "SOURCE": "Canal92 Amazonas",
+  "SOURCE_URL": "https://canal92am.com/amazonas/municipios-situacao-emergencia-amazonas/",
+  "NOTES": "Solo municipio de Eirunepé; resto de municipios en emergencia sin cifra consolidada. Excluida la PROYECCIÓN estatal de ~648.000 personas (Decreto 55.486), por ser proyectada y no confirmada."
+}

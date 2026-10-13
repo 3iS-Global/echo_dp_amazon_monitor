@@ -1,0 +1,14 @@
+{
+  "EVENT_ID": "AMZ-20261006-001",
+  "AS_OF_DATE": "2026-10-05",
+  "DEATHS": null,
+  "INJURIES": null,
+  "AFFECTED_PERSONS": 517,
+  "AFFECTED_FAMILIES": 7442,
+  "DISPLACED_PERSONS": null,
+  "EVACUATED_PERSONS": null,
+  "SCOPE": "CONSOLIDATED",
+  "SOURCE": "Prefeitura de Porto Velho (Decreto 22.515), vía Rondoniaovivo",
+  "SOURCE_URL": "https://www.rondoniaovivo.com/noticia/geral/2026/10/05/estiagem-situacao-de-emergencia-e-decretada-em-distritos-do-alto-medio-e-baixo-madeira.html",
+  "NOTES": "7.442 familias en 85 localidades + 517 personas en 5 aldeas indígenas. Las familias se registran por separado (no se convierten a personas)."
+}
