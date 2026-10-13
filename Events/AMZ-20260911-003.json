@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20260911-003",
   "FIRST_DETECTED_DATE": "2026-09-11",
-  "LAST_UPDATED_DATE": "2026-09-16",
-  "UPDATE_COUNT": "2",
+  "LAST_UPDATED_DATE": "2026-10-13",
+  "UPDATE_COUNT": "3",
   "COUNTRY": "Brazil",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Roraima",
@@ -45,8 +45,8 @@
   "SECONDARY_SOURCE": "ac24horas",
   "SECONDARY_SOURCE_URL": "https://ac24horas.com/2026/09/03/estiagem-se-agrava-e-roraima-decreta-emergencia-para-enfrentar-impactos-do-el-nino/",
   "GDACS_URL": "UNAVAILABLE",
-  "OTHER_SOURCE_URLS": "https://www.folhabv.com.br/politica/governo-decreta-emergencia-em-roraima-e-cria-gabinete-para-enfrentar-impactos-da-estiagem/; https://roraima1.com.br/onze-municipios-de-roraima-estao-em-alerta-de-seca-severa-em-areas-de-agricultura-familiar-aponta-cemaden/",
-  "NOTES_ES": "Evento nuevo en este ciclo. Roraima forma parte de la cuenca amazónica (río Branco → río Negro → Amazonas). ACTUALIZACIÓN 14/09: cifras de nivel de río corroboradas por Roraima1. ACTUALIZACIÓN 16/09: CEMADEN confirma, mediante su plataforma Alerta Secas (fuente: Roraima1, 8-sep), que 11 municípios de Roraima están en alerta de sequía severa en agricultura familiar -- corrobora y detalla la severidad ya registrada; MULTIPLE_SOURCES se mantiene.",
-  "NOTES_PT": "Evento novo neste ciclo. Roraima faz parte da bacia amazônica (rio Branco → rio Negro → Amazonas). ATUALIZAÇÃO 14/09: números de nível do rio corroborados pela Roraima1. ATUALIZAÇÃO 16/09: o CEMADEN confirma, por meio de sua plataforma Alerta Secas (fonte: Roraima1, 8-set), que 11 municípios de Roraima estão em alerta de seca severa na agricultura familiar -- corrobora e detalha a severidade já registrada; mantém-se MULTIPLE_SOURCES.",
-  "NOTES_EN": "New event this cycle. Roraima is part of the Amazon basin (Branco River → Negro River → Amazon). UPDATE 09/14: river-level figures corroborated by Roraima1. UPDATE 09/16: CEMADEN confirms, via its Alerta Secas platform (source: Roraima1, Sep 8), that 11 Roraima municipalities are under a severe drought alert for family farming -- corroborates and details the severity already on record; MULTIPLE_SOURCES status maintained."
+  "OTHER_SOURCE_URLS": "https://www.folhabv.com.br/politica/governo-decreta-emergencia-em-roraima-e-cria-gabinete-para-enfrentar-impactos-da-estiagem/; https://roraima1.com.br/onze-municipios-de-roraima-estao-em-alerta-de-seca-severa-em-areas-de-agricultura-familiar-aponta-cemaden/; https://www.sgb.gov.br/sace/amazonas/ultimo_boletim.php",
+  "NOTES_ES": "Evento nuevo en este ciclo. Roraima forma parte de la cuenca amazónica (río Branco → río Negro → Amazonas). ACTUALIZACIÓN 14/09: cifras de nivel de río corroboradas por Roraima1. ACTUALIZACIÓN 16/09: CEMADEN confirma, mediante su plataforma Alerta Secas (fuente: Roraima1, 8-sep), que 11 municípios de Roraima están en alerta de sequía severa en agricultura familiar -- corrobora y detalla la severidad ya registrada; MULTIPLE_SOURCES se mantiene. ACTUALIZACIÓN 13/10: el boletín SACE/SGB del 6-oct reporta el río Branco en Boa Vista en 82 cm, cerca de los mínimos históricos para el periodo, con lluvia 6-sep a 5-oct clasificada como 'muy seca' en la cuenca del Branco; CPC/NOAA prevé déficit de lluvia hasta el 19-oct, fuente: SGB.",
+  "NOTES_PT": "Evento novo neste ciclo. Roraima faz parte da bacia amazônica (rio Branco → rio Negro → Amazonas). ATUALIZAÇÃO 14/09: números de nível do rio corroborados pela Roraima1. ATUALIZAÇÃO 16/09: o CEMADEN confirma, por meio de sua plataforma Alerta Secas (fonte: Roraima1, 8-set), que 11 municípios de Roraima estão em alerta de seca severa na agricultura familiar -- corrobora e detalha a severidade já registrada; mantém-se MULTIPLE_SOURCES. ATUALIZAÇÃO 13/10: o boletim SACE/SGB de 6-out reporta o rio Branco em Boa Vista em 82 cm, próximo das mínimas históricas para o período, com chuva de 6-set a 5-out classificada como 'muito seca' na bacia do Branco; CPC/NOAA prevê déficit de chuva até 19-out, fonte: SGB.",
+  "NOTES_EN": "New event this cycle. Roraima is part of the Amazon basin (Branco River → Negro River → Amazon). UPDATE 09/14: river-level figures corroborated by Roraima1. UPDATE 09/16: CEMADEN confirms, via its Alerta Secas platform (source: Roraima1, Sep 8), that 11 Roraima municipalities are under a severe drought alert for family farming -- corroborates and details the severity already on record; MULTIPLE_SOURCES status maintained. UPDATE 10/13: the SACE/SGB bulletin of Oct 6 reports the Branco River at Boa Vista at 82 cm, near historic minimums for the period, with Sep 6-Oct 5 rainfall classed 'very dry' in the Branco basin; CPC/NOAA forecasts a rainfall deficit through Oct 19, source: SGB."
 }
