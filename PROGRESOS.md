@@ -3,6 +3,16 @@
 Cada mejora funcional del monitor se registra aquí como un "Progreso" numerado,
 con su commit marcado `Progreso N:` y una etiqueta git `progreso-N`.
 
+## Tareas pendientes
+
+- [ ] **Integrar el Monitoreo climático de forma nativa en el visor** (hoy es
+  un tablero de Power BI embebido por iframe, ver Progreso 2): reconstruir sus
+  indicadores con los datos/capas del propio visor (mismos filtros de país,
+  idioma ES/PT/EN y límite de la cuenca), y retirar la dependencia de Power BI.
+- [ ] Población expuesta estimada (WorldPop / zonas de afectación por amenaza)
+  y control de solapamiento entre eventos del mismo territorio (seguimiento
+  del Progreso 1).
+
 ## Progreso 1 — 2026-10-13 · KPI de población afectada reportada
 
 **Qué hace**
@@ -46,3 +56,15 @@ AMZ-20261006-001 (7.442 familias + 517 personas — Porto Velho).
   Ahora solo corre en pushes a `main`, usa un grupo de concurrencia y hace
   `git pull --rebase` antes del push. La reconstrucción del Progreso 1 sí se
   completó en la corrida de la rama (commit 221b797).
+
+## Progreso 2 — 2026-10-13 · Pestaña "Monitoreo climático" (provisional)
+
+- Nueva pestaña **Monitoreo climático** (PT: Monitoramento climático, EN:
+  Climate monitoring) junto a Monitor y Pronóstico, con el tablero de Power BI
+  publicado en la web embebido en un iframe y un enlace para abrirlo en
+  pantalla completa.
+- El tablero solo se carga al abrir la pestaña (no ralentiza el Monitor).
+  Enlace directo: `index.html#clima`.
+- Pestañas más compactas en pantallas angostas para que quepan las tres.
+- **Provisional**: queda como tarea pendiente su integración nativa en el visor
+  (ver "Tareas pendientes").

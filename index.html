@@ -57,7 +57,9 @@
     #banner { padding-bottom: 3.4rem !important; }
     #bannerTitle { position: static; }
     #lang { position: relative; right:auto; bottom:auto; display:block; margin: 8px 0 0 auto; }
-    .tabs-bar { left: 1.5rem; }
+    .tabs-bar { left: 1.5rem; right: 1.5rem; }
+    .tab-btn { font-size:12px; padding:8px 10px 9px; white-space:nowrap; }
+    .tab-btn.active { padding-bottom:14px; }
   }
   .brand-divider { height: 6px; background: linear-gradient(90deg, var(--3is-aqua) 0%, var(--3is-cyan) 55%, var(--3is-navy) 100%); }
   .dot-field { position:absolute; inset:0; opacity:0.15;
@@ -116,6 +118,7 @@
   <nav id="tabs" class="tabs-bar" role="tablist">
     <button class="tab-btn active" role="tab" data-tab="monitor" data-i18n="tabMonitor"></button>
     <button class="tab-btn" role="tab" data-tab="forecast" data-i18n="tabForecast"></button>
+    <button class="tab-btn" role="tab" data-tab="climate" data-i18n="tabClimate"></button>
   </nav>
 </div>
 <div class="brand-divider"></div>
@@ -194,13 +197,28 @@
   <p style="font-size:12px;color:var(--text-muted);margin:2px 0 0" data-i18n="fcCredit"></p>
 </div>
 </div><!-- /tabForecast -->
+
+<!-- Progreso 2: Monitoreo climatico. Tablero Power BI publicado en la web,
+     embebido por iframe (provisional). PENDIENTE: integrarlo de forma nativa
+     en el visor (ver PROGRESOS.md). El src se asigna al abrir la pestana por
+     primera vez, para no cargar Power BI si nadie la usa. -->
+<div id="tabClimate" hidden>
+<div id="climateSection" style="border:1px solid var(--3is-gray);border-radius:var(--radius);padding:1rem;background:#fafafa">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+    <p style="font-weight:700;font-size:14px;color:var(--3is-navy);margin:0" data-i18n="climateTitle"></p>
+    <a id="climateOpen" href="https://app.powerbi.com/view?r=eyJrIjoiZGEwZDFkZDQtZmZlMS00Y2Q0LWFmODgtZGMzN2NkOTBkYjMzIiwidCI6IjNlOTQyYWU0LWNkOTMtNGQzNy1iZTJmLTY5MzllNDNjMTRiNyJ9" target="_blank" rel="noopener" style="font-size:12px;color:var(--3is-cyan)" data-i18n="climateOpen"></a>
+  </div>
+  <iframe id="climateFrame" title="Monitoreo climático (Power BI)" data-src="https://app.powerbi.com/view?r=eyJrIjoiZGEwZDFkZDQtZmZlMS00Y2Q0LWFmODgtZGMzN2NkOTBkYjMzIiwidCI6IjNlOTQyYWU0LWNkOTMtNGQzNy1iZTJmLTY5MzllNDNjMTRiNyJ9" style="width:100%;height:calc(100vh - 290px);min-height:600px;border:0;border-radius:var(--radius);display:block;background:#e6e6e6" allowfullscreen></iframe>
+  <p style="font-size:12px;color:var(--text-muted);margin:8px 0 0" data-i18n="climateNote"></p>
+</div>
+</div><!-- /tabClimate -->
 </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
 const DICT = {
-  es: { impactTitle:"Población afectada reportada", kpiPersons:"Personas afectadas", kpiFamilies:"Familias afectadas", kpiDeaths:"Fallecidos", kpiInjuries:"Heridos", kpiDisplaced:"Desplazados", kpiEvacuated:"Evacuados", kpiCoverage:"Eventos con cifras", impactNote:"Suma de la última cifra reportada por cada evento filtrado (fuentes oficiales o medios citados). No incluye proyecciones ni estimaciones; las familias no se convierten a personas; puede haber solapamiento entre eventos del mismo territorio. * = incluye cifras parciales.", impactDetail:"Detalle por evento", eventFilter:"Evento", allEvents:"Todos los eventos", impactLbl:"Afectados reportados", persons:"personas", families:"familias", deathsLbl:"fallecidos", injuredLbl:"heridos", displacedLbl:"desplazados", evacuatedLbl:"evacuados", partial:"parcial", noImpact:"Sin cifras reportadas en la selección actual.", eventsWithFig:"eventos con cifra", colEvent:"Evento", colPlace:"País · tipo", colAsOf:"Fecha cifra", colSource:"Fuente", progressTag:"Progreso 1 (13-10-2026): KPI de población afectada reportada, filtrable por país, tipo de evento y evento.", title:"Mapa de riesgos — Cuenca amazónica", subtitle:"Eventos activos por amenaza y prioridad", mapNote:"Mapa base OpenStreetMap. Datos: base propia de eventos verificados (ver lista a la derecha).",
+  es: { tabClimate:"Monitoreo climático", climateTitle:"Monitoreo climático", climateOpen:"Abrir en pantalla completa ↗", climateNote:"Tablero de Power BI embebido (versión provisional). Se integrará de forma nativa en este visor en una próxima versión.", impactTitle:"Población afectada reportada", kpiPersons:"Personas afectadas", kpiFamilies:"Familias afectadas", kpiDeaths:"Fallecidos", kpiInjuries:"Heridos", kpiDisplaced:"Desplazados", kpiEvacuated:"Evacuados", kpiCoverage:"Eventos con cifras", impactNote:"Suma de la última cifra reportada por cada evento filtrado (fuentes oficiales o medios citados). No incluye proyecciones ni estimaciones; las familias no se convierten a personas; puede haber solapamiento entre eventos del mismo territorio. * = incluye cifras parciales.", impactDetail:"Detalle por evento", eventFilter:"Evento", allEvents:"Todos los eventos", impactLbl:"Afectados reportados", persons:"personas", families:"familias", deathsLbl:"fallecidos", injuredLbl:"heridos", displacedLbl:"desplazados", evacuatedLbl:"evacuados", partial:"parcial", noImpact:"Sin cifras reportadas en la selección actual.", eventsWithFig:"eventos con cifra", colEvent:"Evento", colPlace:"País · tipo", colAsOf:"Fecha cifra", colSource:"Fuente", progressTag:"Progreso 1 (13-10-2026): KPI de población afectada reportada, filtrable por país, tipo de evento y evento.", title:"Mapa de riesgos — Cuenca amazónica", subtitle:"Eventos activos por amenaza y prioridad", mapNote:"Mapa base OpenStreetMap. Datos: base propia de eventos verificados (ver lista a la derecha).",
     total:"Eventos", red:"Alertas rojas", countries:"Países afectados",
     firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"activas", alertBannerView:"Ver detalle ↓", alertBannerClear:"Ver todos ×", exportCsv:"Exportar CSV", firmsTimelineLive:"En vivo",
     all:"Todos", FLOOD:"Inundación", EXTREME_RAIN:"Lluvia extrema", DROUGHT:"Sequía", WILDFIRE:"Incendio forestal", EARTHQUAKE:"Sismo", LANDSLIDE:"Deslizamiento", DEFORESTATION:"Deforestación", FLASH_FLOOD:"Inundación repentina", EXTREME_HEAT:"Calor extremo", SEVERE_STORM:"Tormenta severa",
@@ -228,7 +246,7 @@ const DICT = {
       <p style="margin:4px 0 0">Este monitor apoya "Strengthening Response Capacity in the Amazon Basin", financiado por la Comisión Europea (DG ECHO), implementado del 01/06/2026 al 31/05/2028 por un consorcio liderado por Diakonie Katastrophenhilfe (DKH) junto con World Vision, 3iS y PREDES. Cobertura: Bolivia, Brasil, Colombia, Ecuador, Perú y Venezuela.</p>
       <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88;font-size:11px;font-weight:700;text-align:center">Desarrollado por:</p>
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` },
-  pt: { impactTitle:"População afetada reportada", kpiPersons:"Pessoas afetadas", kpiFamilies:"Famílias afetadas", kpiDeaths:"Óbitos", kpiInjuries:"Feridos", kpiDisplaced:"Deslocados", kpiEvacuated:"Evacuados", kpiCoverage:"Eventos com números", impactNote:"Soma do último número reportado para cada evento filtrado (fontes oficiais ou veículos citados). Não inclui projeções nem estimativas; famílias não são convertidas em pessoas; pode haver sobreposição entre eventos do mesmo território. * = inclui números parciais.", impactDetail:"Detalhe por evento", eventFilter:"Evento", allEvents:"Todos os eventos", impactLbl:"Afetados reportados", persons:"pessoas", families:"famílias", deathsLbl:"óbitos", injuredLbl:"feridos", displacedLbl:"deslocados", evacuatedLbl:"evacuados", partial:"parcial", noImpact:"Sem números reportados na seleção atual.", eventsWithFig:"eventos com número", colEvent:"Evento", colPlace:"País · tipo", colAsOf:"Data do número", colSource:"Fonte", progressTag:"Progresso 1 (13-10-2026): KPI de população afetada reportada, filtrável por país, tipo de evento e evento.", title:"Mapa de riscos — Bacia amazônica", subtitle:"Eventos ativos por perigo e prioridade", mapNote:"Mapa base OpenStreetMap. Dados: base própria de eventos verificados (ver lista à direita).",
+  pt: { tabClimate:"Monitoramento climático", climateTitle:"Monitoramento climático", climateOpen:"Abrir em tela cheia ↗", climateNote:"Painel do Power BI incorporado (versão provisória). Será integrado de forma nativa a este visualizador em uma próxima versão.", impactTitle:"População afetada reportada", kpiPersons:"Pessoas afetadas", kpiFamilies:"Famílias afetadas", kpiDeaths:"Óbitos", kpiInjuries:"Feridos", kpiDisplaced:"Deslocados", kpiEvacuated:"Evacuados", kpiCoverage:"Eventos com números", impactNote:"Soma do último número reportado para cada evento filtrado (fontes oficiais ou veículos citados). Não inclui projeções nem estimativas; famílias não são convertidas em pessoas; pode haver sobreposição entre eventos do mesmo território. * = inclui números parciais.", impactDetail:"Detalhe por evento", eventFilter:"Evento", allEvents:"Todos os eventos", impactLbl:"Afetados reportados", persons:"pessoas", families:"famílias", deathsLbl:"óbitos", injuredLbl:"feridos", displacedLbl:"deslocados", evacuatedLbl:"evacuados", partial:"parcial", noImpact:"Sem números reportados na seleção atual.", eventsWithFig:"eventos com número", colEvent:"Evento", colPlace:"País · tipo", colAsOf:"Data do número", colSource:"Fonte", progressTag:"Progresso 1 (13-10-2026): KPI de população afetada reportada, filtrável por país, tipo de evento e evento.", title:"Mapa de riscos — Bacia amazônica", subtitle:"Eventos ativos por perigo e prioridade", mapNote:"Mapa base OpenStreetMap. Dados: base própria de eventos verificados (ver lista à direita).",
     total:"Eventos", red:"Alertas vermelhos", countries:"Países afetados",
     firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"ativos", alertBannerView:"Ver detalhe ↓", alertBannerClear:"Ver todos ×", exportCsv:"Exportar CSV", firmsTimelineLive:"Ao vivo",
     all:"Todos", FLOOD:"Inundação", EXTREME_RAIN:"Chuva extrema", DROUGHT:"Seca", WILDFIRE:"Incêndio florestal", EARTHQUAKE:"Terremoto", LANDSLIDE:"Deslizamento", DEFORESTATION:"Desmatamento", FLASH_FLOOD:"Inundação repentina", EXTREME_HEAT:"Calor extremo", SEVERE_STORM:"Tempestade severa",
@@ -256,7 +274,7 @@ const DICT = {
       <p style="margin:4px 0 0">Este monitor apoia o "Strengthening Response Capacity in the Amazon Basin", financiado pela Comissão Europeia (DG ECHO), implementado de 01/06/2026 a 31/05/2028 por um consórcio liderado pela Diakonie Katastrophenhilfe (DKH), junto com World Vision, 3iS e PREDES. Cobertura: Bolívia, Brasil, Colômbia, Equador, Peru e Venezuela.</p>
       <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88;font-size:11px;font-weight:700;text-align:center">Desenvolvido por:</p>
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` },
-  en: { impactTitle:"Reported affected population", kpiPersons:"People affected", kpiFamilies:"Families affected", kpiDeaths:"Deaths", kpiInjuries:"Injured", kpiDisplaced:"Displaced", kpiEvacuated:"Evacuated", kpiCoverage:"Events with figures", impactNote:"Sum of the latest figure reported for each filtered event (official sources or cited media). Excludes projections and estimates; families are not converted to people; events in the same area may overlap. * = includes partial figures.", impactDetail:"Breakdown by event", eventFilter:"Event", allEvents:"All events", impactLbl:"Reported affected", persons:"people", families:"families", deathsLbl:"deaths", injuredLbl:"injured", displacedLbl:"displaced", evacuatedLbl:"evacuated", partial:"partial", noImpact:"No reported figures in the current selection.", eventsWithFig:"events with figures", colEvent:"Event", colPlace:"Country · type", colAsOf:"Figure date", colSource:"Source", progressTag:"Progress 1 (2026-10-13): reported affected population KPI, filterable by country, event type and event.", title:"Risk map — Amazon Basin", subtitle:"Active events by hazard and priority", mapNote:"Base map: OpenStreetMap. Data: our own base of verified events (see list on the right).",
+  en: { tabClimate:"Climate monitoring", climateTitle:"Climate monitoring", climateOpen:"Open full screen ↗", climateNote:"Embedded Power BI dashboard (interim version). It will be integrated natively into this viewer in a future release.", impactTitle:"Reported affected population", kpiPersons:"People affected", kpiFamilies:"Families affected", kpiDeaths:"Deaths", kpiInjuries:"Injured", kpiDisplaced:"Displaced", kpiEvacuated:"Evacuated", kpiCoverage:"Events with figures", impactNote:"Sum of the latest figure reported for each filtered event (official sources or cited media). Excludes projections and estimates; families are not converted to people; events in the same area may overlap. * = includes partial figures.", impactDetail:"Breakdown by event", eventFilter:"Event", allEvents:"All events", impactLbl:"Reported affected", persons:"people", families:"families", deathsLbl:"deaths", injuredLbl:"injured", displacedLbl:"displaced", evacuatedLbl:"evacuated", partial:"partial", noImpact:"No reported figures in the current selection.", eventsWithFig:"events with figures", colEvent:"Event", colPlace:"Country · type", colAsOf:"Figure date", colSource:"Source", progressTag:"Progress 1 (2026-10-13): reported affected population KPI, filterable by country, event type and event.", title:"Risk map — Amazon Basin", subtitle:"Active events by hazard and priority", mapNote:"Base map: OpenStreetMap. Data: our own base of verified events (see list on the right).",
     total:"Events", red:"Red alerts", countries:"Countries affected",
     firms24hStat:"FIRMS hotspots (24h)", frpMaxStat:"Max FRP (24h)", alertBannerActive:"active", alertBannerView:"View details ↓", alertBannerClear:"View all ×", exportCsv:"Export CSV", firmsTimelineLive:"Live",
     all:"All", FLOOD:"Flood", EXTREME_RAIN:"Extreme rain", DROUGHT:"Drought", WILDFIRE:"Wildfire", EARTHQUAKE:"Earthquake", LANDSLIDE:"Landslide", DEFORESTATION:"Deforestation", FLASH_FLOOD:"Flash flood", EXTREME_HEAT:"Extreme heat", SEVERE_STORM:"Severe storm",
@@ -1189,11 +1207,16 @@ function renderForecast(){
 
 // --- Pestanas (Monitor / Pronostico). La pestana activa queda en la URL (#pronostico). ---
 let activeTab = 'monitor';
-const TAB_HASH = { monitor: '', forecast: '#pronostico' };
+const TAB_HASH = { monitor: '', forecast: '#pronostico', climate: '#clima' };
 function showTab(name){
   activeTab = TAB_HASH.hasOwnProperty(name) ? name : 'monitor';
   document.getElementById('tabMonitor').hidden = (activeTab !== 'monitor');
   document.getElementById('tabForecast').hidden = (activeTab !== 'forecast');
+  document.getElementById('tabClimate').hidden = (activeTab !== 'climate');
+  if (activeTab === 'climate') {
+    var cf = document.getElementById('climateFrame');
+    if (cf && !cf.getAttribute('src')) cf.setAttribute('src', cf.getAttribute('data-src'));
+  }
   document.querySelectorAll('#tabs .tab-btn').forEach(function(b){
     var on = b.getAttribute('data-tab') === activeTab;
     b.classList.toggle('active', on);
@@ -1381,6 +1404,7 @@ function wireTabs(){
     b.addEventListener('click', function(){ showTab(b.getAttribute('data-tab')); });
   });
   if (/^#(pronostico|previsao|forecast)$/i.test(location.hash)) showTab('forecast');
+  if (/^#(clima|climate)$/i.test(location.hash)) showTab('climate');
 }
 
 function initDashboard(){
