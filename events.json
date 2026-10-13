@@ -42,7 +42,8 @@
         "label": "La Patria Bolivia (actualización 7-sep)",
         "url": "https://lapatria.bo/enfoque-nacional/gestion/incendios-forestales-santa-cruz-puntos-calor/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260902-001",
@@ -87,7 +88,19 @@
         "label": "Gazeta da Amazônia (36º Boletim SGB)",
         "url": "https://gazetadaamazonia.com.br/09/09/2026/nivel-do-rio-negro-manaus/"
       }
-    ]
+    ],
+    "impact": {
+      "asOf": "2026-09-14",
+      "deaths": null,
+      "injuries": null,
+      "affectedPersons": 7323,
+      "affectedFamilies": null,
+      "displaced": null,
+      "evacuated": null,
+      "scope": "PARTIAL",
+      "source": "Canal92 Amazonas",
+      "sourceUrl": "https://canal92am.com/amazonas/municipios-situacao-emergencia-amazonas/"
+    }
   },
   {
     "id": "AMZ-20260907-001",
@@ -132,7 +145,8 @@
         "label": "Diario Voces",
         "url": "https://diariovoces.com.pe/lluvia-torrencial-en-pleno-verano-amazonico-pone-en-alerta-a-yurimaguas/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260908-001",
@@ -177,7 +191,8 @@
         "label": "SENAMHI / Plataforma del Estado Peruano",
         "url": "https://www.gob.pe/institucion/senamhi/noticias/1434857-senamhi-informa-sobre-niveles-de-los-principales-rios-amazonicos-de-loreto"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260909-001",
@@ -218,7 +233,8 @@
         "label": "Secretaria de Estado do Meio Ambiente do Amapá (Sema-AP), vía Cleide Freires",
         "url": "https://www.cleidefreires.com.br/amapa-reforca-monitoramento-diante-do-avanco-da-estiagem-e-do-el-nino/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260910-001",
@@ -263,7 +279,8 @@
         "label": "El Comercio (Perú)",
         "url": "https://elcomercio.pe/peru/amazonas/amazonas-sismo-de-magnitud-50-se-registro-en-santa-maria-de-nieva-igp-temblor-ultimas-noticia/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260910-002",
@@ -308,7 +325,8 @@
         "label": "Portal do Caubi (dados INPE)",
         "url": "https://www.portaldocaubi.com.br/amazonas-lidera-focos-de-calor-no-brasil-na-primeira-semana-de-setembro/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260911-001",
@@ -353,7 +371,8 @@
         "label": "Radio Santa Fe",
         "url": "https://www.radiosantafe.com/2026/09/12/ciudades-capitales-y-la-ungrd-acuerdan-pasar-de-la-preparacion-a-la-accion-frente-al-fenomeno-de-el-nino-2026-2027/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260911-002",
@@ -398,7 +417,8 @@
         "label": "INAMHI (vía El Diario Ecuador)",
         "url": "https://www.eldiario.ec/ecuador/inamhi-alerta-lluvias-intensas-en-ecuador-estas-son-las-provincias-con-mayores-precipitaciones-hasta-el-16-de-septiembre-13092026"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260911-003",
@@ -443,7 +463,8 @@
         "label": "ac24horas",
         "url": "https://ac24horas.com/2026/09/03/estiagem-se-agrava-e-roraima-decreta-emergencia-para-enfrentar-impactos-do-el-nino/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260911-004",
@@ -488,7 +509,8 @@
         "label": "El Popular",
         "url": "https://elpopular.pe/actualidad/2026/09/11/senamhi-advierte-lluvias-extremas-desde-el-13-de-septiembre-160-distritos-bajo-riesgo-de-huaicos-y-deslizamientos-886215"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260912-001",
@@ -533,7 +555,8 @@
         "label": "El Nacional (Venezuela), citando al presidente de INAMEH, Reidy Zambrano",
         "url": "https://www.elnacional.com/2026/09/inameh-advierte-que-el-nino-impactara-en-el-consumo-electrico-agua-y-agricultura/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260912-002",
@@ -578,7 +601,8 @@
         "label": "La Razón (confirmación de impacto en el Mamoré)",
         "url": "https://larazon.bo/ciudades/2026/09/14/rehabilitan-el-trafico-en-el-sector-del-rio-mamore-tras-las-lluvias/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260914-001",
@@ -623,7 +647,8 @@
         "label": "El Comercio (Ecuador)",
         "url": "https://www.elcomercio.com/actualidad/ecuador/via-baeza-lago-agrio-habilita/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260914-002",
@@ -668,7 +693,8 @@
         "label": "La Patilla",
         "url": "https://lapatilla.com/2026/09/14/inameh-preve-lluvias-en-gran-parte-del-territorio-venezolano-para-este-14sep/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260914-003",
@@ -709,7 +735,8 @@
         "label": "ClimaInfo (datos DETER/INPE y Ministério do Meio Ambiente)",
         "url": "https://climainfo.org.br/2026/09/14/alertas-de-desmatamento-em-agosto-caem-no-cerrado-mas-sobem-na-amazonia/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260914-004",
@@ -750,7 +777,8 @@
         "label": "Primicias (Ecuador)",
         "url": "https://www.primicias.ec/sucesos/temblor-sismo-loreto-frontera-ecuador-peru-14septiembre-132558/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260916-001",
@@ -795,7 +823,8 @@
         "label": "Infobae Perú (citando IGP/CENSIS)",
         "url": "https://www.infobae.com/peru/2026/09/15/sismo-de-magnitud-48-se-siente-en-a-andoas-loreto/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260916-002",
@@ -836,7 +865,8 @@
         "label": "USGS (U.S. Geological Survey)",
         "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000thr4"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260916-003",
@@ -881,7 +911,8 @@
         "label": "Semana (citando IDEAM)",
         "url": "https://www.semana.com/nacion/articulo/lluvias-y-tiempo-seco-marcaran-el-clima-en-colombia-este-17-de-septiembre-segun-el-ideam-asi-estaran-las-regiones/202631/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260917-001",
@@ -922,7 +953,8 @@
         "label": "Instituto Geofisico del Peru (IGP/CENSIS), via Infobae",
         "url": "https://www.infobae.com/peru/2026/09/17/sismo-de-magnitud-4-se-siente-en-a-sepahua-ucayali/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260923-001",
@@ -963,7 +995,8 @@
         "label": "INAMHI (Advertencia Meteorológica N.° 74), vía El Comercio Ecuador",
         "url": "https://www.elcomercio.com/actualidad/ecuador/ecuador-tendra-lluvias-tormentas-rafagas-viento-23-27-septiembre/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260923-002",
@@ -1008,7 +1041,8 @@
         "label": "Defesa Civil do Acre, vía A Gazeta do Acre",
         "url": "https://agazetadoacre.com/2026/09/noticias/geral/nivel-do-rio-acre-apresenta-elevacao-mas-defesa-civil-alerta-que-oscilacao-nao-altera-cenario-de-seca/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260925-001",
@@ -1053,7 +1087,8 @@
         "label": "Portal Acre",
         "url": "https://portalacre.com.br/2026/09/acre-ja-soma-42-mil-hectares-queimados-em-2026-com-feijo-concentrando-maior-area/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20260929-001",
@@ -1098,7 +1133,8 @@
         "label": "Agencia Andina (citando IGP/CENSIS)",
         "url": "https://andina.pe/agencia/noticia-temblor-magnitud-52-sacude-loreto-y-peru-bordea-los-700-sismos-lo-va-2026-1093786.aspx"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20261001-001",
@@ -1143,7 +1179,8 @@
         "label": "Brasil em Folhas",
         "url": "https://www.brasilemfolhas.com.br/2026/09/monte-alegre-e-ruropolis-decretam-emergencia-por-incendios-florestais/"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20261002-001",
@@ -1188,7 +1225,8 @@
         "label": "INAMHI / SNGR, vía El Diario (Ecuador)",
         "url": "https://www.eldiario.ec/ecuador/lluvias-fuertes-tormentas-y-crecidas-estas-zonas-de-ecuador-estaran-bajo-alerta-hasta-el-5-de-octubre-02102026"
       }
-    ]
+    ],
+    "impact": null
   },
   {
     "id": "AMZ-20261006-001",
@@ -1233,7 +1271,19 @@
         "label": "Rondônia Dinâmica",
         "url": "https://www.rondoniadinamica.com/noticias/2026/10/prefeitura-de-porto-velho-decretada-situacao-de-emergencia-em-distritos-do-alto-medio-e-baixo-madeira,255796.shtml"
       }
-    ]
+    ],
+    "impact": {
+      "asOf": "2026-10-05",
+      "deaths": null,
+      "injuries": null,
+      "affectedPersons": 517,
+      "affectedFamilies": 7442,
+      "displaced": null,
+      "evacuated": null,
+      "scope": "CONSOLIDATED",
+      "source": "Prefeitura de Porto Velho (Decreto 22.515), vía Rondoniaovivo",
+      "sourceUrl": "https://www.rondoniaovivo.com/noticia/geral/2026/10/05/estiagem-situacao-de-emergencia-e-decretada-em-distritos-do-alto-medio-e-baixo-madeira.html"
+    }
   },
   {
     "id": "AMZ-20261008-001",
@@ -1274,6 +1324,7 @@
         "label": "SENAMHI / INDECI (vía La República)",
         "url": "https://larepublica.pe/sociedad/2026/10/05/hasta-38-c-y-radiacion-extrema-senamhi-emite-alerta-meteorologica-para-8-regiones-del-pais-hasta-el-martes-6-348600"
       }
-    ]
+    ],
+    "impact": null
   }
 ]
