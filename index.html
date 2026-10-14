@@ -27,6 +27,7 @@
   #av-3is-root { background: #ffffff; border: 1px solid var(--3is-gray); border-radius: 16px; overflow: hidden; }
   #av-3is-body { padding: 1.5rem; }
   .firms-legend { background:#fff; padding:8px 10px; border-radius:8px; border:1px solid var(--3is-gray); font-size:11px; line-height:1.3; max-width:200px; box-shadow:0 1px 4px rgba(0,0,0,.15); }
+  .sst-legend { background:#fff; padding:8px 10px; border-radius:8px; border:1px solid var(--3is-gray); font-size:11px; line-height:1.3; max-width:260px; box-shadow:0 1px 4px rgba(0,0,0,.15); }
   #map { height: 420px; border-radius: var(--radius); z-index: 0; }
   select, input[type=checkbox] { font-family: var(--font-sans); }
   select { border: 1px solid var(--3is-cyan); border-radius: var(--radius); padding: 5px 10px; font-size: 13px; color: var(--3is-teal-deep); background: #fff; }
@@ -230,7 +231,7 @@ const DICT = {
     dataSourcesHTML:`Fuentes de datos: <a href="https://www.openstreetmap.org/copyright" target="_blank" style="color:var(--3is-cyan)">OpenStreetMap</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS</a> (focos de calor VIIRS)`,
     bordersNote:"Los datos geográficos, nombres y límites políticos y administrativos utilizados en este mapa no implican aceptación oficial por parte de 3iS.",
     layerSst:"Anomalía SST (ENSO)", layerBasin:"Límite de la cuenca amazónica", fcTitle:"Pronóstico meteorológico", tabMonitor:"Monitor", tabForecast:"Pronóstico", fcRain:"Precipitación", fcTemp:"Temperatura", fcRadar:"Radar meteorológico", fcRainAccu:"Lluvia acumulada", fcThunder:"Tormentas eléctricas", fcNote:"Mapa interactivo independiente (no incluye el límite del proyecto ni los eventos). Use la línea de tiempo inferior para avanzar el pronóstico. En la Amazonía hay muy pocos radares, por lo que la capa de radar aparecerá mayormente vacía.", fcCredit:"Pronóstico: Windy.com (widget embebido gratuito, modelo ECMWF).", firmsLegend:"Focos de calor — potencia radiativa (FRP, MW)", firmsLegendNote:"Celdas agregadas: FRP total de la celda. Puntos sin FRP: clase según confianza.", firmsCell:"focos en la celda", firmsFrp:"FRP", firmsNoFrp:"sin FRP (clase por confianza)", firms24h:"Últimas 24 h de datos", firmsUpTo:"hasta", firmsRange:"Fechas seleccionadas", firmsNone:"Sin focos en esas fechas (el mapa guarda solo los últimos 7 días).", eventDateLbl:"Evento", updatedLbl:"Act.",
-    sstNote:"Capa ENSO: anomalía de temperatura superficial del mar (NOAA OISST vía Google Earth Engine) en el Pacífico ecuatorial, con las regiones de referencia Niño 1+2, 3, 3.4 y 4. Es un indicador predictivo de sequías/inundaciones en la cuenca amazónica, no un evento dentro de la cuenca — por eso puede requerir alejar el mapa hacia el Pacífico para verse.",
+    sstNote:"Capa ENSO: anomalía de temperatura superficial del mar (NASA GIBS, producto GHRSST L4 MUR — la misma imagen de NASA Worldview) en el Pacífico ecuatorial, con las regiones de referencia Niño 1+2, 3, 3.4 y 4. Es un indicador predictivo de sequías/inundaciones en la cuenca amazónica, no un evento dentro de la cuenca — por eso puede requerir alejar el mapa hacia el Pacífico para verse. Se actualiza con 1-2 días de rezago típico.",
     infoHTML:`<p style="margin:0 0 8px"><b style="color:var(--3is-navy)">Niveles de alerta</b></p>
       <p style="margin:0 0 4px"><span style="color:#E24B4A">● Rojo</span>: evento mayor o de rápida escalada, con consecuencias humanitarias, ambientales, agrícolas o de medios de vida significativas.</p>
       <p style="margin:0 0 4px"><span style="color:#EF9F27">● Naranja</span>: evento significativo que requiere monitoreo y es potencialmente relevante para acción humanitaria o anticipatoria.</p>
@@ -242,7 +243,7 @@ const DICT = {
       <p style="margin:0 0 4px">Coordenadas en WGS84 (EPSG:4326). La cobertura geográfica se limita a Bolivia, Brasil, Colombia, Ecuador, Perú y Venezuela; un evento dentro de un país elegible no se incluye automáticamente si ocurre fuera de la cuenca amazónica.</p>
       <p style="margin:0">El límite oficial de la cuenca (capa de la Panamazonía, incluyendo el estuario, sin Guyana, Surinam ni Guayana Francesa, que no forman parte del proyecto) se usa como la única zona de verdad: los eventos y los focos de calor (FIRMS) con coordenadas fuera de ese límite se excluyen del mapa y del listado, aunque queden dentro del rectángulo geográfico de búsqueda. La capa ENSO/TSM (Pacífico) es un indicador predictivo externo y no se recorta a este límite.</p>
       <p style="margin:8px 0 0"><a href="https://gdacs.org/" target="_blank" style="color:var(--3is-cyan)">GDACS ↗</a> · <a href="https://reliefweb.int/" target="_blank" style="color:var(--3is-cyan)">ReliefWeb ↗</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS ↗</a></p>
-      <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Población afectada reportada (Progreso 1)</b></p><p style="margin:4px 0 4px">El panel suma, para los eventos visibles según los filtros activos (país, tipo de evento, evento, fechas y alertas rojas), las cifras de impacto <b>reportadas</b> por fuentes oficiales o medios citados: personas y familias afectadas, fallecidos, heridos, desplazados y evacuados.</p><p style="margin:0 0 4px">Reglas: (1) se toma la última cifra vigente de cada evento, sin acumular actualizaciones; (2) no se incluyen proyecciones, estimaciones ni cálculos propios; (3) familias y personas se suman por separado, sin conversión; (4) <b>*</b> indica que el total incluye cifras parciales (que cubren solo parte del área del evento); (5) "Eventos con cifras" muestra cuántos eventos de la selección tienen al menos una cifra reportada.</p><p style="margin:0 0 4px">Limitación: eventos distintos en un mismo territorio (p. ej. sequía e incendios en el mismo estado) pueden contar a la misma población; aún no se corrige ese solapamiento. Las cifras de población expuesta estimada (p. ej. con WorldPop) son un desarrollo futuro.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Monitoreo climático (Progreso 2)</b></p><p style="margin:4px 0 4px">La pestaña "Monitoreo climático" muestra un tablero de Power BI embebido, de forma provisional. Está previsto integrarlo de forma nativa en este visor (mismos filtros, idiomas y límite de la cuenca).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Historial de versiones</b></p><p style="margin:4px 0 0">Progreso 1 (13-10-2026): KPI de población afectada reportada, filtrable por país, tipo de evento y evento. Progreso 2 (13-10-2026): pestaña de Monitoreo climático (provisional).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Alcance del proyecto</b></p>
+      <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Población afectada reportada (Progreso 1)</b></p><p style="margin:4px 0 4px">El panel suma, para los eventos visibles según los filtros activos (país, tipo de evento, evento, fechas y alertas rojas), las cifras de impacto <b>reportadas</b> por fuentes oficiales o medios citados: personas y familias afectadas, fallecidos, heridos, desplazados y evacuados.</p><p style="margin:0 0 4px">Reglas: (1) se toma la última cifra vigente de cada evento, sin acumular actualizaciones; (2) no se incluyen proyecciones, estimaciones ni cálculos propios; (3) familias y personas se suman por separado, sin conversión; (4) <b>*</b> indica que el total incluye cifras parciales (que cubren solo parte del área del evento); (5) "Eventos con cifras" muestra cuántos eventos de la selección tienen al menos una cifra reportada.</p><p style="margin:0 0 4px">Limitación: eventos distintos en un mismo territorio (p. ej. sequía e incendios en el mismo estado) pueden contar a la misma población; aún no se corrige ese solapamiento. Las cifras de población expuesta estimada (p. ej. con WorldPop) son un desarrollo futuro.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Monitoreo climático (Progreso 2)</b></p><p style="margin:4px 0 4px">La pestaña "Monitoreo climático" muestra un tablero de Power BI embebido, de forma provisional. Está previsto integrarlo de forma nativa en este visor (mismos filtros, idiomas y límite de la cuenca).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Anomalía SST / ENSO (Progreso 3)</b></p><p style="margin:4px 0 4px">La capa "Anomalía SST (ENSO)" usa ahora directamente la tesela pública y oficial de <b>NASA GIBS</b> (producto GHRSST L4 MUR, la misma imagen que muestra NASA Worldview), en vez de calcularse a diario con Google Earth Engine. Queda <b>activada por defecto</b> y tiene su propia leyenda de colores (esquina inferior derecha del mapa) con la escala oficial de NASA. La imagen se actualiza con 1-2 días de rezago típico, suficiente para un indicador de evolución lenta como ENSO. El código del cálculo anterior vía Earth Engine se conserva, sin usarse, en <code>legacy/enso_gee_pipeline/</code> del repositorio, como registro de lo hecho.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Historial de versiones</b></p><p style="margin:4px 0 0">Progreso 1 (13-10-2026): KPI de población afectada reportada, filtrable por país, tipo de evento y evento. Progreso 2 (13-10-2026): pestaña de Monitoreo climático (provisional). Progreso 3 (14-10-2026): la capa ENSO/SST pasa a usar directamente la tesela oficial de NASA GIBS (antes Google Earth Engine), activada por defecto con leyenda propia.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Alcance del proyecto</b></p>
       <p style="margin:4px 0 0">Este monitor apoya "Strengthening Response Capacity in the Amazon Basin", financiado por la Comisión Europea (DG ECHO), implementado del 01/06/2026 al 31/05/2028 por un consorcio liderado por Diakonie Katastrophenhilfe (DKH) junto con World Vision, 3iS y PREDES. Cobertura: Bolivia, Brasil, Colombia, Ecuador, Perú y Venezuela.</p>
       <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88;font-size:11px;font-weight:700;text-align:center">Desarrollado por:</p>
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` },
@@ -258,7 +259,7 @@ const DICT = {
     dataSourcesHTML:`Fontes de dados: <a href="https://www.openstreetmap.org/copyright" target="_blank" style="color:var(--3is-cyan)">OpenStreetMap</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS</a> (focos de calor VIIRS)`,
     bordersNote:"Os dados geográficos, nomes e limites políticos e administrativos utilizados neste mapa não implicam aceitação oficial por parte da 3iS.",
     layerSst:"Anomalia de TSM (ENSO)", layerBasin:"Limite da bacia amazônica", fcTitle:"Previsão meteorológica", tabMonitor:"Monitor", tabForecast:"Previsão", fcRain:"Precipitação", fcTemp:"Temperatura", fcRadar:"Radar meteorológico", fcRainAccu:"Chuva acumulada", fcThunder:"Tempestades elétricas", fcNote:"Mapa interativo independente (não inclui o limite do projeto nem os eventos). Use a linha do tempo inferior para avançar a previsão. Na Amazônia há muito poucos radares, por isso a camada de radar aparecerá quase vazia.", fcCredit:"Previsão: Windy.com (widget incorporado gratuito, modelo ECMWF).", firmsLegend:"Focos de calor — potência radiativa (FRP, MW)", firmsLegendNote:"Células agregadas: FRP total da célula. Pontos sem FRP: classe pela confiança.", firmsCell:"focos na célula", firmsFrp:"FRP", firmsNoFrp:"sem FRP (classe pela confiança)", firms24h:"Últimas 24 h de dados", firmsUpTo:"até", firmsRange:"Datas selecionadas", firmsNone:"Sem focos nessas datas (o mapa guarda apenas os últimos 7 dias).", eventDateLbl:"Evento", updatedLbl:"Atual.",
-    sstNote:"Camada ENSO: anomalia da temperatura da superfície do mar (NOAA OISST via Google Earth Engine) no Pacífico equatorial, com as regiões de referência Niño 1+2, 3, 3.4 e 4. É um indicador preditivo de secas/inundações na bacia amazônica, não um evento dentro da bacia — por isso pode ser necessário afastar o mapa em direção ao Pacífico para vê-la.",
+    sstNote:"Camada ENSO: anomalia da temperatura da superfície do mar (NASA GIBS, produto GHRSST L4 MUR — a mesma imagem do NASA Worldview) no Pacífico equatorial, com as regiões de referência Niño 1+2, 3, 3.4 e 4. É um indicador preditivo de secas/inundações na bacia amazônica, não um evento dentro da bacia — por isso pode ser necessário afastar o mapa em direção ao Pacífico para vê-la. É atualizada com uma defasagem típica de 1-2 dias.",
     infoHTML:`<p style="margin:0 0 8px"><b style="color:var(--3is-navy)">Níveis de alerta</b></p>
       <p style="margin:0 0 4px"><span style="color:#E24B4A">● Vermelho</span>: evento maior ou de rápida escalada, com consequências humanitárias, ambientais, agrícolas ou de meios de vida significativas.</p>
       <p style="margin:0 0 4px"><span style="color:#EF9F27">● Laranja</span>: evento significativo que exige monitoramento e é potencialmente relevante para ação humanitária ou antecipatória.</p>
@@ -270,7 +271,7 @@ const DICT = {
       <p style="margin:0 0 4px">Coordenadas em WGS84 (EPSG:4326). A cobertura geográfica se limita à Bolívia, Brasil, Colômbia, Equador, Peru e Venezuela; um evento dentro de um país elegível não é incluído automaticamente se ocorrer fora da bacia amazônica.</p>
       <p style="margin:0">O limite oficial da bacia (camada da Panamazônia, incluindo o estuário, sem Guiana, Suriname e Guiana Francesa, que não fazem parte do projeto) é usado como a única zona de verdade: eventos e focos de calor (FIRMS) com coordenadas fora desse limite são excluídos do mapa e da lista, mesmo que fiquem dentro do retângulo geográfico de busca. A camada ENSO/TSM (Pacífico) é um indicador preditivo externo e não é recortada por esse limite.</p>
       <p style="margin:8px 0 0"><a href="https://gdacs.org/" target="_blank" style="color:var(--3is-cyan)">GDACS ↗</a> · <a href="https://reliefweb.int/" target="_blank" style="color:var(--3is-cyan)">ReliefWeb ↗</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS ↗</a></p>
-      <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">População afetada reportada (Progresso 1)</b></p><p style="margin:4px 0 4px">O painel soma, para os eventos visíveis segundo os filtros ativos (país, tipo de evento, evento, datas e alertas vermelhos), os números de impacto <b>reportados</b> por fontes oficiais ou veículos citados: pessoas e famílias afetadas, óbitos, feridos, deslocados e evacuados.</p><p style="margin:0 0 4px">Regras: (1) usa-se o último número vigente de cada evento, sem acumular atualizações; (2) não se incluem projeções, estimativas nem cálculos próprios; (3) famílias e pessoas são somadas separadamente, sem conversão; (4) <b>*</b> indica que o total inclui números parciais (que cobrem só parte da área do evento); (5) "Eventos com números" mostra quantos eventos da seleção têm pelo menos um número reportado.</p><p style="margin:0 0 4px">Limitação: eventos diferentes no mesmo território (p. ex. seca e incêndios no mesmo estado) podem contar a mesma população; essa sobreposição ainda não é corrigida. A população exposta estimada (p. ex. com WorldPop) é um desenvolvimento futuro.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Monitoramento climático (Progresso 2)</b></p><p style="margin:4px 0 4px">A aba "Monitoramento climático" mostra um painel do Power BI incorporado, de forma provisória. Está prevista sua integração nativa a este visualizador (mesmos filtros, idiomas e limite da bacia).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Histórico de versões</b></p><p style="margin:4px 0 0">Progresso 1 (13-10-2026): KPI de população afetada reportada, filtrável por país, tipo de evento e evento. Progresso 2 (13-10-2026): aba de Monitoramento climático (provisória).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Alcance do projeto</b></p>
+      <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">População afetada reportada (Progresso 1)</b></p><p style="margin:4px 0 4px">O painel soma, para os eventos visíveis segundo os filtros ativos (país, tipo de evento, evento, datas e alertas vermelhos), os números de impacto <b>reportados</b> por fontes oficiais ou veículos citados: pessoas e famílias afetadas, óbitos, feridos, deslocados e evacuados.</p><p style="margin:0 0 4px">Regras: (1) usa-se o último número vigente de cada evento, sem acumular atualizações; (2) não se incluem projeções, estimativas nem cálculos próprios; (3) famílias e pessoas são somadas separadamente, sem conversão; (4) <b>*</b> indica que o total inclui números parciais (que cobrem só parte da área do evento); (5) "Eventos com números" mostra quantos eventos da seleção têm pelo menos um número reportado.</p><p style="margin:0 0 4px">Limitação: eventos diferentes no mesmo território (p. ex. seca e incêndios no mesmo estado) podem contar a mesma população; essa sobreposição ainda não é corrigida. A população exposta estimada (p. ex. com WorldPop) é um desenvolvimento futuro.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Monitoramento climático (Progresso 2)</b></p><p style="margin:4px 0 4px">A aba "Monitoramento climático" mostra um painel do Power BI incorporado, de forma provisória. Está prevista sua integração nativa a este visualizador (mesmos filtros, idiomas e limite da bacia).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Anomalia de TSM / ENSO (Progresso 3)</b></p><p style="margin:4px 0 4px">A camada "Anomalia de TSM (ENSO)" agora usa diretamente a tesela pública e oficial da <b>NASA GIBS</b> (produto GHRSST L4 MUR, a mesma imagem exibida no NASA Worldview), em vez de ser calculada diariamente via Google Earth Engine. Ela fica <b>ativada por padrão</b> e tem sua própria legenda de cores (canto inferior direito do mapa) com a escala oficial da NASA. A imagem é atualizada com 1-2 dias de defasagem típica, suficiente para um indicador de evolução lenta como o ENSO. O código do cálculo anterior via Earth Engine foi mantido, sem uso, em <code>legacy/enso_gee_pipeline/</code> do repositório, como registro do que foi feito.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Histórico de versões</b></p><p style="margin:4px 0 0">Progresso 1 (13-10-2026): KPI de população afetada reportada, filtrável por país, tipo de evento e evento. Progresso 2 (13-10-2026): aba de Monitoramento climático (provisória). Progresso 3 (14-10-2026): a camada ENSO/TSM passa a usar diretamente a tesela oficial da NASA GIBS (antes Google Earth Engine), ativada por padrão com legenda própria.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Alcance do projeto</b></p>
       <p style="margin:4px 0 0">Este monitor apoia o "Strengthening Response Capacity in the Amazon Basin", financiado pela Comissão Europeia (DG ECHO), implementado de 01/06/2026 a 31/05/2028 por um consórcio liderado pela Diakonie Katastrophenhilfe (DKH), junto com World Vision, 3iS e PREDES. Cobertura: Bolívia, Brasil, Colômbia, Equador, Peru e Venezuela.</p>
       <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88;font-size:11px;font-weight:700;text-align:center">Desenvolvido por:</p>
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` },
@@ -286,7 +287,7 @@ const DICT = {
     dataSourcesHTML:`Data sources: <a href="https://www.openstreetmap.org/copyright" target="_blank" style="color:var(--3is-cyan)">OpenStreetMap</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS</a> (VIIRS heat spots)`,
     bordersNote:"The geographic data, names, and political and administrative boundaries used on this map do not imply official acceptance by 3iS.",
     layerSst:"SST Anomaly (ENSO)", layerBasin:"Amazon basin boundary", fcTitle:"Weather forecast", tabMonitor:"Monitor", tabForecast:"Forecast", fcRain:"Precipitation", fcTemp:"Temperature", fcRadar:"Weather radar", fcRainAccu:"Rain accumulation", fcThunder:"Thunderstorms", fcNote:"Standalone interactive map (does not include the project boundary or events). Use the timeline at the bottom to move the forecast forward. There are very few radars in the Amazon, so the radar layer will be mostly empty.", fcCredit:"Forecast: Windy.com (free embedded widget, ECMWF model).", firmsLegend:"Heat spots — fire radiative power (FRP, MW)", firmsLegendNote:"Aggregated cells: total FRP of the cell. Points without FRP: class by confidence.", firmsCell:"hotspots in cell", firmsFrp:"FRP", firmsNoFrp:"no FRP (class by confidence)", firms24h:"Last 24 h of data", firmsUpTo:"up to", firmsRange:"Selected dates", firmsNone:"No hotspots on those dates (the map keeps only the last 7 days).", eventDateLbl:"Event", updatedLbl:"Upd.",
-    sstNote:"ENSO layer: sea surface temperature anomaly (NOAA OISST via Google Earth Engine) across the equatorial Pacific, with the Niño 1+2, 3, 3.4, and 4 reference regions. It is a predictive indicator for droughts/floods in the Amazon Basin, not an event inside the basin itself — you may need to pan the map toward the Pacific to see it.",
+    sstNote:"ENSO layer: sea surface temperature anomaly (NASA GIBS, GHRSST L4 MUR product — the same image shown in NASA Worldview) across the equatorial Pacific, with the Niño 1+2, 3, 3.4, and 4 reference regions. It is a predictive indicator for droughts/floods in the Amazon Basin, not an event inside the basin itself — you may need to pan the map toward the Pacific to see it. It typically lags 1-2 days behind.",
     infoHTML:`<p style="margin:0 0 8px"><b style="color:var(--3is-navy)">Alert levels</b></p>
       <p style="margin:0 0 4px"><span style="color:#E24B4A">● Red</span>: major or rapidly escalating event with significant humanitarian, environmental, agricultural, or livelihood consequences.</p>
       <p style="margin:0 0 4px"><span style="color:#EF9F27">● Orange</span>: significant event requiring monitoring and potentially relevant to humanitarian or anticipatory action.</p>
@@ -298,7 +299,7 @@ const DICT = {
       <p style="margin:0 0 4px">Coordinates in WGS84 (EPSG:4326). Geographic coverage is limited to Bolivia, Brazil, Colombia, Ecuador, Peru, and Venezuela; an event in an eligible country is not automatically included if it occurs outside the Amazon Basin.</p>
       <p style="margin:0">The official basin boundary (the Pan-Amazon layer, including the estuary, excluding Guyana, Suriname and French Guiana, which are outside the project scope) is used as the single source of truth: events and heat spots (FIRMS) with coordinates outside that boundary are excluded from the map and the list, even if they fall inside the geographic search rectangle. The ENSO/SST layer (Pacific) is an external predictive indicator and is not clipped to this boundary.</p>
       <p style="margin:8px 0 0"><a href="https://gdacs.org/" target="_blank" style="color:var(--3is-cyan)">GDACS ↗</a> · <a href="https://reliefweb.int/" target="_blank" style="color:var(--3is-cyan)">ReliefWeb ↗</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS ↗</a></p>
-      <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Reported affected population (Progress 1)</b></p><p style="margin:4px 0 4px">The panel sums, for the events visible under the active filters (country, event type, event, dates and red alerts), the impact figures <b>reported</b> by official sources or cited media: people and families affected, deaths, injured, displaced and evacuated.</p><p style="margin:0 0 4px">Rules: (1) the latest valid figure of each event is used, without accumulating updates; (2) projections, estimates and our own calculations are excluded; (3) families and people are summed separately, with no conversion; (4) <b>*</b> means the total includes partial figures (covering only part of the event area); (5) "Events with figures" shows how many selected events have at least one reported figure.</p><p style="margin:0 0 4px">Limitation: different events in the same area (e.g. drought and fires in the same state) may count the same population; this overlap is not yet corrected. Estimated exposed population (e.g. with WorldPop) is a future development.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Climate monitoring (Progress 2)</b></p><p style="margin:4px 0 4px">The "Climate monitoring" tab shows an embedded Power BI dashboard as an interim solution. It is planned to be integrated natively into this viewer (same filters, languages and basin boundary).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Version history</b></p><p style="margin:4px 0 0">Progress 1 (2026-10-13): reported affected population KPI, filterable by country, event type and event. Progress 2 (2026-10-13): Climate monitoring tab (interim).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Project scope</b></p>
+      <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Reported affected population (Progress 1)</b></p><p style="margin:4px 0 4px">The panel sums, for the events visible under the active filters (country, event type, event, dates and red alerts), the impact figures <b>reported</b> by official sources or cited media: people and families affected, deaths, injured, displaced and evacuated.</p><p style="margin:0 0 4px">Rules: (1) the latest valid figure of each event is used, without accumulating updates; (2) projections, estimates and our own calculations are excluded; (3) families and people are summed separately, with no conversion; (4) <b>*</b> means the total includes partial figures (covering only part of the event area); (5) "Events with figures" shows how many selected events have at least one reported figure.</p><p style="margin:0 0 4px">Limitation: different events in the same area (e.g. drought and fires in the same state) may count the same population; this overlap is not yet corrected. Estimated exposed population (e.g. with WorldPop) is a future development.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Climate monitoring (Progress 2)</b></p><p style="margin:4px 0 4px">The "Climate monitoring" tab shows an embedded Power BI dashboard as an interim solution. It is planned to be integrated natively into this viewer (same filters, languages and basin boundary).</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">SST anomaly / ENSO (Progress 3)</b></p><p style="margin:4px 0 4px">The "SST Anomaly (ENSO)" layer now uses the official public tile straight from <b>NASA GIBS</b> (GHRSST L4 MUR product, the same image shown in NASA Worldview), instead of being computed daily via Google Earth Engine. It is now <b>on by default</b> and has its own colour legend (bottom-right corner of the map) using NASA's official scale. The image typically lags 1-2 days, which is fine for a slow-moving indicator like ENSO. The previous Earth Engine computation code is kept, unused, under <code>legacy/enso_gee_pipeline/</code> in the repository, as a record of past work.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Version history</b></p><p style="margin:4px 0 0">Progress 1 (2026-10-13): reported affected population KPI, filterable by country, event type and event. Progress 2 (2026-10-13): Climate monitoring tab (interim). Progress 3 (2026-10-14): the ENSO/SST layer now uses the official NASA GIBS tile directly (previously Google Earth Engine), on by default with its own legend.</p><p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88"><b style="color:var(--3is-navy)">Project scope</b></p>
       <p style="margin:4px 0 0">This monitor supports "Strengthening Response Capacity in the Amazon Basin," funded by the European Commission (DG ECHO), implemented from 01/06/2026 to 31/05/2028 by a consortium led by Diakonie Katastrophenhilfe (DKH) together with World Vision, 3iS, and PREDES. Coverage: Bolivia, Brazil, Colombia, Ecuador, Peru, and Venezuela.</p>
       <p style="margin:12px 0 0;padding-top:10px;border-top:1px solid #ffffff88;font-size:11px;font-weight:700;text-align:center">Developed by:</p>
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` }
@@ -307,7 +308,6 @@ const DICT = {
 let LAST_UPDATED = "";
 let EVENTS = [];
 let FIRMS_HOTSPOTS = [];
-let SST_LAYER = null; // { tileUrl, date, vis:{min,max,palette} } o null si aun no existe sst_layer.json
 let AMAZON_BASIN_GEOJSON = null; // poligono real de la cuenca (amazon_basin.geojson), null si no cargo
 
 // Ray-casting simple sobre un GeoJSON Polygon/MultiPolygon (con huecos) para
@@ -359,6 +359,15 @@ const ENSO_REGIONS = [
   { name: "Niño 3.4", bounds: [[-5,-170],[5,-120]] },
   { name: "Niño 4 (porción oriental)", bounds: [[-5,-180],[5,-150]] }
 ];
+
+// Capa ENSO/SST (Progreso 3, 14-10-2026): tesela publica y oficial de NASA
+// GIBS (producto GHRSST L4 MUR, la misma imagen que muestra NASA Worldview).
+// "default" en el slot de tiempo resuelve siempre a la ultima fecha
+// disponible -- no requiere ningun calculo ni publicacion propia a diario
+// (antes se generaba con Google Earth Engine; ver legacy/enso_gee_pipeline/).
+const SST_GIBS_TILE_URL = 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/GHRSST_L4_MUR_Sea_Surface_Temperature_Anomalies/default/default/GoogleMapsCompatible_Level7/{z}/{y}/{x}.png';
+const SST_GIBS_MAX_ZOOM = 7;
+const SST_GIBS_LEGEND_URL = 'https://gibs.earthdata.nasa.gov/legends/GHRSST_Sea_Surface_Temperature_Anomalies_H.svg';
 
 const ICON_PATHS = {
   FLOOD: '<path d="M2 17c1.4 1.3 2.8 1.3 4.2 0 1.4-1.3 2.8-1.3 4.2 0 1.4 1.3 2.8 1.3 4.2 0 1.4-1.3 2.8-1.3 4.2 0"/><path d="M2 21c1.4 1.3 2.8 1.3 4.2 0 1.4-1.3 2.8-1.3 4.2 0 1.4 1.3 2.8 1.3 4.2 0 1.4-1.3 2.8-1.3 4.2 0"/><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/>',
@@ -433,7 +442,8 @@ let activeEventId = null; // Progreso 1: filtro por evento puntual
 let dateFrom = null;
 let dateTo = null;
 
-let map, newsLayer, firmsLayer, sstLayer, layersControl, basinLayer, firmsRenderer, firmsLegendControl, countryHighlightLayer;
+let map, newsLayer, firmsLayer, sstLayer, layersControl, basinLayer, firmsRenderer, firmsLegendControl, sstLegendControl, countryHighlightLayer;
+let sstGibsTileLayer = null;
 // Linea de tiempo FIRMS: null = modo "en vivo" (ultimas 24h / filtro de fechas
 // normal, igual que antes); una fecha concreta = se congela el mapa de FIRMS
 // en ese dia, para poder repasar los ultimos dias uno por uno.
@@ -1088,25 +1098,41 @@ function renderSstLayer(){
   if (!sstLayer) return;
   sstLayer.clearLayers();
 
-  // Cajas de referencia de las regiones ENSO estandar (siempre se dibujan,
-  // aunque todavia no haya tile de anomalia disponible).
+  // Cajas de referencia de las regiones ENSO estandar.
   ENSO_REGIONS.forEach(function(r){
     var rect = L.rectangle(r.bounds, { color: '#ffffff', weight: 1.5, dashArray: '4,3', fillOpacity: 0 });
     rect.bindTooltip(r.name, { sticky: true });
     rect.addTo(sstLayer);
   });
 
-  // Capa raster de anomalia SST, generada a diario por GitHub Actions y
-  // publicada como sst_layer.json (tile de Earth Engine). Si el archivo
-  // todavia no existe o Earth Engine aun no esta conectado, SST_LAYER es
-  // null y la capa queda solo con las cajas de referencia.
-  if (SST_LAYER && SST_LAYER.tileUrl) {
-    var tile = L.tileLayer(SST_LAYER.tileUrl, {
-      attribution: 'NOAA OISST via Google Earth Engine',
-      opacity: 0.75
-    });
-    tile.addTo(sstLayer);
+  // Capa raster de anomalia SST: tesela publica y oficial de NASA GIBS (ver
+  // SST_GIBS_TILE_URL arriba). URL fija -- no depende de ningun archivo ni
+  // de ninguna corrida propia.
+  sstGibsTileLayer = L.tileLayer(SST_GIBS_TILE_URL, {
+    maxZoom: SST_GIBS_MAX_ZOOM,
+    opacity: 0.75,
+    attribution: 'NASA GIBS / GHRSST L4 MUR'
+  });
+  sstGibsTileLayer.addTo(sstLayer);
+}
+
+// Leyenda oficial de NASA GIBS para la capa ENSO/SST. Solo visible si la capa esta encendida.
+function updateSstLegend(){
+  if (!map) return;
+  if (!sstLegendControl) {
+    sstLegendControl = L.control({ position: 'bottomright' });
+    sstLegendControl.onAdd = function(){
+      var d = L.DomUtil.create('div', 'sst-legend');
+      L.DomEvent.disableClickPropagation(d);
+      return d;
+    };
+    sstLegendControl.addTo(map);
   }
+  var el = sstLegendControl.getContainer();
+  el.style.display = (sstLayer && map.hasLayer(sstLayer)) ? 'block' : 'none';
+  el.innerHTML = '<div style="font-weight:600;margin-bottom:4px">' + t('layerSst') + '</div>' +
+    '<img src="' + SST_GIBS_LEGEND_URL + '" alt="' + t('layerSst') + '" style="display:block;max-width:220px;height:auto">' +
+    '<div style="margin-top:4px;color:#6b7583;font-size:10px">NASA GIBS — GHRSST L4 MUR</div>';
 }
 
 function renderList(filtered){
@@ -1312,15 +1338,16 @@ function initMap(){
   firmsLayer = L.layerGroup().addTo(map);
   map.on('overlayadd overlayremove', function(e){
     updateFirmsLegend();
+    updateSstLegend();
     renderFirmsTimelineControl();
     if (e.type === 'overlayremove' && e.layer === firmsLayer) {
       stopFirmsTimelinePlay();
     }
   });
-  // Apagada por defecto (igual que los limites nacionales): es una capa de
-  // contexto/prediccion (ENSO), no un evento dentro de la cuenca, asi que no
-  // se agrega al mapa aqui -- solo queda registrada en el selector de capas.
-  sstLayer = L.layerGroup();
+  // Activada por defecto (Progreso 3, 14-10-2026): es una capa de
+  // contexto/prediccion (ENSO), no un evento dentro de la cuenca, pero se
+  // deja visible desde el primer render a pedido explicito del usuario.
+  sstLayer = L.layerGroup().addTo(map);
 
   buildLayersControl();
 }
@@ -1415,6 +1442,7 @@ function initDashboard(){
   wireTabs();
   renderBasinLayer();
   renderSstLayer();
+  updateSstLegend();
   renderAll();
 }
 
@@ -1423,14 +1451,13 @@ document.addEventListener('DOMContentLoaded', function(){
     fetch('./events.json').then(function(r){ return r.json(); }),
     fetch('./firms_hotspots.json').then(function(r){ return r.json(); }),
     fetch('./meta.json').then(function(r){ return r.json(); }),
-    // sst_layer.json es opcional -- todavia no existe hasta que se conecte
-    // Earth Engine del lado de GitHub Actions. Se resuelve a null en vez de
-    // rechazar, para que su ausencia nunca tumbe la carga de events/FIRMS/meta.
-    fetch('./sst_layer.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
     // amazon_basin.geojson es el poligono real de la cuenca (Eva & Huber 2005,
     // sensu latissimo) -- tambien opcional/tolerante, para que su ausencia
     // nunca tumbe la carga del resto de los datos.
     fetch('./amazon_basin_project.geojson').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+    // La capa ENSO/SST (SST_GIBS_TILE_URL, arriba) ya no depende de ningun
+    // archivo propio -- es una tesela publica de NASA GIBS con URL fija
+    // (Progreso 3), asi que no hace falta pedirla aqui.
   ]).then(function(results){
     // Normaliza el hazard a MAYUSCULAS_CON_GUION_BAJO para que siempre calce con
     // ICON_PATHS/HAZARD_ORDER, sin importar como venga escrito en events.json
@@ -1443,15 +1470,13 @@ document.addEventListener('DOMContentLoaded', function(){
     });
     FIRMS_HOTSPOTS = results[1];
     LAST_UPDATED = (results[2] && results[2].lastUpdated) ? results[2].lastUpdated : '';
-    SST_LAYER = results[3] || null;
-    AMAZON_BASIN_GEOJSON = results[4] || null;
+    AMAZON_BASIN_GEOJSON = results[3] || null;
     initDashboard();
   }).catch(function(err){
     console.error('Error cargando datos del monitor:', err);
     EVENTS = [];
     FIRMS_HOTSPOTS = [];
     LAST_UPDATED = '';
-    SST_LAYER = null;
     AMAZON_BASIN_GEOJSON = null;
     initDashboard();
   });

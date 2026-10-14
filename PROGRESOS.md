@@ -77,3 +77,40 @@ AMZ-20261006-001 (7.442 familias + 517 personas — Porto Velho).
   `Amazon_Monitor/Claude outputs/`).
 - Regla: cada nuevo Progreso se registra en este archivo, en el panel "i" del
   visor y en ambas guías.
+
+## Progreso 3 — 2026-10-14 · Capa ENSO/SST: de Google Earth Engine a NASA GIBS
+
+**Qué cambia**
+- La capa "Anomalía SST (ENSO)" del Monitor ya no se calcula a diario con
+  Google Earth Engine: ahora dibuja directamente la tesela pública y oficial
+  de **NASA GIBS** (producto `GHRSST_L4_MUR_Sea_Surface_Temperature_Anomalies`,
+  la misma imagen que muestra NASA Worldview), vía una URL REST fija en
+  `GoogleMapsCompatible_Level7` (EPSG:3857). Usando `default` en el slot de
+  tiempo, la tesela resuelve siempre a la última fecha disponible — sin
+  necesidad de ningún cálculo ni publicación propia a diario.
+- La capa queda **activada por defecto** (antes estaba apagada por defecto) y
+  tiene su propia leyenda de colores (esquina inferior derecha del mapa, con
+  la escala oficial SVG de NASA GIBS), visible solo mientras la capa esté
+  encendida.
+- Verificado en vivo antes de implementar: la URL responde con PNG real
+  (256×256), confirmado también el rezago típico de 1-2 días entre la fecha
+  de hoy y la última imagen disponible — suficiente para un indicador de
+  evolución lenta como ENSO.
+
+**Qué se retira (archivado, no borrado)**
+- `scripts/setup_enso_sst_climatology.py` y la función `update_sst_layer()`
+  de `scripts/fetch_and_publish.py` (cálculo de la anomalía contra una
+  climatología 1991-2020 vía Earth Engine) se movieron, sin cambios, a
+  `legacy/enso_gee_pipeline/` (ver su `README.md`), a pedido explícito de
+  Jerson, como registro de lo hecho — no porque sigan en uso.
+- El workflow `publish.yml` ya no instala `earthengine-api` ni usa los
+  secrets `GEE_SERVICE_ACCOUNT_EMAIL`/`GEE_SERVICE_ACCOUNT_KEY` (se dejaron
+  configurados en el repositorio, sin usarse). Solo sigue actualizando
+  `firms_hotspots.json`.
+- `sst_layer.json` (la última salida del pipeline anterior) se archivó como
+  `legacy/enso_gee_pipeline/sst_layer_last_generated.json`; ya no se lee
+  desde `index.html`.
+
+**Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
+nueva sección "Anomalía SST / ENSO (Progreso 3)" e historial de versiones.
+
