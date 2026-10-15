@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20260908-001",
   "FIRST_DETECTED_DATE": "2026-09-08",
-  "LAST_UPDATED_DATE": "2026-09-09",
-  "UPDATE_COUNT": "1",
+  "LAST_UPDATED_DATE": "2026-10-15",
+  "UPDATE_COUNT": "2",
   "COUNTRY": "Peru",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Loreto",
@@ -45,8 +45,8 @@
   "SECONDARY_SOURCE": "SENAMHI / Plataforma del Estado Peruano",
   "SECONDARY_SOURCE_URL": "https://www.gob.pe/institucion/senamhi/noticias/1434857-senamhi-informa-sobre-niveles-de-los-principales-rios-amazonicos-de-loreto",
   "GDACS_URL": "Posible relación con evento GDACS 'Peru-2025' (sequía, 17 semanas): http://gdacs.org/report.aspx?eventid=1018299&episodeid=8&eventtype=DR (no confirmado como el mismo episodio)",
-  "OTHER_SOURCE_URLS": "UNAVAILABLE",
-  "NOTES_ES": "Evento distinto (ubicación y autoridad nacional diferentes) del evento AMZ-20260902-001 en Brasil. Verificar posible vínculo de cuenca en próximos ciclos.",
-  "NOTES_PT": "Evento distinto (localização e autoridade nacional diferentes) do evento AMZ-20260902-001 no Brasil. Verificar possível vínculo de bacia em ciclos futuros.",
-  "NOTES_EN": "Distinct event (different location and national authority) from event AMZ-20260902-001 in Brazil. Check for possible basin-wide linkage in future cycles."
+  "OTHER_SOURCE_URLS": "https://busquedas.elperuano.pe/dispositivo/NL/2563360-1; https://larepublica.pe/sociedad/2026/10/11/deficit-hidrico-en-peru-gobierno-declara-en-emergencia-707-distritos-de-17-regiones-969683",
+  "NOTES_ES": "Evento distinto (ubicación y autoridad nacional diferentes) del evento AMZ-20260902-001 en Brasil. Verificar posible vínculo de cuenca en próximos ciclos. ACTUALIZACIÓN 15/10: el D.S. 140-2026-PCM (firmado 9-oct, publicado 11-oct, 60 días) declara estado de emergencia por peligro inminente ante déficit hídrico para el período de lluvias 2026-2027 en 707 distritos de 17 regiones, incluidas Loreto, Madre de Dios, San Martín y Ucayali (desglose distrital amazónico no verificado); coordinación con INDECI, fuentes: El Peruano, La República.",
+  "NOTES_PT": "Evento distinto (localização e autoridade nacional diferentes) do evento AMZ-20260902-001 no Brasil. Verificar possível vínculo de bacia em ciclos futuros. ATUALIZAÇÃO 15/10: o D.S. 140-2026-PCM (assinado 9-out, publicado 11-out, 60 dias) declara estado de emergência por perigo iminente de déficit hídrico para o período chuvoso 2026-2027 em 707 distritos de 17 regiões, incluindo Loreto, Madre de Dios, San Martín e Ucayali (detalhamento distrital amazônico não verificado); coordenação com o INDECI, fontes: El Peruano, La República.",
+  "NOTES_EN": "Distinct event (different location and national authority) from event AMZ-20260902-001 in Brazil. Check for possible basin-wide linkage in future cycles. UPDATE 10/15: Supreme Decree 140-2026-PCM (signed Oct 9, published Oct 11, 60 days) declares a state of emergency for imminent water-deficit danger for the 2026-2027 rainy season in 707 districts of 17 regions, including Loreto, Madre de Dios, San Martín and Ucayali (Amazonian district breakdown not verified); coordination with INDECI, sources: El Peruano, La República."
 }

@@ -1,12 +1,12 @@
 {
   "EVENT_ID": "AMZ-20261001-001",
   "FIRST_DETECTED_DATE": "2026-10-01",
-  "LAST_UPDATED_DATE": "2026-10-01",
-  "UPDATE_COUNT": "0",
+  "LAST_UPDATED_DATE": "2026-10-15",
+  "UPDATE_COUNT": "1",
   "COUNTRY": "Brazil",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Pará",
-  "ADMINISTRATIVE_LEVEL_2": "Monte Alegre; Rurópolis",
+  "ADMINISTRATIVE_LEVEL_2": "Monte Alegre; Rurópolis; Trairão",
   "MUNICIPALITY": "Monte Alegre (coordenadas de la sede); Rurópolis",
   "LOCALITY": "NOT_REPORTED",
   "AMAZON_BASIN_STATUS": "INSIDE",
@@ -45,8 +45,8 @@
   "SECONDARY_SOURCE": "Brasil em Folhas",
   "SECONDARY_SOURCE_URL": "https://www.brasilemfolhas.com.br/2026/09/monte-alegre-e-ruropolis-decretam-emergencia-por-incendios-florestais/",
   "GDACS_URL": "UNAVAILABLE",
-  "OTHER_SOURCE_URLS": "https://news.folhadoprogresso.com.br/fogo-avanca-no-oeste-do-para-e-dois-municipios-decretam-emergencia-por-incendios-florestais/",
-  "NOTES_ES": "Evento nuevo. Coordenadas de la sede municipal de Monte Alegre (02°00'28\"S, 54°04'09\"O); Rurópolis está ~250 km al SO. Distinto de AMZ-20260914-003 (deforestación DETER en Pará). Requiere verificación con Diário Oficial / S2iD y Defesa Civil-PA; fuentes son medios regionales citando g1.",
-  "NOTES_PT": "Evento novo. Coordenadas da sede municipal de Monte Alegre (02°00'28\"S, 54°04'09\"O); Rurópolis fica ~250 km a SO. Distinto de AMZ-20260914-003 (desmatamento DETER no Pará). Requer verificação no Diário Oficial / S2iD e Defesa Civil-PA; fontes são mídia regional citando g1.",
-  "NOTES_EN": "New event. Coordinates of Monte Alegre municipal seat (02°00'28\"S, 54°04'09\"W); Rurópolis lies ~250 km SW. Distinct from AMZ-20260914-003 (DETER deforestation in Pará). Needs verification against Diário Oficial / S2iD and Pará Civil Defense; sources are regional media citing g1."
+  "OTHER_SOURCE_URLS": "https://news.folhadoprogresso.com.br/fogo-avanca-no-oeste-do-para-e-dois-municipios-decretam-emergencia-por-incendios-florestais/; https://atlaspublico.com.br/noticias/defesa-civil-nacional-reconhece-emergencia-em-oito-92012",
+  "NOTES_ES": "Evento nuevo. Coordenadas de la sede municipal de Monte Alegre (02°00'28\"S, 54°04'09\"O); Rurópolis está ~250 km al SO. Distinto de AMZ-20260914-003 (deforestación DETER en Pará). Requiere verificación con Diário Oficial / S2iD y Defesa Civil-PA; fuentes son medios regionales citando g1. ACTUALIZACIÓN 15/10: la Defesa Civil Nacional reconoció situación de emergencia por incendio forestal en Trairão (PA, vecino de Rurópolis) mediante Portaria 3.489 (DOU 14-oct); sin cifras de afectados, fuente: Atlas Público.",
+  "NOTES_PT": "Evento novo. Coordenadas da sede municipal de Monte Alegre (02°00'28\"S, 54°04'09\"O); Rurópolis fica ~250 km a SO. Distinto de AMZ-20260914-003 (desmatamento DETER no Pará). Requer verificação no Diário Oficial / S2iD e Defesa Civil-PA; fontes são mídia regional citando g1. ATUALIZAÇÃO 15/10: a Defesa Civil Nacional reconheceu situação de emergência por incêndio florestal em Trairão (PA, vizinho de Rurópolis) pela Portaria 3.489 (DOU 14-out); sem números de afetados, fonte: Atlas Público.",
+  "NOTES_EN": "New event. Coordinates of Monte Alegre municipal seat (02°00'28\"S, 54°04'09\"W); Rurópolis lies ~250 km SW. Distinct from AMZ-20260914-003 (DETER deforestation in Pará). Needs verification against Diário Oficial / S2iD and Pará Civil Defense; sources are regional media citing g1. UPDATE 10/15: the National Civil Defense recognized a wildfire emergency in Trairão (PA, neighboring Rurópolis) via Ordinance 3,489 (DOU Oct 14); no affected figures, source: Atlas Público."
 }
