@@ -7,7 +7,7 @@
     "lon": -64.9,
     "status": "ONGOING",
     "firstDetected": "2026-08-01",
-    "lastUpdated": "2026-10-06",
+    "lastUpdated": "2026-10-16",
     "descEnPreview": "Bolivia is experiencing a wildfire season that had already surpassed the 2025 peak by 21 July (2,835 heat spots, versus 2,536 for all of 2025). CEJIS "
   },
   {
@@ -73,7 +73,7 @@
     "lon": -60.3806,
     "status": "ONGOING",
     "firstDetected": "2026-09-10",
-    "lastUpdated": "2026-10-13",
+    "lastUpdated": "2026-10-16",
     "descEnPreview": "INPE data show Amazonas (Brazil) led the national heat-spot count in the first week of September 2026 (1,167-1,224 spots, depending on source), far ah"
   },
   {
@@ -260,7 +260,7 @@
     "lon": -70.354,
     "status": "ONGOING",
     "firstDetected": "2026-09-25",
-    "lastUpdated": "2026-09-28",
+    "lastUpdated": "2026-10-16",
     "descEnPreview": "According to the AcreQueimadas project (Geoprocessing Laboratory, Federal University of Acre), using Landsat 8 and Sentinel-2 imagery, Acre accumulate"
   },
   {
@@ -317,5 +317,16 @@
     "firstDetected": "2026-10-08",
     "lastUpdated": "2026-10-08",
     "descEnPreview": "Peru's SENAMHI issued weather advisory No. 397 for a daytime temperature rise in the jungle, valid Oct 4-6, 2026, covering Amazonas, Cajamarca, Huánuc"
+  },
+  {
+    "id": "AMZ-20261016-001",
+    "country": "Ecuador",
+    "hazard": "Flood",
+    "lat": -3.40352,
+    "lon": -78.58148,
+    "status": "OBSERVED",
+    "firstDetected": "2026-10-16",
+    "lastUpdated": "2026-10-16",
+    "descEnPreview": "Per the National Risk Management Secretariat (SNGR) monitoring report at 07:00 on 15 October 2026, the Tunim River had overflowed in the Gualaquiza, B"
   }
 ]
