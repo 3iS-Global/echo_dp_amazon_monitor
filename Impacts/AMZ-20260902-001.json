@@ -1,14 +1,14 @@
 {
   "EVENT_ID": "AMZ-20260902-001",
-  "AS_OF_DATE": "2026-09-14",
+  "AS_OF_DATE": "2026-10-18",
   "DEATHS": null,
   "INJURIES": null,
-  "AFFECTED_PERSONS": 7323,
-  "AFFECTED_FAMILIES": null,
+  "AFFECTED_PERSONS": null,
+  "AFFECTED_FAMILIES": 101084,
   "DISPLACED_PERSONS": null,
   "EVACUATED_PERSONS": null,
-  "SCOPE": "PARTIAL",
-  "SOURCE": "Canal92 Amazonas",
-  "SOURCE_URL": "https://canal92am.com/amazonas/municipios-situacao-emergencia-amazonas/",
-  "NOTES": "Solo municipio de Eirunepé; resto de municipios en emergencia sin cifra consolidada. Excluida la PROYECCIÓN estatal de ~648.000 personas (Decreto 55.486), por ser proyectada y no confirmada."
+  "SCOPE": "CONSOLIDATED",
+  "SOURCE": "Copec / Governo do Amazonas (Defesa Civil AM), vía Gazeta da Amazônia",
+  "SOURCE_URL": "https://gazetadaamazonia.com.br/19/10/2026/estiagem-amazonas-101-mil-familias/",
+  "NOTES": "Cifra estatal (Amazonas): 101.084 familias afectadas; 40 municipios en emergencia, 17 en alerta, 5 en atención. Sin cifra de personas reportada; la proyección del Decreto 55.486 (~648.000 personas) no se carga por ser estimación."
 }
