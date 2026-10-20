@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20261006-001",
   "FIRST_DETECTED_DATE": "2026-10-06",
-  "LAST_UPDATED_DATE": "2026-10-06",
-  "UPDATE_COUNT": "0",
+  "LAST_UPDATED_DATE": "2026-10-20",
+  "UPDATE_COUNT": 1,
   "COUNTRY": "Brazil",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Rondônia",
@@ -45,8 +45,8 @@
   "SECONDARY_SOURCE": "Rondônia Dinâmica",
   "SECONDARY_SOURCE_URL": "https://www.rondoniadinamica.com/noticias/2026/10/prefeitura-de-porto-velho-decretada-situacao-de-emergencia-em-distritos-do-alto-medio-e-baixo-madeira,255796.shtml",
   "GDACS_URL": "UNAVAILABLE",
-  "OTHER_SOURCE_URLS": "https://www.rondoniagora.com/geral/seca-severa-prefeitura-decreta-situacao-de-emergencia-em-varios-distritos-de-porto-velho; https://www.diarioonorte.com/2026/10/prefeitura-de-porto-velho-decreta.html",
-  "NOTES_ES": "Evento nuevo; distinto de AMZ-20260902-001 (sequía Amazonas/Rio Negro) y AMZ-20260923-002 (Acre). Coordenadas = sede municipal de Porto Velho (punto representativo, los distritos se extienden a lo largo del Madeira). El SGB (39º boletín, 29-sep) reportó el Madeira en Porto Velho en 386 cm con repunte de +86 cm en 24 h. Requiere verificación con Diário Oficial del Municipio / S2iD.",
-  "NOTES_PT": "Evento novo; distinto de AMZ-20260902-001 (seca Amazonas/Rio Negro) e AMZ-20260923-002 (Acre). Coordenadas = sede municipal de Porto Velho (ponto representativo; os distritos se estendem ao longo do Madeira). O SGB (39º boletim, 29-set) registrou o Madeira em Porto Velho em 386 cm, com alta de +86 cm em 24 h. Requer verificação no Diário Oficial do Município / S2iD.",
-  "NOTES_EN": "New event; distinct from AMZ-20260902-001 (Amazonas/Rio Negro drought) and AMZ-20260923-002 (Acre). Coordinates = Porto Velho municipal seat (representative point; districts stretch along the Madeira). SGB (39th bulletin, 29 Sep) reported the Madeira at Porto Velho at 386 cm with a +86 cm rise in 24 h. Requires verification against the Municipal Official Gazette / S2iD."
+  "OTHER_SOURCE_URLS": "https://www.rondoniagora.com/geral/seca-severa-prefeitura-decreta-situacao-de-emergencia-em-varios-distritos-de-porto-velho; https://www.diarioonorte.com/2026/10/prefeitura-de-porto-velho-decreta.html; https://www.rondoniagora.com/geral/rio-madeira-sobe-para-3-15-metros-mas-continua-abaixo-da-media-de-outubro; https://portalamazonia.com/meio-ambiente/rio-madeira-seca-porto-velho-2026/",
+  "NOTES_ES": "Evento nuevo; distinto de AMZ-20260902-001 (sequía Amazonas/Rio Negro) y AMZ-20260923-002 (Acre). Coordenadas = sede municipal de Porto Velho (punto representativo, los distritos se extienden a lo largo del Madeira). El SGB (39º boletín, 29-sep) reportó el Madeira en Porto Velho en 386 cm con repunte de +86 cm en 24 h. Requiere verificación con Diário Oficial del Municipio / S2iD. ACTUALIZACIÓN 20-oct: el Madeira en Porto Velho marcó 2,62 m el 6-oct y bajó a 2,46 m el 16-oct; el 19-oct repuntó a 3,15 m (+69 cm en tres días), aún 78 cm bajo la media de octubre (3,93 m); medios citan ~22.900 personas afectadas en 85 localidades (cifra en personas sin atribución oficial clara, no cargada en Impacts), fuentes: Rondoniagora, Portal Amazônia.",
+  "NOTES_PT": "Evento novo; distinto de AMZ-20260902-001 (seca Amazonas/Rio Negro) e AMZ-20260923-002 (Acre). Coordenadas = sede municipal de Porto Velho (ponto representativo; os distritos se estendem ao longo do Madeira). O SGB (39º boletim, 29-set) registrou o Madeira em Porto Velho em 386 cm, com alta de +86 cm em 24 h. Requer verificação no Diário Oficial do Município / S2iD. ATUALIZAÇÃO 20-out: o Madeira em Porto Velho marcou 2,62 m em 6-out e caiu para 2,46 m em 16-out; em 19-out subiu para 3,15 m (+69 cm em três dias), ainda 78 cm abaixo da média de outubro (3,93 m); a imprensa cita ~22.900 pessoas afetadas em 85 localidades (cifra em pessoas sem atribuição oficial clara, não carregada em Impacts), fontes: Rondoniagora, Portal Amazônia.",
+  "NOTES_EN": "New event; distinct from AMZ-20260902-001 (Amazonas/Rio Negro drought) and AMZ-20260923-002 (Acre). Coordinates = Porto Velho municipal seat (representative point; districts stretch along the Madeira). SGB (39th bulletin, 29 Sep) reported the Madeira at Porto Velho at 386 cm with a +86 cm rise in 24 h. Requires verification against the Municipal Official Gazette / S2iD. UPDATE 20-Oct: the Madeira at Porto Velho read 2.62 m on 6 Oct and fell to 2.46 m on 16 Oct; on 19 Oct it rose to 3.15 m (+69 cm in three days), still 78 cm below the October average (3.93 m); media cite ~22,900 people affected in 85 localities (person figure without clear official attribution, not loaded in Impacts), sources: Rondoniagora, Portal Amazônia."
 }
