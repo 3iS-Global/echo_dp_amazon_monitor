@@ -114,3 +114,33 @@ AMZ-20261006-001 (7.442 familias + 517 personas — Porto Velho).
 **Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
 nueva sección "Anomalía SST / ENSO (Progreso 3)" e historial de versiones.
 
+
+## Progreso 4 — 2026-10-21 · Informe Situacional Regional trimestral (botón + pipeline de datos)
+
+**Qué cambia**
+- Nuevo botón **"Informe trimestral"** en la barra de herramientas del visor
+  (junto a "Exportar CSV"), que enlaza a una ruta fija
+  `Reports/Informe_trimestral_vigente.pdf` — nunca cambia de nombre, así que
+  no hay que tocar el visor cada trimestre. Si existe `Reports/latest.json`,
+  el botón muestra junto al texto el trimestre del informe vigente (p. ej.
+  "Informe trimestral (último: 2026-Q3)"); si no existe todavía (antes de la
+  primera publicación aprobada), el botón se ve igual pero no tiene PDF que
+  descargar — comportamiento esperado, no es un error.
+- Nuevo script **100% determinista** `scripts/build_quarterly_report_data.py`:
+  lee `Events/` e `Impacts/` y genera `Reports/<AAAA-QN>/data.json` con los
+  conteos de prioridad, la tabla de eventos del periodo, las cifras de
+  impacto reportadas y una clasificación preliminar de nivel de fuente (1-4)
+  por palabra clave (deja sin clasificar — nunca adivina — lo que no
+  reconoce). Alcance: los 6 países del proyecto (Bolivia, Brasil, Colombia,
+  Ecuador, Perú, Venezuela), informe regional único, no por país.
+- El resumen ejecutivo, la relevancia AA por sector y las recomendaciones
+  sectoriales (secciones 1, 5 y 6 de la plantilla de informe) NO se generan
+  con este script — no son datos existentes, son contenido analítico. Se
+  redactarán en un Project de Cowork separado, dedicado a esto, con
+  **revisión y aprobación humana obligatoria antes de publicarse** (ver
+  `claude/propuesta-proyecto-narrativa-informe-trimestral.md` en el Project
+  de Claude). Pendiente: crear ese Project y la tarea programada trimestral.
+
+**Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
+nueva sección "Informe situacional regional (Progreso 4)" e historial de
+versiones.

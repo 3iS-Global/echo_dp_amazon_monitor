@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-10-21T10:07:21Z",
+  "period": {
+    "year": 2026,
+    "quarter": 4,
+    "label": "2026-Q4",
+    "start": "2026-10-01",
+    "end": "2026-12-31"
+  },
+  "scopeCountries": [
+    "Bolivia",
+    "Brasil",
+    "Colombia",
+    "Ecuador",
+    "Peru",
+    "Venezuela"
+  ],
+  "counts": {
+    "red": 1,
+    "orange": 1,
+    "green": 3,
+    "total": 5
+  },
+  "events": [
+    {
+      "eventId": "AMZ-20260801-001",
+      "country": "Bolivia",
+      "adminLevel1": "Beni / Santa Cruz",
+      "municipality": "Múltiples (30 territorios indígenas en Oriente, Chaco y Amazonía)",
+      "hazardType": "Wildfire",
+      "hazardSubtype": "Forest Fire / Heat Spots (focos de calor)",
+      "eventDate": "2026-09-11",
+      "status": "ONGOING",
+      "priority": "RED",
+      "primarySource": "La Patria Bolivia",
+      "primarySourceUrl": "https://lapatria.bo/enfoque-nacional/denuncia/crisis-incendios-forestales-bolivia/",
+      "firstDetected": "2026-08-01",
+      "lastUpdated": "2026-10-16",
+      "updateCount": "7"
+    },
+    {
+      "eventId": "AMZ-20260908-001",
+      "country": "Peru",
+      "adminLevel1": "Loreto",
+      "municipality": "Lagunas (estación Huallaga) / Iquitos (estación Amazonas, ENAPU)",
+      "hazardType": "Drought",
+      "hazardSubtype": "Hydrological Drought / River Level Anomaly",
+      "eventDate": "2026-09-08",
+      "status": "ONGOING",
+      "priority": "ORANGE",
+      "primarySource": "Inforegion (datos oficiales de SENAMHI)",
+      "primarySourceUrl": "https://inforegion.pe/loreto-nivel-de-los-rios-huallaga-y-amazonas-siguen-descendiendo-y-aumenta-la-preocupacion-y-alcanzan-umbrales-de-alerta-roja-y-amarilla/",
+      "firstDetected": "2026-09-08",
+      "lastUpdated": "2026-10-15",
+      "updateCount": "2"
+    },
+    {
+      "eventId": "AMZ-20261002-001",
+      "country": "Ecuador",
+      "adminLevel1": "Sucumbíos, Napo, Pastaza, Morona Santiago",
+      "municipality": "Tena (referencia)",
+      "hazardType": "Extreme Rain",
+      "hazardSubtype": "Lluvias moderadas a fuertes y tormentas (Advertencia Meteorológica N.° 77)",
+      "eventDate": "2026-10-01",
+      "status": "ONGOING",
+      "priority": "GREEN",
+      "primarySource": "INAMHI (Advertencia Meteorológica N.° 77), vía El Universo",
+      "primarySourceUrl": "https://www.eluniverso.com/comunidad/ecuador/inamhi-alerta-por-lluvias-intensas-y-tormentas-en-ecuador-del-1-al-5-de-octubre-estas-son-las-provincias-con-mayor-riesgo-de-inundaciones-y-deslizamientos-nota/",
+      "firstDetected": "2026-10-02",
+      "lastUpdated": "2026-10-03",
+      "updateCount": "1"
+    },
+    {
+      "eventId": "AMZ-20261008-001",
+      "country": "Peru",
+      "adminLevel1": "Amazonas, Cajamarca, Huánuco, Loreto, Madre de Dios, Pasco, San Martín, Ucayali",
+      "municipality": "Múltiples (selva norte, centro y sur)",
+      "hazardType": "Extreme Heat",
+      "hazardSubtype": "Incremento de temperatura diurna en la selva — pronóstico",
+      "eventDate": "2026-10-04",
+      "status": "FORECAST",
+      "priority": "GREEN",
+      "primarySource": "SENAMHI / INDECI (vía La República)",
+      "primarySourceUrl": "https://larepublica.pe/sociedad/2026/10/05/hasta-38-c-y-radiacion-extrema-senamhi-emite-alerta-meteorologica-para-8-regiones-del-pais-hasta-el-martes-6-348600",
+      "firstDetected": "2026-10-08",
+      "lastUpdated": "2026-10-08",
+      "updateCount": "0"
+    },
+    {
+      "eventId": "AMZ-20261016-001",
+      "country": "Ecuador",
+      "adminLevel1": "Morona Santiago",
+      "municipality": "Gualaquiza",
+      "hazardType": "Flood",
+      "hazardSubtype": "Riverine flood (desbordamiento del río Tunim por lluvias intensas)",
+      "eventDate": "2026-10-15",
+      "status": "OBSERVED",
+      "priority": "GREEN",
+      "primarySource": "Secretaría Nacional de Gestión de Riesgos (SNGR), vía Primicias",
+      "primarySourceUrl": "https://www.primicias.ec/sociedad/rios-guayas-rios-morona-santiago-desbordamiento-lluvias-fenomeno-nino-134976/",
+      "firstDetected": "2026-10-16",
+      "lastUpdated": "2026-10-16",
+      "updateCount": "0"
+    }
+  ],
+  "impact": [],
+  "sources": [
+    {
+      "eventId": "AMZ-20260801-001",
+      "role": "primary",
+      "source": "La Patria Bolivia",
+      "url": "https://lapatria.bo/enfoque-nacional/denuncia/crisis-incendios-forestales-bolivia/",
+      "verificationStatus": "MULTIPLE_SOURCES",
+      "tierPreliminar": null,
+      "tierMotivo": "ninguna palabra clave de Nivel 1/2 conocida encontrada; revisar manualmente"
+    },
+    {
+      "eventId": "AMZ-20260801-001",
+      "role": "secondary",
+      "source": "La Patria Bolivia (actualización 7-sep)",
+      "url": "https://lapatria.bo/enfoque-nacional/gestion/incendios-forestales-santa-cruz-puntos-calor/",
+      "verificationStatus": "MULTIPLE_SOURCES",
+      "tierPreliminar": null,
+      "tierMotivo": "ninguna palabra clave de Nivel 1/2 conocida encontrada; revisar manualmente"
+    },
+    {
+      "eventId": "AMZ-20260908-001",
+      "role": "primary",
+      "source": "Inforegion (datos oficiales de SENAMHI)",
+      "url": "https://inforegion.pe/loreto-nivel-de-los-rios-huallaga-y-amazonas-siguen-descendiendo-y-aumenta-la-preocupacion-y-alcanzan-umbrales-de-alerta-roja-y-amarilla/",
+      "verificationStatus": "SINGLE_SOURCE",
+      "tierPreliminar": 1,
+      "tierMotivo": "coincide con palabra clave de Nivel 1: 'SENAMHI'"
+    },
+    {
+      "eventId": "AMZ-20260908-001",
+      "role": "secondary",
+      "source": "SENAMHI / Plataforma del Estado Peruano",
+      "url": "https://www.gob.pe/institucion/senamhi/noticias/1434857-senamhi-informa-sobre-niveles-de-los-principales-rios-amazonicos-de-loreto",
+      "verificationStatus": "SINGLE_SOURCE",
+      "tierPreliminar": 1,
+      "tierMotivo": "coincide con palabra clave de Nivel 1: 'SENAMHI'"
+    },
+    {
+      "eventId": "AMZ-20261002-001",
+      "role": "primary",
+      "source": "INAMHI (Advertencia Meteorológica N.° 77), vía El Universo",
+      "url": "https://www.eluniverso.com/comunidad/ecuador/inamhi-alerta-por-lluvias-intensas-y-tormentas-en-ecuador-del-1-al-5-de-octubre-estas-son-las-provincias-con-mayor-riesgo-de-inundaciones-y-deslizamientos-nota/",
+      "verificationStatus": "MULTIPLE_SOURCES",
+      "tierPreliminar": 1,
+      "tierMotivo": "coincide con palabra clave de Nivel 1: 'INAMHI'"
+    },
+    {
+      "eventId": "AMZ-20261002-001",
+      "role": "secondary",
+      "source": "INAMHI / SNGR, vía El Diario (Ecuador)",
+      "url": "https://www.eldiario.ec/ecuador/lluvias-fuertes-tormentas-y-crecidas-estas-zonas-de-ecuador-estaran-bajo-alerta-hasta-el-5-de-octubre-02102026",
+      "verificationStatus": "MULTIPLE_SOURCES",
+      "tierPreliminar": 1,
+      "tierMotivo": "coincide con palabra clave de Nivel 1: 'INAMHI'"
+    },
+    {
+      "eventId": "AMZ-20261008-001",
+      "role": "primary",
+      "source": "SENAMHI / INDECI (vía La República)",
+      "url": "https://larepublica.pe/sociedad/2026/10/05/hasta-38-c-y-radiacion-extrema-senamhi-emite-alerta-meteorologica-para-8-regiones-del-pais-hasta-el-martes-6-348600",
+      "verificationStatus": "SINGLE_SOURCE",
+      "tierPreliminar": 1,
+      "tierMotivo": "coincide con palabra clave de Nivel 1: 'SENAMHI'"
+    },
+    {
+      "eventId": "AMZ-20261016-001",
+      "role": "primary",
+      "source": "Secretaría Nacional de Gestión de Riesgos (SNGR), vía Primicias",
+      "url": "https://www.primicias.ec/sociedad/rios-guayas-rios-morona-santiago-desbordamiento-lluvias-fenomeno-nino-134976/",
+      "verificationStatus": "MULTIPLE_SOURCES",
+      "tierPreliminar": 1,
+      "tierMotivo": "coincide con palabra clave de Nivel 1: 'SNGR'"
+    },
+    {
+      "eventId": "AMZ-20261016-001",
+      "role": "secondary",
+      "source": "Radio Centro (SNGR / Riesgos EC)",
+      "url": "https://radiocentro.com.ec/tres-rios-se-desbordan-en-los-rios-guayas-y-morona-santiago",
+      "verificationStatus": "MULTIPLE_SOURCES",
+      "tierPreliminar": 1,
+      "tierMotivo": "coincide con palabra clave de Nivel 1: 'SNGR'"
+    }
+  ],
+  "notaMetodologica": "Este archivo es 100% derivado de Events/ e Impacts/, sin ningun paso de LLM. El campo tierPreliminar de 'sources' es una ayuda heuristica por palabra clave para el revisor humano (ver docstring del script), no una clasificacion editorial definitiva."
+}
