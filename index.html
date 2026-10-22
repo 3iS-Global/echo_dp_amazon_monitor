@@ -48,16 +48,27 @@
   .tab-btn.active::before, .tab-btn.active::after { content:""; position:absolute; bottom:0; width:10px; height:10px; pointer-events:none; }
   .tab-btn.active::before { left:-10px; background:radial-gradient(circle at 0 0, transparent 9.5px, #fff 10px); }
   .tab-btn.active::after { right:-10px; background:radial-gradient(circle at 100% 0, transparent 9.5px, #fff 10px); }
-  /* Titulo, subtitulo e idioma arriba a la derecha, sin agrandar el banner */
-  #bannerTitle { position:absolute; top:-0.75rem; right:0; text-align:right; }
-  #lang { position:absolute; right:1.5rem; bottom:8px; z-index:2; }
-  #lang { background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.55); border-radius:999px; padding:2px 10px; font-size:12px; font-weight:500; cursor:pointer; }
-  #lang option { color:#000; }
-  /* Pantallas angostas: el titulo baja bajo el logo, asi que las pestanas necesitan su propio espacio */
+  /* Titulo y subtitulo: ya no absolutos -- fluyen en columna junto al boton de idioma */
+  #bannerTitle { text-align:right; }
+  /* Menus desplegables genericos: boton Descargar (CSV/informes) y boton de idioma */
+  .dropdown { position: relative; display: inline-block; }
+  .dropdown-panel { display:none; position:absolute; top:calc(100% + 6px); right:0; left:auto; background:#fff; border:1px solid var(--3is-cyan); border-radius:var(--radius); box-shadow:0 6px 18px rgba(0,0,0,.18); min-width:230px; z-index:40; padding:6px; }
+  .dropdown-panel.open { display:block; }
+  .dropdown-item { position:relative; display:flex; align-items:center; gap:8px; width:100%; padding:8px 10px; border:none; background:none; border-radius:8px; font-family:var(--font-sans); font-size:12px; font-weight:500; color:var(--3is-teal-deep); text-decoration:none; white-space:nowrap; cursor:pointer; text-align:left; }
+  .dropdown-item:hover, .dropdown-item.active { background:var(--3is-aqua-tint); }
+  .dropdown-item .submenu-caret { margin-left:auto; }
+  .dropdown-submenu { display:none; position:absolute; top:-6px; right:100%; left:auto; margin-right:4px; background:#fff; border:1px solid var(--3is-cyan); border-radius:var(--radius); box-shadow:0 6px 18px rgba(0,0,0,.18); min-width:150px; padding:6px; z-index:50; }
+  .has-submenu.open .dropdown-submenu { display:block; }
+  @media (hover:hover) { .has-submenu:hover .dropdown-submenu { display:block; } }
+  @media (max-width: 640px) {
+    .dropdown-submenu { position:static; box-shadow:none; border:none; margin:2px 0 2px 18px; min-width:0; }
+  }
+  .toolbar-btn { display:inline-flex; align-items:center; gap:6px; padding:7px 10px; border:1px solid var(--3is-cyan); border-radius:var(--radius); background:#fff; font-size:12px; font-weight:500; color:var(--3is-teal-deep); cursor:pointer; font-family:var(--font-sans); }
+  .toolbar-btn-ghost { display:inline-flex; align-items:center; gap:6px; padding:5px 10px; border:1px solid rgba(255,255,255,.55); border-radius:999px; background:rgba(255,255,255,.12); color:#fff; font-size:12px; font-weight:500; cursor:pointer; font-family:var(--font-sans); }
+  .toolbar-btn-ghost:hover { background:rgba(255,255,255,.22); }
+  /* Pantallas angostas: las pestanas necesitan su propio espacio bajo el banner */
   @media (max-width: 760px) {
     #banner { padding-bottom: 3.4rem !important; }
-    #bannerTitle { position: static; }
-    #lang { position: relative; right:auto; bottom:auto; display:block; margin: 8px 0 0 auto; }
     .tabs-bar { left: 1.5rem; right: 1.5rem; }
     .tab-btn { font-size:12px; padding:8px 10px 9px; white-space:nowrap; }
     .tab-btn.active { padding-bottom:14px; }
@@ -108,16 +119,24 @@
 </svg>
     <img src="echo_logo.png" alt="Unión Europea (ECHO)" style="width:55px;height:38px;object-fit:cover;object-position:left;display:block">
     </div>
-    <div id="bannerTitle">
-      <p style="font-weight:800;font-size:24px;line-height:1.15;margin:0;color:#fff" data-i18n="title"></p>
-      <p style="font-size:15px;line-height:1.2;font-weight:500;color:#D4F5EE;margin:3px 0 0" data-i18n="subtitle"></p>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px">
+      <div id="bannerTitle">
+        <p style="font-weight:800;font-size:24px;line-height:1.15;margin:0;color:#fff" data-i18n="title"></p>
+        <p style="font-size:15px;line-height:1.2;font-weight:500;color:#D4F5EE;margin:3px 0 0" data-i18n="subtitle"></p>
+      </div>
+      <div class="dropdown" id="langMenu">
+        <button type="button" id="langBtn" class="toolbar-btn-ghost" aria-haspopup="true" aria-expanded="false" title="Idioma / Language">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3c2.5 2.7 4 6.1 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6.1-4-9s1.5-6.3 4-9z"/></svg>
+          <span id="langBtnLabel">ES</span>
+        </button>
+        <div class="dropdown-panel" id="langMenuPanel" role="menu" aria-label="Idioma / Language">
+          <button type="button" class="dropdown-item lang-item active" data-lang="es" role="menuitem">Español</button>
+          <button type="button" class="dropdown-item lang-item" data-lang="pt" role="menuitem">Português</button>
+          <button type="button" class="dropdown-item lang-item" data-lang="en" role="menuitem">English</button>
+        </div>
+      </div>
     </div>
   </div>
-  <select id="lang" aria-label="Idioma / Language">
-    <option value="es">Español</option>
-    <option value="pt">Português</option>
-    <option value="en">English</option>
-  </select>
   <!-- Pestanas tipo carpeta (estilo Chrome), apoyadas sobre el borde inferior del banner -->
   <nav id="tabs" class="tabs-bar" role="tablist">
     <button class="tab-btn active" role="tab" data-tab="monitor" data-i18n="tabMonitor"></button>
@@ -140,8 +159,38 @@
         <input type="date" id="dateTo" style="width:auto;padding:5px 8px;border:1px solid var(--3is-cyan);border-radius:var(--radius);font-size:12px;color:var(--3is-teal-deep)">
         <button id="dateClear" style="border:none;background:none;color:var(--3is-cyan);font-size:12px;text-decoration:underline;cursor:pointer;padding:4px" data-i18n="dateClear"></button>
       </div>
-      <button id="exportCsvBtn" title="Export CSV" style="display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid var(--3is-cyan);border-radius:var(--radius);background:#fff;font-size:12px;font-weight:500;color:var(--3is-teal-deep);cursor:pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--3is-teal-deep)" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg><span data-i18n="exportCsv"></span></button>
-      <a id="reportBtn" href="./Reports/Informe_trimestral_vigente.pdf" target="_blank" rel="noopener" title="Informe trimestral" style="display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border:1px solid var(--3is-cyan);border-radius:var(--radius);background:#fff;font-size:12px;font-weight:500;color:var(--3is-teal-deep);cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--3is-teal-deep)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span data-i18n="reportBtn"></span><span id="reportBtnPeriod" style="font-weight:400;opacity:.75"></span></a>
+      <div class="dropdown" id="exportMenu">
+        <button type="button" id="exportMenuBtn" class="toolbar-btn" aria-haspopup="true" aria-expanded="false" title="Descargar / Download">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--3is-teal-deep)" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+          <span data-i18n="exportMenuBtn"></span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--3is-teal-deep)" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="dropdown-panel" id="exportMenuPanel" role="menu" aria-label="Descargar">
+          <button type="button" class="dropdown-item" id="exportCsvBtn" role="menuitem">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--3is-teal-deep)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+            <span data-i18n="exportCsv"></span>
+          </button>
+          <a class="dropdown-item" id="reportBtn" href="./Reports/Informe_trimestral_vigente.pdf" target="_blank" rel="noopener" role="menuitem">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--3is-teal-deep)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            <span data-i18n="reportBtn"></span><span id="reportBtnPeriod" style="font-weight:400;opacity:.75"></span>
+          </a>
+          <div class="dropdown-item has-submenu" id="monthlyReportItem" role="menuitem" aria-haspopup="true" aria-expanded="false">
+            <span id="monthlyReportToggle" style="display:flex;align-items:center;gap:8px;width:100%;cursor:pointer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--3is-teal-deep)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <span data-i18n="monthlyReportBtn"></span>
+              <svg class="submenu-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--3is-teal-deep)" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+            </span>
+            <div class="dropdown-submenu" id="monthlyReportSubmenu" role="menu" aria-label="Informe mensual por pais">
+              <a class="dropdown-item" href="./Reports/Informe_mensual_bolivia_vigente.pdf" target="_blank" rel="noopener" role="menuitem" data-i18n="Bolivia"></a>
+              <a class="dropdown-item" href="./Reports/Informe_mensual_brasil_vigente.pdf" target="_blank" rel="noopener" role="menuitem" data-i18n="Brazil"></a>
+              <a class="dropdown-item" href="./Reports/Informe_mensual_colombia_vigente.pdf" target="_blank" rel="noopener" role="menuitem" data-i18n="Colombia"></a>
+              <a class="dropdown-item" href="./Reports/Informe_mensual_ecuador_vigente.pdf" target="_blank" rel="noopener" role="menuitem" data-i18n="Ecuador"></a>
+              <a class="dropdown-item" href="./Reports/Informe_mensual_peru_vigente.pdf" target="_blank" rel="noopener" role="menuitem" data-i18n="Peru"></a>
+              <a class="dropdown-item" href="./Reports/Informe_mensual_venezuela_vigente.pdf" target="_blank" rel="noopener" role="menuitem" data-i18n="Venezuela"></a>
+            </div>
+          </div>
+        </div>
+      </div>
       <button id="infoBtn" title="Info" style="display:inline-flex;align-items:center;padding:7px 10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--3is-navy)" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="7.5" r="1" fill="var(--3is-navy)" stroke="none"/></svg></button>
     </div>
 </div>
@@ -225,7 +274,7 @@
 const DICT = {
   es: { tabClimate:"Monitoreo climático", climateTitle:"Monitoreo climático", climateOpen:"Abrir en pantalla completa ↗", climateNote:"Tablero de Power BI embebido (versión provisional). Se integrará de forma nativa en este visor en una próxima versión.", impactTitle:"Población afectada reportada", kpiPersons:"Personas afectadas", kpiFamilies:"Familias afectadas", kpiDeaths:"Fallecidos", kpiInjuries:"Heridos", kpiDisplaced:"Desplazados", kpiEvacuated:"Evacuados", kpiCoverage:"Eventos con cifras", impactNote:"Suma de la última cifra reportada por cada evento filtrado (fuentes oficiales o medios citados). No incluye proyecciones ni estimaciones; las familias no se convierten a personas; puede haber solapamiento entre eventos del mismo territorio. * = incluye cifras parciales.", impactDetail:"Detalle por evento", eventFilter:"Evento", allEvents:"Todos los eventos", impactLbl:"Afectados reportados", persons:"personas", families:"familias", deathsLbl:"fallecidos", injuredLbl:"heridos", displacedLbl:"desplazados", evacuatedLbl:"evacuados", partial:"parcial", noImpact:"Sin cifras reportadas en la selección actual.", eventsWithFig:"eventos con cifra", colEvent:"Evento", colPlace:"País · tipo", colAsOf:"Fecha cifra", colSource:"Fuente", progressTag:"Progreso 1 (13-10-2026): KPI de población afectada reportada, filtrable por país, tipo de evento y evento.", title:"Mapa de riesgos — Cuenca amazónica", subtitle:"Eventos activos por amenaza y prioridad", mapNote:"Mapa base OpenStreetMap. Datos: base propia de eventos verificados (ver lista a la derecha).",
     total:"Eventos", red:"Alertas rojas", countries:"Países afectados",
-    firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"activas", alertBannerView:"Ver detalle ↓", alertBannerClear:"Ver todos ×", exportCsv:"Exportar CSV", firmsTimelineLive:"En vivo", reportBtn:"Informe trimestral", reportBtnPeriodPrefix:" (último: ",
+    firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"activas", alertBannerView:"Ver detalle ↓", alertBannerClear:"Ver todos ×", exportCsv:"Datos de eventos (CSV)", exportMenuBtn:"Descargar", monthlyReportBtn:"Informe mensual por país", firmsTimelineLive:"En vivo", reportBtn:"Informe trimestral", reportBtnPeriodPrefix:" (último: ",
     all:"Todos", FLOOD:"Inundación", EXTREME_RAIN:"Lluvia extrema", DROUGHT:"Sequía", WILDFIRE:"Incendio forestal", EARTHQUAKE:"Sismo", LANDSLIDE:"Deslizamiento", DEFORESTATION:"Deforestación", FLASH_FLOOD:"Inundación repentina", EXTREME_HEAT:"Calor extremo", SEVERE_STORM:"Tormenta severa",
     Brazil:"Brasil", Peru:"Perú", Colombia:"Colombia", Bolivia:"Bolivia", Ecuador:"Ecuador", Venezuela:"Venezuela",
     RED:"Rojo", ORANGE:"Naranja", GREEN:"Verde", updated:"Actualizado", source:"Fuente", readMore:"Leer más",
@@ -253,7 +302,7 @@ const DICT = {
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` },
   pt: { tabClimate:"Monitoramento climático", climateTitle:"Monitoramento climático", climateOpen:"Abrir em tela cheia ↗", climateNote:"Painel do Power BI incorporado (versão provisória). Será integrado de forma nativa a este visualizador em uma próxima versão.", impactTitle:"População afetada reportada", kpiPersons:"Pessoas afetadas", kpiFamilies:"Famílias afetadas", kpiDeaths:"Óbitos", kpiInjuries:"Feridos", kpiDisplaced:"Deslocados", kpiEvacuated:"Evacuados", kpiCoverage:"Eventos com números", impactNote:"Soma do último número reportado para cada evento filtrado (fontes oficiais ou veículos citados). Não inclui projeções nem estimativas; famílias não são convertidas em pessoas; pode haver sobreposição entre eventos do mesmo território. * = inclui números parciais.", impactDetail:"Detalhe por evento", eventFilter:"Evento", allEvents:"Todos os eventos", impactLbl:"Afetados reportados", persons:"pessoas", families:"famílias", deathsLbl:"óbitos", injuredLbl:"feridos", displacedLbl:"deslocados", evacuatedLbl:"evacuados", partial:"parcial", noImpact:"Sem números reportados na seleção atual.", eventsWithFig:"eventos com número", colEvent:"Evento", colPlace:"País · tipo", colAsOf:"Data do número", colSource:"Fonte", progressTag:"Progresso 1 (13-10-2026): KPI de população afetada reportada, filtrável por país, tipo de evento e evento.", title:"Mapa de riscos — Bacia amazônica", subtitle:"Eventos ativos por perigo e prioridade", mapNote:"Mapa base OpenStreetMap. Dados: base própria de eventos verificados (ver lista à direita).",
     total:"Eventos", red:"Alertas vermelhos", countries:"Países afetados",
-    firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"ativos", alertBannerView:"Ver detalhe ↓", alertBannerClear:"Ver todos ×", exportCsv:"Exportar CSV", firmsTimelineLive:"Ao vivo", reportBtn:"Relatório trimestral", reportBtnPeriodPrefix:" (último: ",
+    firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"ativos", alertBannerView:"Ver detalhe ↓", alertBannerClear:"Ver todos ×", exportCsv:"Dados de eventos (CSV)", exportMenuBtn:"Baixar", monthlyReportBtn:"Relatório mensal por país", firmsTimelineLive:"Ao vivo", reportBtn:"Relatório trimestral", reportBtnPeriodPrefix:" (último: ",
     all:"Todos", FLOOD:"Inundação", EXTREME_RAIN:"Chuva extrema", DROUGHT:"Seca", WILDFIRE:"Incêndio florestal", EARTHQUAKE:"Terremoto", LANDSLIDE:"Deslizamento", DEFORESTATION:"Desmatamento", FLASH_FLOOD:"Inundação repentina", EXTREME_HEAT:"Calor extremo", SEVERE_STORM:"Tempestade severa",
     Brazil:"Brasil", Peru:"Peru", Colombia:"Colômbia", Bolivia:"Bolívia", Ecuador:"Equador", Venezuela:"Venezuela",
     RED:"Vermelho", ORANGE:"Laranja", GREEN:"Verde", updated:"Atualizado", source:"Fonte", readMore:"Ler mais",
@@ -281,7 +330,7 @@ const DICT = {
       <p style="margin:4px 0 0;font-size:11px;text-align:center;line-height:1.8">Jerson ACHICANOY<br>Information Management and GIS Expert<br>3iS<br><a href="mailto:jachicanoy@3is.org" style="color:var(--3is-cyan)">jachicanoy@3is.org</a></p>` },
   en: { tabClimate:"Climate monitoring", climateTitle:"Climate monitoring", climateOpen:"Open full screen ↗", climateNote:"Embedded Power BI dashboard (interim version). It will be integrated natively into this viewer in a future release.", impactTitle:"Reported affected population", kpiPersons:"People affected", kpiFamilies:"Families affected", kpiDeaths:"Deaths", kpiInjuries:"Injured", kpiDisplaced:"Displaced", kpiEvacuated:"Evacuated", kpiCoverage:"Events with figures", impactNote:"Sum of the latest figure reported for each filtered event (official sources or cited media). Excludes projections and estimates; families are not converted to people; events in the same area may overlap. * = includes partial figures.", impactDetail:"Breakdown by event", eventFilter:"Event", allEvents:"All events", impactLbl:"Reported affected", persons:"people", families:"families", deathsLbl:"deaths", injuredLbl:"injured", displacedLbl:"displaced", evacuatedLbl:"evacuated", partial:"partial", noImpact:"No reported figures in the current selection.", eventsWithFig:"events with figures", colEvent:"Event", colPlace:"Country · type", colAsOf:"Figure date", colSource:"Source", progressTag:"Progress 1 (2026-10-13): reported affected population KPI, filterable by country, event type and event.", title:"Risk map — Amazon Basin", subtitle:"Active events by hazard and priority", mapNote:"Base map: OpenStreetMap. Data: our own base of verified events (see list on the right).",
     total:"Events", red:"Red alerts", countries:"Countries affected",
-    firms24hStat:"FIRMS hotspots (24h)", frpMaxStat:"Max FRP (24h)", alertBannerActive:"active", alertBannerView:"View details ↓", alertBannerClear:"View all ×", exportCsv:"Export CSV", firmsTimelineLive:"Live", reportBtn:"Quarterly report", reportBtnPeriodPrefix:" (latest: ",
+    firms24hStat:"FIRMS hotspots (24h)", frpMaxStat:"Max FRP (24h)", alertBannerActive:"active", alertBannerView:"View details ↓", alertBannerClear:"View all ×", exportCsv:"Event data (CSV)", exportMenuBtn:"Download", monthlyReportBtn:"Monthly report by country", firmsTimelineLive:"Live", reportBtn:"Quarterly report", reportBtnPeriodPrefix:" (latest: ",
     all:"All", FLOOD:"Flood", EXTREME_RAIN:"Extreme rain", DROUGHT:"Drought", WILDFIRE:"Wildfire", EARTHQUAKE:"Earthquake", LANDSLIDE:"Landslide", DEFORESTATION:"Deforestation", FLASH_FLOOD:"Flash flood", EXTREME_HEAT:"Extreme heat", SEVERE_STORM:"Severe storm",
     Brazil:"Brazil", Peru:"Peru", Colombia:"Colombia", Bolivia:"Bolivia", Ecuador:"Ecuador", Venezuela:"Venezuela",
     RED:"Red", ORANGE:"Orange", GREEN:"Green", updated:"Updated", source:"Source", readMore:"Read more",
@@ -1418,12 +1467,55 @@ function exportEventsCsv(){
   setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
 }
 
-function wireControls(){
-  document.getElementById('lang').addEventListener('change', function(e){
-    currentLang = e.target.value;
-    applyI18nText();
-    renderAll();
+function closeAllMenus(){
+  document.querySelectorAll('.dropdown-panel.open').forEach(function(p){ p.classList.remove('open'); });
+  document.querySelectorAll('.has-submenu.open').forEach(function(p){ p.classList.remove('open'); p.setAttribute('aria-expanded','false'); });
+  document.querySelectorAll('.dropdown > button[aria-expanded]').forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+}
+
+function updateLangButton(){
+  var lbl = document.getElementById('langBtnLabel');
+  if (lbl) lbl.textContent = currentLang.toUpperCase();
+  document.querySelectorAll('.lang-item').forEach(function(btn){
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
   });
+}
+
+function wireDropdownToggle(btn, panel){
+  btn.addEventListener('click', function(ev){
+    ev.stopPropagation();
+    var willOpen = !panel.classList.contains('open');
+    closeAllMenus();
+    if (willOpen) { panel.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+  });
+}
+
+function wireMenus(){
+  wireDropdownToggle(document.getElementById('exportMenuBtn'), document.getElementById('exportMenuPanel'));
+  wireDropdownToggle(document.getElementById('langBtn'), document.getElementById('langMenuPanel'));
+  var monthlyToggle = document.getElementById('monthlyReportToggle');
+  var monthlyItem = document.getElementById('monthlyReportItem');
+  monthlyToggle.addEventListener('click', function(ev){
+    ev.stopPropagation();
+    var willOpen = !monthlyItem.classList.contains('open');
+    monthlyItem.classList.toggle('open', willOpen);
+    monthlyItem.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+  });
+  document.querySelectorAll('.lang-item').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      currentLang = btn.getAttribute('data-lang');
+      applyI18nText();
+      renderAll();
+      updateLangButton();
+      closeAllMenus();
+    });
+  });
+  document.addEventListener('click', closeAllMenus);
+  document.addEventListener('keydown', function(ev){ if (ev.key === 'Escape') closeAllMenus(); });
+}
+
+function wireControls(){
+  wireMenus();
   document.getElementById('infoBtn').addEventListener('click', function(){
     var p = document.getElementById('infoPanel');
     p.style.display = (p.style.display === 'none' || !p.style.display) ? 'block' : 'none';
@@ -1436,7 +1528,10 @@ function wireControls(){
     document.getElementById('dateTo').value = '';
     renderAll();
   });
-  document.getElementById('exportCsvBtn').addEventListener('click', exportEventsCsv);
+  document.getElementById('exportCsvBtn').addEventListener('click', function(){
+    exportEventsCsv();
+    closeAllMenus();
+  });
   document.getElementById('eventFilter').addEventListener('change', function(ev){
     activeEventId = ev.target.value || null;
     renderAll();
@@ -1459,7 +1554,7 @@ function wireTabs(){
 }
 
 function initDashboard(){
-  document.getElementById('lang').value = currentLang;
+  updateLangButton();
   applyI18nText();
   initMap();
   wireControls();
