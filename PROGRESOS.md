@@ -144,3 +144,38 @@ nueva sección "Anomalía SST / ENSO (Progreso 3)" e historial de versiones.
 **Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
 nueva sección "Informe situacional regional (Progreso 4)" e historial de
 versiones.
+
+## Progreso 5 — 2026-10-22 · Menú de descargas + corrección del selector de idioma
+
+**Qué cambia**
+- Los botones separados **"Exportar CSV"** e **"Informe trimestral"** se
+  unificaron en un único menú desplegable **"Descargar"** (icono de
+  descarga), con tres opciones: "Datos de eventos (CSV)" (el CSV de eventos
+  filtrados, ya existente, solo renombrado para describir mejor su
+  contenido), "Informe trimestral" (igual que antes) y nuevo
+  **"Informe mensual por país"**, que despliega un submenú para elegir uno
+  de los 6 países del proyecto.
+- Los enlaces de informe mensual apuntan a una ruta fija por país
+  (`Reports/Informe_mensual_<pais>_vigente.pdf`, p. ej.
+  `Reports/Informe_mensual_bolivia_vigente.pdf`), siguiendo la misma
+  convención de nombre fijo ("vigente") usada para el informe trimestral
+  (Progreso 4). Esa ruta **todavía no existe** — los enlaces descargan error
+  404 hasta que exista un pipeline que genere y publique el informe mensual
+  por país; comportamiento esperado, igual que pasó con el informe
+  trimestral antes de su primera publicación. Pendiente: definir y construir
+  ese pipeline (plantilla ya generada en sesiones previas, ver bitácora del
+  Project de Claude).
+- **Corrección de bug visual**: en anchos intermedios (banner angosto, pero
+  por encima del punto de quiebre móvil de 760px), el selector de idioma
+  (`<select>`) quedaba posicionado en absoluto de forma independiente del
+  bloque de título/subtítulo, y en ciertos anchos se superponía
+  visualmente al subtítulo del banner. Se reemplazó el `<select>` por un
+  **botón/ícono de idioma** (globo + código de 2 letras: ES/PT/EN) con su
+  propio menú desplegable, y el título/subtítulo dejó de posicionarse en
+  absoluto — ahora título y botón de idioma fluyen en una columna dentro
+  del layout flex del banner, lo que elimina la superposición en cualquier
+  ancho de pantalla (verificado en ~1100px, ~1400px y 375px/móvil).
+
+**Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
+nueva sección "Menú de descargas e informe mensual por país (Progreso 5)" e
+historial de versiones.
