@@ -179,3 +179,29 @@ versiones.
 **Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
 nueva sección "Menú de descargas e informe mensual por país (Progreso 5)" e
 historial de versiones.
+
+## Publicación — 2026-10-26 · Primer Informe Situacional Regional (2026-Q3)
+
+**Qué cambia**
+- Primera publicación real a través del pipeline del Progreso 4: se subió
+  `Reports/Informe_trimestral_vigente.pdf` (Informe Situacional Regional
+  2026-Q3, 1 agosto – 30 septiembre de 2026, 8 páginas, con revisión humana
+  antes de publicarse) y se creó `Reports/latest.json`
+  (`{"label": "2026-Q3", "period": {...}, "publishedAt": "2026-10-26"}`),
+  que el visor lee para mostrar el trimestre vigente junto al botón
+  "Informe trimestral" (p. ej. "Informe trimestral (último: 2026-Q3)").
+- Se subió también `Reports/2026-Q3/data.json`, el insumo de datos
+  determinista generado por `scripts/build_quarterly_report_data.py` para
+  ese trimestre (24 eventos, 2 rojos / 11 naranja / 11 verde en los 6
+  países del proyecto).
+- Se corrigió `scripts/build_quarterly_report_data.py` (necesario para
+  generar este informe correctamente): reconoce variantes de nombre de país
+  en inglés (`Brazil`/`Peru`, como vienen en `Events/`) además de las
+  variantes en español ya soportadas, y excluye explícitamente los eventos
+  con `AMAZON_BASIN_STATUS: OUTSIDE` del alcance regional del informe.
+
+**Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
+se actualizó la sección "Informe situacional regional (Progreso 4)" para
+reflejar que ya hay un informe publicado (antes decía que el botón no
+tendría informe disponible hasta la primera publicación aprobada) — y este
+archivo.

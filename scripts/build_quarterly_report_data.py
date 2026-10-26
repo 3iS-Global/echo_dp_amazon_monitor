@@ -64,6 +64,10 @@ def _norm(s):
 
 
 REGION_COUNTRIES_NORM = {_norm(c) for c in REGION_COUNTRIES}
+# Variantes de nombre en otros idiomas (Events/ usa ingles: "Brazil", "Peru").
+COUNTRY_ALIASES = {"BRAZIL": "BRASIL", "PERU": "PERU"}
+# Solo eventos dentro (total o parcialmente) de la cuenca; OUTSIDE se excluye.
+EXCLUDED_BASIN_STATUS = {"OUTSIDE"}
 
 IMPACT_KEYS = [
     "EVENT_ID", "AS_OF_DATE", "DEATHS", "INJURIES", "AFFECTED_PERSONS",
@@ -155,7 +159,11 @@ def load_impacts():
 
 
 def in_region(event):
-    return _norm(event.get("COUNTRY")) in REGION_COUNTRIES_NORM
+    c = _norm(event.get("COUNTRY"))
+    c = COUNTRY_ALIASES.get(c, c)
+    if (event.get("AMAZON_BASIN_STATUS") or "").strip().upper() in EXCLUDED_BASIN_STATUS:
+        return False
+    return c in REGION_COUNTRIES_NORM
 
 
 def in_period(event, start, end):
