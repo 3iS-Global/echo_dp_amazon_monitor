@@ -205,3 +205,41 @@ se actualizó la sección "Informe situacional regional (Progreso 4)" para
 reflejar que ya hay un informe publicado (antes decía que el botón no
 tendría informe disponible hasta la primera publicación aprobada) — y este
 archivo.
+
+
+## Progreso 6 — 2026-10-27 · Alertas IDEAM (hidrología, deslizamientos, incendios)
+
+**Qué cambia**
+- Nueva pestaña **"Alertas IDEAM"** en el visor, con su propio mapa
+  (independiente del mapa del Monitor), que muestra 3 capas publicas y
+  gratuitas de IDEAM (`bart.ideam.gov.co`), filtradas a la porcion
+  colombiana de la cuenca (Amazonas, Caqueta, Putumayo):
+  1. **Hidrología** — subzonas hidrográficas con alerta vigente hoy
+     (amarilla/naranja/roja), filtradas al área hidrográfica oficial
+     "Amazonas" de IDEAM. El archivo de origen solo lista subzonas con
+     alerta activa, así que en muchos días esta capa estará vacía — eso
+     es el comportamiento esperado, no un error.
+  2. **Deslizamientos** — índice diario de amenaza por lluvia acumulada
+     (alta/moderada/baja), por municipio.
+  3. **Incendios** — índice diario de amenaza de incendio de la
+     cobertura vegetal (alta/moderada/baja), por municipio.
+- Estas 3 capas son **índices de amenaza/alerta**, no eventos confirmados:
+  nunca escriben en `Events/` ni en `Impacts/`, nunca crean ni actualizan
+  un `Event_ID`, y se reescriben completas cada corrida (sin acumular
+  historial). Viven deliberadamente separadas de la base de eventos.
+- Nuevo script determinista `scripts/fetch_ideam_alerts.py` (sin IA, sin
+  costo de tokens) y workflow `.github/workflows/fetch-ideam.yml` (cron
+  diario, 06:00 hora Bogotá) que descargan las 3 capas, cruzan
+  deslizamientos/incendios por código DANE contra
+  `IDEAM_Alerts/municipios_cuenca_amazonica.geojson` (límites oficiales de
+  los 40 municipios de Amazonas/Caquetá/Putumayo — IGAC / Ministerio de
+  Ambiente, generado una sola vez, no se vuelve a descargar a diario), y
+  escriben `IDEAM_Alerts/{hidrologia,deslizamientos,incendios,meta}.json`.
+- La leyenda de la nueva pestaña usa la escala propia de IDEAM
+  (amarilla/naranja/roja para hidrología; alta/moderada/baja para
+  deslizamientos e incendios), deliberadamente distinta de los colores
+  🔴🟠🟢 de `ALERT_PRIORITY` del monitor, para no confundir ambas escalas.
+
+**Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
+nueva sección "Alertas IDEAM (Progreso 6)" e historial de versiones — y
+este archivo.
