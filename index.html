@@ -143,7 +143,7 @@
     <button class="tab-btn active" role="tab" data-tab="monitor" data-i18n="tabMonitor"></button>
     <button class="tab-btn" role="tab" data-tab="forecast" data-i18n="tabForecast"></button>
     <button class="tab-btn" role="tab" data-tab="climate" data-i18n="tabClimate"></button>
-    <button class="tab-btn" role="tab" data-tab="ideam" data-i18n="tabIdeam"></button>
+    <button class="tab-btn" role="tab" data-tab="ideam" data-i18n="tabIdeam" style="display:none"></button>
   </nav>
 </div>
 <div class="brand-divider"></div>
@@ -648,6 +648,19 @@ function zoomToFilteredEvents(fallbackBounds){
   }
 }
 
+function updateIdeamTabVisibility(){
+  // Progreso 6 (ajuste 27-10-2026): la pestana "Alertas IDEAM" solo cubre
+  // Colombia, asi que solo debe verse cuando el filtro de pais activo es
+  // Colombia -- nunca con "Todos" ni con otro pais. Si la pestana estaba
+  // abierta y el filtro cambia, se regresa a Monitor para no dejar una
+  // pestana activa pero oculta.
+  var btn = document.querySelector('#tabs .tab-btn[data-tab="ideam"]');
+  if (!btn) return;
+  var show = (activeCountry === 'Colombia');
+  btn.style.display = show ? '' : 'none';
+  if (!show && activeTab === 'ideam') showTab('monitor');
+}
+
 function renderCountryFilters(){
   var wrap = document.getElementById('countryFilters');
   wrap.innerHTML = '';
@@ -681,6 +694,7 @@ function renderCountryFilters(){
     };
     wrap.appendChild(chip);
   });
+  updateIdeamTabVisibility();
 }
 
 function renderHazardFilters(){
