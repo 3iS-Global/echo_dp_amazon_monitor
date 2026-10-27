@@ -1351,6 +1351,7 @@ let ideamLayersControl = null;
 let ideamLegendControl = null;
 const ideamGeoLayers = {};   // { hidro, desliz, incendios } -> L.geoJSON
 const ideamRawFeatures = {}; // guarda los features crudos para poder re-generar popups al cambiar de idioma
+let ideamLastRunUtc = null; // guarda el timestamp crudo para poder re-traducir el prefijo "Actualizado:" al cambiar de idioma
 
 const IDEAM_HIDRO_COLORS = { 'ALERTA ROJA': '#d62828', 'ALERTA NARANJA': '#f08c00', 'ALERTA AMARILLA': '#f1c40f' };
 const IDEAM_MUNI_COLORS = { 'ALTA': '#d62828', 'MODERADA': '#f08c00', 'BAJA': '#f1c40f' };
@@ -1425,6 +1426,10 @@ function refreshIdeamI18n(){
     return sum + ((ideamRawFeatures[k] && ideamRawFeatures[k].length) || 0);
   }, 0);
   if (emptyEl) emptyEl.style.display = (totalFeatures === 0) ? 'block' : 'none';
+  var updEl = document.getElementById('ideamUpdatedAt');
+  if (updEl && ideamLastRunUtc) {
+    updEl.textContent = t('ideamUpdatedPrefix') + ideamLastRunUtc.replace('T',' ').replace('Z',' UTC');
+  }
 }
 
 function initIdeamTab(){
@@ -1471,9 +1476,10 @@ function initIdeamTab(){
   loadLayer('incendios', 'IDEAM_Alerts/incendios.geojson', ideamMuniStyle, ideamMuniPopup, 'ideamLayerIncendios');
 
   fetch('IDEAM_Alerts/meta.json').then(function(r){ return r.ok ? r.json() : null; }).then(function(meta){
-    var el = document.getElementById('ideamUpdatedAt');
-    if (el && meta && meta.last_run_utc) {
-      el.textContent = t('ideamUpdatedPrefix') + meta.last_run_utc.replace('T',' ').replace('Z',' UTC');
+    if (meta && meta.last_run_utc) {
+      ideamLastRunUtc = meta.last_run_utc;
+      var el = document.getElementById('ideamUpdatedAt');
+      if (el) el.textContent = t('ideamUpdatedPrefix') + ideamLastRunUtc.replace('T',' ').replace('Z',' UTC');
     }
   }).catch(function(){});
 }
