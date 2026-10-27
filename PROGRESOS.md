@@ -280,6 +280,27 @@ archivo.
     (`#d62828`/`#f08c00`/`#f1c40f`) son una versión más suave de esa misma
     escala roja/naranja/amarilla — coherentes con el estándar de IDEAM.
 
+**Correcciones (27-10-2026, misma tarde — segunda ronda, feedback de UX)**
+- **Popups sin identificar la capa**: al hacer clic en un municipio/subzona
+  resaltado, el popup no decía si era hidrología, deslizamientos o
+  incendios (deslizamientos e incendios comparten la misma función de
+  popup). Se agregó una etiqueta de capa en la parte superior de cada
+  popup ("Hidrología" / "Deslizamientos" / "Incendios").
+- **Nomenclatura distinta para el mismo color**: hidrología usa su propia
+  escala (Alerta Roja/Naranja/Amarilla) y deslizamientos/incendios usan la
+  suya (Amenaza Alta/Moderada/Baja) — ambas con los mismos 3 colores, pero
+  nombres distintos, lo que generaba confusión. Se armonizó así: cada
+  popup y la leyenda ahora muestran primero un nivel común (Alto/Medio/
+  Bajo, mismo color en las 3 capas) y, debajo, el término nativo de IDEAM
+  entre paréntesis (p. ej. "Alto (IDEAM: Roja)" en hidrología y "Alto
+  (IDEAM: Alta)" en deslizamientos/incendios). La leyenda del mapa se
+  unificó en una sola lista de 3 niveles, con ambas nomenclaturas visibles
+  lado a lado bajo cada color, en vez de dos listas separadas sin
+  relación explícita entre sí.
+- **Nota de fuente simplificada**: se quitó la mención a "sin
+  autenticación" (dato técnico irrelevante para el usuario) del pie de la
+  pestaña IDEAM en los 3 idiomas; ahora dice simplemente "datos públicos".
+
 **Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
 nueva sección "Alertas IDEAM (Progreso 6)" e historial de versiones — y
 este archivo.
