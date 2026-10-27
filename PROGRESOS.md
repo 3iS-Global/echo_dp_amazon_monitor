@@ -240,6 +240,46 @@ archivo.
   deslizamientos e incendios), deliberadamente distinta de los colores
   🔴🟠🟢 de `ALERT_PRIORITY` del monitor, para no confundir ambas escalas.
 
+**Correcciones (27-10-2026, mismo día)**
+- **Visibilidad por país**: la pestaña "Alertas IDEAM" solo cubre Colombia,
+  así que ahora solo aparece (botón y contenido) cuando el filtro de país
+  del Monitor está en **Colombia** — no se muestra con "Todos" ni con
+  ningún otro país. Si la pestaña estaba abierta y el filtro cambia, se
+  regresa automáticamente a Monitor.
+- **Bug de idioma corregido**: la etiqueta "Actualizado:"/"Updated:" no se
+  traducía al cambiar de idioma después de cargar la pestaña (se quedaba
+  en el idioma con el que se inicializó el mapa). Ya se recompone en cada
+  cambio de idioma, igual que el resto del texto de la pestaña.
+- **Verificación de datos contra el servidor de IDEAM**: se confirmaron
+  en vivo las 3 fuentes usadas por `fetch_ideam_alerts.py` contra todo el
+  contenedor `bart.ideam.gov.co/ospa/` (no solo `Alertas/modelos/`):
+  - `deslizamientos/ultimo/amenaza_idd.csv` (la que usa el script) y
+    `deslizamientos/ultimo/2026_amenaza_idd_vidhag.csv` contienen **los
+    mismos 471 registros**, solo con nombres de columna distintos
+    (`DEPARTAMENTO`/`MUNICIPIO` vs `DEPTO`/`GEOGRAPHIC`) y una columna
+    numérica adicional (`nivel_numero`) en la versión "vidhag" — ambas
+    son válidas, no hay discrepancia de datos.
+  - `incendios/ultimo/amenaza_icv.csv` (la que usa el script) se actualiza
+    a diario (confirmado hoy, 27-10-2026); en cambio
+    `incendios/ultimo/2026_amenaza_icv_vidhag.csv` **no se actualiza desde
+    el 16-06-2026** (archivo abandonado/obsoleto, esquema distinto con
+    columna `PROBABILIDAD` 1-5 en vez de `TEXTO_AMENAZA`) — confirma que
+    el script ya usa la fuente correcta y vigente, no la obsoleta.
+  - `hidrologia/` (shapefile `Alertas_vigentes.*`) coincide exactamente
+    con lo que usa el script, actualizado hoy.
+  - No se encontró ninguna nota metodológica oficial dentro de
+    `bart.ideam.gov.co/ospa/` (se revisó todo el contenedor, incluyendo
+    `DatosAbiertos/` y `varios/`, que tienen series históricas completas
+    por subzona/municipio — útiles para un futuro análisis de tendencias,
+    pero no para el mapa de "alerta vigente" actual). La semántica de los
+    niveles (Roja = "para tomar acción", Naranja = "para prepararse",
+    Amarilla = informativa) y la paleta oficial de colores
+    (Alta/Roja=#FF0000, Moderada/Naranja=#FFAA00, Baja/Amarilla=#FFFF00,
+    según el renderizador del propio visualizador de IDEAM) se confirmaron
+    por fuera del servidor de datos. Los colores usados en nuestra pestaña
+    (`#d62828`/`#f08c00`/`#f1c40f`) son una versión más suave de esa misma
+    escala roja/naranja/amarilla — coherentes con el estándar de IDEAM.
+
 **Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
 nueva sección "Alertas IDEAM (Progreso 6)" e historial de versiones — y
 este archivo.
