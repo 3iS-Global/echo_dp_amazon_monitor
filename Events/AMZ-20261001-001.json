@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20261001-001",
   "FIRST_DETECTED_DATE": "2026-10-01",
-  "LAST_UPDATED_DATE": "2026-10-15",
-  "UPDATE_COUNT": "1",
+  "LAST_UPDATED_DATE": "2026-10-28",
+  "UPDATE_COUNT": "2",
   "COUNTRY": "Brazil",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Pará",
@@ -28,12 +28,12 @@
   "EVENT_DESCRIPTION_EN": "Two municipalities in western Pará (Brazil) declared emergencies due to wildfires: Monte Alegre (Decree 480/2026, Level II emergency) and Rurópolis (Decree 163 of 21 Sep 2026, Level II disaster, valid up to 180 days). The decrees cite damage to crops, pastures, fences, structures and livestock, plus wildlife, soil and biodiversity; threats to water reserves and human/animal water supply; and smoke degrading air quality and increasing respiratory cases among vulnerable groups. Rurópolis attributes fire spread to reduced rainfall, low humidity and falling rivers since July 2026. Monte Alegre banned clearing and waste burning; both authorized emergency procurement and community brigades. No heat-spot counts, burned area or casualty figures reported.",
   "DEATHS": "NOT_REPORTED",
   "INJURIES": "NOT_REPORTED",
-  "AFFECTED_POPULATION": "NOT_REPORTED",
+  "AFFECTED_POPULATION": "NOT_REPORTED; ACTUALIZACIÓN 28-oct: sin cifra de afectados; PM2.5 de 205 µg/m³ en Santarém el 27-oct (sensor IPAM/PurpleAir); alerta federal de salud por humo para Pará (12-oct)",
   "DISPLACED_POPULATION": "NOT_REPORTED",
   "EVACUATED_POPULATION": "NOT_REPORTED",
   "AGRICULTURAL_IMPACT": "Daños a cultivos, pastos, cercas e infraestructuras rurales (decretos municipales); sin cuantificar",
   "LIVESTOCK_IMPACT": "Daños a rebaños reportados en decretos; sin cuantificar",
-  "FOREST_IMPACT": "Incendios forestales activos; área quemada NOT_REPORTED",
+  "FOREST_IMPACT": "Incendios forestales activos; área quemada NOT_REPORTED ; ACTUALIZACIÓN 28-oct: Pará registró 4.424 focos INPE en 1-13 oct (más que todo oct-2025: 3.682) y 937 de los 1.645 focos del país el 25-26 oct; municipios destacados: Uruará (164), Santarém (96), Aveiro (80), Mojuí dos Campos (73)",
   "WATER_IMPACT": "Riesgo para reservas de agua y abastecimiento humano/animal (Rurópolis); sin cuantificar",
   "FOOD_SECURITY_IMPACT": "NOT_REPORTED",
   "ALERT_PRIORITY": "ORANGE",
@@ -45,8 +45,8 @@
   "SECONDARY_SOURCE": "Brasil em Folhas",
   "SECONDARY_SOURCE_URL": "https://www.brasilemfolhas.com.br/2026/09/monte-alegre-e-ruropolis-decretam-emergencia-por-incendios-florestais/",
   "GDACS_URL": "UNAVAILABLE",
-  "OTHER_SOURCE_URLS": "https://news.folhadoprogresso.com.br/fogo-avanca-no-oeste-do-para-e-dois-municipios-decretam-emergencia-por-incendios-florestais/; https://atlaspublico.com.br/noticias/defesa-civil-nacional-reconhece-emergencia-em-oito-92012",
-  "NOTES_ES": "Evento nuevo. Coordenadas de la sede municipal de Monte Alegre (02°00'28\"S, 54°04'09\"O); Rurópolis está ~250 km al SO. Distinto de AMZ-20260914-003 (deforestación DETER en Pará). Requiere verificación con Diário Oficial / S2iD y Defesa Civil-PA; fuentes son medios regionales citando g1. ACTUALIZACIÓN 15/10: la Defesa Civil Nacional reconoció situación de emergencia por incendio forestal en Trairão (PA, vecino de Rurópolis) mediante Portaria 3.489 (DOU 14-oct); sin cifras de afectados, fuente: Atlas Público.",
-  "NOTES_PT": "Evento novo. Coordenadas da sede municipal de Monte Alegre (02°00'28\"S, 54°04'09\"O); Rurópolis fica ~250 km a SO. Distinto de AMZ-20260914-003 (desmatamento DETER no Pará). Requer verificação no Diário Oficial / S2iD e Defesa Civil-PA; fontes são mídia regional citando g1. ATUALIZAÇÃO 15/10: a Defesa Civil Nacional reconheceu situação de emergência por incêndio florestal em Trairão (PA, vizinho de Rurópolis) pela Portaria 3.489 (DOU 14-out); sem números de afetados, fonte: Atlas Público.",
-  "NOTES_EN": "New event. Coordinates of Monte Alegre municipal seat (02°00'28\"S, 54°04'09\"W); Rurópolis lies ~250 km SW. Distinct from AMZ-20260914-003 (DETER deforestation in Pará). Needs verification against Diário Oficial / S2iD and Pará Civil Defense; sources are regional media citing g1. UPDATE 10/15: the National Civil Defense recognized a wildfire emergency in Trairão (PA, neighboring Rurópolis) via Ordinance 3,489 (DOU Oct 14); no affected figures, source: Atlas Público."
+  "OTHER_SOURCE_URLS": "https://news.folhadoprogresso.com.br/fogo-avanca-no-oeste-do-para-e-dois-municipios-decretam-emergencia-por-incendios-florestais/; https://atlaspublico.com.br/noticias/defesa-civil-nacional-reconhece-emergencia-em-oito-92012; https://climainfo.org.br/2026/10/27/incendios-tem-queda-de-quase-80-no-amazonas-durante-o-mes-de-outubro; https://diariodopara.com.br/para/queimadas-no-para-aumentam-em-outubro-e-el-nino-pode-agravar-a-seca-na-amazonia/",
+  "NOTES_ES": "Evento nuevo. Coordenadas de la sede municipal de Monte Alegre (02°00'28\"S, 54°04'09\"O); Rurópolis está ~250 km al SO. Distinto de AMZ-20260914-003 (deforestación DETER en Pará). Requiere verificación con Diário Oficial / S2iD y Defesa Civil-PA; fuentes son medios regionales citando g1. ACTUALIZACIÓN 15/10: la Defesa Civil Nacional reconoció situación de emergencia por incendio forestal en Trairão (PA, vecino de Rurópolis) mediante Portaria 3.489 (DOU 14-oct); sin cifras de afectados, fuente: Atlas Público. ACTUALIZACIÓN 28-oct: el fuego se intensifica en el oeste de Pará (937 de 1.645 focos nacionales el 25-26 oct; Uruará, Santarém, Aveiro, Mojuí dos Campos); seis aeronaves Air Tractor del IBAMA no pudieron despegar en Santarém por baja visibilidad, fuente: ClimaInfo (INPE/Folha/g1) y Diário do Pará.",
+  "NOTES_PT": "Evento novo. Coordenadas da sede municipal de Monte Alegre (02°00'28\"S, 54°04'09\"O); Rurópolis fica ~250 km a SO. Distinto de AMZ-20260914-003 (desmatamento DETER no Pará). Requer verificação no Diário Oficial / S2iD e Defesa Civil-PA; fontes são mídia regional citando g1. ATUALIZAÇÃO 15/10: a Defesa Civil Nacional reconheceu situação de emergência por incêndio florestal em Trairão (PA, vizinho de Rurópolis) pela Portaria 3.489 (DOU 14-out); sem números de afetados, fonte: Atlas Público. ATUALIZAÇÃO 28/10: o fogo se intensifica no oeste do Pará (937 dos 1.645 focos nacionais em 25-26/10; Uruará, Santarém, Aveiro, Mojuí dos Campos); seis aeronaves Air Tractor do IBAMA não puderam decolar em Santarém pela baixa visibilidade, fonte: ClimaInfo (INPE/Folha/g1) e Diário do Pará.",
+  "NOTES_EN": "New event. Coordinates of Monte Alegre municipal seat (02°00'28\"S, 54°04'09\"W); Rurópolis lies ~250 km SW. Distinct from AMZ-20260914-003 (DETER deforestation in Pará). Needs verification against Diário Oficial / S2iD and Pará Civil Defense; sources are regional media citing g1. UPDATE 10/15: the National Civil Defense recognized a wildfire emergency in Trairão (PA, neighboring Rurópolis) via Ordinance 3,489 (DOU Oct 14); no affected figures, source: Atlas Público. UPDATE 10/28: fire activity intensifies in western Pará (937 of 1,645 national hotspots on 25-26 Oct; Uruará, Santarém, Aveiro, Mojuí dos Campos); six IBAMA Air Tractor aircraft were grounded in Santarém by low visibility, source: ClimaInfo (INPE/Folha/g1) and Diário do Pará."
 }

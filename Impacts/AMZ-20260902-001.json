@@ -1,14 +1,14 @@
 {
   "EVENT_ID": "AMZ-20260902-001",
-  "AS_OF_DATE": "2026-10-18",
+  "AS_OF_DATE": "2026-10-26",
   "DEATHS": null,
   "INJURIES": null,
   "AFFECTED_PERSONS": null,
-  "AFFECTED_FAMILIES": 101084,
+  "AFFECTED_FAMILIES": 124221,
   "DISPLACED_PERSONS": null,
   "EVACUATED_PERSONS": null,
   "SCOPE": "CONSOLIDATED",
-  "SOURCE": "Copec / Governo do Amazonas (Defesa Civil AM), vía Gazeta da Amazônia",
-  "SOURCE_URL": "https://gazetadaamazonia.com.br/19/10/2026/estiagem-amazonas-101-mil-familias/",
-  "NOTES": "Cifra estatal (Amazonas): 101.084 familias afectadas; 40 municipios en emergencia, 17 en alerta, 5 en atención. Sin cifra de personas reportada; la proyección del Decreto 55.486 (~648.000 personas) no se carga por ser estimación."
+  "SOURCE": "Defesa Civil do Amazonas (boletim 26-out), vía Amazonas1",
+  "SOURCE_URL": "https://amazonas1.com.br/estiagem-atinge-mais-de-124-mil-familias-e-deixa-46-municipios-em-emergencia-no-am/",
+  "NOTES": "Cifra estatal (Amazonas): 124.221 familias afectadas; 46 municipios en emergencia, 12 en alerta, 4 en atención. Sin cifra de personas reportada; la proyección del Decreto 55.486 (~648.000 personas) no se carga por ser estimación."
 }
