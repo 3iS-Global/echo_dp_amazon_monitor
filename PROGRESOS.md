@@ -304,3 +304,21 @@ archivo.
 **Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
 nueva sección "Alertas IDEAM (Progreso 6)" e historial de versiones — y
 este archivo.
+
+## Actualización — 2026-10-28 · Informe Situacional Regional 2026-Q3
+
+**Qué cambia**
+- Se reemplazó `Reports/Informe_trimestral_vigente.pdf` por la versión
+  revisada del informe 2026-Q3 (mismo periodo y mismos datos: 24 eventos,
+  2 rojos / 11 naranja / 11 verde):
+  - el mapa coroplético por admin 1 muestra los nombres de los
+    departamentos/estados con eventos (en lugar del número de eventos) y
+    tiene título propio; el color sigue indicando el número de eventos;
+  - las fuentes dejan de ir como notas al pie y se citan al final del
+    documento, en la sección "7. Fuentes" (30 fuentes numeradas, con
+    referencias en superíndice enlazadas desde el texto).
+- `Reports/latest.json`: `publishedAt` pasa a `2026-10-28`.
+
+**Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
+la sección "Informe situacional regional (Progreso 4)" indica la fecha de
+última actualización — y este archivo.
