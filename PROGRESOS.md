@@ -322,3 +322,44 @@ este archivo.
 **Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
 la sección "Informe situacional regional (Progreso 4)" indica la fecha de
 última actualización — y este archivo.
+
+## 2026-10-29 — Se quitan referencias a "Progreso N" de la UI; se corrige "Última actualización" congelada
+
+**Feedback del usuario**: (1) pidió quitar cualquier referencia a la
+numeración interna "Progreso N" de los textos visibles del visor (footnote
+bajo el panel de población afectada, encabezados e historial de versiones
+del botón "Acerca de"); (2) reportó que, aunque el día anterior se había
+hecho una actualización, el panel seguía mostrando una fecha congelada en
+"Última actualización" (20 de octubre).
+
+**Causa raíz de la fecha congelada**: `meta.json` solo lo regenera
+`rebuild-aggregates.yml`, disparado por `push` sobre `Events/**`/`Impacts/**`
+— no corre a diario. Entre el 20-10-2026 y el 28-10-2026 no se tocó ningún
+evento, así que `meta.json.lastUpdated` quedó fijo en `2026-10-20 18:02 UTC`
+durante más de una semana, aunque `firms_hotspots.json` (vía `publish.yml`,
+cron diario) y `IDEAM_Alerts/meta.json` (vía `fetch-ideam.yml`, cron diario)
+sí se refrescaron cada día mientras tanto. El panel solo leía `meta.json`,
+así que mostraba una fecha que no reflejaba la frescura real del sitio.
+
+**Correcciones aplicadas**:
+- Se quitó "Progreso N" del footnote `progressTag` y de los 6 encabezados
+  y el historial de versiones del panel "i" (ES/PT/EN) — queda solo la
+  descripción y la fecha. Los comentarios de código internos
+  (`<!-- Progreso N: ... -->`, `// Progreso N: ...`) no se tocaron: no son
+  visibles para el usuario y siguen la convención de seguimiento interna ya
+  documentada en este mismo archivo.
+- "Última actualización" ahora se calcula como la más reciente entre 3
+  fuentes: `meta.json.lastUpdated` (eventos), la cabecera HTTP
+  `Last-Modified` de `firms_hotspots.json` (leída del lado del cliente, sin
+  tocar el pipeline de Python) y `IDEAM_Alerts/meta.json.last_run_utc`
+  (`computeLastUpdated()` en `index.html`). No requirió cambios en ningún
+  script de Python ni en los workflows — es puramente una ampliación de la
+  carga de datos del lado del cliente (`Promise.all` en `index.html`).
+- Verificado en vivo contra `https://3is-global.github.io/echo_dp_amazon_monitor/`
+  (confirmada como la URL pública de referencia del proyecto): "Última
+  actualización: 2026-10-29 21:10 UTC" (coincide con la hora de la última
+  corrida de FIRMS); footnote sin "Progreso 1"; panel "i" sin ningún
+  "(Progreso N)" en encabezados ni en el historial de versiones.
+
+**Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
+footnote y panel "i" sin "Progreso N" — y este archivo.
