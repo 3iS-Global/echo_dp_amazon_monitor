@@ -397,3 +397,27 @@ minuto (17:53 UTC) sin fallo de push.
 **Documentación actualizada**: `.github/workflows/publish.yml`,
 `.github/workflows/fetch-ideam.yml`, `.github/workflows/rebuild-aggregates.yml`
 (comentarios inline) y este archivo.
+
+## 2026-11-01 (tarde) — Hallazgo: origin y 3iS-Global desincronizados en Events/Impacts
+
+Al revisar la pregunta del usuario sobre el solapamiento de workflows, se
+comparó `origin/main` contra `3is/main` directamente (`git diff --stat`,
+conteo de eventos en `index.json`, `git log -- Events/` en cada remoto).
+Resultado: `3is/main` le faltaban 3 commits de `Events/`/`Impacts/` que sí
+estaban en `origin/main` (incl. la actualización del 28-10 de
+AMZ-20260902-001). FIRMS e IDEAM sí estaban al día en ambos, porque corren
+con cron propio en cada repo — pero los eventos, que son lo que de verdad
+importa para el mapa, solo llegaban a `3iS-Global` cuando alguien los
+replicaba a mano.
+
+**Causa**: la tarea diaria programada (cuenta `jachicanoy@3is.org`) solo
+hacía `git push` a `origin`; nunca tocaba el remoto `3is`.
+
+**Decisión (Jerson, 01-11-2026)**: actualizar el prompt de la tarea diaria
+para que haga push a los dos remotos cada corrida, igual que ya se hacía
+manualmente en sesiones puntuales. El texto corregido del prompt (paso 6,
+con el mismo patrón de rama temporal desde `FETCH_HEAD` + PAT que se usa en
+este repositorio) queda documentado en el Project de Cowork
+(`claude/contexto-migracion-github-2026-10.md`, sección 7). **Pendiente**:
+esta cuenta (`jersoncatalyst@gmail.com`) no tiene acceso a esa tarea
+programada — debe aplicarse desde la cuenta `jachicanoy@3is.org`.
