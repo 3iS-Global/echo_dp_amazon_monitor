@@ -421,3 +421,26 @@ este repositorio) queda documentado en el Project de Cowork
 (`claude/contexto-migracion-github-2026-10.md`, sección 7). **Pendiente**:
 esta cuenta (`jersoncatalyst@gmail.com`) no tiene acceso a esa tarea
 programada — debe aplicarse desde la cuenta `jachicanoy@3is.org`.
+
+## 2026-11-01 (noche) — Decisión: dos tareas diarias activas en paralelo
+
+A raíz del hallazgo anterior (origin y 3iS-Global desincronizados), Jerson
+creó la misma tarea diaria también en la cuenta `jersoncatalyst@gmail.com`
+(08:43 Bogotá, trigger `trig_0136rVLAjj2UwZoUYX4RqDHL`), con el paso 6 ya
+corregido para hacer push a los dos remotos. Al preguntársele si debía
+desactivarse la tarea original de `jachicanoy@3is.org` (09:00 Bogotá, sigue
+sin el fix, solo push a `origin`) para evitar duplicados, decidió **dejar
+las dos activas por ahora**.
+
+Riesgo aceptado conscientemente: gasto duplicado de búsquedas/tokens cada
+día, y una probabilidad baja pero real de choque de `git` si ambas tareas
+tocan el mismo `Events/<ID>.json` el mismo día. Importante: no hay
+sincronización cruzada entre lo que una tarea escribe y lo que la otra ve
+— cada una hace su propia búsqueda web y su propia deduplicación contra
+`index.json` en el momento en que corre, cada una con su propio `git pull`
+al inicio.
+
+Pendiente: aplicar en `jachicanoy@3is.org` el mismo paso 6 corregido (texto
+listo en el Project de Cowork, `claude/contexto-migracion-github-2026-10.md`
+sección 7) — ninguna de las dos cuentas puede desactivar o editar la tarea
+de la otra.
