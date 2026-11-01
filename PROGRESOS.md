@@ -363,3 +363,37 @@ así que mostraba una fecha que no reflejaba la frescura real del sitio.
 
 **Documentación actualizada**: panel de metodología del visor (ES/PT/EN) —
 footnote y panel "i" sin "Progreso N" — y este archivo.
+
+## 2026-11-01 — publish.yml y fetch-ideam.yml ahora corren también con cada push a main
+
+**Contexto**: el fix del 29-10-2026 (ver sección anterior) solo corrigió lo
+que el visor *muestra* como "Última actualización" — combinando del lado
+del cliente la fecha más reciente entre las 3 fuentes de datos. Pero los
+datos subyacentes de FIRMS e IDEAM seguían dependiendo exclusivamente de
+sus cron diarios (`publish.yml` a las 15:00 UTC, `fetch-ideam.yml` a las
+11:00 UTC): un push desde Cowork/Claude no los refrescaba, así que podían
+seguir desactualizados hasta 24h frente al momento real del push.
+
+**Corrección**: `publish.yml` y `fetch-ideam.yml` ahora también escuchan
+`on: push: branches: [main]`, además de su `schedule` de siempre. Como los
+tres workflows que hacen commit/push a `main` (los dos anteriores más
+`rebuild-aggregates.yml`) podían terminar corriendo a la vez por el mismo
+push, se les puso un único grupo de concurrencia compartido
+(`amazon-monitor-main-writes`, antes cada uno tenía el suyo) para que
+GitHub los encole en vez de dejarlos competir por el push a `main`.
+`publish.yml` también gana el `git pull --rebase origin main` antes de su
+push que ya tenían los otros dos (antes hacía un `git push` directo, que sí
+podía fallar por "fetch first" si otro workflow empujaba un commit
+primero).
+
+**Verificado en vivo**: el push de este mismo cambio (commit `4cdcc5e` en
+`origin`) disparó ambos workflows en segundos (confirmado vía la API de
+GitHub Actions: `event: push`, `conclusion: success` para los dos), y cada
+uno encontró datos nuevos y los publicó sin colisión — `79995c8`
+("Actualizacion automatica de datos") y `51f597e` ("Actualizacion
+automatica de alertas IDEAM"), ambos corridos y empujados en el mismo
+minuto (17:53 UTC) sin fallo de push.
+
+**Documentación actualizada**: `.github/workflows/publish.yml`,
+`.github/workflows/fetch-ideam.yml`, `.github/workflows/rebuild-aggregates.yml`
+(comentarios inline) y este archivo.
