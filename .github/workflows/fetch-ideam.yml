@@ -17,6 +17,11 @@
 # Corre 1 hora antes del workflow de GDACS y 3 horas antes de la tarea
 # diaria de Cowork, para que la capa este fresca cuando el usuario abra el
 # visor en la manana.
+#
+# (01-11-2026): ademas del cron diario, tambien corre con cada push a main,
+# para no depender solo del horario fijo cuando hay un push desde
+# Cowork/Claude. Comparte grupo de concurrencia con publish.yml y
+# rebuild-aggregates.yml (ver mas abajo) para no competir por el push.
 
 name: Alertas IDEAM (hidrologia, deslizamientos, incendios)
 
@@ -24,13 +29,20 @@ on:
   schedule:
     # 11:00 UTC = 06:00 America/Bogota (Bogota es UTC-5 todo el ano).
     - cron: "0 11 * * *"
+  push:
+    # (01-11-2026): corre tambien de inmediato con cualquier push a main.
+    branches:
+      - main
   workflow_dispatch: {}  # permite darle "Run workflow" manualmente desde GitHub
 
 permissions:
   contents: write  # necesario para que el workflow pueda hacer commit y push
 
+# (01-11-2026): mismo grupo de concurrencia que publish.yml y
+# rebuild-aggregates.yml -- evita que los tres compitan por el push a main
+# cuando un mismo push los dispara a la vez.
 concurrency:
-  group: fetch-ideam
+  group: amazon-monitor-main-writes
   cancel-in-progress: false
 
 jobs:

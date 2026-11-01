@@ -3,6 +3,15 @@
 # Que hace: cada dia (y tambien cuando lo corras manualmente desde la pestana
 # "Actions"), descarga los datos mas recientes y los publica en el repo, lo
 # que dispara automaticamente una reconstruccion de GitHub Pages.
+#
+# (01-11-2026): ademas del cron diario, ahora tambien corre con cada push a
+# main (igual que rebuild-aggregates.yml y fetch-ideam.yml), para que un
+# push hecho desde Cowork/Claude refresque FIRMS de inmediato en vez de
+# esperar hasta la proxima corrida programada. Comparte el mismo grupo de
+# concurrencia ("amazon-monitor-main-writes") que los otros dos workflows
+# que tambien hacen commit/push a main, para que si un mismo push dispara
+# los tres a la vez, GitHub los encole en lugar de dejarlos competir por el
+# push y fallar.
 
 name: Actualizar datos del monitor
 
@@ -20,10 +29,22 @@ on:
     # GIBS; ver legacy/enso_gee_pipeline/README.md para el pipeline anterior
     # via Google Earth Engine (retirado, no borrado).
     - cron: "0 15 * * *"
+  push:
+    # (01-11-2026): corre tambien de inmediato con cualquier push a main,
+    # ademas del cron diario de arriba.
+    branches:
+      - main
   workflow_dispatch: {}  # permite darle "Run workflow" manualmente desde GitHub
 
 permissions:
   contents: write  # necesario para que el workflow pueda hacer commit y push
+
+# (01-11-2026): mismo grupo de concurrencia que rebuild-aggregates.yml y
+# fetch-ideam.yml -- evita que los tres compitan por el push a main cuando
+# un mismo push los dispara a la vez.
+concurrency:
+  group: amazon-monitor-main-writes
+  cancel-in-progress: false
 
 jobs:
   publish:
@@ -54,5 +75,8 @@ jobs:
             echo "Sin cambios que publicar hoy."
           else
             git commit -m "Actualizacion automatica de datos ($(date -u +'%Y-%m-%d %H:%M UTC'))"
-            git push
+            # (01-11-2026): rebase antes de push, igual que rebuild-aggregates.yml
+            # y fetch-ideam.yml, por si main avanzo mientras este job corria.
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi

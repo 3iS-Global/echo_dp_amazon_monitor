@@ -10,6 +10,11 @@
 # Se dispara por push sobre Events/** (inmediato, sin depender de un cron que
 # tenga que adivinar si Cowork ya termino) y tambien admite correrse a mano
 # desde la pestana "Actions" del repo.
+#
+# (01-11-2026): comparte grupo de concurrencia con publish.yml y
+# fetch-ideam.yml (ver mas abajo), que desde esta fecha tambien corren con
+# cada push a main -- asi los tres se encolan en vez de competir por el
+# push cuando un mismo push los dispara a la vez.
 
 name: Reconstruir agregados desde Events/
 
@@ -28,8 +33,9 @@ permissions:
   contents: write  # necesario para que el workflow pueda hacer commit y push
 
 # Evita que dos reconstrucciones simultaneas (p. ej. dos pushes seguidos) choquen al hacer push.
+# (01-11-2026): el grupo ahora es compartido con publish.yml y fetch-ideam.yml.
 concurrency:
-  group: rebuild-aggregates
+  group: amazon-monitor-main-writes
   cancel-in-progress: false
 
 jobs:
