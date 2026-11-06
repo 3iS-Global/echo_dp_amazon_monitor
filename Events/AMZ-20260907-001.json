@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20260907-001",
   "FIRST_DETECTED_DATE": "2026-09-07",
-  "LAST_UPDATED_DATE": "2026-09-08",
-  "UPDATE_COUNT": "1",
+  "LAST_UPDATED_DATE": "2026-11-06",
+  "UPDATE_COUNT": "2",
   "COUNTRY": "Peru",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Loreto",
@@ -46,7 +46,7 @@
   "SECONDARY_SOURCE_URL": "https://diariovoces.com.pe/lluvia-torrencial-en-pleno-verano-amazonico-pone-en-alerta-a-yurimaguas/",
   "GDACS_URL": "UNAVAILABLE",
   "OTHER_SOURCE_URLS": "UNAVAILABLE",
-  "NOTES_ES": "Sin cifras oficiales de daños/afectados de INDECI o el COER Loreto al momento del reporte. Se recomienda seguimiento.",
-  "NOTES_PT": "Sem números oficiais de danos/afetados do INDECI ou do COER Loreto até o momento do relato. Recomenda-se acompanhamento.",
-  "NOTES_EN": "No official damage/affected-population figures from INDECI or the Loreto Regional Emergency Operations Center at time of reporting. Follow-up recommended."
+  "NOTES_ES": "Sin cifras oficiales de daños/afectados de INDECI o el COER Loreto al momento del reporte. Se recomienda seguimiento. | SIN RESPALDO TRAS MÚLTIPLES INTENTOS (2026-11-06): sin fuente oficial ni cobertura de medios pese a búsquedas repetidas en los últimos 59 días desde la última actualización real; es improbable que el evento siga igual de activo sin que nadie lo reporte durante tanto tiempo, pero esto no se puede confirmar sin una fuente, así que se mantiene OBSERVED y ORANGE hasta nueva evidencia.",
+  "NOTES_PT": "Sem números oficiais de danos/afetados do INDECI ou do COER Loreto até o momento do relato. Recomenda-se acompanhamento. | SEM RESPALDO APÓS MÚLTIPLAS TENTATIVAS (2026-11-06): sem fonte oficial nem cobertura da mídia apesar de buscas repetidas nos últimos 59 dias desde a última atualização real; é improvável que o evento continue igualmente ativo sem que ninguém o reporte por tanto tempo, mas isso não pode ser confirmado sem uma fonte, portanto mantém-se OBSERVED e ORANGE até nova evidência.",
+  "NOTES_EN": "No official damage/affected-population figures from INDECI or the Loreto Regional Emergency Operations Center at time of reporting. Follow-up recommended. | NO SUPPORT AFTER MULTIPLE ATTEMPTS (2026-11-06): no official source or media coverage despite repeated searches over the last 59 days since the last real update; it is unlikely the event remains just as active without anyone reporting it for this long, but this cannot be confirmed without a source, so it remains OBSERVED and ORANGE until new evidence emerges."
 }
