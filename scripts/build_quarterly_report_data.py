@@ -189,7 +189,10 @@ def build(year, q):
 
     scoped = [e for e in all_events if in_region(e) and in_period(e, start, end)]
 
-    counts = {"RED": 0, "ORANGE": 0, "GREEN": 0}
+    # (06-11-2026): ALERT_PRIORITY paso de 3 a 4 niveles (WMO-1150 / CAP:
+    # verde/amarillo/naranja/rojo) -- se agrega YELLOW para que no se pierda
+    # silenciosamente del conteo ni del total del reporte trimestral.
+    counts = {"RED": 0, "ORANGE": 0, "YELLOW": 0, "GREEN": 0}
     for e in scoped:
         p = (e.get("ALERT_PRIORITY") or "").upper()
         if p in counts:
@@ -197,8 +200,9 @@ def build(year, q):
     counts_out = {
         "red": counts["RED"],
         "orange": counts["ORANGE"],
+        "yellow": counts["YELLOW"],
         "green": counts["GREEN"],
-        "total": counts["RED"] + counts["ORANGE"] + counts["GREEN"],
+        "total": counts["RED"] + counts["ORANGE"] + counts["YELLOW"] + counts["GREEN"],
     }
 
     events_rows = []
@@ -301,7 +305,7 @@ def main():
     print(f"OK: {out_path}")
     print(f"  Periodo: {data['period']['label']} ({data['period']['start']} a {data['period']['end']})")
     print(f"  Eventos en el periodo (region, 6 paises): {len(data['events'])}")
-    print(f"  Conteos: rojo={data['counts']['red']} naranja={data['counts']['orange']} verde={data['counts']['green']} total={data['counts']['total']}")
+    print(f"  Conteos: rojo={data['counts']['red']} naranja={data['counts']['orange']} amarillo={data['counts']['yellow']} verde={data['counts']['green']} total={data['counts']['total']}")
     print(f"  Con cifras de impacto reportadas: {len(data['impact'])}")
     sin_clasificar = sum(1 for s in data["sources"] if s["tierPreliminar"] is None)
     print(f"  Fuentes citadas: {len(data['sources'])} ({sin_clasificar} sin clasificacion preliminar de Nivel)")

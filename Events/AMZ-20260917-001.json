@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20260917-001",
   "FIRST_DETECTED_DATE": "2026-09-17",
-  "LAST_UPDATED_DATE": "2026-09-17",
-  "UPDATE_COUNT": "0",
+  "LAST_UPDATED_DATE": "2026-11-06",
+  "UPDATE_COUNT": "1",
   "COUNTRY": "Peru",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Ucayali",
@@ -12,7 +12,7 @@
   "AMAZON_BASIN_STATUS": "INSIDE",
   "HAZARD_TYPE": "Earthquake",
   "HAZARD_SUBTYPE": "Single Seismic Event",
-  "EVENT_STATUS": "OBSERVED",
+  "EVENT_STATUS": "ENDED",
   "EVENT_DATE": "2026-09-17",
   "EVENT_START_DATE": "2026-09-17",
   "EVENT_END_DATE": "2026-09-17",
@@ -46,7 +46,7 @@
   "SECONDARY_SOURCE_URL": "UNAVAILABLE",
   "GDACS_URL": "UNAVAILABLE",
   "OTHER_SOURCE_URLS": "UNAVAILABLE",
-  "NOTES_ES": "Evento nuevo, fuente unica (Infobae, citando IGP/CENSIS). Se consulto la API FDSN de USGS (lat -13/-9, lon -75/-71, 16-18 sep, M3.5+) y no se encontro un sismo correspondiente; USGS no siempre cataloga sismos de esta magnitud en zonas remotas de forma inmediata. Se recomienda verificar en un proximo ciclo si USGS actualiza su catalogo. Sepahua se ubica en la cuenca del rio Urubamba/Ucayali, afluente directo del Amazonas -- AMAZON_BASIN_STATUS: INSIDE.",
-  "NOTES_PT": "Evento novo, fonte unica (Infobae, citando IGP/CENSIS). Foi consultada a API FDSN do USGS (lat -13/-9, lon -75/-71, 16-18 set, M3,5+) e nao foi encontrado um sismo correspondente; o USGS nem sempre cataloga sismos dessa magnitude em areas remotas de forma imediata. Recomenda-se verificar em um proximo ciclo se o USGS atualiza seu catalogo. Sepahua situa-se na bacia do rio Urubamba/Ucayali, afluente direto do Amazonas -- AMAZON_BASIN_STATUS: INSIDE.",
-  "NOTES_EN": "New event, single source (Infobae, citing IGP/CENSIS). A query was run against the USGS FDSN API (lat -13/-9, lon -75/-71, Sep 16-18, M3.5+) and found no matching earthquake; USGS does not always catalog earthquakes of this magnitude in remote areas immediately. Recommend checking again next cycle if USGS updates its catalog. Sepahua lies in the Urubamba/Ucayali river basin, a direct Amazon tributary -- AMAZON_BASIN_STATUS: INSIDE."
+  "NOTES_ES": "Evento nuevo, fuente unica (Infobae, citando IGP/CENSIS). Se consulto la API FDSN de USGS (lat -13/-9, lon -75/-71, 16-18 sep, M3.5+) y no se encontro un sismo correspondiente; USGS no siempre cataloga sismos de esta magnitud en zonas remotas de forma inmediata. Se recomienda verificar en un proximo ciclo si USGS actualiza su catalogo. Sepahua se ubica en la cuenca del rio Urubamba/Ucayali, afluente directo del Amazonas -- AMAZON_BASIN_STATUS: INSIDE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+  "NOTES_PT": "Evento novo, fonte unica (Infobae, citando IGP/CENSIS). Foi consultada a API FDSN do USGS (lat -13/-9, lon -75/-71, 16-18 set, M3,5+) e nao foi encontrado um sismo correspondente; o USGS nem sempre cataloga sismos dessa magnitude em areas remotas de forma imediata. Recomenda-se verificar em um proximo ciclo se o USGS atualiza seu catalogo. Sepahua situa-se na bacia do rio Urubamba/Ucayali, afluente direto do Amazonas -- AMAZON_BASIN_STATUS: INSIDE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+  "NOTES_EN": "New event, single source (Infobae, citing IGP/CENSIS). A query was run against the USGS FDSN API (lat -13/-9, lon -75/-71, Sep 16-18, M3.5+) and found no matching earthquake; USGS does not always catalog earthquakes of this magnitude in remote areas immediately. Recommend checking again next cycle if USGS updates its catalog. Sepahua lies in the Urubamba/Ucayali river basin, a direct Amazon tributary -- AMAZON_BASIN_STATUS: INSIDE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
 }

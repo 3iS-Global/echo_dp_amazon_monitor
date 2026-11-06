@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20260929-001",
   "FIRST_DETECTED_DATE": "2026-09-29",
-  "LAST_UPDATED_DATE": "2026-09-29",
-  "UPDATE_COUNT": "0",
+  "LAST_UPDATED_DATE": "2026-11-06",
+  "UPDATE_COUNT": "1",
   "COUNTRY": "Peru",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Loreto",
@@ -12,7 +12,7 @@
   "AMAZON_BASIN_STATUS": "INSIDE",
   "HAZARD_TYPE": "Earthquake",
   "HAZARD_SUBTYPE": "Intermediate-depth intraplate earthquake",
-  "EVENT_STATUS": "OBSERVED",
+  "EVENT_STATUS": "ENDED",
   "EVENT_DATE": "2026-09-29",
   "EVENT_START_DATE": "2026-09-29",
   "EVENT_END_DATE": "2026-09-29",
@@ -46,7 +46,7 @@
   "SECONDARY_SOURCE_URL": "https://andina.pe/agencia/noticia-temblor-magnitud-52-sacude-loreto-y-peru-bordea-los-700-sismos-lo-va-2026-1093786.aspx",
   "GDACS_URL": "UNAVAILABLE",
   "OTHER_SOURCE_URLS": "https://larepublica.pe/sociedad/2026/09/29/temblor-en-loreto-sismo-de-magnitud-52-remecio-andoas-esta-manana-segun-igp-mdga-2017675; https://www.abc.com.py/internacionales/2026/09/29/un-sismo-de-magnitud-52-se-siente-en-la-frontera-amazonica-de-peru-y-ecuador/",
-  "NOTES_ES": "Evento nuevo. Coordenadas del USGS (API FDSN, estado 'reviewed'). Discrepancia de magnitud USGS mb 4,5 vs IGP 5,2 y de profundidad (135 vs 150 km); se consigna la cifra del IGP en el título por ser la autoridad nacional. Distinto de AMZ-20260916-001 (14-sep) y AMZ-20260910-001 (Condorcanqui).",
-  "NOTES_PT": "Evento novo. Coordenadas do USGS (API FDSN, status 'reviewed'). Discrepância de magnitude USGS mb 4,5 vs IGP 5,2 e de profundidade (135 vs 150 km); o título usa o valor do IGP por ser a autoridade nacional. Distinto de AMZ-20260916-001 (14-set) e AMZ-20260910-001 (Condorcanqui).",
-  "NOTES_EN": "New event. Coordinates from USGS (FDSN API, status 'reviewed'). Magnitude discrepancy USGS mb 4.5 vs IGP 5.2 and depth (135 vs 150 km); title uses IGP value as national authority. Distinct from AMZ-20260916-001 (Sep 14) and AMZ-20260910-001 (Condorcanqui)."
+  "NOTES_ES": "Evento nuevo. Coordenadas del USGS (API FDSN, estado 'reviewed'). Discrepancia de magnitud USGS mb 4,5 vs IGP 5,2 y de profundidad (135 vs 150 km); se consigna la cifra del IGP en el título por ser la autoridad nacional. Distinto de AMZ-20260916-001 (14-sep) y AMZ-20260910-001 (Condorcanqui). | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+  "NOTES_PT": "Evento novo. Coordenadas do USGS (API FDSN, status 'reviewed'). Discrepância de magnitude USGS mb 4,5 vs IGP 5,2 e de profundidade (135 vs 150 km); o título usa o valor do IGP por ser a autoridade nacional. Distinto de AMZ-20260916-001 (14-set) e AMZ-20260910-001 (Condorcanqui). | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+  "NOTES_EN": "New event. Coordinates from USGS (FDSN API, status 'reviewed'). Magnitude discrepancy USGS mb 4.5 vs IGP 5.2 and depth (135 vs 150 km); title uses IGP value as national authority. Distinct from AMZ-20260916-001 (Sep 14) and AMZ-20260910-001 (Condorcanqui). | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
 }

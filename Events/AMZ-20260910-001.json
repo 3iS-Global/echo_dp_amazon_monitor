@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20260910-001",
   "FIRST_DETECTED_DATE": "2026-09-10",
-  "LAST_UPDATED_DATE": "2026-09-11",
-  "UPDATE_COUNT": "1",
+  "LAST_UPDATED_DATE": "2026-11-06",
+  "UPDATE_COUNT": "2",
   "COUNTRY": "Peru",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Amazonas",
@@ -12,7 +12,7 @@
   "AMAZON_BASIN_STATUS": "INSIDE",
   "HAZARD_TYPE": "Earthquake",
   "HAZARD_SUBTYPE": "Seismic swarm (3 events)",
-  "EVENT_STATUS": "OBSERVED",
+  "EVENT_STATUS": "ENDED",
   "EVENT_DATE": "2026-09-10",
   "EVENT_START_DATE": "2026-09-10",
   "EVENT_END_DATE": "2026-09-10",
@@ -46,7 +46,7 @@
   "SECONDARY_SOURCE_URL": "https://elcomercio.pe/peru/amazonas/amazonas-sismo-de-magnitud-50-se-registro-en-santa-maria-de-nieva-igp-temblor-ultimas-noticia/",
   "GDACS_URL": "UNAVAILABLE",
   "OTHER_SOURCE_URLS": "https://larepublica.pe/sociedad/2026/09/10/temblor-en-peru-hoy-10-de-septiembre-donde-fue-el-ultimo-sismo-y-que-magnitud-tuvo-segun-el-igp-188019",
-  "NOTES_ES": "No se encontró réplica en USGS/GDACS; coordenadas y magnitudes oficiales del IGP. Corroborado por percepción en 6 provincias del sur de Ecuador.",
-  "NOTES_PT": "Não foi encontrado registro no USGS/GDACS; coordenadas e magnitudes oficiais do IGP. Corroborado por percepção em 6 províncias do sul do Equador.",
-  "NOTES_EN": "No corroborating USGS/GDACS record; coordinates and magnitudes from IGP. Corroborated by felt reports in 6 southern Ecuadorian provinces."
+  "NOTES_ES": "No se encontró réplica en USGS/GDACS; coordenadas y magnitudes oficiales del IGP. Corroborado por percepción en 6 provincias del sur de Ecuador. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+  "NOTES_PT": "Não foi encontrado registro no USGS/GDACS; coordenadas e magnitudes oficiais do IGP. Corroborado por percepção em 6 províncias do sul do Equador. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+  "NOTES_EN": "No corroborating USGS/GDACS record; coordinates and magnitudes from IGP. Corroborated by felt reports in 6 southern Ecuadorian provinces. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
 }

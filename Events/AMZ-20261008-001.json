@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20261008-001",
   "FIRST_DETECTED_DATE": "2026-10-08",
-  "LAST_UPDATED_DATE": "2026-10-08",
-  "UPDATE_COUNT": "0",
+  "LAST_UPDATED_DATE": "2026-11-06",
+  "UPDATE_COUNT": "1",
   "COUNTRY": "Peru",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Amazonas, Cajamarca, Huánuco, Loreto, Madre de Dios, Pasco, San Martín, Ucayali",
@@ -12,7 +12,7 @@
   "AMAZON_BASIN_STATUS": "INSIDE",
   "HAZARD_TYPE": "Extreme Heat",
   "HAZARD_SUBTYPE": "Incremento de temperatura diurna en la selva — pronóstico",
-  "EVENT_STATUS": "FORECAST",
+  "EVENT_STATUS": "ENDED",
   "EVENT_DATE": "2026-10-04",
   "EVENT_START_DATE": "2026-10-04",
   "EVENT_END_DATE": "2026-10-06",
@@ -46,7 +46,7 @@
   "SECONDARY_SOURCE_URL": "UNAVAILABLE",
   "GDACS_URL": "UNAVAILABLE",
   "OTHER_SOURCE_URLS": "UNAVAILABLE",
-  "NOTES_ES": "Pronóstico sin impactos confirmados, por eso GREEN. La fuente no indica nivel de color del aviso ni provincias específicas. Contexto: coincide con la temporada de sequía e incendios en la cuenca (ver AMZ-20260908-001, Loreto). Requiere confirmación con el aviso oficial en senamhi.gob.pe.",
-  "NOTES_PT": "Previsão sem impactos confirmados, por isso GREEN. A fonte não indica o nível de cor do aviso nem províncias específicas. Contexto: coincide com a temporada de seca e incêndios na bacia (ver AMZ-20260908-001, Loreto). Requer confirmação com o aviso oficial em senamhi.gob.pe.",
-  "NOTES_EN": "Forecast without confirmed impacts, hence GREEN. The source gives no color level or specific provinces. Context: coincides with the basin drought and fire season (see AMZ-20260908-001, Loreto). Needs confirmation against the official advisory at senamhi.gob.pe."
+  "NOTES_ES": "Pronóstico sin impactos confirmados, por eso GREEN. La fuente no indica nivel de color del aviso ni provincias específicas. Contexto: coincide con la temporada de sequía e incendios en la cuenca (ver AMZ-20260908-001, Loreto). Requiere confirmación con el aviso oficial en senamhi.gob.pe. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+  "NOTES_PT": "Previsão sem impactos confirmados, por isso GREEN. A fonte não indica o nível de cor do aviso nem províncias específicas. Contexto: coincide com a temporada de seca e incêndios na bacia (ver AMZ-20260908-001, Loreto). Requer confirmação com o aviso oficial em senamhi.gob.pe. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+  "NOTES_EN": "Forecast without confirmed impacts, hence GREEN. The source gives no color level or specific provinces. Context: coincides with the basin drought and fire season (see AMZ-20260908-001, Loreto). Needs confirmation against the official advisory at senamhi.gob.pe. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio."
 }

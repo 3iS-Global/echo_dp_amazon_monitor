@@ -299,7 +299,7 @@ const DICT = {
     firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"activas", alertBannerView:"Ver detalle ↓", alertBannerClear:"Ver todos ×", exportCsv:"Datos de eventos (CSV)", exportMenuBtn:"Descargar", monthlyReportBtn:"Informe mensual por país", firmsTimelineLive:"En vivo", reportBtn:"Informe trimestral", reportBtnPeriodPrefix:" (último: ",
     all:"Todos", FLOOD:"Inundación", EXTREME_RAIN:"Lluvia extrema", DROUGHT:"Sequía", WILDFIRE:"Incendio forestal", EARTHQUAKE:"Sismo", LANDSLIDE:"Deslizamiento", DEFORESTATION:"Deforestación", FLASH_FLOOD:"Inundación repentina", EXTREME_HEAT:"Calor extremo", SEVERE_STORM:"Tormenta severa",
     Brazil:"Brasil", Peru:"Perú", Colombia:"Colombia", Bolivia:"Bolivia", Ecuador:"Ecuador", Venezuela:"Venezuela",
-    RED:"Rojo", ORANGE:"Naranja", GREEN:"Verde", updated:"Actualizado", source:"Fuente", readMore:"Leer más",
+    RED:"Rojo", ORANGE:"Naranja", YELLOW:"Amarillo", GREEN:"Verde", updated:"Actualizado", source:"Fuente", readMore:"Leer más",
     legendShape:"Forma = tipo de peligro", legendColor:"Color = nivel de amenaza", methodology:"Metodología", info:"Info", borders:"Límites nacionales", alertsPanel:"Alertas",
     dateFrom:"Desde", dateTo:"Hasta", dateClear:"Limpiar", lastUpdated:"Última actualización",
     layerNews:"Noticias", layerFirms:"Anomalías térmicas (focos de calor)",
@@ -327,7 +327,7 @@ const DICT = {
     firms24hStat:"Focos FIRMS (24h)", frpMaxStat:"FRP máxima (24h)", alertBannerActive:"ativos", alertBannerView:"Ver detalhe ↓", alertBannerClear:"Ver todos ×", exportCsv:"Dados de eventos (CSV)", exportMenuBtn:"Baixar", monthlyReportBtn:"Relatório mensal por país", firmsTimelineLive:"Ao vivo", reportBtn:"Relatório trimestral", reportBtnPeriodPrefix:" (último: ",
     all:"Todos", FLOOD:"Inundação", EXTREME_RAIN:"Chuva extrema", DROUGHT:"Seca", WILDFIRE:"Incêndio florestal", EARTHQUAKE:"Terremoto", LANDSLIDE:"Deslizamento", DEFORESTATION:"Desmatamento", FLASH_FLOOD:"Inundação repentina", EXTREME_HEAT:"Calor extremo", SEVERE_STORM:"Tempestade severa",
     Brazil:"Brasil", Peru:"Peru", Colombia:"Colômbia", Bolivia:"Bolívia", Ecuador:"Equador", Venezuela:"Venezuela",
-    RED:"Vermelho", ORANGE:"Laranja", GREEN:"Verde", updated:"Atualizado", source:"Fonte", readMore:"Ler mais",
+    RED:"Vermelho", ORANGE:"Laranja", YELLOW:"Amarelo", GREEN:"Verde", updated:"Atualizado", source:"Fonte", readMore:"Ler mais",
     legendShape:"Forma = tipo de perigo", legendColor:"Cor = nível de ameaça", methodology:"Metodologia", info:"Info", borders:"Limites nacionais", alertsPanel:"Alertas",
     dateFrom:"De", dateTo:"Até", dateClear:"Limpar", lastUpdated:"Última atualização",
     layerNews:"Notícias", layerFirms:"Anomalias térmicas (focos de calor)",
@@ -355,7 +355,7 @@ const DICT = {
     firms24hStat:"FIRMS hotspots (24h)", frpMaxStat:"Max FRP (24h)", alertBannerActive:"active", alertBannerView:"View details ↓", alertBannerClear:"View all ×", exportCsv:"Event data (CSV)", exportMenuBtn:"Download", monthlyReportBtn:"Monthly report by country", firmsTimelineLive:"Live", reportBtn:"Quarterly report", reportBtnPeriodPrefix:" (latest: ",
     all:"All", FLOOD:"Flood", EXTREME_RAIN:"Extreme rain", DROUGHT:"Drought", WILDFIRE:"Wildfire", EARTHQUAKE:"Earthquake", LANDSLIDE:"Landslide", DEFORESTATION:"Deforestation", FLASH_FLOOD:"Flash flood", EXTREME_HEAT:"Extreme heat", SEVERE_STORM:"Severe storm",
     Brazil:"Brazil", Peru:"Peru", Colombia:"Colombia", Bolivia:"Bolivia", Ecuador:"Ecuador", Venezuela:"Venezuela",
-    RED:"Red", ORANGE:"Orange", GREEN:"Green", updated:"Updated", source:"Source", readMore:"Read more",
+    RED:"Red", ORANGE:"Orange", YELLOW:"Yellow", GREEN:"Green", updated:"Updated", source:"Source", readMore:"Read more",
     legendShape:"Shape = hazard type", legendColor:"Color = threat level", methodology:"Methodology", info:"Info", borders:"National borders", alertsPanel:"Alerts",
     dateFrom:"From", dateTo:"To", dateClear:"Clear", lastUpdated:"Last updated",
     layerNews:"News", layerFirms:"Thermal anomalies (heat spots)",
@@ -465,7 +465,7 @@ const ICON_PATHS = {
 
 const HAZARD_ORDER = ["WILDFIRE","FLOOD","FLASH_FLOOD","EXTREME_RAIN","DROUGHT","LANDSLIDE","EARTHQUAKE","EXTREME_HEAT","SEVERE_STORM","DEFORESTATION"];
 
-const PRIORITY_COLOR = { RED:"#E24B4A", ORANGE:"#EF9F27", GREEN:"#639922" };
+const PRIORITY_COLOR = { RED:"#E24B4A", ORANGE:"#EF9F27", YELLOW:"#E8C547", GREEN:"#639922" };
 // Clases de severidad FIRMS segun la potencia radiativa del fuego (FRP, MW).
 // En celdas agregadas se usa la FRP total de la celda. Escala de grises:
 // claro/pequeno = menos intenso, oscuro/grande = mas intenso.
@@ -757,7 +757,7 @@ function renderLegend(){
   colorLabel.textContent = t('legendColor') + ':';
   colorLabel.style.fontWeight = '600';
   colorBlock.appendChild(colorLabel);
-  ['RED','ORANGE','GREEN'].forEach(function(p){
+  ['RED','ORANGE','YELLOW','GREEN'].forEach(function(p){
     var item = document.createElement('span');
     item.style.display='inline-flex'; item.style.alignItems='center'; item.style.gap='4px';
     item.innerHTML = '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+PRIORITY_COLOR[p]+'"></span><span>'+t(p)+'</span>';

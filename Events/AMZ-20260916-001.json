@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20260916-001",
   "FIRST_DETECTED_DATE": "2026-09-16",
-  "LAST_UPDATED_DATE": "2026-09-16",
-  "UPDATE_COUNT": "0",
+  "LAST_UPDATED_DATE": "2026-11-06",
+  "UPDATE_COUNT": "1",
   "COUNTRY": "Peru",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Loreto",
@@ -12,7 +12,7 @@
   "AMAZON_BASIN_STATUS": "INSIDE",
   "HAZARD_TYPE": "Earthquake",
   "HAZARD_SUBTYPE": "Intermediate-depth intraplate earthquake",
-  "EVENT_STATUS": "OBSERVED",
+  "EVENT_STATUS": "ENDED",
   "EVENT_DATE": "2026-09-14",
   "EVENT_START_DATE": "2026-09-14",
   "EVENT_END_DATE": "2026-09-14",
@@ -46,7 +46,7 @@
   "SECONDARY_SOURCE_URL": "https://www.infobae.com/peru/2026/09/15/sismo-de-magnitud-48-se-siente-en-a-andoas-loreto/",
   "GDACS_URL": "UNAVAILABLE",
   "OTHER_SOURCE_URLS": "UNAVAILABLE",
-  "NOTES_ES": "Verificado directamente vía API FDSN de USGS (earthquake.usgs.gov) el 16-sep. Distinto del enjambre sísmico de Condorcanqui, Perú (AMZ-20260910-001, 10-sep) por tratarse de fecha y ubicación diferentes. Se recomienda reconciliar la discrepancia horaria (UTC vs. hora local) con el IGP en un próximo ciclo.",
-  "NOTES_PT": "Verificado diretamente via API FDSN do USGS (earthquake.usgs.gov) em 16-set. Distinto do enxame sísmico de Condorcanqui, Peru (AMZ-20260910-001, 10-set) por se tratar de data e localização diferentes. Recomenda-se reconciliar a discrepância horária (UTC vs. hora local) com o IGP em um próximo ciclo.",
-  "NOTES_EN": "Directly verified via the USGS FDSN API (earthquake.usgs.gov) on Sep 16. Distinct from the Condorcanqui, Peru earthquake swarm (AMZ-20260910-001, Sep 10) as it involves a different date and location. Reconciling the time discrepancy (UTC vs. local time) with IGP is recommended for a future cycle."
+  "NOTES_ES": "Verificado directamente vía API FDSN de USGS (earthquake.usgs.gov) el 16-sep. Distinto del enjambre sísmico de Condorcanqui, Perú (AMZ-20260910-001, 10-sep) por tratarse de fecha y ubicación diferentes. Se recomienda reconciliar la discrepancia horaria (UTC vs. hora local) con el IGP en un próximo ciclo. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+  "NOTES_PT": "Verificado diretamente via API FDSN do USGS (earthquake.usgs.gov) em 16-set. Distinto do enxame sísmico de Condorcanqui, Peru (AMZ-20260910-001, 10-set) por se tratar de data e localização diferentes. Recomenda-se reconciliar a discrepância horária (UTC vs. hora local) com o IGP em um próximo ciclo. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+  "NOTES_EN": "Directly verified via the USGS FDSN API (earthquake.usgs.gov) on Sep 16. Distinct from the Condorcanqui, Peru earthquake swarm (AMZ-20260910-001, Sep 10) as it involves a different date and location. Reconciling the time discrepancy (UTC vs. local time) with IGP is recommended for a future cycle. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
 }

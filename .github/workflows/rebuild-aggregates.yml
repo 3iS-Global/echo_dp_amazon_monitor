@@ -15,6 +15,16 @@
 # fetch-ideam.yml (ver mas abajo), que desde esta fecha tambien corren con
 # cada push a main -- asi los tres se encolan en vez de competir por el
 # push cuando un mismo push los dispara a la vez.
+#
+# (06-11-2026): tambien corre con su propio schedule diario (20:17 UTC =
+# 15:17 America/Bogota, fuera de los horarios de fetch-ideam/publish y del
+# rango 14:00-17:00 UTC con mayor riesgo de retraso en GitHub Actions). El
+# "Ultima actualizacion" del dashboard se habia quedado congelado mas de una
+# semana porque este workflow SOLO se disparaba por push a Events/**, y en
+# dias sin eventos nuevos simplemente no corria. meta.json["lastUpdated"] ya
+# escribe datetime.now(utc) en cada corrida (ver rebuild_aggregates.py), asi
+# que basta con garantizar que el workflow corra todos los dias para que esa
+# fecha nunca se congele, haya o no eventos nuevos ese dia.
 
 name: Reconstruir agregados desde Events/
 
@@ -27,6 +37,11 @@ on:
     paths:
       - "Events/**"
       - "Impacts/**"
+  schedule:
+    # Heartbeat diario: garantiza que meta.json (y por tanto "Ultima
+    # actualizacion" en el dashboard) se reescriba todos los dias, incluso
+    # sin eventos nuevos. 20:17 UTC = 15:17 America/Bogota.
+    - cron: "17 20 * * *"
   workflow_dispatch: {}
 
 permissions:

@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20260911-004",
   "FIRST_DETECTED_DATE": "2026-09-11",
-  "LAST_UPDATED_DATE": "2026-09-16",
-  "UPDATE_COUNT": "2",
+  "LAST_UPDATED_DATE": "2026-11-06",
+  "UPDATE_COUNT": "3",
   "COUNTRY": "Peru",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "San Martín (mayor riesgo); también Loreto, Amazonas, Ucayali y regiones andinas (Ayacucho, Cajamarca, Cusco, Huánuco, Junín, Pasco, Puno)",
@@ -12,7 +12,7 @@
   "AMAZON_BASIN_STATUS": "PARTIALLY_INSIDE",
   "HAZARD_TYPE": "Landslide",
   "HAZARD_SUBTYPE": "Rainfall-induced landslide / debris flow (huaico) risk — forecast",
-  "EVENT_STATUS": "FORECAST",
+  "EVENT_STATUS": "ENDED",
   "EVENT_DATE": "2026-09-13",
   "EVENT_START_DATE": "2026-09-13",
   "EVENT_END_DATE": "2026-09-16",
@@ -36,7 +36,7 @@
   "FOREST_IMPACT": "NOT_REPORTED",
   "WATER_IMPACT": "NOT_REPORTED",
   "FOOD_SECURITY_IMPACT": "NOT_REPORTED",
-  "ALERT_PRIORITY": "ORANGE",
+  "ALERT_PRIORITY": "GREEN",
   "AA_RELEVANCE": "HIGH",
   "VERIFICATION_STATUS": "MULTIPLE_SOURCES",
   "CONFIDENCE": "HIGH",
@@ -46,7 +46,7 @@
   "SECONDARY_SOURCE_URL": "https://elpopular.pe/actualidad/2026/09/11/senamhi-advierte-lluvias-extremas-desde-el-13-de-septiembre-160-distritos-bajo-riesgo-de-huaicos-y-deslizamientos-886215",
   "GDACS_URL": "UNAVAILABLE",
   "OTHER_SOURCE_URLS": "https://elpopular.pe/actualidad/2026/09/14/senamhi-advierte-lluvia-granizo-y-nieve-en-12-regiones-incluyendo-lima-revisa-las-zonas-en-riesgo-climatico-776300",
-  "NOTES_ES": "Alerta de pronóstico (evento aún no observado); cubre departamentos dentro y fuera de la cuenca amazónica, por lo que se marca PARTIALLY_INSIDE. ACTUALIZACIÓN 14/09: la ventana de lluvias intensas prevista para el 13-14 de septiembre se presentó según lo pronosticado; no se han reportado afectaciones confirmadas por huaicos o deslizamientos. ACTUALIZACIÓN 16/09: SENAMHI emitió el 14-sep una nueva alerta que extiende el periodo de riesgo (lluvia, granizo, nieve según altitud, descargas eléctricas, ráfagas) hasta el 16 de septiembre en 13 regiones, entre ellas San Martín (única región amazónica nombrada explícitamente en este episodio). EVENT_END_DATE se actualiza a 2026-09-16. Sigue sin reportarse ningún daño materializado (víctimas, viviendas afectadas, vías bloqueadas) en Loreto, San Martín, Amazonas o Ucayali.",
-  "NOTES_PT": "Alerta de previsão (evento ainda não observado); cobre departamentos dentro e fora da bacia amazônica, por isso é marcado PARTIALLY_INSIDE. ATUALIZAÇÃO 14/09: a janela de chuvas intensas prevista para 13-14 de setembro ocorreu conforme previsto; não foram reportadas afetações confirmadas por deslizamentos. ATUALIZAÇÃO 16/09: o SENAMHI emitiu em 14-set um novo alerta que estende o período de risco (chuva, granizo, neve conforme altitude, descargas elétricas, rajadas) até 16 de setembro em 13 regiões, entre elas San Martín (única região amazônica citada explicitamente neste episódio). O EVENT_END_DATE é atualizado para 2026-09-16. Continua sem relato de dano materializado (vítimas, residências afetadas, vias bloqueadas) em Loreto, San Martín, Amazonas ou Ucayali.",
-  "NOTES_EN": "Forecast alert (event not yet observed); covers departments both inside and outside the Amazon basin, hence marked PARTIALLY_INSIDE. UPDATE 09/14: the intense-rain window forecast for Sep 13-14 occurred as predicted; no confirmed damage from landslides has been reported. UPDATE 09/16: SENAMHI issued a new alert on Sep 14 extending the risk period (rain, hail, snow depending on altitude, lightning, gusts) through September 16 across 13 regions, including San Martín (the only Amazonian region explicitly named in this episode). EVENT_END_DATE is updated to 2026-09-16. Still no materialized damage reported (casualties, affected homes, blocked roads) in Loreto, San Martín, Amazonas, or Ucayali."
+  "NOTES_ES": "Alerta de pronóstico (evento aún no observado); cubre departamentos dentro y fuera de la cuenca amazónica, por lo que se marca PARTIALLY_INSIDE. ACTUALIZACIÓN 14/09: la ventana de lluvias intensas prevista para el 13-14 de septiembre se presentó según lo pronosticado; no se han reportado afectaciones confirmadas por huaicos o deslizamientos. ACTUALIZACIÓN 16/09: SENAMHI emitió el 14-sep una nueva alerta que extiende el periodo de riesgo (lluvia, granizo, nieve según altitud, descargas eléctricas, ráfagas) hasta el 16 de septiembre en 13 regiones, entre ellas San Martín (única región amazónica nombrada explícitamente en este episodio). EVENT_END_DATE se actualiza a 2026-09-16. Sigue sin reportarse ningún daño materializado (víctimas, viviendas afectadas, vías bloqueadas) en Loreto, San Martín, Amazonas o Ucayali. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+  "NOTES_PT": "Alerta de previsão (evento ainda não observado); cobre departamentos dentro e fora da bacia amazônica, por isso é marcado PARTIALLY_INSIDE. ATUALIZAÇÃO 14/09: a janela de chuvas intensas prevista para 13-14 de setembro ocorreu conforme previsto; não foram reportadas afetações confirmadas por deslizamentos. ATUALIZAÇÃO 16/09: o SENAMHI emitiu em 14-set um novo alerta que estende o período de risco (chuva, granizo, neve conforme altitude, descargas elétricas, rajadas) até 16 de setembro em 13 regiões, entre elas San Martín (única região amazônica citada explicitamente neste episódio). O EVENT_END_DATE é atualizado para 2026-09-16. Continua sem relato de dano materializado (vítimas, residências afetadas, vias bloqueadas) em Loreto, San Martín, Amazonas ou Ucayali. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+  "NOTES_EN": "Forecast alert (event not yet observed); covers departments both inside and outside the Amazon basin, hence marked PARTIALLY_INSIDE. UPDATE 09/14: the intense-rain window forecast for Sep 13-14 occurred as predicted; no confirmed damage from landslides has been reported. UPDATE 09/16: SENAMHI issued a new alert on Sep 14 extending the risk period (rain, hail, snow depending on altitude, lightning, gusts) through September 16 across 13 regions, including San Martín (the only Amazonian region explicitly named in this episode). EVENT_END_DATE is updated to 2026-09-16. Still no materialized damage reported (casualties, affected homes, blocked roads) in Loreto, San Martín, Amazonas, or Ucayali. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio."
 }

@@ -60,9 +60,9 @@
     "hazard": "Earthquake",
     "lat": -3.91,
     "lon": -77.4,
-    "status": "OBSERVED",
+    "status": "ENDED",
     "firstDetected": "2026-09-10",
-    "lastUpdated": "2026-09-11",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Peru's IGP recorded three earthquakes in the early hours of 10 September 2026 in Condorcanqui, Amazonas: M5.4 at 01:42 (15 km depth, 92 km NE of Santa"
   },
   {
@@ -115,9 +115,9 @@
     "hazard": "Landslide",
     "lat": -6.0333,
     "lon": -76.9667,
-    "status": "FORECAST",
+    "status": "ENDED",
     "firstDetected": "2026-09-11",
-    "lastUpdated": "2026-09-16",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Peru's SENAMHI (weather advisory No. 358) and INDECI issued an alert for light-to-moderate rainfall forecast between September 13-14 across 160 distri"
   },
   {
@@ -181,9 +181,9 @@
     "hazard": "Earthquake",
     "lat": -3.738,
     "lon": -78.7,
-    "status": "OBSERVED",
+    "status": "ENDED",
     "firstDetected": "2026-09-14",
-    "lastUpdated": "2026-09-16",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "On September 14, 2026 at 14:16h, a magnitude-5.5 earthquake was recorded with a reported epicenter near the Ecuador-Peru border area (Loreto region), "
   },
   {
@@ -192,9 +192,9 @@
     "hazard": "Earthquake",
     "lat": -3.7302,
     "lon": -77.3609,
-    "status": "OBSERVED",
+    "status": "ENDED",
     "firstDetected": "2026-09-16",
-    "lastUpdated": "2026-09-16",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "USGS recorded a magnitude 4.8 earthquake on September 14, 2026 at 19:16:49 UTC (approx. 14:16 local time), 106 km WSW of Alianza Cristiana, Loreto, Pe"
   },
   {
@@ -203,9 +203,9 @@
     "hazard": "Earthquake",
     "lat": -1.6157,
     "lon": -78.094,
-    "status": "OBSERVED",
+    "status": "ENDED",
     "firstDetected": "2026-09-16",
-    "lastUpdated": "2026-09-16",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "USGS recorded a magnitude 4.5 earthquake on September 15, 2026 at 23:45:06 UTC, located 17 km WNW of Palora, Morona Santiago province, Ecuador (-1.615"
   },
   {
@@ -214,9 +214,9 @@
     "hazard": "Extreme Rain",
     "lat": 1.6144,
     "lon": -75.6062,
-    "status": "FORECAST",
+    "status": "ENDED",
     "firstDetected": "2026-09-16",
-    "lastUpdated": "2026-09-18",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "El Espectador reported on September 14, 2026 that, per weather forecasts citing IDEAM, the country's heaviest rainfall is expected on September 17 and"
   },
   {
@@ -225,9 +225,9 @@
     "hazard": "Earthquake",
     "lat": -11.37,
     "lon": -73.32,
-    "status": "OBSERVED",
+    "status": "ENDED",
     "firstDetected": "2026-09-17",
-    "lastUpdated": "2026-09-17",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Peru's National Seismological Center (CENSIS) at the Geophysical Institute of Peru (IGP) recorded a magnitude-4.0 earthquake on September 17, 2026 at "
   },
   {
@@ -236,9 +236,9 @@
     "hazard": "Extreme Rain",
     "lat": -0.9938,
     "lon": -77.8129,
-    "status": "FORECAST",
+    "status": "ENDED",
     "firstDetected": "2026-09-23",
-    "lastUpdated": "2026-09-29",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "On Sep 22 INAMHI issued Meteorological Advisory No. 74, valid from Sep 23 (13:00) to Sep 27 (10:00), for rain, thunderstorms and strong wind gusts. In"
   },
   {
@@ -269,9 +269,9 @@
     "hazard": "Earthquake",
     "lat": -3.1213,
     "lon": -75.6413,
-    "status": "OBSERVED",
+    "status": "ENDED",
     "firstDetected": "2026-09-29",
-    "lastUpdated": "2026-09-29",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Peru's IGP (CENSIS) recorded a magnitude 5.2 earthquake on 29 September 2026 at 05:22 local time, epicenter 67 km NE of Andoas (Datem del Marañón, Lor"
   },
   {
@@ -313,9 +313,9 @@
     "hazard": "Extreme Heat",
     "lat": -3.7437,
     "lon": -73.2516,
-    "status": "FORECAST",
+    "status": "ENDED",
     "firstDetected": "2026-10-08",
-    "lastUpdated": "2026-10-08",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Peru's SENAMHI issued weather advisory No. 397 for a daytime temperature rise in the jungle, valid Oct 4-6, 2026, covering Amazonas, Cajamarca, Huánuc"
   },
   {

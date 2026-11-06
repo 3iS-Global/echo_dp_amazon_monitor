@@ -241,15 +241,15 @@
     "country": "Peru",
     "hazard": "Earthquake",
     "priority": "GREEN",
-    "status": "OBSERVED",
+    "status": "ENDED",
     "basinStatus": "INSIDE",
     "verification": "MULTIPLE_SOURCES",
     "lat": -3.91,
     "lon": -77.4,
     "coordAccuracy": "PRECISE",
     "firstDetected": "2026-09-10",
-    "lastUpdated": "2026-09-11",
-    "updateCount": 1,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 2,
     "eventDate": "2026-09-10",
     "adminLevel1": "Amazonas",
     "adminLevel2": "Condorcanqui",
@@ -266,9 +266,9 @@
       "en": "Peru's IGP recorded three earthquakes in the early hours of 10 September 2026 in Condorcanqui, Amazonas: M5.4 at 01:42 (15 km depth, 92 km NE of Santa María de Nieva); M4.1 at 02:04; and M5.0 at 05:39. Maximum perceived intensity: grade III (light). No damage or injuries reported. UPDATE (11 Sep): Ecuadorian outlets report the swarm was felt in southern/Amazonian Ecuadorian provinces, with no confirmed damage; same seismic sequence originating in Peru."
     },
     "notes": {
-      "es": "No se encontró réplica en USGS/GDACS; coordenadas y magnitudes oficiales del IGP. Corroborado por percepción en 6 provincias del sur de Ecuador.",
-      "pt": "Não foi encontrado registro no USGS/GDACS; coordenadas e magnitudes oficiais do IGP. Corroborado por percepção em 6 províncias do sul do Equador.",
-      "en": "No corroborating USGS/GDACS record; coordinates and magnitudes from IGP. Corroborated by felt reports in 6 southern Ecuadorian provinces."
+      "es": "No se encontró réplica en USGS/GDACS; coordenadas y magnitudes oficiales del IGP. Corroborado por percepción en 6 provincias del sur de Ecuador. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "pt": "Não foi encontrado registro no USGS/GDACS; coordenadas e magnitudes oficiais do IGP. Corroborado por percepção em 6 províncias do sul do Equador. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "en": "No corroborating USGS/GDACS record; coordinates and magnitudes from IGP. Corroborated by felt reports in 6 southern Ecuadorian provinces. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
     },
     "sources": [
       {
@@ -332,7 +332,7 @@
     "id": "AMZ-20260911-001",
     "country": "Colombia",
     "hazard": "Drought",
-    "priority": "GREEN",
+    "priority": "YELLOW",
     "status": "ONGOING",
     "basinStatus": "INSIDE",
     "verification": "MULTIPLE_SOURCES",
@@ -378,7 +378,7 @@
     "id": "AMZ-20260911-002",
     "country": "Ecuador",
     "hazard": "Extreme Rain",
-    "priority": "GREEN",
+    "priority": "YELLOW",
     "status": "ONGOING",
     "basinStatus": "INSIDE",
     "verification": "MULTIPLE_SOURCES",
@@ -470,16 +470,16 @@
     "id": "AMZ-20260911-004",
     "country": "Peru",
     "hazard": "Landslide",
-    "priority": "ORANGE",
-    "status": "FORECAST",
+    "priority": "GREEN",
+    "status": "ENDED",
     "basinStatus": "PARTIALLY_INSIDE",
     "verification": "MULTIPLE_SOURCES",
     "lat": -6.0333,
     "lon": -76.9667,
     "coordAccuracy": "ADMINISTRATIVE_APPROXIMATION (punto representativo, San Martín)",
     "firstDetected": "2026-09-11",
-    "lastUpdated": "2026-09-16",
-    "updateCount": 2,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 3,
     "eventDate": "2026-09-13",
     "adminLevel1": "San Martín (mayor riesgo); también Loreto, Amazonas, Ucayali y regiones andinas (Ayacucho, Cajamarca, Cusco, Huánuco, Junín, Pasco, Puno)",
     "adminLevel2": "NOT_REPORTED",
@@ -496,9 +496,9 @@
       "en": "Peru's SENAMHI (weather advisory No. 358) and INDECI issued an alert for light-to-moderate rainfall forecast between September 13-14 across 160 districts in 11 departments, including Amazon basin areas (Loreto, Amazonas, San Martín, Ucayali) as well as Andean regions outside the basin (Ayacucho, Cajamarca, Cusco, Huánuco, Junín, Pasco, Puno). San Martín has the largest number of districts at very-high risk (16). Landslides, debris flows (huaicos), and mass movements are anticipated due to soil saturation and slope instability."
     },
     "notes": {
-      "es": "Alerta de pronóstico (evento aún no observado); cubre departamentos dentro y fuera de la cuenca amazónica, por lo que se marca PARTIALLY_INSIDE. ACTUALIZACIÓN 14/09: la ventana de lluvias intensas prevista para el 13-14 de septiembre se presentó según lo pronosticado; no se han reportado afectaciones confirmadas por huaicos o deslizamientos. ACTUALIZACIÓN 16/09: SENAMHI emitió el 14-sep una nueva alerta que extiende el periodo de riesgo (lluvia, granizo, nieve según altitud, descargas eléctricas, ráfagas) hasta el 16 de septiembre en 13 regiones, entre ellas San Martín (única región amazónica nombrada explícitamente en este episodio). EVENT_END_DATE se actualiza a 2026-09-16. Sigue sin reportarse ningún daño materializado (víctimas, viviendas afectadas, vías bloqueadas) en Loreto, San Martín, Amazonas o Ucayali.",
-      "pt": "Alerta de previsão (evento ainda não observado); cobre departamentos dentro e fora da bacia amazônica, por isso é marcado PARTIALLY_INSIDE. ATUALIZAÇÃO 14/09: a janela de chuvas intensas prevista para 13-14 de setembro ocorreu conforme previsto; não foram reportadas afetações confirmadas por deslizamentos. ATUALIZAÇÃO 16/09: o SENAMHI emitiu em 14-set um novo alerta que estende o período de risco (chuva, granizo, neve conforme altitude, descargas elétricas, rajadas) até 16 de setembro em 13 regiões, entre elas San Martín (única região amazônica citada explicitamente neste episódio). O EVENT_END_DATE é atualizado para 2026-09-16. Continua sem relato de dano materializado (vítimas, residências afetadas, vias bloqueadas) em Loreto, San Martín, Amazonas ou Ucayali.",
-      "en": "Forecast alert (event not yet observed); covers departments both inside and outside the Amazon basin, hence marked PARTIALLY_INSIDE. UPDATE 09/14: the intense-rain window forecast for Sep 13-14 occurred as predicted; no confirmed damage from landslides has been reported. UPDATE 09/16: SENAMHI issued a new alert on Sep 14 extending the risk period (rain, hail, snow depending on altitude, lightning, gusts) through September 16 across 13 regions, including San Martín (the only Amazonian region explicitly named in this episode). EVENT_END_DATE is updated to 2026-09-16. Still no materialized damage reported (casualties, affected homes, blocked roads) in Loreto, San Martín, Amazonas, or Ucayali."
+      "es": "Alerta de pronóstico (evento aún no observado); cubre departamentos dentro y fuera de la cuenca amazónica, por lo que se marca PARTIALLY_INSIDE. ACTUALIZACIÓN 14/09: la ventana de lluvias intensas prevista para el 13-14 de septiembre se presentó según lo pronosticado; no se han reportado afectaciones confirmadas por huaicos o deslizamientos. ACTUALIZACIÓN 16/09: SENAMHI emitió el 14-sep una nueva alerta que extiende el periodo de riesgo (lluvia, granizo, nieve según altitud, descargas eléctricas, ráfagas) hasta el 16 de septiembre en 13 regiones, entre ellas San Martín (única región amazónica nombrada explícitamente en este episodio). EVENT_END_DATE se actualiza a 2026-09-16. Sigue sin reportarse ningún daño materializado (víctimas, viviendas afectadas, vías bloqueadas) en Loreto, San Martín, Amazonas o Ucayali. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+      "pt": "Alerta de previsão (evento ainda não observado); cobre departamentos dentro e fora da bacia amazônica, por isso é marcado PARTIALLY_INSIDE. ATUALIZAÇÃO 14/09: a janela de chuvas intensas prevista para 13-14 de setembro ocorreu conforme previsto; não foram reportadas afetações confirmadas por deslizamentos. ATUALIZAÇÃO 16/09: o SENAMHI emitiu em 14-set um novo alerta que estende o período de risco (chuva, granizo, neve conforme altitude, descargas elétricas, rajadas) até 16 de setembro em 13 regiões, entre elas San Martín (única região amazônica citada explicitamente neste episódio). O EVENT_END_DATE é atualizado para 2026-09-16. Continua sem relato de dano materializado (vítimas, residências afetadas, vias bloqueadas) em Loreto, San Martín, Amazonas ou Ucayali. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+      "en": "Forecast alert (event not yet observed); covers departments both inside and outside the Amazon basin, hence marked PARTIALLY_INSIDE. UPDATE 09/14: the intense-rain window forecast for Sep 13-14 occurred as predicted; no confirmed damage from landslides has been reported. UPDATE 09/16: SENAMHI issued a new alert on Sep 14 extending the risk period (rain, hail, snow depending on altitude, lightning, gusts) through September 16 across 13 regions, including San Martín (the only Amazonian region explicitly named in this episode). EVENT_END_DATE is updated to 2026-09-16. Still no materialized damage reported (casualties, affected homes, blocked roads) in Loreto, San Martín, Amazonas, or Ucayali. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio."
     },
     "sources": [
       {
@@ -654,7 +654,7 @@
     "id": "AMZ-20260914-002",
     "country": "Venezuela",
     "hazard": "Extreme Rain",
-    "priority": "GREEN",
+    "priority": "YELLOW",
     "status": "OBSERVED",
     "basinStatus": "INSIDE",
     "verification": "MULTIPLE_SOURCES",
@@ -743,15 +743,15 @@
     "country": "Ecuador",
     "hazard": "Earthquake",
     "priority": "GREEN",
-    "status": "OBSERVED",
+    "status": "ENDED",
     "basinStatus": "INSIDE",
     "verification": "SINGLE_SOURCE",
     "lat": -3.738,
     "lon": -78.7,
     "coordAccuracy": "APPROXIMATE",
     "firstDetected": "2026-09-14",
-    "lastUpdated": "2026-09-16",
-    "updateCount": 1,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 2,
     "eventDate": "2026-09-14",
     "adminLevel1": "Morona Santiago (percibido) / posible epicentro fronterizo con Perú (Loreto)",
     "adminLevel2": "NOT_REPORTED",
@@ -768,9 +768,9 @@
       "en": "On September 14, 2026 at 14:16h, a magnitude-5.5 earthquake was recorded with a reported epicenter near the Ecuador-Peru border area (Loreto region), at an approximate depth of 85 km. It was felt in several cantons of southern/eastern Ecuador, including Morona Santiago province. According to the Risk Management Secretariat, no damage was recorded. The only source found (Primicias) contains inconsistencies in the canton names cited as affected (it mentions Azogues, Loja, and Paute, which actually belong to Cañar, Loja, and Azuay provinces, not Morona Santiago), so the exact epicenter location and the cantons truly affected require direct verification with the Geophysical Institute (IGEPN) or USGS before being confirmed."
     },
     "notes": {
-      "es": "Evento nuevo, fuente única con inconsistencias internas en los cantones citados (ver descripción). GEOGRAPHIC_CONFIDENCE y CONFIDENCE marcados LOW. Requiere verificación urgente con IGEPN (Ecuador) y/o USGS antes de confirmar epicentro, magnitud exacta y cantones afectados. Distinto del enjambre sísmico de Condorcanqui, Perú (AMZ-20260910-001, 10 de septiembre) por tratarse de fecha y evento diferentes. ACTUALIZACIÓN 16/09: se realizó una consulta directa a la API FDSN de USGS (earthquake.usgs.gov) para sismos M4.0+ entre el 12 y 17 de septiembre en la franja fronteriza Ecuador-Perú (lat -8 a 2, lon -82 a -73): NO se encontró ningún sismo M5.5 que coincida con las coordenadas/fecha reportadas por Primicias. Solo se detectaron dos sismos distintos en esa ventana, ya registrados por separado como AMZ-20260916-001 (M4.8, 14-sep, Loreto/Andoas, Perú) y AMZ-20260916-002 (M4.5, 15-sep, Palora, Morona Santiago, Ecuador), ninguno de los cuales coincide con la ubicación ni la fecha exacta de este registro. Persiste la necesidad de verificación con IGEPN antes de confirmar epicentro y magnitud.",
-      "pt": "Evento novo, fonte única com inconsistências internas nos cantões citados (ver descrição). GEOGRAPHIC_CONFIDENCE e CONFIDENCE marcados como LOW. Requer verificação urgente junto ao IGEPN (Equador) e/ou USGS antes de confirmar epicentro, magnitude exata e cantões afetados. Distinto do enxame sísmico de Condorcanqui, Peru (AMZ-20260910-001, 10 de setembro), por se tratar de data e evento diferentes. ATUALIZAÇÃO 16/09: foi feita uma consulta direta à API FDSN do USGS (earthquake.usgs.gov) para sismos M4.0+ entre 12 e 17 de setembro na faixa fronteiriça Equador-Peru (lat -8 a 2, lon -82 a -73): NÃO foi encontrado nenhum sismo M5,5 compatível com as coordenadas/data relatadas pela Primicias. Apenas dois sismos distintos foram detectados nessa janela, já registrados separadamente como AMZ-20260916-001 (M4,8, 14-set, Loreto/Andoas, Peru) e AMZ-20260916-002 (M4,5, 15-set, Palora, Morona Santiago, Equador), nenhum dos quais coincide com a localização ou a data exata deste registro. Persiste a necessidade de verificação junto ao IGEPN antes de confirmar epicentro e magnitude.",
-      "en": "New event, single source with internal inconsistencies in the cantons cited (see description). GEOGRAPHIC_CONFIDENCE and CONFIDENCE marked LOW. Urgent verification needed with IGEPN (Ecuador) and/or USGS before confirming epicenter, exact magnitude, and affected cantons. Distinct from the Condorcanqui, Peru seismic swarm (AMZ-20260910-001, September 10) — different date and event. UPDATE 09/16: a direct query was run against the USGS FDSN API (earthquake.usgs.gov) for M4.0+ earthquakes between Sep 12-17 in the Ecuador-Peru border band (lat -8 to 2, lon -82 to -73): NO M5.5 earthquake matching the coordinates/date reported by Primicias was found. Only two distinct earthquakes were detected in that window, already logged separately as AMZ-20260916-001 (M4.8, Sep 14, Loreto/Andoas, Peru) and AMZ-20260916-002 (M4.5, Sep 15, Palora, Morona Santiago, Ecuador), neither of which matches this record's location or exact date. IGEPN verification is still needed to confirm epicenter and magnitude."
+      "es": "Evento nuevo, fuente única con inconsistencias internas en los cantones citados (ver descripción). GEOGRAPHIC_CONFIDENCE y CONFIDENCE marcados LOW. Requiere verificación urgente con IGEPN (Ecuador) y/o USGS antes de confirmar epicentro, magnitud exacta y cantones afectados. Distinto del enjambre sísmico de Condorcanqui, Perú (AMZ-20260910-001, 10 de septiembre) por tratarse de fecha y evento diferentes. ACTUALIZACIÓN 16/09: se realizó una consulta directa a la API FDSN de USGS (earthquake.usgs.gov) para sismos M4.0+ entre el 12 y 17 de septiembre en la franja fronteriza Ecuador-Perú (lat -8 a 2, lon -82 a -73): NO se encontró ningún sismo M5.5 que coincida con las coordenadas/fecha reportadas por Primicias. Solo se detectaron dos sismos distintos en esa ventana, ya registrados por separado como AMZ-20260916-001 (M4.8, 14-sep, Loreto/Andoas, Perú) y AMZ-20260916-002 (M4.5, 15-sep, Palora, Morona Santiago, Ecuador), ninguno de los cuales coincide con la ubicación ni la fecha exacta de este registro. Persiste la necesidad de verificación con IGEPN antes de confirmar epicentro y magnitud. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "pt": "Evento novo, fonte única com inconsistências internas nos cantões citados (ver descrição). GEOGRAPHIC_CONFIDENCE e CONFIDENCE marcados como LOW. Requer verificação urgente junto ao IGEPN (Equador) e/ou USGS antes de confirmar epicentro, magnitude exata e cantões afetados. Distinto do enxame sísmico de Condorcanqui, Peru (AMZ-20260910-001, 10 de setembro), por se tratar de data e evento diferentes. ATUALIZAÇÃO 16/09: foi feita uma consulta direta à API FDSN do USGS (earthquake.usgs.gov) para sismos M4.0+ entre 12 e 17 de setembro na faixa fronteiriça Equador-Peru (lat -8 a 2, lon -82 a -73): NÃO foi encontrado nenhum sismo M5,5 compatível com as coordenadas/data relatadas pela Primicias. Apenas dois sismos distintos foram detectados nessa janela, já registrados separadamente como AMZ-20260916-001 (M4,8, 14-set, Loreto/Andoas, Peru) e AMZ-20260916-002 (M4,5, 15-set, Palora, Morona Santiago, Equador), nenhum dos quais coincide com a localização ou a data exata deste registro. Persiste a necessidade de verificação junto ao IGEPN antes de confirmar epicentro e magnitude. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "en": "New event, single source with internal inconsistencies in the cantons cited (see description). GEOGRAPHIC_CONFIDENCE and CONFIDENCE marked LOW. Urgent verification needed with IGEPN (Ecuador) and/or USGS before confirming epicenter, exact magnitude, and affected cantons. Distinct from the Condorcanqui, Peru seismic swarm (AMZ-20260910-001, September 10) — different date and event. UPDATE 09/16: a direct query was run against the USGS FDSN API (earthquake.usgs.gov) for M4.0+ earthquakes between Sep 12-17 in the Ecuador-Peru border band (lat -8 to 2, lon -82 to -73): NO M5.5 earthquake matching the coordinates/date reported by Primicias was found. Only two distinct earthquakes were detected in that window, already logged separately as AMZ-20260916-001 (M4.8, Sep 14, Loreto/Andoas, Peru) and AMZ-20260916-002 (M4.5, Sep 15, Palora, Morona Santiago, Ecuador), neither of which matches this record's location or exact date. IGEPN verification is still needed to confirm epicenter and magnitude. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
     },
     "sources": [
       {
@@ -785,15 +785,15 @@
     "country": "Peru",
     "hazard": "Earthquake",
     "priority": "GREEN",
-    "status": "OBSERVED",
+    "status": "ENDED",
     "basinStatus": "INSIDE",
     "verification": "MULTIPLE_SOURCES",
     "lat": -3.7302,
     "lon": -77.3609,
     "coordAccuracy": "PRECISE",
     "firstDetected": "2026-09-16",
-    "lastUpdated": "2026-09-16",
-    "updateCount": 0,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 1,
     "eventDate": "2026-09-14",
     "adminLevel1": "Loreto",
     "adminLevel2": "Datem del Marañón",
@@ -810,9 +810,9 @@
       "en": "USGS recorded a magnitude 4.8 earthquake on September 14, 2026 at 19:16:49 UTC (approx. 14:16 local time), 106 km WSW of Alianza Cristiana, Loreto, Peru (-3.7302, -77.3609), at a depth of 106.2 km. Peru's National Seismological Center (CENSIS) at IGP independently reported, via Infobae, a magnitude 4.8 earthquake the same day near Andoas, Datem del Marañón, at coordinates -3.68/-77.42 and a depth of 117 km, assigning it a yellow alert (M4.5-6.0 earthquakes). Both reports agree on date, magnitude, and a nearby epicentral area (~8 km apart), so they are logged as the same seismic event, though a roughly 5-hour discrepancy between IGP's reported local time and USGS's UTC time could not be reconciled. No damage or injuries were reported; maximum perceived intensity was grade III (light) per IGP."
     },
     "notes": {
-      "es": "Verificado directamente vía API FDSN de USGS (earthquake.usgs.gov) el 16-sep. Distinto del enjambre sísmico de Condorcanqui, Perú (AMZ-20260910-001, 10-sep) por tratarse de fecha y ubicación diferentes. Se recomienda reconciliar la discrepancia horaria (UTC vs. hora local) con el IGP en un próximo ciclo.",
-      "pt": "Verificado diretamente via API FDSN do USGS (earthquake.usgs.gov) em 16-set. Distinto do enxame sísmico de Condorcanqui, Peru (AMZ-20260910-001, 10-set) por se tratar de data e localização diferentes. Recomenda-se reconciliar a discrepância horária (UTC vs. hora local) com o IGP em um próximo ciclo.",
-      "en": "Directly verified via the USGS FDSN API (earthquake.usgs.gov) on Sep 16. Distinct from the Condorcanqui, Peru earthquake swarm (AMZ-20260910-001, Sep 10) as it involves a different date and location. Reconciling the time discrepancy (UTC vs. local time) with IGP is recommended for a future cycle."
+      "es": "Verificado directamente vía API FDSN de USGS (earthquake.usgs.gov) el 16-sep. Distinto del enjambre sísmico de Condorcanqui, Perú (AMZ-20260910-001, 10-sep) por tratarse de fecha y ubicación diferentes. Se recomienda reconciliar la discrepancia horaria (UTC vs. hora local) con el IGP en un próximo ciclo. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "pt": "Verificado diretamente via API FDSN do USGS (earthquake.usgs.gov) em 16-set. Distinto do enxame sísmico de Condorcanqui, Peru (AMZ-20260910-001, 10-set) por se tratar de data e localização diferentes. Recomenda-se reconciliar a discrepância horária (UTC vs. hora local) com o IGP em um próximo ciclo. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "en": "Directly verified via the USGS FDSN API (earthquake.usgs.gov) on Sep 16. Distinct from the Condorcanqui, Peru earthquake swarm (AMZ-20260910-001, Sep 10) as it involves a different date and location. Reconciling the time discrepancy (UTC vs. local time) with IGP is recommended for a future cycle. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
     },
     "sources": [
       {
@@ -831,15 +831,15 @@
     "country": "Ecuador",
     "hazard": "Earthquake",
     "priority": "GREEN",
-    "status": "OBSERVED",
+    "status": "ENDED",
     "basinStatus": "INSIDE",
     "verification": "SINGLE_SOURCE",
     "lat": -1.6157,
     "lon": -78.094,
     "coordAccuracy": "PRECISE",
     "firstDetected": "2026-09-16",
-    "lastUpdated": "2026-09-16",
-    "updateCount": 1,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 2,
     "eventDate": "2026-09-15",
     "adminLevel1": "Morona Santiago",
     "adminLevel2": "Palora",
@@ -856,9 +856,9 @@
       "en": "USGS recorded a magnitude 4.5 earthquake on September 15, 2026 at 23:45:06 UTC, located 17 km WNW of Palora, Morona Santiago province, Ecuador (-1.6157, -78.094), at a depth of 155.8 km. No Ecuadorian press reports or IGEPN statements corroborating or describing this specific earthquake were found at the time of this report; given the considerable depth, it was likely only lightly felt or not felt at the surface. No damage or injuries are reported."
     },
     "notes": {
-      "es": "Fuente única (USGS, verificado directamente vía API FDSN el 16-sep); no se encontró corroboración de IGEPN o prensa ecuatoriana pese a búsqueda específica. Distinto del sismo M5.5 de fuente única ya registrado como AMZ-20260914-004 (14-sep, cerca de Gualaquiza, mismo departamento/provincia pero fecha, ubicación y magnitud distintas) y del sismo de Loreto/Andoas, Perú registrado como AMZ-20260916-001. Se recomienda verificación con IGEPN en el próximo ciclo. ACTUALIZACION 16-sep: se reintento la verificacion cruzada con IGEPN (sitio web y canal de Telegram 'SismosVolcanesIGEPN') y prensa ecuatoriana (Primicias, Teleamazonas, El Oriente); no se encontro corroboracion de este sismo especifico M4.5 cerca de Palora. Busquedas relacionadas devolvieron un sismo distinto M5.4/5.6 cerca de Gualaquiza fechado 10-sep (fuera de la ventana de 72h y evento distinto de este registro y de AMZ-20260914-004). Se mantiene como fuente unica (USGS) y prioridad GREEN; se recomienda reintentar en el proximo ciclo. Nota tecnica: este registro fue corregido en este ciclo por un error de formato CSV (comas sin comillas en los campos de titulo ES/EN de la carga original) que habia desalineado las columnas posteriores del registro; tambien se corrigio SECONDARY_SOURCE (duplicaba erroneamente a USGS) a UNAVAILABLE, consistente con VERIFICATION_STATUS=SINGLE_SOURCE.",
-      "pt": "Fonte única (USGS, verificado diretamente via API FDSN em 16-set); não foi encontrada corroboração do IGEPN ou da imprensa equatoriana apesar de busca específica. Distinto do sismo M5,5 de fonte única já registrado como AMZ-20260914-004 (14-set, perto de Gualaquiza, mesma província mas data, localização e magnitude diferentes) e do sismo de Loreto/Andoas, Peru registrado como AMZ-20260916-001. Recomenda-se verificação com o IGEPN no próximo ciclo. ATUALIZACAO 16-set: tentou-se novamente a verificacao cruzada com o IGEPN (site e canal de Telegram 'SismosVolcanesIGEPN') e a imprensa equatoriana (Primicias, Teleamazonas, El Oriente); nao foi encontrada corroboracao deste sismo especifico M4.5 perto de Palora. Buscas relacionadas retornaram um sismo distinto M5.4/5.6 perto de Gualaquiza datado de 10-set (fora da janela de 72h e evento distinto deste registro e de AMZ-20260914-004). Mantem-se como fonte unica (USGS) e prioridade GREEN; recomenda-se nova tentativa no proximo ciclo. Nota tecnica: este registro foi corrigido neste ciclo devido a um erro de formatacao CSV (virgulas sem aspas nos campos de titulo ES/EN da carga original) que havia desalinhado as colunas posteriores do registro; tambem foi corrigido o campo SECONDARY_SOURCE (duplicava erroneamente USGS) para UNAVAILABLE, consistente com VERIFICATION_STATUS=SINGLE_SOURCE.",
-      "en": "Single source (USGS, directly verified via FDSN API on Sep 16); no IGEPN or Ecuadorian press corroboration was found despite a targeted search. Distinct from the single-source M5.5 earthquake already logged as AMZ-20260916-002 (Sep 15, Palora). UPDATE Sep 16: cross-checking with IGEPN (website and 'SismosVolcanesIGEPN' Telegram channel) and Ecuadorian press (Primicias, Teleamazonas, El Oriente) was reattempted; no corroboration of this specific M4.5 quake near Palora was found. Related searches returned a different M5.4/5.6 quake near Gualaquiza dated Sep 10 (outside the 72h window and distinct from both this record and AMZ-20260914-004). It remains single-source (USGS) with GREEN priority; retry recommended next cycle. Technical note: this record was corrected this cycle for a CSV formatting error (unquoted commas in the original ES/EN title fields) that had shifted the record's later columns out of alignment; SECONDARY_SOURCE (which erroneously duplicated USGS) was also corrected to UNAVAILABLE, consistent with VERIFICATION_STATUS=SINGLE_SOURCE."
+      "es": "Fuente única (USGS, verificado directamente vía API FDSN el 16-sep); no se encontró corroboración de IGEPN o prensa ecuatoriana pese a búsqueda específica. Distinto del sismo M5.5 de fuente única ya registrado como AMZ-20260914-004 (14-sep, cerca de Gualaquiza, mismo departamento/provincia pero fecha, ubicación y magnitud distintas) y del sismo de Loreto/Andoas, Perú registrado como AMZ-20260916-001. Se recomienda verificación con IGEPN en el próximo ciclo. ACTUALIZACION 16-sep: se reintento la verificacion cruzada con IGEPN (sitio web y canal de Telegram 'SismosVolcanesIGEPN') y prensa ecuatoriana (Primicias, Teleamazonas, El Oriente); no se encontro corroboracion de este sismo especifico M4.5 cerca de Palora. Busquedas relacionadas devolvieron un sismo distinto M5.4/5.6 cerca de Gualaquiza fechado 10-sep (fuera de la ventana de 72h y evento distinto de este registro y de AMZ-20260914-004). Se mantiene como fuente unica (USGS) y prioridad GREEN; se recomienda reintentar en el proximo ciclo. Nota tecnica: este registro fue corregido en este ciclo por un error de formato CSV (comas sin comillas en los campos de titulo ES/EN de la carga original) que habia desalineado las columnas posteriores del registro; tambien se corrigio SECONDARY_SOURCE (duplicaba erroneamente a USGS) a UNAVAILABLE, consistente con VERIFICATION_STATUS=SINGLE_SOURCE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "pt": "Fonte única (USGS, verificado diretamente via API FDSN em 16-set); não foi encontrada corroboração do IGEPN ou da imprensa equatoriana apesar de busca específica. Distinto do sismo M5,5 de fonte única já registrado como AMZ-20260914-004 (14-set, perto de Gualaquiza, mesma província mas data, localização e magnitude diferentes) e do sismo de Loreto/Andoas, Peru registrado como AMZ-20260916-001. Recomenda-se verificação com o IGEPN no próximo ciclo. ATUALIZACAO 16-set: tentou-se novamente a verificacao cruzada com o IGEPN (site e canal de Telegram 'SismosVolcanesIGEPN') e a imprensa equatoriana (Primicias, Teleamazonas, El Oriente); nao foi encontrada corroboracao deste sismo especifico M4.5 perto de Palora. Buscas relacionadas retornaram um sismo distinto M5.4/5.6 perto de Gualaquiza datado de 10-set (fora da janela de 72h e evento distinto deste registro e de AMZ-20260914-004). Mantem-se como fonte unica (USGS) e prioridade GREEN; recomenda-se nova tentativa no proximo ciclo. Nota tecnica: este registro foi corrigido neste ciclo devido a um erro de formatacao CSV (virgulas sem aspas nos campos de titulo ES/EN da carga original) que havia desalinhado as colunas posteriores do registro; tambem foi corrigido o campo SECONDARY_SOURCE (duplicava erroneamente USGS) para UNAVAILABLE, consistente com VERIFICATION_STATUS=SINGLE_SOURCE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "en": "Single source (USGS, directly verified via FDSN API on Sep 16); no IGEPN or Ecuadorian press corroboration was found despite a targeted search. Distinct from the single-source M5.5 earthquake already logged as AMZ-20260916-002 (Sep 15, Palora). UPDATE Sep 16: cross-checking with IGEPN (website and 'SismosVolcanesIGEPN' Telegram channel) and Ecuadorian press (Primicias, Teleamazonas, El Oriente) was reattempted; no corroboration of this specific M4.5 quake near Palora was found. Related searches returned a different M5.4/5.6 quake near Gualaquiza dated Sep 10 (outside the 72h window and distinct from both this record and AMZ-20260914-004). It remains single-source (USGS) with GREEN priority; retry recommended next cycle. Technical note: this record was corrected this cycle for a CSV formatting error (unquoted commas in the original ES/EN title fields) that had shifted the record's later columns out of alignment; SECONDARY_SOURCE (which erroneously duplicated USGS) was also corrected to UNAVAILABLE, consistent with VERIFICATION_STATUS=SINGLE_SOURCE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
     },
     "sources": [
       {
@@ -873,15 +873,15 @@
     "country": "Colombia",
     "hazard": "Extreme Rain",
     "priority": "GREEN",
-    "status": "FORECAST",
+    "status": "ENDED",
     "basinStatus": "PARTIALLY_INSIDE",
     "verification": "MULTIPLE_SOURCES",
     "lat": 1.6144,
     "lon": -75.6062,
     "coordAccuracy": "APPROXIMATE",
     "firstDetected": "2026-09-16",
-    "lastUpdated": "2026-09-18",
-    "updateCount": 2,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 3,
     "eventDate": "2026-09-17",
     "adminLevel1": "Caqueta, Putumayo, Amazonas, Guaviare, Guainia, Vaupes (nucleo cuenca amazonica); tambien incluye Meta y Vichada (cuenca del Orinoco, fuera del alcance estricto del proyecto, mencionados solo por contexto del pronostico regional)",
     "adminLevel2": "NOT_REPORTED",
@@ -898,9 +898,9 @@
       "en": "El Espectador reported on September 14, 2026 that, per weather forecasts citing IDEAM, the country's heaviest rainfall is expected on September 17 and especially September 18, with electrical storms and strong winds, across the departments of Meta, Vichada, Guaviare, Guainia, Vaupes, Caqueta, Putumayo, and Amazonas. Of these, Guaviare, Guainia, Vaupes, Caqueta, Putumayo, and Amazonas are inside or directly connected to the Amazon basin; Meta and Vichada belong mainly to the Orinoco basin and are cited here only as part of the same regional forecast system. This is a preventive advisory; no observed impacts have been recorded at the time of this report."
     },
     "notes": {
-      "es": "Evento de pronostico (FORECAST), fuente unica. No se encontro un boletin propio de IDEAM con URL directa ni corroboracion independiente al momento de este reporte. Se recomienda dar seguimiento el 18-19 de septiembre para confirmar impactos observados y, de ser posible, localizar el boletin original de IDEAM. Coordenadas aproximadas centradas en Florencia, Caqueta, solo como referencia regional (alerta departamental sin municipio especifico). ACTUALIZACION 17-sep: Semana (17-sep), citando tambien al IDEAM, corrobora que la manana sera seca con un cambio a lluvias moderadas a localmente fuertes durante la tarde/noche del 17 de septiembre en los departamentos de la Amazonia colombiana (Caqueta, Putumayo, Amazonas, Guaviare, Guainia, Vaupes), sin advertencias de riesgo especificas. Aun no se reportan impactos observados; se mantiene EVENT_STATUS FORECAST. Seguimiento pendiente el 18-19 de septiembre. ACTUALIZACION 18/09: el pronostico climatico mensual del IDEAM (via Diario La Libertad, 17-sep) indica una probabilidad aproximada del 50% de precipitacion por encima de lo normal durante septiembre en zonas puntuales de Caqueta y Amazonas -- una referencia probabilistica mensual, no una alerta de corto plazo, que explicitamente no predice intensidad diaria ni riesgo especifico de inundacion/deslizamiento. Aun no se reportan impactos observados; se mantiene EVENT_STATUS FORECAST. Sigue pendiente confirmar los impactos de las lluvias del 17 de septiembre.",
-      "pt": "Evento de previsao (FORECAST), fonte unica. Nao foi encontrado um boletim proprio do IDEAM com URL direta nem corroboracao independente ate o momento deste relato. Recomenda-se acompanhamento em 18-19 de setembro para confirmar impactos observados e, se possivel, localizar o boletim original do IDEAM. Coordenadas aproximadas centradas em Florencia, Caqueta, apenas como referencia regional (alerta departamental sem municipio especifico). ATUALIZACAO 17-set: Semana (17-set), citando tambem o IDEAM, corrobora que a manha sera seca com mudanca para chuvas moderadas a localmente fortes durante a tarde/noite de 17 de setembro nos departamentos da Amazonia colombiana (Caqueta, Putumayo, Amazonas, Guaviare, Guainia, Vaupes), sem avisos de risco especificos. Ainda nao ha impactos observados relatados; mantem-se EVENT_STATUS FORECAST. Acompanhamento pendente em 18-19 de setembro. ATUALIZACAO 18/09: a previsao climatica mensal do IDEAM (via Diario La Libertad, 17-set) indica uma probabilidade aproximada de 50% de precipitacao acima do normal durante setembro em zonas especificas de Caqueta e Amazonas -- uma referencia probabilistica mensal, nao um alerta de curto prazo, que explicitamente nao preve intensidade diaria nem risco especifico de inundacao/deslizamento. Ainda nao ha impactos observados relatados; mantem-se EVENT_STATUS FORECAST. Continua pendente confirmar os impactos das chuvas de 17 de setembro.",
-      "en": "Forecast-stage event, single source. No standalone IDEAM bulletin with a direct URL, nor independent corroboration, was found at the time of this report. Follow-up on September 18-19 is recommended to confirm observed impacts and, if possible, locate the original IDEAM bulletin. Approximate coordinates centered on Florencia, Caqueta, used only as a regional reference point (departmental-level advisory with no specific municipality). UPDATE Sep 17: Semana (Sep 17), also citing IDEAM, corroborates that the morning will be dry, shifting to moderate to locally strong rain during the afternoon/evening of September 17 across Colombia's Amazon departments (Caqueta, Putumayo, Amazonas, Guaviare, Guainia, Vaupes), with no specific risk warnings. No observed impacts reported yet; EVENT_STATUS remains FORECAST. Follow-up pending Sep 18-19. UPDATE 09/18: IDEAM's monthly climate outlook (via Diario La Libertad, Sep 17) indicates an approximate 50% probability of above-normal precipitation during September for specific zones of Caqueta and Amazonas -- a probabilistic monthly reference, not a short-term alert, and it explicitly does not predict daily intensity or specific flood/landslide risk. No observed impacts reported yet; EVENT_STATUS remains FORECAST. Follow-up on confirmed impacts for Sep 17 rainfall still pending."
+      "es": "Evento de pronostico (FORECAST), fuente unica. No se encontro un boletin propio de IDEAM con URL directa ni corroboracion independiente al momento de este reporte. Se recomienda dar seguimiento el 18-19 de septiembre para confirmar impactos observados y, de ser posible, localizar el boletin original de IDEAM. Coordenadas aproximadas centradas en Florencia, Caqueta, solo como referencia regional (alerta departamental sin municipio especifico). ACTUALIZACION 17-sep: Semana (17-sep), citando tambien al IDEAM, corrobora que la manana sera seca con un cambio a lluvias moderadas a localmente fuertes durante la tarde/noche del 17 de septiembre en los departamentos de la Amazonia colombiana (Caqueta, Putumayo, Amazonas, Guaviare, Guainia, Vaupes), sin advertencias de riesgo especificas. Aun no se reportan impactos observados; se mantiene EVENT_STATUS FORECAST. Seguimiento pendiente el 18-19 de septiembre. ACTUALIZACION 18/09: el pronostico climatico mensual del IDEAM (via Diario La Libertad, 17-sep) indica una probabilidad aproximada del 50% de precipitacion por encima de lo normal durante septiembre en zonas puntuales de Caqueta y Amazonas -- una referencia probabilistica mensual, no una alerta de corto plazo, que explicitamente no predice intensidad diaria ni riesgo especifico de inundacion/deslizamiento. Aun no se reportan impactos observados; se mantiene EVENT_STATUS FORECAST. Sigue pendiente confirmar los impactos de las lluvias del 17 de septiembre. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+      "pt": "Evento de previsao (FORECAST), fonte unica. Nao foi encontrado um boletim proprio do IDEAM com URL direta nem corroboracao independente ate o momento deste relato. Recomenda-se acompanhamento em 18-19 de setembro para confirmar impactos observados e, se possivel, localizar o boletim original do IDEAM. Coordenadas aproximadas centradas em Florencia, Caqueta, apenas como referencia regional (alerta departamental sem municipio especifico). ATUALIZACAO 17-set: Semana (17-set), citando tambem o IDEAM, corrobora que a manha sera seca com mudanca para chuvas moderadas a localmente fortes durante a tarde/noite de 17 de setembro nos departamentos da Amazonia colombiana (Caqueta, Putumayo, Amazonas, Guaviare, Guainia, Vaupes), sem avisos de risco especificos. Ainda nao ha impactos observados relatados; mantem-se EVENT_STATUS FORECAST. Acompanhamento pendente em 18-19 de setembro. ATUALIZACAO 18/09: a previsao climatica mensal do IDEAM (via Diario La Libertad, 17-set) indica uma probabilidade aproximada de 50% de precipitacao acima do normal durante setembro em zonas especificas de Caqueta e Amazonas -- uma referencia probabilistica mensal, nao um alerta de curto prazo, que explicitamente nao preve intensidade diaria nem risco especifico de inundacao/deslizamento. Ainda nao ha impactos observados relatados; mantem-se EVENT_STATUS FORECAST. Continua pendente confirmar os impactos das chuvas de 17 de setembro. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+      "en": "Forecast-stage event, single source. No standalone IDEAM bulletin with a direct URL, nor independent corroboration, was found at the time of this report. Follow-up on September 18-19 is recommended to confirm observed impacts and, if possible, locate the original IDEAM bulletin. Approximate coordinates centered on Florencia, Caqueta, used only as a regional reference point (departmental-level advisory with no specific municipality). UPDATE Sep 17: Semana (Sep 17), also citing IDEAM, corroborates that the morning will be dry, shifting to moderate to locally strong rain during the afternoon/evening of September 17 across Colombia's Amazon departments (Caqueta, Putumayo, Amazonas, Guaviare, Guainia, Vaupes), with no specific risk warnings. No observed impacts reported yet; EVENT_STATUS remains FORECAST. Follow-up pending Sep 18-19. UPDATE 09/18: IDEAM's monthly climate outlook (via Diario La Libertad, Sep 17) indicates an approximate 50% probability of above-normal precipitation during September for specific zones of Caqueta and Amazonas -- a probabilistic monthly reference, not a short-term alert, and it explicitly does not predict daily intensity or specific flood/landslide risk. No observed impacts reported yet; EVENT_STATUS remains FORECAST. Follow-up on confirmed impacts for Sep 17 rainfall still pending. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio."
     },
     "sources": [
       {
@@ -919,15 +919,15 @@
     "country": "Peru",
     "hazard": "Earthquake",
     "priority": "GREEN",
-    "status": "OBSERVED",
+    "status": "ENDED",
     "basinStatus": "INSIDE",
     "verification": "SINGLE_SOURCE",
     "lat": -11.37,
     "lon": -73.32,
     "coordAccuracy": "PRECISE",
     "firstDetected": "2026-09-17",
-    "lastUpdated": "2026-09-17",
-    "updateCount": 0,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 1,
     "eventDate": "2026-09-17",
     "adminLevel1": "Ucayali",
     "adminLevel2": "Atalaya",
@@ -944,9 +944,9 @@
       "en": "Peru's National Seismological Center (CENSIS) at the Geophysical Institute of Peru (IGP) recorded a magnitude-4.0 earthquake on September 17, 2026 at 00:32 local time, with an epicenter 39 km southwest of Atalaya, Atalaya province, Ucayali department (-11.37, -73.32), at a depth of 27 km. IGP assigned a green alert (earthquakes below magnitude 4.4). No damage or injuries were reported."
     },
     "notes": {
-      "es": "Evento nuevo, fuente unica (Infobae, citando IGP/CENSIS). Se consulto la API FDSN de USGS (lat -13/-9, lon -75/-71, 16-18 sep, M3.5+) y no se encontro un sismo correspondiente; USGS no siempre cataloga sismos de esta magnitud en zonas remotas de forma inmediata. Se recomienda verificar en un proximo ciclo si USGS actualiza su catalogo. Sepahua se ubica en la cuenca del rio Urubamba/Ucayali, afluente directo del Amazonas -- AMAZON_BASIN_STATUS: INSIDE.",
-      "pt": "Evento novo, fonte unica (Infobae, citando IGP/CENSIS). Foi consultada a API FDSN do USGS (lat -13/-9, lon -75/-71, 16-18 set, M3,5+) e nao foi encontrado um sismo correspondente; o USGS nem sempre cataloga sismos dessa magnitude em areas remotas de forma imediata. Recomenda-se verificar em um proximo ciclo se o USGS atualiza seu catalogo. Sepahua situa-se na bacia do rio Urubamba/Ucayali, afluente direto do Amazonas -- AMAZON_BASIN_STATUS: INSIDE.",
-      "en": "New event, single source (Infobae, citing IGP/CENSIS). A query was run against the USGS FDSN API (lat -13/-9, lon -75/-71, Sep 16-18, M3.5+) and found no matching earthquake; USGS does not always catalog earthquakes of this magnitude in remote areas immediately. Recommend checking again next cycle if USGS updates its catalog. Sepahua lies in the Urubamba/Ucayali river basin, a direct Amazon tributary -- AMAZON_BASIN_STATUS: INSIDE."
+      "es": "Evento nuevo, fuente unica (Infobae, citando IGP/CENSIS). Se consulto la API FDSN de USGS (lat -13/-9, lon -75/-71, 16-18 sep, M3.5+) y no se encontro un sismo correspondiente; USGS no siempre cataloga sismos de esta magnitud en zonas remotas de forma inmediata. Se recomienda verificar en un proximo ciclo si USGS actualiza su catalogo. Sepahua se ubica en la cuenca del rio Urubamba/Ucayali, afluente directo del Amazonas -- AMAZON_BASIN_STATUS: INSIDE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "pt": "Evento novo, fonte unica (Infobae, citando IGP/CENSIS). Foi consultada a API FDSN do USGS (lat -13/-9, lon -75/-71, 16-18 set, M3,5+) e nao foi encontrado um sismo correspondente; o USGS nem sempre cataloga sismos dessa magnitude em areas remotas de forma imediata. Recomenda-se verificar em um proximo ciclo se o USGS atualiza seu catalogo. Sepahua situa-se na bacia do rio Urubamba/Ucayali, afluente direto do Amazonas -- AMAZON_BASIN_STATUS: INSIDE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "en": "New event, single source (Infobae, citing IGP/CENSIS). A query was run against the USGS FDSN API (lat -13/-9, lon -75/-71, Sep 16-18, M3.5+) and found no matching earthquake; USGS does not always catalog earthquakes of this magnitude in remote areas immediately. Recommend checking again next cycle if USGS updates its catalog. Sepahua lies in the Urubamba/Ucayali river basin, a direct Amazon tributary -- AMAZON_BASIN_STATUS: INSIDE. | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
     },
     "sources": [
       {
@@ -961,15 +961,15 @@
     "country": "Ecuador",
     "hazard": "Extreme Rain",
     "priority": "GREEN",
-    "status": "FORECAST",
+    "status": "ENDED",
     "basinStatus": "INSIDE",
     "verification": "SINGLE_SOURCE",
     "lat": -0.9938,
     "lon": -77.8129,
     "coordAccuracy": "APPROXIMATE",
     "firstDetected": "2026-09-23",
-    "lastUpdated": "2026-09-29",
-    "updateCount": 2,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 3,
     "eventDate": "2026-09-23",
     "adminLevel1": "Sucumbíos, Orellana, Napo (piedemonte de Tena), Pastaza, Morona Santiago",
     "adminLevel2": "NOT_REPORTED",
@@ -986,9 +986,9 @@
       "en": "On Sep 22 INAMHI issued Meteorological Advisory No. 74, valid from Sep 23 (13:00) to Sep 27 (10:00), for rain, thunderstorms and strong wind gusts. In the Amazon region the greatest impacts are expected in Sucumbíos, Orellana and the foothills (Tena, Pastaza, Morona Santiago), with totals of 22-31 mm/day (medium intensity) to 32-54 mm/day (high). Peaks are expected on Sep 23 and from the night of Sep 25 into the early morning of Sep 26. INAMHI warns of possible landslides and river overflows in susceptible areas."
     },
     "notes": {
-      "es": "Episodio de pronóstico distinto de AMZ-20260911-002 (Alerta N.° 70, vigencia terminada ~16-18 sep). Mismas provincias afectadas por deslizamientos el 14-sep (AMZ-20260914-001): vigilar impactos 23-27 sep. Coordenadas = Tena, punto representativo, no epicentro. Requiere verificación con boletín oficial INAMHI/SNGR. ACTUALIZACIÓN 28/09: INAMHI emitió la Advertencia Meteorológica N.º 75 (vigente hasta el 28-sep 10:00), con Sucumbíos, Napo, Orellana, Pastaza y Morona Santiago en atención; la SNGR registró entre 21-26 sep un colapso (Alshi, cantón Morona) y un hundimiento en Macas (Morona Santiago), sin cifras de afectados, fuente: Metro Ecuador / El Diario (datos SNGR). ACTUALIZACIÓN 29/09: pronóstico INAMHI 28-sep a 2-oct prevé lluvias moderadas en Sucumbíos, Orellana y Napo y ligeras en el resto de la Amazonía; la mayor intensidad se concentra en la Costa; sin nuevos impactos amazónicos reportados, fuente: Metro Ecuador.",
-      "pt": "Episódio de previsão distinto de AMZ-20260911-002 (Alerta n.º 70, vigência encerrada ~16-18 set). Mesmas províncias afetadas por deslizamentos em 14-set (AMZ-20260914-001): monitorar impactos 23-27 set. Coordenadas = Tena, ponto representativo. Requer verificação no boletim oficial INAMHI/SNGR. ATUALIZAÇÃO 28/09: o INAMHI emitiu a Advertência Meteorológica N.º 75 (válida até 28-set 10:00), com Sucumbíos, Napo, Orellana, Pastaza e Morona Santiago em atenção; a SNGR registrou entre 21-26 set um colapso (Alshi, cantão Morona) e um afundamento em Macas (Morona Santiago), sem números de afetados, fonte: Metro Ecuador / El Diario (dados SNGR). ATUALIZAÇÃO 29/09: previsão do INAMHI de 28-set a 2-out indica chuvas moderadas em Sucumbíos, Orellana e Napo e fracas no restante da Amazônia; maior intensidade na Costa; sem novos impactos amazônicos, fonte: Metro Ecuador.",
-      "en": "Forecast episode distinct from AMZ-20260911-002 (Alert No. 70, validity ended ~Sep 16-18). Same provinces hit by landslides on Sep 14 (AMZ-20260914-001): watch for impacts Sep 23-27. Coordinates = Tena, a representative point. Requires verification against the official INAMHI/SNGR bulletin. UPDATE 09/28: INAMHI issued Meteorological Warning No. 75 (valid to Sep 28 10:00), with Sucumbíos, Napo, Orellana, Pastaza and Morona Santiago under watch; SNGR recorded between Sep 21-26 a collapse (Alshi, Morona canton) and ground subsidence in Macas (Morona Santiago), no affected figures, source: Metro Ecuador / El Diario (SNGR data). UPDATE 09/29: INAMHI forecast for Sep 28-Oct 2 expects moderate rain in Sucumbíos, Orellana and Napo and light rain elsewhere in the Amazon; heaviest rain on the Coast; no new Amazon impacts reported, source: Metro Ecuador."
+      "es": "Episodio de pronóstico distinto de AMZ-20260911-002 (Alerta N.° 70, vigencia terminada ~16-18 sep). Mismas provincias afectadas por deslizamientos el 14-sep (AMZ-20260914-001): vigilar impactos 23-27 sep. Coordenadas = Tena, punto representativo, no epicentro. Requiere verificación con boletín oficial INAMHI/SNGR. ACTUALIZACIÓN 28/09: INAMHI emitió la Advertencia Meteorológica N.º 75 (vigente hasta el 28-sep 10:00), con Sucumbíos, Napo, Orellana, Pastaza y Morona Santiago en atención; la SNGR registró entre 21-26 sep un colapso (Alshi, cantón Morona) y un hundimiento en Macas (Morona Santiago), sin cifras de afectados, fuente: Metro Ecuador / El Diario (datos SNGR). ACTUALIZACIÓN 29/09: pronóstico INAMHI 28-sep a 2-oct prevé lluvias moderadas en Sucumbíos, Orellana y Napo y ligeras en el resto de la Amazonía; la mayor intensidad se concentra en la Costa; sin nuevos impactos amazónicos reportados, fuente: Metro Ecuador. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+      "pt": "Episódio de previsão distinto de AMZ-20260911-002 (Alerta n.º 70, vigência encerrada ~16-18 set). Mesmas províncias afetadas por deslizamentos em 14-set (AMZ-20260914-001): monitorar impactos 23-27 set. Coordenadas = Tena, ponto representativo. Requer verificação no boletim oficial INAMHI/SNGR. ATUALIZAÇÃO 28/09: o INAMHI emitiu a Advertência Meteorológica N.º 75 (válida até 28-set 10:00), com Sucumbíos, Napo, Orellana, Pastaza e Morona Santiago em atenção; a SNGR registrou entre 21-26 set um colapso (Alshi, cantão Morona) e um afundamento em Macas (Morona Santiago), sem números de afetados, fonte: Metro Ecuador / El Diario (dados SNGR). ATUALIZAÇÃO 29/09: previsão do INAMHI de 28-set a 2-out indica chuvas moderadas em Sucumbíos, Orellana e Napo e fracas no restante da Amazônia; maior intensidade na Costa; sem novos impactos amazônicos, fonte: Metro Ecuador. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+      "en": "Forecast episode distinct from AMZ-20260911-002 (Alert No. 70, validity ended ~Sep 16-18). Same provinces hit by landslides on Sep 14 (AMZ-20260914-001): watch for impacts Sep 23-27. Coordinates = Tena, a representative point. Requires verification against the official INAMHI/SNGR bulletin. UPDATE 09/28: INAMHI issued Meteorological Warning No. 75 (valid to Sep 28 10:00), with Sucumbíos, Napo, Orellana, Pastaza and Morona Santiago under watch; SNGR recorded between Sep 21-26 a collapse (Alshi, Morona canton) and ground subsidence in Macas (Morona Santiago), no affected figures, source: Metro Ecuador / El Diario (SNGR data). UPDATE 09/29: INAMHI forecast for Sep 28-Oct 2 expects moderate rain in Sucumbíos, Orellana and Napo and light rain elsewhere in the Amazon; heaviest rain on the Coast; no new Amazon impacts reported, source: Metro Ecuador. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio."
     },
     "sources": [
       {
@@ -1095,15 +1095,15 @@
     "country": "Peru",
     "hazard": "Earthquake",
     "priority": "GREEN",
-    "status": "OBSERVED",
+    "status": "ENDED",
     "basinStatus": "INSIDE",
     "verification": "MULTIPLE_SOURCES",
     "lat": -3.1213,
     "lon": -75.6413,
     "coordAccuracy": "PRECISE",
     "firstDetected": "2026-09-29",
-    "lastUpdated": "2026-09-29",
-    "updateCount": 0,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 1,
     "eventDate": "2026-09-29",
     "adminLevel1": "Loreto",
     "adminLevel2": "Datem del Marañón",
@@ -1120,9 +1120,9 @@
       "en": "Peru's IGP (CENSIS) recorded a magnitude 5.2 earthquake on 29 September 2026 at 05:22 local time, epicenter 67 km NE of Andoas (Datem del Marañón, Loreto), depth 150 km (report RS 2026-0697), intensity II MM at Andoas. USGS logged the same event at 10:22:14 UTC as mb 4.5, 96 km ENE of Alianza Cristiana (-3.1213, -75.6413), depth 134.8 km, with no PAGER alert or felt reports. Local Civil Defense reported no injuries or material damage. It was lightly felt along the Amazonian border with Ecuador."
     },
     "notes": {
-      "es": "Evento nuevo. Coordenadas del USGS (API FDSN, estado 'reviewed'). Discrepancia de magnitud USGS mb 4,5 vs IGP 5,2 y de profundidad (135 vs 150 km); se consigna la cifra del IGP en el título por ser la autoridad nacional. Distinto de AMZ-20260916-001 (14-sep) y AMZ-20260910-001 (Condorcanqui).",
-      "pt": "Evento novo. Coordenadas do USGS (API FDSN, status 'reviewed'). Discrepância de magnitude USGS mb 4,5 vs IGP 5,2 e de profundidade (135 vs 150 km); o título usa o valor do IGP por ser a autoridade nacional. Distinto de AMZ-20260916-001 (14-set) e AMZ-20260910-001 (Condorcanqui).",
-      "en": "New event. Coordinates from USGS (FDSN API, status 'reviewed'). Magnitude discrepancy USGS mb 4.5 vs IGP 5.2 and depth (135 vs 150 km); title uses IGP value as national authority. Distinct from AMZ-20260916-001 (Sep 14) and AMZ-20260910-001 (Condorcanqui)."
+      "es": "Evento nuevo. Coordenadas del USGS (API FDSN, estado 'reviewed'). Discrepancia de magnitud USGS mb 4,5 vs IGP 5,2 y de profundidad (135 vs 150 km); se consigna la cifra del IGP en el título por ser la autoridad nacional. Distinto de AMZ-20260916-001 (14-sep) y AMZ-20260910-001 (Condorcanqui). | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "pt": "Evento novo. Coordenadas do USGS (API FDSN, status 'reviewed'). Discrepância de magnitude USGS mb 4,5 vs IGP 5,2 e de profundidade (135 vs 150 km); o título usa o valor do IGP por ser a autoridade nacional. Distinto de AMZ-20260916-001 (14-set) e AMZ-20260910-001 (Condorcanqui). | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06.",
+      "en": "New event. Coordinates from USGS (FDSN API, status 'reviewed'). Magnitude discrepancy USGS mb 4.5 vs IGP 5.2 and depth (135 vs 150 km); title uses IGP value as national authority. Distinct from AMZ-20260916-001 (Sep 14) and AMZ-20260910-001 (Condorcanqui). | Cierre automatico: evento sismico puntual, sin riesgo secundario (replicas/deslizamiento inducido/tsunami) senalado en el registro. Regla de cierre por cronologia/fisica del peligro aplicada 2026-11-06."
     },
     "sources": [
       {
@@ -1186,7 +1186,7 @@
     "id": "AMZ-20261002-001",
     "country": "Ecuador",
     "hazard": "Extreme Rain",
-    "priority": "GREEN",
+    "priority": "YELLOW",
     "status": "ONGOING",
     "basinStatus": "INSIDE",
     "verification": "MULTIPLE_SOURCES",
@@ -1290,15 +1290,15 @@
     "country": "Peru",
     "hazard": "Extreme Heat",
     "priority": "GREEN",
-    "status": "FORECAST",
+    "status": "ENDED",
     "basinStatus": "INSIDE",
     "verification": "SINGLE_SOURCE",
     "lat": -3.7437,
     "lon": -73.2516,
     "coordAccuracy": "ADMINISTRATIVE_APPROXIMATION (punto representativo, Iquitos, Loreto)",
     "firstDetected": "2026-10-08",
-    "lastUpdated": "2026-10-08",
-    "updateCount": 0,
+    "lastUpdated": "2026-11-06",
+    "updateCount": 1,
     "eventDate": "2026-10-04",
     "adminLevel1": "Amazonas, Cajamarca, Huánuco, Loreto, Madre de Dios, Pasco, San Martín, Ucayali",
     "adminLevel2": "NOT_REPORTED",
@@ -1315,9 +1315,9 @@
       "en": "Peru's SENAMHI issued weather advisory No. 397 for a daytime temperature rise in the jungle, valid Oct 4-6, 2026, covering Amazonas, Cajamarca, Huánuco, Loreto, Madre de Dios, Pasco, San Martín and Ucayali. Forecast maxima: 31-38 °C in the northern jungle, 22-36 °C in the central jungle and around 36 °C in the southern jungle, with afternoon wind gusts of ~55 km/h and high UV radiation. INDECI issued preventive recommendations and COEN is monitoring the regions. No impacts reported."
     },
     "notes": {
-      "es": "Pronóstico sin impactos confirmados, por eso GREEN. La fuente no indica nivel de color del aviso ni provincias específicas. Contexto: coincide con la temporada de sequía e incendios en la cuenca (ver AMZ-20260908-001, Loreto). Requiere confirmación con el aviso oficial en senamhi.gob.pe.",
-      "pt": "Previsão sem impactos confirmados, por isso GREEN. A fonte não indica o nível de cor do aviso nem províncias específicas. Contexto: coincide com a temporada de seca e incêndios na bacia (ver AMZ-20260908-001, Loreto). Requer confirmação com o aviso oficial em senamhi.gob.pe.",
-      "en": "Forecast without confirmed impacts, hence GREEN. The source gives no color level or specific provinces. Context: coincides with the basin drought and fire season (see AMZ-20260908-001, Loreto). Needs confirmation against the official advisory at senamhi.gob.pe."
+      "es": "Pronóstico sin impactos confirmados, por eso GREEN. La fuente no indica nivel de color del aviso ni provincias específicas. Contexto: coincide con la temporada de sequía e incendios en la cuenca (ver AMZ-20260908-001, Loreto). Requiere confirmación con el aviso oficial en senamhi.gob.pe. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+      "pt": "Previsão sem impactos confirmados, por isso GREEN. A fonte não indica o nível de cor do aviso nem províncias específicas. Contexto: coincide com a temporada de seca e incêndios na bacia (ver AMZ-20260908-001, Loreto). Requer confirmação com o aviso oficial em senamhi.gob.pe. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio.",
+      "en": "Forecast without confirmed impacts, hence GREEN. The source gives no color level or specific provinces. Context: coincides with the basin drought and fire season (see AMZ-20260908-001, Loreto). Needs confirmation against the official advisory at senamhi.gob.pe. | Cierre automatico: ventana de pronostico/advertencia ya transcurrida (regla de caducidad de pronosticos, 3-7 dias, aplicada 2026-11-06) sin confirmacion posterior de materializacion ni cierre oficial. Si se confirma que el peligro pronosticado ocurrio, debe reabrirse como evento OBSERVED/CONFIRMED con seguimiento propio."
     },
     "sources": [
       {
@@ -1331,7 +1331,7 @@
     "id": "AMZ-20261016-001",
     "country": "Ecuador",
     "hazard": "Flood",
-    "priority": "GREEN",
+    "priority": "YELLOW",
     "status": "OBSERVED",
     "basinStatus": "INSIDE",
     "verification": "MULTIPLE_SOURCES",
