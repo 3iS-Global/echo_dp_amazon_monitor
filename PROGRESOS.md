@@ -444,3 +444,88 @@ Pendiente: aplicar en `jachicanoy@3is.org` el mismo paso 6 corregido (texto
 listo en el Project de Cowork, `claude/contexto-migracion-github-2026-10.md`
 sección 7) — ninguna de las dos cuentas puede desactivar o editar la tarea
 de la otra.
+
+## 2026-11-06 — ALERT_PRIORITY a 4 niveles (WMO-1150/CAP), cierre de eventos vencidos por cronología, heartbeat real
+
+A raíz de que el usuario notó que (a) "Última actualización" podía congelarse días sin que nadie lo notara, y (b) varias alertas activas llevaban semanas/meses sin re-verificarse (ej. un incendio `ONGOING` desde agosto, última confirmación 21 días atrás), y tras corregir una confusión sobre el marco de referencia (no es el Marco de Sendai — es el estándar técnico WMO-1150, que UNDRR promueve vía *Early Warnings for All*/CAP), se implementaron cuatro cambios:
+
+**1. Heartbeat real de "Última actualización".** `rebuild-aggregates.yml` ahora corre también con `schedule` propio (20:17 UTC diario), no solo por push a `Events/**`/`Impacts/**`. `meta.json["lastUpdated"]` ya escribía la hora real de cada corrida; el bug era que el workflow simplemente no corría en días sin eventos nuevos.
+
+**2. `ALERT_PRIORITY` migrado de 3 a 4 niveles** (WMO Guidelines on Multi-hazard Impact-based Forecast and Warning Services, WMO-No. 1150, 2015 — matriz Likelihood × Impact). RED="Take action", ORANGE="Be prepared", **YELLOW (nuevo)="Be aware"**, GREEN="No severe hazard expected". Regla aplicada a los 30 eventos existentes sin inventar datos nuevos (solo con EVENT_STATUS + si el registro ya tenía impacto real reportado en algún campo de impacto):
+
+| EVENT_ID | Peligro | País | Status antes→después | Prioridad antes→después | Motivo |
+|---|---|---|---|---|---|
+| AMZ-20260801-001 | Wildfire | Bolivia | ONGOING | RED→RED | impacto real, sin cambio |
+| AMZ-20260902-001 | Drought | Brasil | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260907-001 | Flood | Perú | OBSERVED | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260908-001 | Drought | Perú | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260909-001 | Wildfire | Brasil | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260910-001 | Earthquake | Perú | OBSERVED→**ENDED** | GREEN→GREEN | sismo puntual sin riesgo secundario, cerrado |
+| AMZ-20260910-002 | Wildfire | Brasil | ONGOING | RED→RED | impacto real, sin cambio |
+| AMZ-20260911-001 | Drought | Colombia | ONGOING | GREEN→**YELLOW** | activo, sin impacto real reportado |
+| AMZ-20260911-002 | Extreme Rain | Ecuador | ONGOING | GREEN→**YELLOW** | activo, sin impacto real reportado |
+| AMZ-20260911-003 | Drought | Brasil | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260911-004 | Landslide | Perú | FORECAST→**ENDED** | ORANGE→**GREEN** | ventana de pronóstico vencida, sin impacto confirmado |
+| AMZ-20260912-001 | Drought | Venezuela | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260912-002 | Flood | Bolivia | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260914-001 | Landslide | Ecuador | OBSERVED | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260914-002 | Extreme Rain | Venezuela | OBSERVED | GREEN→**YELLOW** | activo, sin impacto real reportado |
+| AMZ-20260914-003 | Deforestation | Brasil | OBSERVED | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260914-004 | Earthquake | Ecuador | OBSERVED→**ENDED** | GREEN→GREEN | sismo puntual sin riesgo secundario, cerrado |
+| AMZ-20260916-001 | Earthquake | Perú | OBSERVED→**ENDED** | GREEN→GREEN | sismo puntual sin riesgo secundario, cerrado |
+| AMZ-20260916-002 | Earthquake | Ecuador | OBSERVED→**ENDED** | GREEN→GREEN | sismo puntual sin riesgo secundario, cerrado |
+| AMZ-20260916-003 | Extreme Rain | Colombia | FORECAST→**ENDED** | GREEN→GREEN | ventana de pronóstico vencida, sin impacto confirmado |
+| AMZ-20260917-001 | Earthquake | Perú | OBSERVED→**ENDED** | GREEN→GREEN | sismo puntual sin riesgo secundario, cerrado |
+| AMZ-20260923-001 | Extreme Rain | Ecuador | FORECAST→**ENDED** | GREEN→GREEN | ventana de pronóstico vencida, sin impacto confirmado |
+| AMZ-20260923-002 | Drought | Brasil | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260925-001 | Wildfire | Brasil | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20260929-001 | Earthquake | Perú | OBSERVED→**ENDED** | GREEN→GREEN | sismo puntual sin riesgo secundario, cerrado |
+| AMZ-20261001-001 | Wildfire | Brasil | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20261002-001 | Extreme Rain | Ecuador | ONGOING | GREEN→**YELLOW** | activo, sin impacto real reportado |
+| AMZ-20261006-001 | Drought | Brasil | ONGOING | ORANGE→ORANGE | impacto real, sin cambio |
+| AMZ-20261008-001 | Extreme Heat | Perú | FORECAST→**ENDED** | GREEN→GREEN | ventana de pronóstico vencida, sin impacto confirmado |
+| AMZ-20261016-001 | Flood | Ecuador | OBSERVED | GREEN→**YELLOW** | activo, sin impacto real reportado |
+
+Resumen: 10 eventos cerrados a `ENDED` (6 sismos OBSERVED sin riesgo secundario mencionado en su propio registro; 4 FORECAST cuya ventana de días específicos ya pasó hace 40-90+ días sin confirmación posterior), 6 eventos GREEN→YELLOW (activos, sin impacto real reportado), 14 sin cambio de prioridad (RED/ORANGE con impacto real ya confirmado). Los 10 cierres actualizaron LAST_UPDATED_DATE/UPDATE_COUNT (cambio real de estado); los 20 restantes NO se tocaron sin verificación real — quedan en una cola de re-verificación explícita (ver abajo), nunca se cerró nada por adivinar.
+
+**3. Regla de re-verificación por tipo de peligro** (ver prompt completo en `claude/contexto-migracion-github-2026-10.md` sección 7 del Project): sismo → cierre casi inmediato sin necesidad de fuente nueva (salvo riesgo secundario mencionado); pronóstico → 3-7 días de vigencia; lluvia extrema/tormenta severa → 7 días (flag a 14); inundación/deslizamiento → 14 días (flag a 30); incendio forestal → 7-10 días, cruzando con FIRMS; sequía → 30 días; deforestación → 30-60 días (condición estructural, no evento que "termine"). Nunca se cierra sin evidencia — si no se encuentra nada tras buscar, el evento simplemente no se toca esa corrida.
+
+Cola de re-verificación real pendiente tras esta migración (20 eventos activos, ninguno cerrado sin evidencia):
+
+```
+ 59d  AMZ-20260907-001   Flood         Peru       OBSERVED  ORANGE
+ 51d  AMZ-20260911-001   Drought       Colombia   ONGOING   YELLOW
+ 51d  AMZ-20260912-001   Drought       Venezuela  ONGOING   ORANGE
+ 51d  AMZ-20260914-001   Landslide     Ecuador    OBSERVED  ORANGE
+ 51d  AMZ-20260914-002   Extreme Rain  Venezuela  OBSERVED  YELLOW
+ 51d  AMZ-20260914-003   Deforestation Brazil     OBSERVED  ORANGE
+ 50d  AMZ-20260909-001   Wildfire      Brazil     ONGOING   ORANGE
+ 49d  AMZ-20260911-002   Extreme Rain  Ecuador    ONGOING   YELLOW
+ 38d  AMZ-20260912-002   Flood         Bolivia    ONGOING   ORANGE
+ 35d  AMZ-20260923-002   Drought       Brazil     ONGOING   ORANGE
+ 34d  AMZ-20261002-001   Extreme Rain  Ecuador    ONGOING   YELLOW
+ 24d  AMZ-20260911-003   Drought       Brazil     ONGOING   ORANGE
+ 22d  AMZ-20260908-001   Drought       Peru       ONGOING   ORANGE
+ 21d  AMZ-20260801-001   Wildfire      Bolivia    ONGOING   RED
+ 21d  AMZ-20260925-001   Wildfire      Brazil     ONGOING   ORANGE
+ 21d  AMZ-20261016-001   Flood         Ecuador    OBSERVED  YELLOW
+ 17d  AMZ-20261006-001   Drought       Brazil     ONGOING   ORANGE
+  9d  AMZ-20260910-002   Wildfire      Brazil     ONGOING   RED
+  9d  AMZ-20261001-001   Wildfire      Brazil     ONGOING   ORANGE
+  8d  AMZ-20260902-001   Drought       Brazil     ONGOING   ORANGE
+```
+(días desde LAST_UPDATED_DATE al 06-11-2026). La tarea diaria actualizada ya prioriza esta cola antes de buscar eventos nuevos.
+
+**4. Ventana de visualización del visor — confirmado, sin cambio de lógica.** Se mantiene "GitHub = historial completo para siempre, visor = solo lo vigente", filtrando por `EVENT_STATUS` (no-`ENDED` sin límite de días; `ENDED` retenido 90 días, regla ya existente en `rebuild_aggregates.py`). Se descartó un corte fijo de antigüedad (7/30 días): no distingue un peligro que sigue genuinamente activo de uno que simplemente nadie ha vuelto a verificar — ese es justamente el problema que ataca el punto 3.
+
+**Cambios de código:**
+- `.github/workflows/rebuild-aggregates.yml`: + `schedule: cron "17 20 * * *"` (heartbeat diario).
+- `index.html`: `PRIORITY_COLOR`, traducciones ES/PT/EN y leyenda de colores ahora incluyen YELLOW (antes el fallback los habría pintado como GREEN sin aviso).
+- `scripts/build_quarterly_report_data.py`: conteo de prioridades del reporte trimestral incluye YELLOW (antes se perdía silenciosamente del total).
+- `Events/*.json` (20 de 30 archivos), `index.json`, `events.json`, `meta.json`, ambos CSV trimestrales: reconstruidos con `scripts/rebuild_aggregates.py` tras la migración.
+
+**Documentación actualizada:** este archivo y `claude/contexto-migracion-github-2026-10.md` (Project de Cowork) — secciones 2 (esquema de prioridad), 3 (tarea diaria), 4 (changelog del visor), 5 (decisiones), 6 (pendientes 0b/0c, cola de re-verificación), 7 (prompt completo actualizado) y 8 (commits).
+
+**Pendiente:** aplicar en `jachicanoy@3is.org` el mismo esquema de 4 colores y la regla de re-verificación (texto ya listo) — esa cuenta sigue con el esquema viejo de 3 colores hasta que alguien lo actualice ahí. Sección 19 de las instrucciones del Project de Cowork (fuera del alcance de las herramientas de esta sesión — solo se puede editar desde la configuración del Project en claude.ai) también necesita el texto de reemplazo con el esquema de 4 colores; texto entregado directamente a Jerson en el chat.
+
+Commits: `4762ca3` (origin) / `743d7b5` (3is).
