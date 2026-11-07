@@ -7,7 +7,7 @@
     "lon": -64.9,
     "status": "ONGOING",
     "firstDetected": "2026-08-01",
-    "lastUpdated": "2026-10-16",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Bolivia is experiencing a wildfire season that had already surpassed the 2025 peak by 21 July (2,835 heat spots, versus 2,536 for all of 2025). CEJIS "
   },
   {
@@ -29,7 +29,7 @@
     "lon": -76.1122,
     "status": "OBSERVED",
     "firstDetected": "2026-09-07",
-    "lastUpdated": "2026-09-08",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Several hours of intense, sudden rainfall, following a preceding stretch of heat and low rainfall, caused rapid urban flooding in Yurimaguas. Streets,"
   },
   {
@@ -73,7 +73,7 @@
     "lon": -60.3806,
     "status": "ONGOING",
     "firstDetected": "2026-09-10",
-    "lastUpdated": "2026-10-28",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "INPE data show Amazonas (Brazil) led the national heat-spot count in the first week of September 2026 (1,167-1,224 spots, depending on source), far ah"
   },
   {
@@ -95,7 +95,7 @@
     "lon": -76.8869,
     "status": "ONGOING",
     "firstDetected": "2026-09-11",
-    "lastUpdated": "2026-09-18",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Ecuador's National Institute of Meteorology and Hydrology (INAMHI) issued a medium-to-high intensity rain alert for the night of September 5 through t"
   },
   {
@@ -139,7 +139,7 @@
     "lon": -64.9014,
     "status": "ONGOING",
     "firstDetected": "2026-09-12",
-    "lastUpdated": "2026-09-29",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Bolivia's National Meteorology and Hydrology Service (SENAMHI), which had maintained an orange river-overflow alert for Santa Cruz, Cochabamba and La "
   },
   {
@@ -150,7 +150,7 @@
     "lon": -78.1113,
     "status": "OBSERVED",
     "firstDetected": "2026-09-14",
-    "lastUpdated": "2026-09-16",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "ECU 911 reported multiple landslides and road damage in Ecuador's Amazonian provinces on the morning of September 14, 2026, as a direct consequence of"
   },
   {
@@ -161,7 +161,7 @@
     "lon": -67.6236,
     "status": "OBSERVED",
     "firstDetected": "2026-09-14",
-    "lastUpdated": "2026-09-16",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Venezuela's National Institute of Meteorology and Hydrology (INAMEH) issued an alert over the passage of Tropical Wave No. 49, combined with the Inter"
   },
   {
@@ -260,7 +260,7 @@
     "lon": -70.354,
     "status": "ONGOING",
     "firstDetected": "2026-09-25",
-    "lastUpdated": "2026-10-16",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "According to the AcreQueimadas project (Geoprocessing Laboratory, Federal University of Acre), using Landsat 8 and Sentinel-2 imagery, Acre accumulate"
   },
   {
@@ -282,7 +282,7 @@
     "lon": -54.0692,
     "status": "ONGOING",
     "firstDetected": "2026-10-01",
-    "lastUpdated": "2026-10-28",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "Two municipalities in western Pará (Brazil) declared emergencies due to wildfires: Monte Alegre (Decree 480/2026, Level II emergency) and Rurópolis (D"
   },
   {
@@ -293,7 +293,7 @@
     "lon": -77.8129,
     "status": "ONGOING",
     "firstDetected": "2026-10-02",
-    "lastUpdated": "2026-10-03",
+    "lastUpdated": "2026-11-06",
     "descEnPreview": "INAMHI issued Meteorological Advisory No. 77, valid from Oct 1 (15:00) to Oct 5 (10:00), for rain, thunderstorms and possible river rises, driven by u"
   },
   {
@@ -328,5 +328,16 @@
     "firstDetected": "2026-10-16",
     "lastUpdated": "2026-10-16",
     "descEnPreview": "Per the National Risk Management Secretariat (SNGR) monitoring report at 07:00 on 15 October 2026, the Tunim River had overflowed in the Gualaquiza, B"
+  },
+  {
+    "id": "AMZ-20261106-001",
+    "country": "Bolivia",
+    "hazard": "Earthquake",
+    "lat": -17.4671,
+    "lon": -64.5015,
+    "status": "ENDED",
+    "firstDetected": "2026-11-06",
+    "lastUpdated": "2026-11-06",
+    "descEnPreview": "USGS recorded a magnitude 4.4 earthquake on 2 November 2026 at 18:54:23 UTC, epicenter 49 km north of Comarapa (Manuel María Caballero province, Santa"
   }
 ]
