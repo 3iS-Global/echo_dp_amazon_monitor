@@ -51,7 +51,7 @@
     "lon": -50.95,
     "status": "ONGOING",
     "firstDetected": "2026-09-09",
-    "lastUpdated": "2026-09-17",
+    "lastUpdated": "2026-11-10",
     "descEnPreview": "Amapá's state environment secretariat (Sema-AP), via the Painel do Fogo (using INPE and Ibama/ICMBio data), recorded 90 heat spots between August 1 an"
   },
   {
@@ -172,7 +172,7 @@
     "lon": -52.21,
     "status": "OBSERVED",
     "firstDetected": "2026-09-14",
-    "lastUpdated": "2026-09-16",
+    "lastUpdated": "2026-11-11",
     "descEnPreview": "Data from the DETER/INPE system, released on September 14, 2026, show deforestation alerts in Pará rose from 74 km² to 155 km² between August 2025 and"
   },
   {
@@ -350,5 +350,38 @@
     "firstDetected": "2026-11-11",
     "lastUpdated": "2026-11-11",
     "descEnPreview": "USGS recorded a magnitude 5.3 (mb) earthquake on 9 November 2026 at 10:23:53 UTC (05:23 local time), epicenter 80 km ENE of Lagunas, Loreto region, Pe"
+  },
+  {
+    "id": "AMZ-20261111-002",
+    "country": "Peru",
+    "hazard": "Landslide",
+    "lat": -9.02,
+    "lon": -75.52,
+    "status": "ONGOING",
+    "firstDetected": "2026-11-11",
+    "lastUpdated": "2026-11-05",
+    "descEnPreview": "In the early hours of November 1, 2026, a debris flow (huaico) struck the Federico Basadre highway in the Santa Rosa sector, Padre Abad province, Ucay"
+  },
+  {
+    "id": "AMZ-20261111-003",
+    "country": "Brazil",
+    "hazard": "Wildfire",
+    "lat": -3.2,
+    "lon": -52.21,
+    "status": "ONGOING",
+    "firstDetected": "2026-11-11",
+    "lastUpdated": "2026-11-10",
+    "descEnPreview": "The municipality of Altamira, in southwestern Para (Xingu River region), declared a state of emergency over forest fires on October 22, 2026, valid fo"
+  },
+  {
+    "id": "AMZ-20261111-004",
+    "country": "Brazil",
+    "hazard": "Wildfire",
+    "lat": -4.44,
+    "lon": -49.12,
+    "status": "ONGOING",
+    "firstDetected": "2026-11-11",
+    "lastUpdated": "2026-11-09",
+    "descEnPreview": "The municipality of Jacunda, in southeastern Para (Tocantins River/Tucurui reservoir region), declared a state of emergency over forest fires on Octob"
   }
 ]
