@@ -1,14 +1,14 @@
 {
   "EVENT_ID": "AMZ-20260902-001",
-  "AS_OF_DATE": "2026-10-28",
+  "AS_OF_DATE": "2026-11-02",
   "DEATHS": null,
   "INJURIES": null,
   "AFFECTED_PERSONS": null,
-  "AFFECTED_FAMILIES": 124221,
+  "AFFECTED_FAMILIES": 146425,
   "DISPLACED_PERSONS": null,
   "EVACUATED_PERSONS": null,
   "SCOPE": "CONSOLIDATED",
-  "SOURCE": "Defesa Civil do Amazonas (boletim 28-out), vía Agência Amazonas / Portal do Lobão",
-  "SOURCE_URL": "https://portaldolobao.com.br/governo-do-amazonas-divulga-boletim-sobre-a-estiagem-nesta-quarta-feira/",
-  "NOTES": "Cifra estatal (Amazonas, boletín 28-oct): 124.221 familias afectadas; 47 municipios en emergencia, 11 en alerta, 4 en atención; 562 comunidades aisladas (levantamiento preliminar). Sin cifra de personas reportada; la proyección del Decreto 55.486 (~648.000 personas) no se carga por ser estimación. Un medio citó 124.887 familias (boletín 27-oct), no confirmado en el boletín posterior."
+  "SOURCE": "Defesa Civil do Amazonas (boletim 2-nov), vía Rio Times Online",
+  "SOURCE_URL": "https://www.riotimesonline.com/brazil-amazonas-drought-146000-families-47-municipalities-2026/",
+  "NOTES": "Cifra estatal (Amazonas, boletín 2-nov-2026, citado por Rio Times Online 3-nov): 146.425 familias afectadas; 47 de 62 municipios en emergencia, el resto en alerta (incl. Manaus, capital). Sin cifra de personas ni de niveles de río en esta nota. Reemplaza la cifra anterior de 124.221 familias (boletín 28-oct)."
 }
