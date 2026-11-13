@@ -586,3 +586,17 @@ Commits: `4762ca3` (origin) / `743d7b5` (3is).
 **Verificación:** vista previa local (Playwright) en 3 idiomas, confirmando medición exacta de 5px para los logos, el subtítulo en una línea con las iniciales resaltadas, y la pestaña activa visible en teal en las 4 pestañas.
 
 **Documentación:** este archivo.
+
+## 2026-11-13 (ajustes 2) — Logos 10px más abajo, espacio banner-tabs reducido, fondo blanco con difuminado azul
+
+**Feedback de Jerson tras ver el rediseño anterior (fondo blanco plano):** "no tiene buen diseño", con 3 pedidos puntuales, trabajados en vivo sobre el visor real (GitHub Pages) usando Claude en Chrome para que pudiera ver los cambios mientras se probaban, antes de tocar el código fuente.
+
+1. **Logos 10px más abajo:** de 5px a 15px desde el borde superior del banner (`.banner-logos-row` pasa de `top:-15px` a `top:-5px`; sigue usando `align-self:flex-start` para no depender de la altura del bloque de título).
+2. **Espacio banner↔tabs-bar reducido:** el `padding-bottom` del banner baja de `3.4rem` a `2.4rem`. El hueco entre el título/logos y la barra de pestañas se redujo de ~78px a ~52px.
+3. **Fondo con difuminado azul (alternativa a blanco plano):** se probaron varias variantes en vivo directamente sobre jachicanoy.github.io/3is-global.github.io antes de decidir. La versión final: un pseudo-elemento `#banner::before` con dos capas de gradiente — (a) un degradado horizontal que mantiene **blanco puro** desde el borde izquierdo hasta justo después de terminar los 3 logos (0 a 500px), y a partir de ahí transiciona a los mismos 3 colores que ya usa `.brand-divider` (aqua→cian→navy, la franja de 6px que queda justo debajo del banner), dándole continuidad visual; (b) un degradado vertical que desvanece ese color a blanco puro hacia el 82% de la altura del banner, para que no se vea como un bloque de color sólido. En pantallas angostas (`≤760px`, donde logos y título se apilan en vez de quedar lado a lado) se usa un *fallback* más simple: un lavado uniforme de arriba a abajo, sin la división izquierda/derecha.
+
+**Bug encontrado y corregido durante la iteración:** la primera versión probada en vivo usaba `#banner > * { position:relative; z-index:1 }` para que los logos/título quedaran por encima del nuevo fondo (necesario porque un pseudo-elemento con `z-index:0` pinta por encima de contenido estático dentro del mismo contexto de apilamiento). Ese selector universal también capturaba `.tabs-bar` (hijo directo de `#banner`) y le sobrescribía `position:absolute` a `position:relative`, sacándola de su posicionamiento absoluto — eso hizo que la barra de pestañas pasara a fluir en el documento y dejara un hueco de ~32px antes de la línea `.brand-divider` (exactamente el síntoma que reportó Jerson: "la línea de los tabs y el contenido quedó abajo"). Se corrigió apuntando el `z-index:1` únicamente al primer `div` hijo de `#banner` (el que envuelve logos+título+botón de idioma), sin tocar `.tabs-bar`, que ya tiene su propio `position:absolute;z-index:2` y no lo necesitaba.
+
+**Verificación:** iteración completa en vivo sobre el sitio publicado (inyección de CSS vía `javascript_tool` de Claude en Chrome, con capturas en cada paso) antes de tocar `index.html`; luego réplica exacta en el archivo fuente, validación de JS (`node --check`) y vista previa local (Playwright, 1400px y 375px) confirmando el mismo resultado visual, incluyendo el *fallback* móvil.
+
+**Documentación:** este archivo.
