@@ -572,3 +572,17 @@ Commits: `4762ca3` (origin) / `743d7b5` (3is).
 **Commits:** pendientes de registrar aquí tras el push (ver `git log` — `index.html`, `logo_cuenca.png`, `3is_logo.png`, `echo_logo.png`).
 
 **Documentación:** este archivo.
+
+## 2026-11-13 (ajustes) — Logos arriba, subtítulo de una línea con iniciales PRISMA resaltadas, pestaña activa en teal
+
+**Feedback de Jerson tras ver el rediseño anterior:** le gustó el resultado, con 4 ajustes puntuales:
+
+1. **Logos más arriba:** antes quedaban a ~71px del borde superior del banner (centrados verticalmente junto al título, que es más alto). Se cambió `.banner-logos-row` para que ya no herede la alineación inferior de la fila (se le dio `align-self:flex-start`, independiente de la altura del bloque de título) y se ajustó el offset vertical para que queden a exactamente **5px** del borde superior del banner, medido con Playwright (`getBoundingClientRect()`), en vez de calcularlo a ojo.
+2. **Subtítulo en una sola línea, resaltando las iniciales de PRISMA:** se quitó el `max-width:300px` que forzaba el salto a 2 líneas. El texto completo del acrónimo ya formaba PRISMA con sus iniciales (Plataforma-Regional-de-Inteligencia-y-Seguimiento-Multiamenaza-Amazónica → P-R-I-S-M-A); se resaltan esas 6 letras en negrita y en el color aqua de 3iS (`var(--3is-aqua)`) dentro del subtítulo, vía `innerHTML` en vez de `textContent` (`updateSubtitle()` actualizado).
+3. **Traducción al inglés fijada por Jerson:** "Platform for Regional Intelligence and Surveillance of Multi-hazards in the Amazon" (también forma P-R-I-S-M-A). Reemplaza la traducción provisional de la sesión anterior.
+4. **Portugués reordenado para que también deletree PRISMA:** la traducción provisional anterior no conservaba el orden de iniciales. Nueva versión: "Plataforma Regional de Inteligência e Supervisão de Multiameaças da Amazônia" (P-R-I-S-M-A). El panel "Acerca de"/"Sobre"/"About" se actualizó con la misma redacción en los 3 idiomas (sin negrita ahí, solo en el banner).
+5. **Pestaña activa ahora en teal (`var(--3is-teal)`), no blanco:** con el banner ya blanco, la pestaña seleccionada en blanco se fundía con el fondo. Se cambió el color de fondo de `.tab-btn.active` y el de los dos pseudo-elementos que generan el efecto de "pestaña de carpeta" (`::before`/`::after`, antes `#fff`, ahora `var(--3is-teal)`) para que el recorte curvo siga coincidiendo con el nuevo color de la pestaña activa. Es el mismo verde-azulado que ya se usa para los chips de filtro activos ("Todos", etc.), para mantener consistencia visual.
+
+**Verificación:** vista previa local (Playwright) en 3 idiomas, confirmando medición exacta de 5px para los logos, el subtítulo en una línea con las iniciales resaltadas, y la pestaña activa visible en teal en las 4 pestañas.
+
+**Documentación:** este archivo.
