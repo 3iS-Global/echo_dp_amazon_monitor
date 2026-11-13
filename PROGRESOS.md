@@ -550,3 +550,25 @@ Commits: `4762ca3` (origin) / `743d7b5` (3is).
 - Aplicado al prompt de `trig_0136rVLAjj2UwZoUYX4RqDHL` vía `update_trigger` (re-firmado por Jerson). **Pendiente:** aplicar el mismo texto a la tarea de `jachicanoy@3is.org`.
 
 **Documentación actualizada:** este archivo. Pendiente aplicar el mismo resumen a `claude/contexto-migracion-github-2026-10.md` (Project de Cowork) y `claude/bitacora-reuniones-equipo.md`.
+
+## 2026-11-13 — Rediseño del banner: logo de CUENCA, fondo blanco y nuevo nombre "PRISMA Amazonía"
+
+**Pedido de Jerson:** organizar los 3 logos del banner (CUENCA primero a la izquierda, 3iS segundo, ECHO tercero en su versión de letras azules), cambiar el fondo del banner principal de degradado navy/teal/cyan a blanco, mantener el tamaño del banner (sin ensancharlo) y la altura visual de los logos, mover la barra de pestañas para que quede debajo de los logos (no al lado), y renombrar el visor de "Observatorio de Riesgos" a **"PRISMA Amazonía"** ("Plataforma Regional de Inteligencia y Seguimiento Multiamenaza Amazónica").
+
+**Logos nuevos añadidos al repositorio:** `logo_cuenca.png` (logo del proyecto CUENCA, circular + texto), `3is_logo.png` (logo principal de 3iS con eslogan "information · innovation · impact", reemplaza el SVG en blanco embebido que solo se veía sobre fondo oscuro), `echo_logo.png` (reemplazado por la versión horizontal "Financiado por la Unión Europea — Ayuda Humanitaria" con texto en azul, antes era un recorte pequeño en blanco). Los tres se muestran a `height:38px;width:auto` (se preserva la proporción real de cada archivo en vez de forzar un ancho fijo), con una clase `.banner-logo` que se reduce a 26px en pantallas angostas (antes `≤760px`) para que los 3 quepan sin desbordarse.
+
+**Banner (`#banner`):**
+- Fondo: de `linear-gradient(135deg, navy, teal-deep, cyan)` a `#ffffff` sólido. Se quitó la textura decorativa de puntos blancos (`.dot-field`), invisible sobre fondo blanco.
+- Título y subtítulo: colores invertidos de blanco/aqua-tint a `var(--3is-navy)`/`var(--3is-teal-deep)` para mantener contraste sobre el nuevo fondo claro.
+- Botón de idioma (`.toolbar-btn-ghost`) e ícono de globo: mismo cambio, de blancos translúcidos (pensados para fondo oscuro) a borde/relleno/texto en la paleta cian/teal-deep habitual del resto del visor.
+- Pestañas inactivas (`.tab-btn`): de `rgba(255,255,255,.14)`/texto blanco a `var(--3is-gray)`/texto navy — la pestaña activa sigue en blanco con texto navy, igual que antes.
+
+**Barra de pestañas — ahora en su propia fila:** antes `.tabs-bar` se posicionaba con un offset calculado (`left:calc(1.5rem + 207px + 1cm)`) para quedar a la derecha de los logos, a la altura del borde inferior del banner. Con 3 logos el ancho de esa fila ya no era constante ni predecible, así que se simplificó: `.tabs-bar` pasa a `left:1.5rem;right:1.5rem` (ocupa todo el ancho, como ya hacía solo en móvil) y el padding inferior extra que antes solo se aplicaba en pantallas `≤760px` (`padding-bottom:3.4rem`) ahora es permanente en `#banner`, dejando sitio para que la fila de pestañas quede siempre debajo de logos+título, nunca a un lado.
+
+**Nombre del visor → "PRISMA Amazonía":** se preguntó a Jerson dónde debía ir el nombre completo del acrónimo ("Plataforma Regional de Inteligencia y Seguimiento Multiamenaza Amazónica"), dado que el subtítulo del banner ya tenía un uso (texto dinámico distinto por pestaña, añadido el 06-11-2026). Decisión: el nombre completo **reemplaza** el subtítulo dinámico — el banner ahora siempre muestra "PRISMA Amazonía" + el nombre completo debajo, igual en las 3 pestañas. El texto que antes variaba por pestaña (qué muestra cada una) se trasladó al panel "Acerca de"/"Sobre"/"About", como primer párrafo nuevo bajo el título "PRISMA Amazonía", en ES/PT/EN. La función `updateSubtitle()` y el diccionario `SUBTITLE_KEY` (que eran por pestaña) se reemplazaron por una sola clave fija `subtitleFull` por idioma; las claves antiguas `subtitleMonitor/Forecast/Climate/Ideam` se conservan en el diccionario (ya no se usan en el banner, mantenidas por si se necesitan más adelante). `<title>` de la pestaña del navegador actualizado a "PRISMA Amazonía". Historial de versiones del panel "Acerca de" actualizado con una entrada para el 06-11-2026 (que no se había registrado ahí) y una para hoy.
+
+**Verificación antes de publicar:** se montó una vista previa local (servidor HTTP + Playwright, sin tocar el repositorio en producción) con los 3 logos reales, en 3 anchos (1400px, 900px, 375px) y en los 3 idiomas, confirmando: los 3 logos se ven completos y sin recortes en escritorio y en móvil, el título/subtítulo cambian de idioma correctamente, el panel "Acerca de" muestra la nueva sección "PRISMA Amazonía" con el contenido por pestaña, y no hay errores de JavaScript nuevos en consola (los únicos 404 son los de datos — `events.json`, etc. — esperados en una vista previa sin servidor real).
+
+**Commits:** pendientes de registrar aquí tras el push (ver `git log` — `index.html`, `logo_cuenca.png`, `3is_logo.png`, `echo_logo.png`).
+
+**Documentación:** este archivo.
