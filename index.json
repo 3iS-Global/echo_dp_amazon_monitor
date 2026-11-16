@@ -40,7 +40,7 @@
     "lon": -73.2516,
     "status": "ONGOING",
     "firstDetected": "2026-09-08",
-    "lastUpdated": "2026-10-15",
+    "lastUpdated": "2026-11-16",
     "descEnPreview": "SENAMHI reports that the Huallaga and Amazonas rivers in Loreto are falling faster than normal due to reduced upstream rainfall combined with the dry-"
   },
   {
@@ -73,7 +73,7 @@
     "lon": -60.3806,
     "status": "ONGOING",
     "firstDetected": "2026-09-10",
-    "lastUpdated": "2026-11-06",
+    "lastUpdated": "2026-11-16",
     "descEnPreview": "INPE data show Amazonas (Brazil) led the national heat-spot count in the first week of September 2026 (1,167-1,224 spots, depending on source), far ah"
   },
   {
@@ -260,7 +260,7 @@
     "lon": -70.354,
     "status": "ONGOING",
     "firstDetected": "2026-09-25",
-    "lastUpdated": "2026-11-06",
+    "lastUpdated": "2026-11-16",
     "descEnPreview": "According to the AcreQueimadas project (Geoprocessing Laboratory, Federal University of Acre), using Landsat 8 and Sentinel-2 imagery, Acre accumulate"
   },
   {
@@ -381,7 +381,18 @@
     "lon": -49.12,
     "status": "ONGOING",
     "firstDetected": "2026-11-11",
-    "lastUpdated": "2026-11-09",
+    "lastUpdated": "2026-11-16",
     "descEnPreview": "The municipality of Jacunda, in southeastern Para (Tocantins River/Tucurui reservoir region), declared a state of emergency over forest fires on Octob"
+  },
+  {
+    "id": "AMZ-20261116-001",
+    "country": "Peru",
+    "hazard": "Landslide",
+    "lat": -9.0369,
+    "lon": -75.5075,
+    "status": "OBSERVED",
+    "firstDetected": "2026-11-16",
+    "lastUpdated": "2026-11-16",
+    "descEnPreview": "In the early morning of 1 November 2026, a rain-induced landslide (huaico) affected roughly 140 linear meters of the Federico (Jorge) Basadre highway,"
   }
 ]
