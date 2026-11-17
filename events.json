@@ -1518,13 +1518,13 @@
     "priority": "ORANGE",
     "status": "ONGOING",
     "basinStatus": "INSIDE",
-    "verification": "SINGLE_SOURCE",
+    "verification": "MULTIPLE_SOURCES",
     "lat": -3.2,
     "lon": -52.21,
     "coordAccuracy": "APPROXIMATE",
     "firstDetected": "2026-11-11",
-    "lastUpdated": "2026-11-10",
-    "updateCount": 0,
+    "lastUpdated": "2026-11-17",
+    "updateCount": 1,
     "eventDate": "2026-10-22",
     "adminLevel1": "Para",
     "adminLevel2": "NOT_REPORTED",
@@ -1541,9 +1541,9 @@
       "en": "The municipality of Altamira, in southwestern Para (Xingu River region), declared a state of emergency over forest fires on October 22, 2026, valid for 180 days, per O Liberal. Between October 1-20, 2026, Inpe recorded 618 heat spots in Altamira (second-highest in Brazil for that period) and 751 in neighboring Sao Felix do Xingu (the country's highest), driven by drought and high temperatures. The Riozinho do Anfrisio Extractive Reserve, about 450 km from Altamira's municipal seat, is among the hardest-hit areas; firefighters had reduced the flames there but the fire was not fully controlled as of the report date. The decree covers urban, rural and riverside areas and responds to smoke-related health risks for Altamira's population. A cross-check against NASA FIRMS/VIIRS data confirms sustained activity: 386 heat spots in an approximate 2x2-degree box around Altamira in the last 14 days (as of Nov 10, 2026), 338 of them in the last 7 days."
     },
     "notes": {
-      "es": "Evento nuevo, distinto por tipo de peligro (Wildfire) del evento de deforestacion AMZ-20260914-003 (Deforestation) que comparte la misma zona geografica (Altamira/Sao Felix do Xingu); se registran por separado porque el esquema exige coincidencia de hazard_type para tratarlos como el mismo evento. Coordenadas = sede municipal de Altamira (mismo punto usado en AMZ-20260914-003), APPROXIMATE/MEDIUM; el incendio mas critico (Riozinho do Anfrisio) esta a ~450 km de ese punto, por lo que la ubicacion exacta del fuego no esta representada con precision. Sao Felix do Xingu registro mas focos (751) que Altamira (618) en el mismo periodo pero no se reporto un decreto de emergencia propio en la fuente consultada; se recomienda buscar fuente especifica de Sao Felix do Xingu en el proximo ciclo y evaluar si merece un registro separado. AMAZON_BASIN_STATUS=INSIDE confirmado por interseccion geometrica con el poligono oficial amazon_basin_project.geojson.",
-      "pt": "Evento novo, distinto por tipo de perigo (Wildfire) do evento de desmatamento AMZ-20260914-003 (Deforestation) que compartilha a mesma area geografica (Altamira/Sao Felix do Xingu); sao registrados separadamente porque o esquema exige correspondencia de hazard_type para trata-los como o mesmo evento. Coordenadas = sede municipal de Altamira (mesmo ponto usado no AMZ-20260914-003), APPROXIMATE/MEDIUM; o incendio mais critico (Riozinho do Anfrisio) esta a ~450 km desse ponto, portanto a localizacao exata do fogo nao esta representada com precisao. Sao Felix do Xingu registrou mais focos (751) que Altamira (618) no mesmo periodo, mas nao foi reportado um decreto de emergencia proprio na fonte consultada; recomenda-se buscar fonte especifica de Sao Felix do Xingu no proximo ciclo e avaliar se merece registro separado. AMAZON_BASIN_STATUS=INSIDE confirmado por intersecao geometrica com o poligono oficial amazon_basin_project.geojson.",
-      "en": "New event, distinct by hazard type (Wildfire) from the deforestation event AMZ-20260914-003 (Deforestation) that shares the same geographic area (Altamira/Sao Felix do Xingu); they are recorded separately because the schema requires matching hazard_type to treat them as the same event. Coordinates = Altamira municipal seat (the same point used for AMZ-20260914-003), APPROXIMATE/MEDIUM; the most critical fire (Riozinho do Anfrisio) is about 450 km from that point, so the exact fire location is not precisely represented. Sao Felix do Xingu recorded more heat spots (751) than Altamira (618) in the same period but no emergency decree of its own was reported in the source consulted; recommend searching for a Sao Felix do Xingu-specific source next cycle and assessing whether it warrants a separate record. AMAZON_BASIN_STATUS=INSIDE confirmed by geometric intersection with the official amazon_basin_project.geojson polygon."
+      "es": "Evento nuevo, distinto por tipo de peligro (Wildfire) del evento de deforestacion AMZ-20260914-003 (Deforestation) que comparte la misma zona geografica (Altamira/Sao Felix do Xingu); se registran por separado porque el esquema exige coincidencia de hazard_type para tratarlos como el mismo evento. Coordenadas = sede municipal de Altamira (mismo punto usado en AMZ-20260914-003), APPROXIMATE/MEDIUM; el incendio mas critico (Riozinho do Anfrisio) esta a ~450 km de ese punto, por lo que la ubicacion exacta del fuego no esta representada con precision. Sao Felix do Xingu registro mas focos (751) que Altamira (618) en el mismo periodo pero no se reporto un decreto de emergencia propio en la fuente consultada; se recomienda buscar fuente especifica de Sao Felix do Xingu en el proximo ciclo y evaluar si merece un registro separado. AMAZON_BASIN_STATUS=INSIDE confirmado por interseccion geometrica con el poligono oficial amazon_basin_project.geojson. | ACTUALIZACIÓN 17-11: El Ministerio de Integración y Desarrollo Regional reconoció (ordenanza federal, Diário Oficial da União, 3-nov-2026) situación de emergencia en 12 municipios de Pará: 8 por incendios forestales (incluye Altamira) y 4 por sequía; 515 brigadistas/inspectores de Ibama e ICMBio desplegados con apoyo de 11 aeronaves y 40 vehículos terrestres (O Liberal, 4-nov-2026). Confirma que la emergencia por incendios en Altamira continúa activa más allá del decreto municipal original del 22-oct. La fuente reporta cifras contradictorias de focos extintos (titular: +700; cuerpo: +170 según el Ministerio de Medio Ambiente) sin reconciliar, no se adopta ninguna cifra como definitiva.",
+      "pt": "Evento novo, distinto por tipo de perigo (Wildfire) do evento de desmatamento AMZ-20260914-003 (Deforestation) que compartilha a mesma area geografica (Altamira/Sao Felix do Xingu); sao registrados separadamente porque o esquema exige correspondencia de hazard_type para trata-los como o mesmo evento. Coordenadas = sede municipal de Altamira (mesmo ponto usado no AMZ-20260914-003), APPROXIMATE/MEDIUM; o incendio mais critico (Riozinho do Anfrisio) esta a ~450 km desse ponto, portanto a localizacao exata do fogo nao esta representada com precisao. Sao Felix do Xingu registrou mais focos (751) que Altamira (618) no mesmo periodo, mas nao foi reportado um decreto de emergencia proprio na fonte consultada; recomenda-se buscar fonte especifica de Sao Felix do Xingu no proximo ciclo e avaliar se merece registro separado. AMAZON_BASIN_STATUS=INSIDE confirmado por intersecao geometrica com o poligono oficial amazon_basin_project.geojson. | ATUALIZAÇÃO 17-11: O Ministério da Integração e do Desenvolvimento Regional reconheceu (portaria federal, Diário Oficial da União, 3-nov-2026) situação de emergência em 12 municípios do Pará: 8 por incêndios florestais (incluindo Altamira) e 4 por seca; 515 brigadistas/fiscais do Ibama e ICMBio mobilizados com apoio de 11 aeronaves e 40 veículos terrestres (O Liberal, 4-nov-2026). Confirma que a emergência por incêndios em Altamira segue ativa além do decreto municipal original de 22-out. A fonte traz números contraditórios de focos extintos (manchete: +700; corpo do texto: +170 segundo o Ministério do Meio Ambiente) sem reconciliação, nenhuma cifra é adotada como definitiva.",
+      "en": "New event, distinct by hazard type (Wildfire) from the deforestation event AMZ-20260914-003 (Deforestation) that shares the same geographic area (Altamira/Sao Felix do Xingu); they are recorded separately because the schema requires matching hazard_type to treat them as the same event. Coordinates = Altamira municipal seat (the same point used for AMZ-20260914-003), APPROXIMATE/MEDIUM; the most critical fire (Riozinho do Anfrisio) is about 450 km from that point, so the exact fire location is not precisely represented. Sao Felix do Xingu recorded more heat spots (751) than Altamira (618) in the same period but no emergency decree of its own was reported in the source consulted; recommend searching for a Sao Felix do Xingu-specific source next cycle and assessing whether it warrants a separate record. AMAZON_BASIN_STATUS=INSIDE confirmed by geometric intersection with the official amazon_basin_project.geojson polygon. | UPDATE Nov 17: Brazil's Ministry of Regional Integration and Development recognized (federal ordinance, Diário Oficial da União, Nov 3, 2026) a state of emergency in 12 Pará municipalities: 8 for forest fires (including Altamira) and 4 for drought; 515 Ibama/ICMBio brigade members and inspectors deployed, backed by 11 aircraft and 40 ground vehicles (O Liberal, Nov 4, 2026). Confirms the Altamira fire emergency remains active beyond the original Oct 22 municipal decree. The source gives conflicting figures for fires extinguished (headline: 700+; body: 170+ per the Ministry of Environment) without reconciling them, so no figure is adopted as definitive."
     },
     "sources": [
       {
@@ -1551,8 +1551,8 @@
         "url": "https://www.oliberal.com/para/altamira-e-jacunda-decretam-emergencia-por-incendios-florestais-no-para-1.1185543"
       },
       {
-        "label": "NASA FIRMS/VIIRS (cruce de focos de calor satelital)",
-        "url": "https://firms.modaps.eosdis.nasa.gov/"
+        "label": "Ministério da Integração e do Desenvolvimento Regional (Portaria federal, Diário Oficial da União) via O Liberal",
+        "url": "https://www.oliberal.com/policia/equipes-dos-bombeiros-combatem-queimadas-em-quase-todas-as-regi-es-do-para-1.1190543"
       }
     ],
     "impact": null
@@ -1645,6 +1645,140 @@
       {
         "label": "Gestion / Canal N",
         "url": "https://gestion.pe/peru/huaico-bloquea-tramo-de-carretera-federico-basadre-noticia/"
+      }
+    ],
+    "impact": null
+  },
+  {
+    "id": "AMZ-20261117-001",
+    "country": "Peru",
+    "hazard": "Earthquake",
+    "priority": "GREEN",
+    "status": "ENDED",
+    "basinStatus": "INSIDE",
+    "verification": "MULTIPLE_SOURCES",
+    "lat": -4.53,
+    "lon": -75.47,
+    "coordAccuracy": "PRECISE",
+    "firstDetected": "2026-11-17",
+    "lastUpdated": "2026-11-17",
+    "updateCount": 0,
+    "eventDate": "2026-11-13",
+    "adminLevel1": "Loreto",
+    "adminLevel2": "Alto Amazonas",
+    "municipality": "Lagunas (referencia: 81-86 km N/NNE de Lagunas)",
+    "locality": "NOT_REPORTED",
+    "title": {
+      "es": "Sismo de magnitud 4,7 (IGP) cerca de Lagunas, Loreto, Perú",
+      "pt": "Sismo de magnitude 4,7 (IGP) perto de Lagunas, Loreto, Peru",
+      "en": "Magnitude 4.7 (IGP) earthquake near Lagunas, Loreto, Peru"
+    },
+    "desc": {
+      "es": "El Instituto Geofisico del Peru (IGP) registro el 13 de noviembre de 2026 a las 05:55:11 hora local un sismo de magnitud 4,7 con epicentro a 81 km al norte de Lagunas, provincia de Alto Amazonas, region Loreto (coordenadas -4,53/-75,47), a 15 km de profundidad, con intensidad III en Lagunas. El USGS registro el mismo evento (eventid us7000txza) con magnitud 4,5 mb, coordenadas -4,5227/-75,3275, 10 km de profundidad. No se reportaron muertos, heridos ni danos materiales en ninguna de las fuentes consultadas; no hay alerta de tsunami.",
+      "pt": "O Instituto Geofisico do Peru (IGP) registrou em 13 de novembro de 2026 as 05:55:11 (hora local) um sismo de magnitude 4,7 com epicentro a 81 km ao norte de Lagunas, provincia de Alto Amazonas, regiao Loreto (coordenadas -4,53/-75,47), a 15 km de profundidade, com intensidade III em Lagunas. O USGS registrou o mesmo evento (eventid us7000txza) com magnitude 4,5 mb, coordenadas -4,5227/-75,3275, 10 km de profundidade. Nao foram reportados mortos, feridos ou danos materiais em nenhuma das fontes consultadas; nao ha alerta de tsunami.",
+      "en": "Peru's Geophysical Institute (IGP) recorded a magnitude 4.7 earthquake on November 13, 2026 at 05:55:11 local time, epicenter 81 km north of Lagunas, Alto Amazonas province, Loreto region (coordinates -4.53/-75.47), depth 15 km, intensity III in Lagunas. USGS recorded the same event (eventid us7000txza) at magnitude 4.5 mb, coordinates -4.5227/-75.3275, depth 10 km. No deaths, injuries or material damage were reported in any source consulted; no tsunami alert was issued."
+    },
+    "notes": {
+      "es": "Evento nuevo (verificacion de duplicado: no coincide con ningun registro previo de index.json por fecha, ubicacion ni peligro; distinto del sismo previo AMZ-20261111-001, ocurrido el 09-nov en zona cercana pero fecha diferente). Epicentro verificado dentro del area de la cuenca amazonica del proyecto -- AMAZON_BASIN_STATUS=INSIDE. Cierre automatico: evento sismico puntual sin riesgo secundario (replicas, deslizamiento inducido o alerta de tsunami) senalado en las fuentes consultadas.",
+      "pt": "Evento novo (verificacao de duplicidade: nao corresponde a nenhum registro previo do index.json por data, localizacao ou ameaca; distinto do sismo anterior AMZ-20261111-001, ocorrido em 09-nov em area proxima mas data diferente). Epicentro verificado dentro da area da bacia amazonica do projeto -- AMAZON_BASIN_STATUS=INSIDE. Encerramento automatico: evento sismico pontual sem risco secundario indicado nas fontes consultadas.",
+      "en": "New event (duplicate check: does not match any prior index.json record by date, location or hazard; distinct from the earlier quake AMZ-20261111-001, which occurred Nov 9 in a nearby area but on a different date). Epicenter verified inside the project's Amazon basin area -- AMAZON_BASIN_STATUS=INSIDE. Automatic closure: point seismic event with no secondary risk noted in the sources consulted."
+    },
+    "sources": [
+      {
+        "label": "Instituto Geofisico del Peru (IGP), vía La República",
+        "url": "https://larepublica.pe/sociedad/2026/11/13/temblor-en-peru-hoy-en-vivo-viernes-13-de-noviembre-ultimo-sismo-magnitud-y-epicentro-segun-el-igp-543180"
+      },
+      {
+        "label": "USGS (U.S. Geological Survey)",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txza"
+      }
+    ],
+    "impact": null
+  },
+  {
+    "id": "AMZ-20261117-002",
+    "country": "Peru",
+    "hazard": "Earthquake",
+    "priority": "GREEN",
+    "status": "ENDED",
+    "basinStatus": "INSIDE",
+    "verification": "MULTIPLE_SOURCES",
+    "lat": -9.05,
+    "lon": -74.48,
+    "coordAccuracy": "PRECISE",
+    "firstDetected": "2026-11-17",
+    "lastUpdated": "2026-11-17",
+    "updateCount": 0,
+    "eventDate": "2026-11-13",
+    "adminLevel1": "Huánuco",
+    "adminLevel2": "Puerto Inca",
+    "municipality": "Puerto Inca (referencia: 65 km NE de Puerto Inca; cercano a Tournavista)",
+    "locality": "NOT_REPORTED",
+    "title": {
+      "es": "Sismo de magnitud 4,7 (IGP) cerca de Puerto Inca, Huánuco, Perú",
+      "pt": "Sismo de magnitude 4,7 (IGP) perto de Puerto Inca, Huánuco, Peru",
+      "en": "Magnitude 4.7 (IGP) earthquake near Puerto Inca, Huánuco, Peru"
+    },
+    "desc": {
+      "es": "El Instituto Geofisico del Peru (IGP) registro el 13 de noviembre de 2026 a las 05:32:05 hora local un sismo de magnitud 4,7 con epicentro a 65 km al noreste de Puerto Inca, provincia de Puerto Inca, region Huanuco (coordenadas -9,05/-74,48), a 131 km de profundidad, con intensidad III en Puerto Inca. El USGS registro el mismo evento (eventid us7000txz8, 51 km ESE de Tournavista) con magnitud 4,4 mb, coordenadas -9,1322/-74,2837, 131,7 km de profundidad. No se reportaron muertos, heridos ni danos materiales en ninguna fuente consultada.",
+      "pt": "O Instituto Geofisico do Peru (IGP) registrou em 13 de novembro de 2026 as 05:32:05 (hora local) um sismo de magnitude 4,7 com epicentro a 65 km a nordeste de Puerto Inca, provincia de Puerto Inca, regiao Huanuco (coordenadas -9,05/-74,48), a 131 km de profundidade, com intensidade III em Puerto Inca. O USGS registrou o mesmo evento (eventid us7000txz8, 51 km ESE de Tournavista) com magnitude 4,4 mb, coordenadas -9,1322/-74,2837, 131,7 km de profundidade. Nao foram reportados mortos, feridos ou danos materiais em nenhuma fonte consultada.",
+      "en": "Peru's Geophysical Institute (IGP) recorded a magnitude 4.7 earthquake on November 13, 2026 at 05:32:05 local time, epicenter 65 km northeast of Puerto Inca, Puerto Inca province, Huánuco region (coordinates -9.05/-74.48), depth 131 km, intensity III in Puerto Inca. USGS recorded the same event (eventid us7000txz8, 51 km ESE of Tournavista) at magnitude 4.4 mb, coordinates -9.1322/-74.2837, depth 131.7 km. No deaths, injuries or material damage were reported in any source consulted."
+    },
+    "notes": {
+      "es": "Evento nuevo (verificacion de duplicado: no coincide con ningun registro previo de index.json). Puerto Inca es una provincia amazonica de baja altitud en Huanuco; epicentro verificado dentro del poligono oficial del proyecto -- AMAZON_BASIN_STATUS=INSIDE. Cierre automatico: evento sismico puntual sin riesgo secundario senalado en las fuentes consultadas.",
+      "pt": "Evento novo (verificacao de duplicidade: nao corresponde a nenhum registro previo do index.json). Puerto Inca e uma provincia amazonica de baixa altitude em Huanuco; epicentro verificado dentro do poligono oficial do projeto -- AMAZON_BASIN_STATUS=INSIDE. Encerramento automatico: evento sismico pontual sem risco secundario indicado nas fontes consultadas.",
+      "en": "New event (duplicate check: does not match any prior index.json record). Puerto Inca is a low-altitude Amazonian province in Huánuco; epicenter verified inside the project's official polygon -- AMAZON_BASIN_STATUS=INSIDE. Automatic closure: point seismic event with no secondary risk noted in the sources consulted."
+    },
+    "sources": [
+      {
+        "label": "Instituto Geofisico del Peru (IGP), vía La República",
+        "url": "https://larepublica.pe/sociedad/2026/11/13/temblor-en-peru-hoy-en-vivo-viernes-13-de-noviembre-ultimo-sismo-magnitud-y-epicentro-segun-el-igp-543180"
+      },
+      {
+        "label": "USGS (U.S. Geological Survey)",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000txz8"
+      }
+    ],
+    "impact": null
+  },
+  {
+    "id": "AMZ-20261117-003",
+    "country": "Peru",
+    "hazard": "Earthquake",
+    "priority": "GREEN",
+    "status": "ENDED",
+    "basinStatus": "INSIDE",
+    "verification": "SINGLE_SOURCE",
+    "lat": -10.5256,
+    "lon": -74.6131,
+    "coordAccuracy": "PRECISE",
+    "firstDetected": "2026-11-17",
+    "lastUpdated": "2026-11-17",
+    "updateCount": 0,
+    "eventDate": "2026-11-13",
+    "adminLevel1": "Ucayali",
+    "adminLevel2": "Atalaya",
+    "municipality": "Oventeni (referencia: 52 km NE de Santa Rosa / epicentro en Oventeni)",
+    "locality": "NOT_REPORTED",
+    "title": {
+      "es": "Sismo de magnitud 4,4 (USGS) cerca de Oventeni, Ucayali, Perú",
+      "pt": "Sismo de magnitude 4,4 (USGS) perto de Oventeni, Ucayali, Peru",
+      "en": "Magnitude 4.4 (USGS) earthquake near Oventeni, Ucayali, Peru"
+    },
+    "desc": {
+      "es": "El USGS registro el 13 de noviembre de 2026 a las 12:37:49 UTC (07:37 hora local) un sismo de magnitud 4,4 mb con epicentro cercano a Oventeni, provincia de Atalaya, region Ucayali (coordenadas -10,5256/-74,6131, referencia USGS '52 km NE de Santa Rosa'), a 125,8 km de profundidad (evento USGS us7000ty0j). No fue mencionado en el reporte en vivo del IGP consultado para este ciclo (que solo listo los sismos de Loreto, Huanuco e Ica del mismo dia), por lo que se mantiene como fuente unica internacional (USGS); no se reportaron muertos, heridos ni danos materiales.",
+      "pt": "O USGS registrou em 13 de novembro de 2026 as 12:37:49 UTC (07:37 horario local) um sismo de magnitude 4,4 mb com epicentro proximo a Oventeni, provincia de Atalaya, regiao Ucayali (coordenadas -10,5256/-74,6131, referencia USGS '52 km NE de Santa Rosa'), a 125,8 km de profundidade (evento USGS us7000ty0j). Nao foi mencionado no relato ao vivo do IGP consultado neste ciclo (que listou apenas os sismos de Loreto, Huanuco e Ica do mesmo dia), por isso mantem-se como fonte unica internacional (USGS); nao foram reportados mortos, feridos ou danos materiais.",
+      "en": "USGS recorded a magnitude 4.4 mb earthquake on November 13, 2026 at 12:37:49 UTC (07:37 local time), epicenter near Oventeni, Atalaya province, Ucayali region (coordinates -10.5256/-74.6131, USGS reference '52 km NE of Santa Rosa'), depth 125.8 km (USGS event us7000ty0j). It was not mentioned in the IGP live report consulted this cycle (which listed only the Loreto, Huánuco and Ica quakes from the same day), so it remains single-sourced to the international USGS network; no deaths, injuries or material damage were reported."
+    },
+    "notes": {
+      "es": "Evento nuevo (verificacion de duplicado: no coincide con ningun registro previo de index.json). Epicentro verificado dentro del poligono oficial del proyecto -- AMAZON_BASIN_STATUS=INSIDE. No se encontro fuente nacional (IGP) que confirme este sismo especifico en el ciclo de busqueda actual; se recomienda buscar confirmacion de IGP en un proximo ciclo si se requiere subir VERIFICATION_STATUS. Cierre automatico: evento sismico puntual sin riesgo secundario senalado en las fuentes consultadas.",
+      "pt": "Evento novo (verificacao de duplicidade: nao corresponde a nenhum registro previo do index.json). Epicentro verificado dentro do poligono oficial do projeto -- AMAZON_BASIN_STATUS=INSIDE. Nao foi encontrada fonte nacional (IGP) que confirme este sismo especifico no ciclo de busca atual; recomenda-se buscar confirmacao do IGP em um proximo ciclo caso seja necessario elevar o VERIFICATION_STATUS. Encerramento automatico: evento sismico pontual sem risco secundario indicado nas fontes consultadas.",
+      "en": "New event (duplicate check: does not match any prior index.json record). Epicenter verified inside the project's official polygon -- AMAZON_BASIN_STATUS=INSIDE. No national source (IGP) was found confirming this specific quake in the current search cycle; recommend seeking IGP confirmation in a future cycle if raising VERIFICATION_STATUS is needed. Automatic closure: point seismic event with no secondary risk noted in the sources consulted."
+    },
+    "sources": [
+      {
+        "label": "USGS (U.S. Geological Survey)",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ty0j"
       }
     ],
     "impact": null

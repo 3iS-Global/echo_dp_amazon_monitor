@@ -370,7 +370,7 @@
     "lon": -52.21,
     "status": "ONGOING",
     "firstDetected": "2026-11-11",
-    "lastUpdated": "2026-11-10",
+    "lastUpdated": "2026-11-17",
     "descEnPreview": "The municipality of Altamira, in southwestern Para (Xingu River region), declared a state of emergency over forest fires on October 22, 2026, valid fo"
   },
   {
@@ -394,5 +394,38 @@
     "firstDetected": "2026-11-16",
     "lastUpdated": "2026-11-16",
     "descEnPreview": "In the early morning of 1 November 2026, a rain-induced landslide (huaico) affected roughly 140 linear meters of the Federico (Jorge) Basadre highway,"
+  },
+  {
+    "id": "AMZ-20261117-001",
+    "country": "Peru",
+    "hazard": "Earthquake",
+    "lat": -4.53,
+    "lon": -75.47,
+    "status": "ENDED",
+    "firstDetected": "2026-11-17",
+    "lastUpdated": "2026-11-17",
+    "descEnPreview": "Peru's Geophysical Institute (IGP) recorded a magnitude 4.7 earthquake on November 13, 2026 at 05:55:11 local time, epicenter 81 km north of Lagunas, "
+  },
+  {
+    "id": "AMZ-20261117-002",
+    "country": "Peru",
+    "hazard": "Earthquake",
+    "lat": -9.05,
+    "lon": -74.48,
+    "status": "ENDED",
+    "firstDetected": "2026-11-17",
+    "lastUpdated": "2026-11-17",
+    "descEnPreview": "Peru's Geophysical Institute (IGP) recorded a magnitude 4.7 earthquake on November 13, 2026 at 05:32:05 local time, epicenter 65 km northeast of Puert"
+  },
+  {
+    "id": "AMZ-20261117-003",
+    "country": "Peru",
+    "hazard": "Earthquake",
+    "lat": -10.5256,
+    "lon": -74.6131,
+    "status": "ENDED",
+    "firstDetected": "2026-11-17",
+    "lastUpdated": "2026-11-17",
+    "descEnPreview": "USGS recorded a magnitude 4.4 mb earthquake on November 13, 2026 at 12:37:49 UTC (07:37 local time), epicenter near Oventeni, Atalaya province, Ucayal"
   }
 ]
