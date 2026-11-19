@@ -600,3 +600,17 @@ Commits: `4762ca3` (origin) / `743d7b5` (3is).
 **Verificación:** iteración completa en vivo sobre el sitio publicado (inyección de CSS vía `javascript_tool` de Claude en Chrome, con capturas en cada paso) antes de tocar `index.html`; luego réplica exacta en el archivo fuente, validación de JS (`node --check`) y vista previa local (Playwright, 1400px y 375px) confirmando el mismo resultado visual, incluyendo el *fallback* móvil.
 
 **Documentación:** este archivo.
+
+## 2026-11-19 — Banner: se quita el logo de 3iS, difuminado recalculado, nota al pie "Producto desarrollado por 3iS"
+
+**Pedido de Jerson:** quitar el logo de 3iS del banner (quedan solo CUENCA y ECHO), y en su lugar dejar constancia, en texto, de que el producto fue desarrollado por 3iS -- como nota al pie de página, con el nombre "3iS" enlazado a www.3is.org.
+
+1. **Logo de 3iS retirado del banner:** la fila de logos ahora muestra solo CUENCA y ECHO (financiado por la Unión Europea). El archivo `3is_logo.png` no se borró del repositorio (sigue disponible por si se reutiliza en otro lugar), solo se quitó su `<img>` del banner.
+2. **Difuminado azul recalculado:** el degradado blanco→azul detrás de los logos (ver entrada del 13-11-2026) estaba calibrado para terminar justo después del tercer logo (~500px). Con solo 2 logos la fila es más angosta (~290px), así que el punto donde empieza el color se adelantó (de 500/650/820px a 340/490/660px) para que el difuminado siga arrancando justo después de los logos, sin dejar un vacío de blanco de más ni empezar el azul sobre espacio vacío del banner.
+3. **Nota al pie "Producto desarrollado por 3iS":** nuevo `<p id="pageFooter">` centrado, en gris, justo debajo de la tarjeta blanca redondeada del visor (fuera de `#av-3is-root`), con el texto en los 3 idiomas vía el mismo sistema de traducción del visor (`DICT.<idioma>.footerHTML`, aplicado en `applyI18nText()`): "Producto desarrollado por **3iS**" (ES) / "Produto desenvolvido pela **3iS**" (PT) / "Product developed by **3iS**" (EN). "3iS" es un enlace (`target="_blank"`) a `https://www.3is.org`.
+
+**Verificación:** vista previa local (Playwright), confirmando que solo quedan 2 logos, que el difuminado ya no deja un hueco raro de blanco antes del azul, que la nota al pie aparece centrada bajo la tarjeta con el enlace correcto a 3is.org, y que el texto cambia correctamente en los 3 idiomas (`currentLang` + `applyI18nText()`).
+
+**Documentación:** este archivo.
+
+**Pendiente (no resuelto en esta tarea):** Jerson pidió además usar este mismo banner (ya actualizado) para el Informe Situacional Regional trimestral y para el informe mensual por país. El informe trimestral ya existe como documento Word/PDF (`Claude outputs/Informe_Situacional_Regional_2026-Q3.docx`) con un banner anterior (fondo navy, logo de 3iS incluido) y hoy solo en español; el informe mensual por país todavía no se genera (el menú "Descargar" del visor ya tiene el enlace preparado, pero la ruta `Reports/Informe_mensual_<pais>_vigente.pdf` aún no existe). Queda pendiente de que Jerson confirme el alcance exacto antes de tocar esos documentos -- ver conversación.
