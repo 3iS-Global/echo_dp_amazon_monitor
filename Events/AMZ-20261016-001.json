@@ -1,8 +1,8 @@
 {
   "EVENT_ID": "AMZ-20261016-001",
   "FIRST_DETECTED_DATE": "2026-10-16",
-  "LAST_UPDATED_DATE": "2026-10-16",
-  "UPDATE_COUNT": "0",
+  "LAST_UPDATED_DATE": "2026-11-19",
+  "UPDATE_COUNT": "1",
   "COUNTRY": "Ecuador",
   "TERRITORY": "",
   "ADMINISTRATIVE_LEVEL_1": "Morona Santiago",
@@ -46,7 +46,7 @@
   "SECONDARY_SOURCE_URL": "https://radiocentro.com.ec/tres-rios-se-desbordan-en-los-rios-guayas-y-morona-santiago",
   "GDACS_URL": "UNAVAILABLE",
   "OTHER_SOURCE_URLS": "https://www.expreso.ec/ecuador/inamhi-advierte-lluvias-tormentas-ecuador-15-18-octubre-299506.html",
-  "NOTES_ES": "Coordenadas = cabecera cantonal de Gualaquiza (punto representativo; ubicación exacta del desborde no reportada). Ambos medios replican el mismo reporte SNGR (no son fuentes independientes en origen). Sin cifras locales de afectación; verificar en próximos reportes SNGR. Contexto: Advertencia INAMHI N.º 80 vigente hasta el 18-oct.",
-  "NOTES_PT": "Coordenadas = sede cantonal de Gualaquiza (ponto representativo; local exato do transbordamento não reportado). Ambos os veículos replicam o mesmo relatório da SNGR (não são fontes independentes na origem). Sem números locais de afetação; verificar nos próximos relatórios da SNGR. Contexto: Aviso INAMHI n.º 80 vigente até 18-out.",
-  "NOTES_EN": "Coordinates = Gualaquiza cantonal seat (representative point; exact overflow location not reported). Both outlets relay the same SNGR report (not independent at origin). No local impact figures; verify in upcoming SNGR reports. Context: INAMHI Advisory No. 80 in force until Oct 18."
+  "NOTES_ES": "Coordenadas = cabecera cantonal de Gualaquiza (punto representativo; ubicación exacta del desborde no reportada). Ambos medios replican el mismo reporte SNGR (no son fuentes independientes en origen). Sin cifras locales de afectación; verificar en próximos reportes SNGR. Contexto: Advertencia INAMHI N.º 80 vigente hasta el 18-oct. | SIN RESPALDO TRAS MÚLTIPLES INTENTOS (2026-11-19): sin fuente oficial ni cobertura de medios pese a búsquedas repetidas en los últimos 34 días desde la última actualización real; es improbable que el evento siga igual de activo sin que nadie lo reporte durante tanto tiempo, pero esto no se puede confirmar sin una fuente, así que se mantiene OBSERVED y YELLOW hasta nueva evidencia.",
+  "NOTES_PT": "Coordenadas = sede cantonal de Gualaquiza (ponto representativo; local exato do transbordamento não reportado). Ambos os veículos replicam o mesmo relatório da SNGR (não são fontes independentes na origem). Sem números locais de afetação; verificar nos próximos relatórios da SNGR. Contexto: Aviso INAMHI n.º 80 vigente até 18-out. | SEM RESPALDO APÓS MÚLTIPLAS TENTATIVAS (2026-11-19): sem fonte oficial nem cobertura de mídia apesar de buscas repetidas nos últimos 34 dias desde a última atualização real; é improvável que o evento continue igualmente ativo sem que ninguém o relate durante tanto tempo, mas isso não pode ser confirmado sem uma fonte, então mantém-se OBSERVED e YELLOW até nova evidência.",
+  "NOTES_EN": "Coordinates = Gualaquiza cantonal seat (representative point; exact overflow location not reported). Both outlets relay the same SNGR report (not independent at origin). No local impact figures; verify in upcoming SNGR reports. Context: INAMHI Advisory No. 80 in force until Oct 18. | NO SUPPORT AFTER REPEATED ATTEMPTS (2026-11-19): no official source or media coverage found despite repeated searches in the 34 days since the last real update; it is unlikely the event remains just as active without anyone reporting it for this long, but this cannot be confirmed without a source, so it stays OBSERVED and YELLOW pending new evidence."
 }
