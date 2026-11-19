@@ -1539,6 +1539,18 @@ function initIdeamTab(){
 // ningun informe), el boton sigue ahi pero sin esa etiqueta -- descargaria
 // 404 hasta la primera publicacion, que es el comportamiento esperado.
 function renderReportButton(){
+  // Progreso (2026-11-19): el informe trimestral ahora existe en 3 idiomas;
+  // el enlace de descarga apunta al archivo del idioma activo segun
+  // Reports/latest.json (campo "files"), con el espanol como respaldo si
+  // ese mapa no esta disponible (informes publicados antes de esta fecha).
+  var link = document.getElementById('reportBtn');
+  if (link) {
+    var file = 'Informe_trimestral_vigente.pdf';
+    if (LATEST_REPORT && LATEST_REPORT.files && LATEST_REPORT.files[currentLang]) {
+      file = LATEST_REPORT.files[currentLang];
+    }
+    link.setAttribute('href', './Reports/' + file);
+  }
   var el = document.getElementById('reportBtnPeriod');
   if (!el) return;
   if (LATEST_REPORT && LATEST_REPORT.label) {

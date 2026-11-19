@@ -5,5 +5,11 @@
     "end": "2026-09-30"
   },
   "publishedAt": "2026-10-28",
-  "file": "Informe_trimestral_vigente.pdf"
+  "bannerUpdatedAt": "2026-11-19",
+  "file": "Informe_trimestral_vigente.pdf",
+  "files": {
+    "es": "Informe_trimestral_vigente.pdf",
+    "pt": "Informe_trimestral_vigente_PT.pdf",
+    "en": "Informe_trimestral_vigente_EN.pdf"
+  }
 }
