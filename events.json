@@ -1230,7 +1230,18 @@
         "url": "https://www.eldiario.ec/ecuador/lluvias-fuertes-tormentas-y-crecidas-estas-zonas-de-ecuador-estaran-bajo-alerta-hasta-el-5-de-octubre-02102026"
       }
     ],
-    "impact": null
+    "impact": {
+      "asOf": "2026-11-19",
+      "deaths": 0,
+      "injuries": 1,
+      "affectedPersons": 11,
+      "affectedFamilies": null,
+      "displaced": null,
+      "evacuated": null,
+      "scope": "PARTIAL",
+      "source": "SNGR (Ecuador), SitRep Nacional de Lluvias N.°97",
+      "sourceUrl": "https://www.gestionderiesgos.gob.ec/wp-content/uploads/2026/11/SitRep-No-97-Lluvias-29082026-al-19112026-PM.pdf"
+    }
   },
   {
     "id": "AMZ-20261006-001",
