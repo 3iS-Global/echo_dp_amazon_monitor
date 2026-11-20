@@ -1,0 +1,14 @@
+{
+  "EVENT_ID": "AMZ-20261002-001",
+  "AS_OF_DATE": "2026-11-19",
+  "DEATHS": 0,
+  "INJURIES": 1,
+  "AFFECTED_PERSONS": 11,
+  "AFFECTED_FAMILIES": null,
+  "DISPLACED_PERSONS": null,
+  "EVACUATED_PERSONS": null,
+  "SCOPE": "PARTIAL",
+  "SOURCE": "SNGR (Ecuador), SitRep Nacional de Lluvias N.°97",
+  "SOURCE_URL": "https://www.gestionderiesgos.gob.ec/wp-content/uploads/2026/11/SitRep-No-97-Lluvias-29082026-al-19112026-PM.pdf",
+  "NOTES": "Cifra corresponde solo a la provincia de Pastaza (la mas directamente vinculada a este evento: desbordamiento de rios en parroquia Curaray, canton Arajuno). Es un acumulado nacional de TODOS los eventos adversos de lluvia en Pastaza entre 29-ago y 19-nov-2026 (12 eventos), no exclusivo de la Advertencia Meteorologica N.°77 (1-5 oct) que dio origen a este registro; damnificados adicionales (15, en 3 familias) no cargados aqui por no corresponder al campo AFFECTED_PERSONS. Otras provincias de este evento (Napo, Sucumbios, Morona Santiago) tienen cifras propias no incluidas en este archivo (ver Events/AMZ-20261002-001.json)."
+}
