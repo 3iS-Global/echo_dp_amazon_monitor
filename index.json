@@ -73,7 +73,7 @@
     "lon": -60.3806,
     "status": "ONGOING",
     "firstDetected": "2026-09-10",
-    "lastUpdated": "2026-11-16",
+    "lastUpdated": "2026-11-23",
     "descEnPreview": "INPE data show Amazonas (Brazil) led the national heat-spot count in the first week of September 2026 (1,167-1,224 spots, depending on source), far ah"
   },
   {
@@ -260,7 +260,7 @@
     "lon": -70.354,
     "status": "ONGOING",
     "firstDetected": "2026-09-25",
-    "lastUpdated": "2026-11-16",
+    "lastUpdated": "2026-11-23",
     "descEnPreview": "According to the AcreQueimadas project (Geoprocessing Laboratory, Federal University of Acre), using Landsat 8 and Sentinel-2 imagery, Acre accumulate"
   },
   {
@@ -304,7 +304,7 @@
     "lon": -63.9004,
     "status": "ONGOING",
     "firstDetected": "2026-10-06",
-    "lastUpdated": "2026-10-20",
+    "lastUpdated": "2026-11-23",
     "descEnPreview": "Porto Velho city government signed on 1 Oct 2026 (published 5 Oct) Municipal Decree No. 22,515 declaring a Situation of Emergency (Level II) for 180 d"
   },
   {
@@ -427,5 +427,27 @@
     "firstDetected": "2026-11-17",
     "lastUpdated": "2026-11-17",
     "descEnPreview": "USGS recorded a magnitude 4.4 mb earthquake on November 13, 2026 at 12:37:49 UTC (07:37 local time), epicenter near Oventeni, Atalaya province, Ucayal"
+  },
+  {
+    "id": "AMZ-20261123-001",
+    "country": "Brazil",
+    "hazard": "Wildfire",
+    "lat": -6.6447,
+    "lon": -51.9947,
+    "status": "ONGOING",
+    "firstDetected": "2026-11-23",
+    "lastUpdated": "2026-11-23",
+    "descEnPreview": "On November 12, 2026, the Pará state government decreed a 120-day environmental and climate emergency, restricting the use of fire to clear pasturelan"
+  },
+  {
+    "id": "AMZ-20261123-002",
+    "country": "Ecuador",
+    "hazard": "Landslide",
+    "lat": -0.4667,
+    "lon": -77.8833,
+    "status": "OBSERVED",
+    "firstDetected": "2026-11-23",
+    "lastUpdated": "2026-11-23",
+    "descEnPreview": "On November 18, 2026, a landslide blocked the E45 Baeza-El Chaco road in the San Francisco de Borja-Cumandá sector (km 169), Quijos canton, Napo provi"
   }
 ]
