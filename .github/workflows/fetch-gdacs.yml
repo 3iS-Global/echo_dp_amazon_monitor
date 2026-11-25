@@ -1,0 +1,73 @@
+# Sube este archivo al repo en la ruta exacta: .github/workflows/fetch-gdacs.yml
+#
+# Que hace: cada dia, consulta la API publica y gratuita de GDACS (gdacs.org,
+# sin API key) con scripts/fetch_gdacs_candidates.py y escribe
+# GDACS_Candidates/candidates.json: una lista de candidatos NO verificados
+# (inundacion, sequia, volcan) con cifras de afectacion tipo Sendai, para que
+# la tarea diaria del monitor los revise como una fuente adicional (nunca la
+# unica) al validar eventos existentes o nuevos, y al completar cifras de
+# poblacion afectada en Impacts/. Es 100% determinista -- no llama a ningun
+# modelo de IA, por lo que no tiene costo de tokens.
+#
+# IMPORTANTE: este workflow NUNCA escribe en Events/ ni en Impacts/, y nunca
+# crea ni actualiza un Event_ID. Solo escribe GDACS_Candidates/candidates.json
+# (se sobrescribe completo cada corrida, sin acumular historial). La revision/
+# promocion de un candidato a Events/Impacts la hace la tarea diaria de Cowork
+# (o un humano), nunca este workflow.
+#
+# Corre 2 horas antes de la tarea diaria de Cowork (08:43 Bogota), para que
+# los candidatos esten frescos cuando el monitor diario los revise. Comparte
+# grupo de concurrencia con publish.yml, rebuild-aggregates.yml y
+# fetch-ideam.yml para no competir por el push a main.
+
+name: Candidatos GDACS (inundacion, sequia, volcan)
+
+on:
+  schedule:
+    # 11:30 UTC = 06:30 America/Bogota (Bogota es UTC-5 todo el ano).
+    - cron: "30 11 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/fetch_gdacs_candidates.py"
+      - "amazon_basin_project.geojson"
+  workflow_dispatch: {}  # permite darle "Run workflow" manualmente desde GitHub
+
+permissions:
+  contents: write  # necesario para que el workflow pueda hacer commit y push
+
+concurrency:
+  group: amazon-monitor-main-writes
+  cancel-in-progress: false
+
+jobs:
+  fetch-gdacs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias (shapely para la verificacion geografica)
+        run: pip install shapely
+
+      - name: Consultar GDACS y escribir GDACS_Candidates/candidates.json
+        run: python scripts/fetch_gdacs_candidates.py
+
+      - name: Hacer commit y push solo si algo cambio
+        run: |
+          git config user.name "amazon-basin-monitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add GDACS_Candidates/candidates.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los candidatos GDACS hoy."
+          else
+            git commit -m "Actualizacion automatica de candidatos GDACS ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
