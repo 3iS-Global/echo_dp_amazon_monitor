@@ -85,7 +85,14 @@
       linear-gradient(90deg, #fff 0px, #fff 340px, rgba(32,118,133,.30) 490px, rgba(19,88,121,.35) 660px, rgba(6,59,109,.40) 100%);
     z-index:0; pointer-events:none;
   }
-  #banner > div:first-child { position:relative; z-index:1; }
+  /* Progreso (25-11-2026): subido de 1 a 3 (por encima de .tabs-bar, z-index:2)
+     -- con la nueva etiqueta de rango de fechas (#dateRangeLabel) debajo del
+     selector de idioma, esta columna crece lo suficiente como para que su
+     menu desplegable de idioma se superponga visualmente con las pestanas;
+     sin este cambio esa superposicion dejaba las pestanas "ganando" el click
+     (a pesar del z-index:40 del propio panel, que solo compite dentro de este
+     contexto de apilamiento, no contra .tabs-bar). */
+  #banner > div:first-child { position:relative; z-index:3; }
   @media (max-width: 760px) {
     /* Logos/title stack on narrow screens -- a left/right split no longer makes sense,
        so fall back to a simple, uniform wash that just fades in from the top. */
@@ -119,6 +126,9 @@
           <button type="button" class="dropdown-item lang-item" data-lang="en" role="menuitem">English</button>
         </div>
       </div>
+      <!-- Progreso (25-11-2026): rango de fechas que se esta viendo -- solo
+           visible en el Monitor de eventos (ver updateDateRangeLabel()). -->
+      <p id="dateRangeLabel" style="font-size:11px;color:var(--3is-teal-deep);margin:0;text-align:right;display:none"></p>
     </div>
   </div>
   <!-- Pestanas tipo carpeta (estilo Chrome), apoyadas sobre el borde inferior del banner -->
@@ -143,6 +153,7 @@
         <span style="font-size:12px;color:var(--3is-teal-deep)" data-i18n="dateTo"></span>
         <input type="date" id="dateTo" style="width:auto;padding:5px 8px;border:1px solid var(--3is-cyan);border-radius:var(--radius);font-size:12px;color:var(--3is-teal-deep)">
         <button id="dateClear" style="border:none;background:none;color:var(--3is-cyan);font-size:12px;text-decoration:underline;cursor:pointer;padding:4px" data-i18n="dateClear"></button>
+        <button id="rollingWeekToggleBtn" style="border:none;background:none;color:var(--3is-cyan);font-size:12px;text-decoration:underline;cursor:pointer;padding:4px"></button>
       </div>
       <div class="dropdown" id="exportMenu">
         <button type="button" id="exportMenuBtn" class="toolbar-btn" aria-haspopup="true" aria-expanded="false" title="Descargar / Download">
@@ -180,11 +191,6 @@
     </div>
 </div>
 
-<div id="eventFilterRow" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px">
-  <span style="font-size:12px;color:var(--3is-teal-deep);font-weight:600" data-i18n="eventFilter"></span>
-  <select id="eventFilter" style="flex:1;min-width:220px;max-width:640px;padding:5px 8px;border:1px solid var(--3is-cyan);border-radius:var(--radius);font-size:12px;color:var(--3is-teal-deep);background:#fff"></select>
-</div>
-
 <div id="infoPanel" style="display:none;background:var(--3is-aqua-tint);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1rem;font-size:13px;color:var(--3is-teal-deep);line-height:1.6"></div>
 
 <div id="alertBanner" style="display:none;align-items:center;gap:10px;background:#FDECEA;border:1px solid #E24B4A;border-radius:var(--radius);padding:10px 14px;margin-bottom:1rem;font-size:13px;color:#8A1F1F;font-weight:600"></div>
@@ -193,7 +199,10 @@
 
 <!-- Progreso 1: KPI de poblacion afectada reportada (suma dinamica segun filtros) -->
 <div id="impactSection" style="border:1px solid var(--3is-gray);border-radius:var(--radius);padding:1rem;margin-bottom:1.25rem;background:#fff">
-  <p style="font-weight:700;font-size:14px;color:var(--3is-navy);margin:0 0 10px" data-i18n="impactTitle"></p>
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin:0 0 10px">
+    <p style="font-weight:700;font-size:14px;color:var(--3is-navy);margin:0" data-i18n="impactTitle"></p>
+    <a href="#" id="eventFilterClearLink" style="display:none;color:var(--3is-cyan);text-decoration:underline;font-weight:700;font-size:12px" data-i18n="alertBannerClear"></a>
+  </div>
   <div id="impactKpis" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px"></div>
   <p style="font-size:11px;color:var(--text-muted);margin:8px 0 0" data-i18n="impactNote"></p>
   <details id="impactDetailWrap" style="margin-top:8px;font-size:12px">
@@ -291,7 +300,7 @@ const DICT = {
     layerNews:"Noticias", layerFirms:"Anomalías térmicas (focos de calor)",
     dataSourcesHTML:`Fuentes de datos: <a href="https://www.openstreetmap.org/copyright" target="_blank" style="color:var(--3is-cyan)">OpenStreetMap</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS</a> (focos de calor VIIRS)`,
     bordersNote:"Los datos geográficos, nombres y límites políticos y administrativos utilizados en este mapa no implican aceptación oficial por parte de 3iS.",
-    layerSst:"Anomalía SST (ENSO)", layerGlofas:"GLOFAS — riesgo de inundación pronosticado (15 días)", layerGwis:"GWIS — peligro de incendio pronosticado", layerCiifen:"CIIFEN — anomalía climática El Niño (compuesto histórico)", externalLegendTitle:"Capas externas de pronóstico / contexto", externalForecastWarning:"Pronóstico o compuesto climático de terceros — no es un evento confirmado de este monitor.", externalGlofasNote:"Copernicus EMS / GloFAS — resumen de alerta de inundación, próximos 1-15 días.", externalGwisNote:"Copernicus EMS / GWIS (ECMWF) — Índice de Peligro de Incendio (FWI) pronosticado.", externalCiifenNote:"CIIFEN — anomalía de precipitación compuesta para temporadas El Niño fuerte pasadas (set-nov, CHIRPS/ONI); es un análogo climatológico histórico, no un pronóstico de esta temporada.", freshnessPrefix:"Actualizado hace ", freshnessDaySingular:"día", freshnessDayPlural:"días", freshnessLegend:"Puntos de frescura: ● ≤7 días · ◐ 8-21 días · ○ más de 21 días desde la última confirmación real (no indica severidad, solo antigüedad).", layerBasin:"Límite de la cuenca amazónica", fcTitle:"Pronóstico meteorológico", tabMonitor:"Monitor de eventos", tabForecast:"Pronóstico", fcRain:"Precipitación", fcTemp:"Temperatura", fcRadar:"Radar meteorológico", fcRainAccu:"Lluvia acumulada", fcThunder:"Tormentas eléctricas", fcNote:"Mapa interactivo independiente (no incluye el límite del proyecto ni los eventos). Use la línea de tiempo inferior para avanzar el pronóstico. En la Amazonía hay muy pocos radares, por lo que la capa de radar aparecerá mayormente vacía.", fcCredit:"Pronóstico: Windy.com (widget embebido gratuito, modelo ECMWF).", firmsLegend:"Focos de calor — potencia radiativa (FRP, MW)", firmsLegendNote:"Celdas agregadas: FRP total de la celda. Puntos sin FRP: clase según confianza.", firmsCell:"focos en la celda", firmsFrp:"FRP", firmsNoFrp:"sin FRP (clase por confianza)", firms24h:"Últimas 24 h de datos", firmsUpTo:"hasta", firmsRange:"Fechas seleccionadas", firmsNone:"Sin focos en esas fechas (el mapa guarda solo los últimos 7 días).", eventDateLbl:"Evento", updatedLbl:"Act.",
+    layerSst:"Anomalía SST (ENSO)", layerGlofas:"GLOFAS — riesgo de inundación pronosticado (15 días)", layerGwis:"GWIS — peligro de incendio pronosticado", layerCiifen:"CIIFEN — anomalía climática El Niño (compuesto histórico)", layerGdacs:"GDACS — candidatos sin verificar", gdacsUnverified:"Candidato GDACS sin verificar — no es un evento confirmado de este monitor", gdacsMatchType_POSSIBLE_UPDATE:"Posible actualización de un evento ya registrado", gdacsMatchType_POSSIBLE_NEW_EVENT:"Posible evento nuevo, pendiente de verificación", gdacsApproxLocation:"Ubicación aproximada (centroide del país; GDACS no reporta coordenada puntual)", externalLegendTitle:"Capas externas de pronóstico / contexto", externalForecastWarning:"Pronóstico o compuesto climático de terceros — no es un evento confirmado de este monitor.", externalGlofasNote:"Copernicus EMS / GloFAS — resumen de alerta de inundación, próximos 1-15 días.", externalGwisNote:"Copernicus EMS / GWIS (ECMWF) — Índice de Peligro de Incendio (FWI) pronosticado.", externalCiifenNote:"CIIFEN — anomalía de precipitación compuesta para temporadas El Niño fuerte pasadas (set-nov, CHIRPS/ONI); es un análogo climatológico histórico, no un pronóstico de esta temporada.", freshnessPrefix:"Actualizado hace ", freshnessDaySingular:"día", freshnessDayPlural:"días", freshnessLegend:"Puntos de frescura: ● ≤7 días · ◐ 8-21 días · ○ más de 21 días desde la última confirmación real (no indica severidad, solo antigüedad).", layerBasin:"Límite de la cuenca amazónica", fcTitle:"Pronóstico meteorológico", tabMonitor:"Monitor de eventos", tabForecast:"Pronóstico", fcRain:"Precipitación", fcTemp:"Temperatura", fcRadar:"Radar meteorológico", fcRainAccu:"Lluvia acumulada", fcThunder:"Tormentas eléctricas", fcNote:"Mapa interactivo independiente (no incluye el límite del proyecto ni los eventos). Use la línea de tiempo inferior para avanzar el pronóstico. En la Amazonía hay muy pocos radares, por lo que la capa de radar aparecerá mayormente vacía.", fcCredit:"Pronóstico: Windy.com (widget embebido gratuito, modelo ECMWF).", firmsLegend:"Focos de calor — potencia radiativa (FRP, MW)", firmsLegendNote:"Celdas agregadas: FRP total de la celda. Puntos sin FRP: clase según confianza.", firmsCell:"focos en la celda", firmsFrp:"FRP", firmsNoFrp:"sin FRP (clase por confianza)", firms24h:"Últimas 24 h de datos", firmsUpTo:"hasta", firmsRange:"Fechas seleccionadas", firmsNone:"Sin focos en esas fechas (el mapa guarda solo los últimos 7 días).", eventDateLbl:"Evento", updatedLbl:"Act.", dateRangeEventsPrefix:"Eventos", dateRangeFromPrefix:"Eventos desde", dateRangeToPrefix:"Eventos hasta", dateRangeAllLabel:"Mostrando todos los eventos (historial completo)", rollingWeekShowAll:"Ver todos los eventos", rollingWeekShowRecent:"Ver solo la última semana",
     sstNote:"Capa ENSO: anomalía de temperatura superficial del mar (NASA GIBS, producto GHRSST L4 MUR — la misma imagen de NASA Worldview) en el Pacífico ecuatorial, con las regiones de referencia Niño 1+2, 3, 3.4 y 4. Es un indicador predictivo de sequías/inundaciones en la cuenca amazónica, no un evento dentro de la cuenca — por eso puede requerir alejar el mapa hacia el Pacífico para verse. Se actualiza con 1-2 días de rezago típico.",
     infoHTML:`<p style="margin:0 0 8px"><b style="color:var(--3is-navy)">PRISMA Amazonía</b></p><p style="margin:0 0 12px">Plataforma Regional de Inteligencia y Seguimiento Multiamenaza Amazónica (PRISMA). Contenido por pestaña: <b>Monitor de eventos</b> — eventos activos por amenaza y prioridad; <b>Pronóstico</b> — precipitación, temperatura, radar y tormentas eléctricas; <b>Análisis climático</b> — indicadores y tendencias climáticas estacionales; <b>Alertas IDEAM</b> — alertas oficiales de IDEAM para la porción colombiana de la cuenca (visible solo al filtrar por Colombia).</p><p style="margin:0 0 8px"><b style="color:var(--3is-navy)">Niveles de alerta</b></p>
       <p style="margin:0 0 4px"><span style="color:#E24B4A">● Rojo</span>: impacto real confirmado y significativo (“Take action”).</p>
@@ -323,7 +332,7 @@ const DICT = {
     layerNews:"Notícias", layerFirms:"Anomalias térmicas (focos de calor)",
     dataSourcesHTML:`Fontes de dados: <a href="https://www.openstreetmap.org/copyright" target="_blank" style="color:var(--3is-cyan)">OpenStreetMap</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS</a> (focos de calor VIIRS)`,
     bordersNote:"Os dados geográficos, nomes e limites políticos e administrativos utilizados neste mapa não implicam aceitação oficial por parte da 3iS.",
-    layerSst:"Anomalia de TSM (ENSO)", layerGlofas:"GLOFAS — risco de inundação previsto (15 dias)", layerGwis:"GWIS — perigo de incêndio previsto", layerCiifen:"CIIFEN — anomalia climática El Niño (composto histórico)", externalLegendTitle:"Camadas externas de previsão / contexto", externalForecastWarning:"Previsão ou composto climático de terceiros — não é um evento confirmado deste monitor.", externalGlofasNote:"Copernicus EMS / GloFAS — resumo de alerta de inundação, próximos 1-15 dias.", externalGwisNote:"Copernicus EMS / GWIS (ECMWF) — Índice de Perigo de Incêndio (FWI) previsto.", externalCiifenNote:"CIIFEN — anomalia de precipitação composta para temporadas El Niño forte passadas (set-nov, CHIRPS/ONI); é um análogo climatológico histórico, não uma previsão desta temporada.", freshnessPrefix:"Atualizado há ", freshnessDaySingular:"dia", freshnessDayPlural:"dias", freshnessLegend:"Pontos de atualidade: ● ≤7 dias · ◐ 8-21 dias · ○ mais de 21 dias desde a última confirmação real (não indica severidade, apenas idade).", layerBasin:"Limite da bacia amazônica", fcTitle:"Previsão meteorológica", tabMonitor:"Monitor de eventos", tabForecast:"Previsão", fcRain:"Precipitação", fcTemp:"Temperatura", fcRadar:"Radar meteorológico", fcRainAccu:"Chuva acumulada", fcThunder:"Tempestades elétricas", fcNote:"Mapa interativo independente (não inclui o limite do projeto nem os eventos). Use a linha do tempo inferior para avançar a previsão. Na Amazônia há muito poucos radares, por isso a camada de radar aparecerá quase vazia.", fcCredit:"Previsão: Windy.com (widget incorporado gratuito, modelo ECMWF).", firmsLegend:"Focos de calor — potência radiativa (FRP, MW)", firmsLegendNote:"Células agregadas: FRP total da célula. Pontos sem FRP: classe pela confiança.", firmsCell:"focos na célula", firmsFrp:"FRP", firmsNoFrp:"sem FRP (classe pela confiança)", firms24h:"Últimas 24 h de dados", firmsUpTo:"até", firmsRange:"Datas selecionadas", firmsNone:"Sem focos nessas datas (o mapa guarda apenas os últimos 7 dias).", eventDateLbl:"Evento", updatedLbl:"Atual.",
+    layerSst:"Anomalia de TSM (ENSO)", layerGlofas:"GLOFAS — risco de inundação previsto (15 dias)", layerGwis:"GWIS — perigo de incêndio previsto", layerCiifen:"CIIFEN — anomalia climática El Niño (composto histórico)", layerGdacs:"GDACS — candidatos não verificados", gdacsUnverified:"Candidato GDACS não verificado — não é um evento confirmado deste monitor", gdacsMatchType_POSSIBLE_UPDATE:"Possível atualização de um evento já registrado", gdacsMatchType_POSSIBLE_NEW_EVENT:"Possível evento novo, pendente de verificação", gdacsApproxLocation:"Localização aproximada (centróide do país; o GDACS não informa coordenada pontual)", externalLegendTitle:"Camadas externas de previsão / contexto", externalForecastWarning:"Previsão ou composto climático de terceiros — não é um evento confirmado deste monitor.", externalGlofasNote:"Copernicus EMS / GloFAS — resumo de alerta de inundação, próximos 1-15 dias.", externalGwisNote:"Copernicus EMS / GWIS (ECMWF) — Índice de Perigo de Incêndio (FWI) previsto.", externalCiifenNote:"CIIFEN — anomalia de precipitação composta para temporadas El Niño forte passadas (set-nov, CHIRPS/ONI); é um análogo climatológico histórico, não uma previsão desta temporada.", freshnessPrefix:"Atualizado há ", freshnessDaySingular:"dia", freshnessDayPlural:"dias", freshnessLegend:"Pontos de atualidade: ● ≤7 dias · ◐ 8-21 dias · ○ mais de 21 dias desde a última confirmação real (não indica severidade, apenas idade).", layerBasin:"Limite da bacia amazônica", fcTitle:"Previsão meteorológica", tabMonitor:"Monitor de eventos", tabForecast:"Previsão", fcRain:"Precipitação", fcTemp:"Temperatura", fcRadar:"Radar meteorológico", fcRainAccu:"Chuva acumulada", fcThunder:"Tempestades elétricas", fcNote:"Mapa interativo independente (não inclui o limite do projeto nem os eventos). Use a linha do tempo inferior para avançar a previsão. Na Amazônia há muito poucos radares, por isso a camada de radar aparecerá quase vazia.", fcCredit:"Previsão: Windy.com (widget incorporado gratuito, modelo ECMWF).", firmsLegend:"Focos de calor — potência radiativa (FRP, MW)", firmsLegendNote:"Células agregadas: FRP total da célula. Pontos sem FRP: classe pela confiança.", firmsCell:"focos na célula", firmsFrp:"FRP", firmsNoFrp:"sem FRP (classe pela confiança)", firms24h:"Últimas 24 h de dados", firmsUpTo:"até", firmsRange:"Datas selecionadas", firmsNone:"Sem focos nessas datas (o mapa guarda apenas os últimos 7 dias).", eventDateLbl:"Evento", updatedLbl:"Atual.", dateRangeEventsPrefix:"Eventos", dateRangeFromPrefix:"Eventos desde", dateRangeToPrefix:"Eventos até", dateRangeAllLabel:"A mostrar todos os eventos (histórico completo)", rollingWeekShowAll:"Ver todos os eventos", rollingWeekShowRecent:"Ver apenas a última semana",
     sstNote:"Camada ENSO: anomalia da temperatura da superfície do mar (NASA GIBS, produto GHRSST L4 MUR — a mesma imagem do NASA Worldview) no Pacífico equatorial, com as regiões de referência Niño 1+2, 3, 3.4 e 4. É um indicador preditivo de secas/inundações na bacia amazônica, não um evento dentro da bacia — por isso pode ser necessário afastar o mapa em direção ao Pacífico para vê-la. É atualizada com uma defasagem típica de 1-2 dias.",
     infoHTML:`<p style="margin:0 0 8px"><b style="color:var(--3is-navy)">PRISMA Amazonía</b></p><p style="margin:0 0 12px">Plataforma Regional de Inteligência e Supervisão de Multiameaças da Amazônia (PRISMA). Conteúdo por aba: <b>Monitor de eventos</b> — eventos ativos por perigo e prioridade; <b>Previsão</b> — precipitação, temperatura, radar e tempestades elétricas; <b>Análise climática</b> — indicadores e tendências climáticas sazonais; <b>Alertas IDEAM</b> — alertas oficiais do IDEAM para a porção colombiana da bacia (visível apenas ao filtrar por Colômbia).</p><p style="margin:0 0 8px"><b style="color:var(--3is-navy)">Níveis de alerta</b></p>
       <p style="margin:0 0 4px"><span style="color:#E24B4A">● Vermelho</span>: impacto real confirmado e significativo (“Take action”).</p>
@@ -355,7 +364,7 @@ const DICT = {
     layerNews:"News", layerFirms:"Thermal anomalies (heat spots)",
     dataSourcesHTML:`Data sources: <a href="https://www.openstreetmap.org/copyright" target="_blank" style="color:var(--3is-cyan)">OpenStreetMap</a> · <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" style="color:var(--3is-cyan)">NASA FIRMS</a> (VIIRS heat spots)`,
     bordersNote:"The geographic data, names, and political and administrative boundaries used on this map do not imply official acceptance by 3iS.",
-    layerSst:"SST Anomaly (ENSO)", layerGlofas:"GLOFAS — forecast flood risk (15 days)", layerGwis:"GWIS — forecast fire danger", layerCiifen:"CIIFEN — El Niño climate anomaly (historical composite)", externalLegendTitle:"External forecast / context layers", externalForecastWarning:"Third-party forecast or climate composite — not a confirmed event in this monitor.", externalGlofasNote:"Copernicus EMS / GloFAS — flood alert summary, next 1-15 days.", externalGwisNote:"Copernicus EMS / GWIS (ECMWF) — forecast Fire Weather Index (FWI).", externalCiifenNote:"CIIFEN — composite precipitation anomaly for past strong El Niño seasons (Sep-Nov, CHIRPS/ONI); a historical climatological analog, not a forecast for this season.", freshnessPrefix:"Updated ", freshnessDaySingular:"day ago", freshnessDayPlural:"days ago", freshnessLegend:"Freshness dots: ● ≤7 days · ◐ 8-21 days · ○ more than 21 days since the last real confirmation (not severity, just age).", layerBasin:"Amazon basin boundary", fcTitle:"Weather forecast", tabMonitor:"Event monitor", tabForecast:"Forecast", fcRain:"Precipitation", fcTemp:"Temperature", fcRadar:"Weather radar", fcRainAccu:"Rain accumulation", fcThunder:"Thunderstorms", fcNote:"Standalone interactive map (does not include the project boundary or events). Use the timeline at the bottom to move the forecast forward. There are very few radars in the Amazon, so the radar layer will be mostly empty.", fcCredit:"Forecast: Windy.com (free embedded widget, ECMWF model).", firmsLegend:"Heat spots — fire radiative power (FRP, MW)", firmsLegendNote:"Aggregated cells: total FRP of the cell. Points without FRP: class by confidence.", firmsCell:"hotspots in cell", firmsFrp:"FRP", firmsNoFrp:"no FRP (class by confidence)", firms24h:"Last 24 h of data", firmsUpTo:"up to", firmsRange:"Selected dates", firmsNone:"No hotspots on those dates (the map keeps only the last 7 days).", eventDateLbl:"Event", updatedLbl:"Upd.",
+    layerSst:"SST Anomaly (ENSO)", layerGlofas:"GLOFAS — forecast flood risk (15 days)", layerGwis:"GWIS — forecast fire danger", layerCiifen:"CIIFEN — El Niño climate anomaly (historical composite)", layerGdacs:"GDACS — unverified candidates", gdacsUnverified:"Unverified GDACS candidate — not a confirmed event in this monitor", gdacsMatchType_POSSIBLE_UPDATE:"Possible update to an already-recorded event", gdacsMatchType_POSSIBLE_NEW_EVENT:"Possible new event, pending verification", gdacsApproxLocation:"Approximate location (country centroid; GDACS does not report a point coordinate)", externalLegendTitle:"External forecast / context layers", externalForecastWarning:"Third-party forecast or climate composite — not a confirmed event in this monitor.", externalGlofasNote:"Copernicus EMS / GloFAS — flood alert summary, next 1-15 days.", externalGwisNote:"Copernicus EMS / GWIS (ECMWF) — forecast Fire Weather Index (FWI).", externalCiifenNote:"CIIFEN — composite precipitation anomaly for past strong El Niño seasons (Sep-Nov, CHIRPS/ONI); a historical climatological analog, not a forecast for this season.", freshnessPrefix:"Updated ", freshnessDaySingular:"day ago", freshnessDayPlural:"days ago", freshnessLegend:"Freshness dots: ● ≤7 days · ◐ 8-21 days · ○ more than 21 days since the last real confirmation (not severity, just age).", layerBasin:"Amazon basin boundary", fcTitle:"Weather forecast", tabMonitor:"Event monitor", tabForecast:"Forecast", fcRain:"Precipitation", fcTemp:"Temperature", fcRadar:"Weather radar", fcRainAccu:"Rain accumulation", fcThunder:"Thunderstorms", fcNote:"Standalone interactive map (does not include the project boundary or events). Use the timeline at the bottom to move the forecast forward. There are very few radars in the Amazon, so the radar layer will be mostly empty.", fcCredit:"Forecast: Windy.com (free embedded widget, ECMWF model).", firmsLegend:"Heat spots — fire radiative power (FRP, MW)", firmsLegendNote:"Aggregated cells: total FRP of the cell. Points without FRP: class by confidence.", firmsCell:"hotspots in cell", firmsFrp:"FRP", firmsNoFrp:"no FRP (class by confidence)", firms24h:"Last 24 h of data", firmsUpTo:"up to", firmsRange:"Selected dates", firmsNone:"No hotspots on those dates (the map keeps only the last 7 days).", eventDateLbl:"Event", updatedLbl:"Upd.", dateRangeEventsPrefix:"Events for", dateRangeFromPrefix:"Events from", dateRangeToPrefix:"Events through", dateRangeAllLabel:"Showing all events (full history)", rollingWeekShowAll:"Show all events", rollingWeekShowRecent:"Show only the last week",
     sstNote:"ENSO layer: sea surface temperature anomaly (NASA GIBS, GHRSST L4 MUR product — the same image shown in NASA Worldview) across the equatorial Pacific, with the Niño 1+2, 3, 3.4, and 4 reference regions. It is a predictive indicator for droughts/floods in the Amazon Basin, not an event inside the basin itself — you may need to pan the map toward the Pacific to see it. It typically lags 1-2 days behind.",
     infoHTML:`<p style="margin:0 0 8px"><b style="color:var(--3is-navy)">PRISMA Amazonía</b></p><p style="margin:0 0 12px">Platform for Regional Intelligence and Surveillance of Multi-hazards in the Amazon (PRISMA). Content by tab: <b>Event monitor</b> — active events by hazard and priority; <b>Forecast</b> — precipitation, temperature, radar and thunderstorms; <b>Climate analysis</b> — seasonal climate indicators and trends; <b>IDEAM Alerts</b> — official IDEAM alerts for the Colombian portion of the basin (only visible when filtering by Colombia).</p><p style="margin:0 0 8px"><b style="color:var(--3is-navy)">Alert levels</b></p>
       <p style="margin:0 0 4px"><span style="color:#E24B4A">● Red</span>: confirmed, significant real impact (“Take action”).</p>
@@ -465,6 +474,13 @@ const CIIFEN_WMS_URL = 'https://geoportal.ciifen.org/geoserver/compuestos_enso/w
 // (set-nov, la mas cercana a la fecha de esta integracion) -- NO es un
 // pronostico de la temporada actual, es un analogo historico.
 const CIIFEN_WMS_LAYER = 'oni_chirps_elnino_SON_clim_difference';
+// Progreso (25-11-2026): imagen real de leyenda (GetLegendGraphic) de cada
+// servicio -- antes solo se mostraba una nota de texto, sin los colores.
+// Parametros verificados manualmente por servidor (cada uno exige algo
+// distinto: GLOFAS solo funciona con WMS 1.1.1; GWIS exige SLD_VERSION).
+const GLOFAS_LEGEND_URL = GLOFAS_WMS_URL + '?service=WMS&version=1.1.1&request=GetLegendGraphic&layer=' + GLOFAS_WMS_LAYER + '&format=image/png';
+const GWIS_LEGEND_URL = GWIS_WMS_URL + '?service=WMS&version=1.3.0&request=GetLegendGraphic&layer=' + GWIS_WMS_LAYER + '&format=image/png&SLD_VERSION=1.1.0';
+const CIIFEN_LEGEND_URL = CIIFEN_WMS_URL + '?service=WMS&version=1.3.0&request=GetLegendGraphic&layer=' + CIIFEN_WMS_LAYER + '&format=image/png';
 
 const ICON_PATHS = {
   FLOOD: '<path d="M2 17c1.4 1.3 2.8 1.3 4.2 0 1.4-1.3 2.8-1.3 4.2 0 1.4 1.3 2.8 1.3 4.2 0 1.4-1.3 2.8-1.3 4.2 0"/><path d="M2 21c1.4 1.3 2.8 1.3 4.2 0 1.4-1.3 2.8-1.3 4.2 0 1.4 1.3 2.8 1.3 4.2 0 1.4-1.3 2.8-1.3 4.2 0"/><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/>',
@@ -525,6 +541,12 @@ const COUNTRY_ISO3 = {
 };
 // Se llena de forma asincrona cuando loadBordersLayer() recibe el GeoJSON.
 let COUNTRY_FEATURES = {};
+// Progreso (25-11-2026): candidatos GDACS sin verificar (ver
+// scripts/fetch_gdacs_candidates.py), como capa aparte del mapa principal
+// -- opt-in, apagada por defecto, nunca mezclada con los eventos
+// confirmados ni con su color de ALERT_PRIORITY.
+let GDACS_CANDIDATES = [];
+let gdacsLayer = null;
 
 function normalizeHazard(h){
   if (!h) return 'DEFAULT';
@@ -538,6 +560,11 @@ let activePriority = null;
 let activeEventId = null; // Progreso 1: filtro por evento puntual
 let dateFrom = null;
 let dateTo = null;
+// Progreso (25-11-2026): semana movil de 7 dias como vista principal del
+// Monitor de eventos; el boton "Ver todos"/"Ver solo..." la alterna. El
+// rango manual Desde/Hasta (dateFrom/dateTo) siempre tiene prioridad --
+// ver inDateRange().
+let rollingWeek = true;
 
 let map, newsLayer, firmsLayer, sstLayer, layersControl, basinLayer, firmsRenderer, firmsLegendControl, sstLegendControl, countryHighlightLayer, glofasLayer, gwisLayer, ciifenLayer, externalLegendControl;
 let sstGibsTileLayer = null;
@@ -569,10 +596,72 @@ function presentCountries(){
   return Object.keys(set).sort();
 }
 
+// Progreso (25-11-2026): formato de fecha legible (es/pt/en) para la
+// etiqueta de rango de fechas del Monitor de eventos (debajo del selector
+// de idioma) -- construido a mano, sin Intl.DateTimeFormat, para controlar
+// exactamente el formato "D de mes de AAAA" pedido por el usuario.
+const MONTH_NAMES = {
+  es: ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],
+  pt: ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],
+  en: ["January","February","March","April","May","June","July","August","September","October","November","December"]
+};
+function isoParts(iso){ var p = iso.split('-').map(Number); return { y:p[0], m:p[1]-1, d:p[2] }; }
+function humanDate(iso){
+  var p = isoParts(iso);
+  var months = MONTH_NAMES[currentLang] || MONTH_NAMES.es;
+  return currentLang === 'en' ? (months[p.m] + ' ' + p.d + ', ' + p.y) : (p.d + ' de ' + months[p.m] + ' de ' + p.y);
+}
+function humanDateRange(fromIso, toIso){
+  var a = isoParts(fromIso), b = isoParts(toIso);
+  var months = MONTH_NAMES[currentLang] || MONTH_NAMES.es;
+  if (currentLang === 'en') {
+    if (a.y===b.y && a.m===b.m) return months[a.m] + ' ' + a.d + '\u2013' + b.d + ', ' + a.y;
+    if (a.y===b.y) return months[a.m] + ' ' + a.d + ' \u2013 ' + months[b.m] + ' ' + b.d + ', ' + a.y;
+    return humanDate(fromIso) + ' \u2013 ' + humanDate(toIso);
+  }
+  var link = currentLang === 'pt' ? 'a' : 'al';
+  var pre = currentLang === 'pt' ? 'de' : 'del';
+  if (a.y===b.y && a.m===b.m) return pre+' '+a.d+' '+link+' '+b.d+' de '+months[a.m]+' de '+a.y;
+  if (a.y===b.y) return pre+' '+a.d+' de '+months[a.m]+' '+link+' '+b.d+' de '+months[b.m]+' de '+a.y;
+  return pre+' '+humanDate(fromIso)+' '+link+' '+humanDate(toIso);
+}
+// Ventana movil de 7 dias terminando hoy (fecha local del navegador), en
+// formato YYYY-MM-DD para comparar lexicograficamente con las fechas ISO
+// de los eventos (igual que dateFrom/dateTo).
+function rollingWeekRange(){
+  var end = new Date();
+  var start = new Date(end);
+  start.setDate(start.getDate() - 6);
+  function iso(d){ return d.toISOString().slice(0,10); }
+  return { from: iso(start), to: iso(end) };
+}
+// Actualiza tanto la etiqueta de rango de fechas (solo visible en el
+// Monitor de eventos) como el texto del boton de alternar semana movil /
+// todos los eventos.
+function updateDateRangeUI(){
+  var btn = document.getElementById('rollingWeekToggleBtn');
+  if (btn) btn.textContent = rollingWeek ? t('rollingWeekShowAll') : t('rollingWeekShowRecent');
+  var el = document.getElementById('dateRangeLabel');
+  if (!el) return;
+  if (activeTab !== 'monitor') { el.style.display = 'none'; return; }
+  var text;
+  if (dateFrom && dateTo) text = t('dateRangeEventsPrefix') + ' ' + humanDateRange(dateFrom, dateTo);
+  else if (dateFrom) text = t('dateRangeFromPrefix') + ' ' + humanDate(dateFrom);
+  else if (dateTo) text = t('dateRangeToPrefix') + ' ' + humanDate(dateTo);
+  else if (rollingWeek) { var w = rollingWeekRange(); text = t('dateRangeEventsPrefix') + ' ' + humanDateRange(w.from, w.to); }
+  else text = t('dateRangeAllLabel');
+  el.textContent = text;
+  el.style.display = 'block';
+}
 function inDateRange(e){
   var d = e.eventDate || e.firstDetected;
   if (dateFrom && d < dateFrom) return false;
   if (dateTo && d > dateTo) return false;
+  if (!dateFrom && !dateTo && rollingWeek) {
+    var w = rollingWeekRange();
+    var ref = e.lastUpdated || e.eventDate || e.firstDetected;
+    if (!ref || ref < w.from || ref > w.to) return false;
+  }
   return true;
 }
 // Progreso 1: getFiltered() = filtros base (pais/tipo/prioridad/fechas/cuenca)
@@ -883,28 +972,27 @@ function impactSummary(e){
   });
   return parts.join(' · ') + (e.impact.scope === 'PARTIAL' ? ' (' + t('partial') + ')' : '');
 }
-function renderEventFilter(){
-  var sel = document.getElementById('eventFilter');
-  if (!sel) return;
-  var base = getFilteredBase().slice().sort(function(a,b){
-    var da = a.eventDate || a.firstDetected || '', db = b.eventDate || b.firstDetected || '';
-    return db.localeCompare(da) || (b.id || '').localeCompare(a.id || '');
-  });
-  // Si los otros filtros ya excluyen el evento elegido, se vuelve a "Todos".
-  if (activeEventId && !base.some(function(e){ return e.id === activeEventId; })) activeEventId = null;
-  sel.innerHTML = '';
-  var all = document.createElement('option');
-  all.value = ''; all.textContent = t('allEvents') + ' (' + base.length + ')';
-  sel.appendChild(all);
-  base.forEach(function(e){
-    var o = document.createElement('option');
-    var title = (e.title && (e.title[currentLang] || e.title.es)) || '';
-    if (title.length > 80) title = title.slice(0, 77) + '…';
-    o.value = e.id;
-    o.textContent = e.id + ' · ' + countryLabel(e.country) + ' · ' + hazardLabel(e.hazard) + ' — ' + title;
-    sel.appendChild(o);
-  });
-  sel.value = activeEventId || '';
+// Progreso (25-11-2026): el desplegable "Evento" se elimino (filtraba solo
+// via <select>, redundante con hacer clic en una tarjeta del panel
+// derecho). validateActiveEventId() conserva la unica logica que seguia
+// haciendo falta: si otro filtro (pais/tipo/prioridad/fecha) deja fuera al
+// evento seleccionado, la seleccion se limpia sola en vez de quedar en un
+// estado inconsistente. updateEventFilterClearUI() muestra/oculta el
+// enlace "Ver todos ×" que reemplaza la opcion "Todos los eventos" del
+// desplegable.
+function validateActiveEventId(){
+  if (!activeEventId) return;
+  if (!getFilteredBase().some(function(e){ return e.id === activeEventId; })) activeEventId = null;
+}
+function updateEventFilterClearUI(){
+  var link = document.getElementById('eventFilterClearLink');
+  if (!link) return;
+  link.style.display = activeEventId ? 'inline' : 'none';
+  link.onclick = function(ev){
+    ev.preventDefault();
+    activeEventId = null;
+    renderAll();
+  };
 }
 function renderImpactKpis(filtered){
   var wrap = document.getElementById('impactKpis');
@@ -1249,12 +1337,104 @@ function updateSstLegend(){
 // Progreso (25-11-2026): capas externas (GLOFAS/GWIS/CIIFEN). Una sola
 // leyenda compacta que lista solo las que esten encendidas, con la
 // advertencia de que son pronostico/compuesto, no evento confirmado.
+// Progreso (25-11-2026): recorte visual de GLOFAS/GWIS/CIIFEN a la cuenca.
+// Tecnica: en vez de un poligono opaco (que taparia el mapa base tambien),
+// se aplica un clip-path CSS al pane 'externalWmsPane' (ver initMap), con
+// un <clipPath> SVG cuyo <path> se recalcula en cada moveend/zoomend
+// proyectando el poligono real de la cuenca (AMAZON_BASIN_GEOJSON, un
+// MultiPolygon con huecos) a coordenadas de pantalla via
+// map.latLngToContainerPoint(). fill-rule=evenodd hace que los huecos del
+// poligono (islas/exclusiones internas) tambien se recorten bien, sin
+// necesidad de saber la orientacion de cada anillo.
+function ensureBasinClipDefs(){
+  if (document.getElementById('basinClipMask')) return;
+  var svgNS = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('width', '0'); svg.setAttribute('height', '0');
+  svg.style.position = 'absolute'; svg.style.pointerEvents = 'none';
+  var clipPath = document.createElementNS(svgNS, 'clipPath');
+  clipPath.setAttribute('id', 'basinClipMask');
+  clipPath.setAttribute('clipPathUnits', 'userSpaceOnUse');
+  var path = document.createElementNS(svgNS, 'path');
+  path.setAttribute('id', 'basinClipMaskPath');
+  path.setAttribute('fill-rule', 'evenodd');
+  clipPath.appendChild(path);
+  svg.appendChild(clipPath);
+  document.body.appendChild(svg);
+}
+function ringToPathD(ring){
+  var d = '';
+  ring.forEach(function(pt, i){
+    var p = map.latLngToContainerPoint([pt[1], pt[0]]);
+    d += (i === 0 ? 'M' : 'L') + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ' ';
+  });
+  return d + 'Z ';
+}
+// Progreso (25-11-2026): candidatos GDACS sin verificar como capa aparte.
+// FL/DR normalmente no traen coordenada puntual (GDACS agrega varias
+// localidades bajo un solo evento) -- en ese caso se usa el centroide del
+// pais (COUNTRY_FEATURES, ya cargado para el resaltado por pais) como
+// ubicacion aproximada, dejandolo explicito en el popup.
+function gdacsCandidateLatLng(c){
+  if (c.coordinates && typeof c.coordinates.lat === 'number' && typeof c.coordinates.lon === 'number') {
+    return { latlng: [c.coordinates.lat, c.coordinates.lon], approx: false };
+  }
+  var feat = COUNTRY_FEATURES[c.iso3];
+  if (feat) {
+    try {
+      var center = L.geoJSON(feat).getBounds().getCenter();
+      return { latlng: [center.lat, center.lng], approx: true };
+    } catch(e) { /* sigue al fallback de abajo */ }
+  }
+  return null;
+}
+function gdacsCandidatePopup(c, approx){
+  var impact = c.impact_report || {};
+  var rows = [
+    '<b>' + t('gdacsUnverified') + '</b>',
+    (c.event_name || c.hazard_type_guess || '') + ' — ' + (c.country || ''),
+    c.region_reported || '',
+    impact.sendainame ? ('<b>' + impact.sendainame + ':</b> ' + impact.value) : '',
+    c.gdacs_fromdate ? (t('eventDateLbl') + ': ' + String(c.gdacs_fromdate).slice(0,10)) : '',
+    '<i>' + t('gdacsMatchType_' + (c.match_type || 'POSSIBLE_NEW_EVENT')) + '</i>',
+    approx ? ('<span style="color:#8a6d00">' + t('gdacsApproxLocation') + '</span>') : '',
+    c.source_url ? ('<a href="' + c.source_url + '" target="_blank">GDACS ↗</a>') : ''
+  ].filter(Boolean);
+  return '<div style="font-size:12px;line-height:1.5;max-width:230px">' + rows.join('<br>') + '</div>';
+}
+function renderGdacsLayer(){
+  if (!gdacsLayer) return;
+  gdacsLayer.clearLayers();
+  (GDACS_CANDIDATES || []).forEach(function(c){
+    var loc = gdacsCandidateLatLng(c);
+    if (!loc) return;
+    var marker = L.circleMarker(loc.latlng, {
+      radius: 8, color: '#7c3aed', weight: 2, dashArray: '3,2',
+      fillColor: '#ede9fe', fillOpacity: 0.85
+    });
+    marker.bindTooltip('?', { permanent: true, direction: 'center', className: 'gdacs-marker-label' });
+    marker.bindPopup(gdacsCandidatePopup(c, loc.approx));
+    gdacsLayer.addLayer(marker);
+  });
+}
+function updateBasinClipMask(){
+  if (!map || !AMAZON_BASIN_GEOJSON) return;
+  var pathEl = document.getElementById('basinClipMaskPath');
+  if (!pathEl) return;
+  var d = '';
+  (AMAZON_BASIN_GEOJSON.features || []).forEach(function(f){
+    var g = f.geometry; if (!g) return;
+    var polys = g.type === 'MultiPolygon' ? g.coordinates : (g.type === 'Polygon' ? [g.coordinates] : []);
+    polys.forEach(function(rings){ rings.forEach(function(ring){ d += ringToPathD(ring); }); });
+  });
+  pathEl.setAttribute('d', d);
+}
 function updateExternalLegend(){
   if (!map) return;
   var items = [
-    [glofasLayer, 'layerGlofas', 'externalGlofasNote'],
-    [gwisLayer, 'layerGwis', 'externalGwisNote'],
-    [ciifenLayer, 'layerCiifen', 'externalCiifenNote']
+    [glofasLayer, 'layerGlofas', 'externalGlofasNote', GLOFAS_LEGEND_URL],
+    [gwisLayer, 'layerGwis', 'externalGwisNote', GWIS_LEGEND_URL],
+    [ciifenLayer, 'layerCiifen', 'externalCiifenNote', CIIFEN_LEGEND_URL]
   ].filter(function(it){ return it[0] && map.hasLayer(it[0]); });
   if (!externalLegendControl) {
     externalLegendControl = L.control({ position: 'bottomright' });
@@ -1271,7 +1451,8 @@ function updateExternalLegend(){
   el.innerHTML = '<div style="font-weight:600;margin-bottom:4px;max-width:220px">' + t('externalLegendTitle') + '</div>' +
     '<div style="color:#b15c00;font-size:10px;margin-bottom:5px;max-width:220px">' + t('externalForecastWarning') + '</div>' +
     items.map(function(it){
-      return '<div style="margin-top:4px;max-width:220px"><b style="font-size:11px">' + t(it[1]) + '</b>' +
+      return '<div style="margin-top:6px;max-width:220px"><b style="font-size:11px">' + t(it[1]) + '</b>' +
+        '<div><img src="' + it[3] + '" alt="" style="display:block;max-height:140px;max-width:200px;margin:3px 0" onerror="this.style.display=\'none\'"></div>' +
         '<div style="color:#6b7583;font-size:10px;line-height:1.3">' + t(it[2]) + '</div></div>';
     }).join('');
 }
@@ -1315,7 +1496,8 @@ function renderList(filtered){
       return kb.localeCompare(ka) || (b.eventDate || '').localeCompare(a.eventDate || '') || (b.id || '').localeCompare(a.id || '');
     }).forEach(function(e){
       var card = document.createElement('div');
-      card.style.border = '1px solid var(--3is-gray)'; card.style.borderRadius = 'var(--radius)'; card.style.padding = '10px 12px'; card.style.marginBottom = '8px'; card.style.background = '#fff'; card.style.cursor = 'pointer';
+      var isActive = activeEventId === e.id;
+      card.style.border = isActive ? '2px solid var(--3is-cyan)' : '1px solid var(--3is-gray)'; card.style.borderRadius = 'var(--radius)'; card.style.padding = isActive ? '9px 11px' : '10px 12px'; card.style.marginBottom = '8px'; card.style.background = isActive ? 'var(--3is-aqua-tint)' : '#fff'; card.style.cursor = 'pointer';
       var title = (e.title && e.title[currentLang]) || e.id;
       var srcHtml = (e.sources||[]).map(function(s){ return '<a href="'+s.url+'" target="_blank" style="color:var(--3is-cyan)" onclick="event.stopPropagation()">'+(s.label||t('source'))+' ↗</a>'; }).join(' · ');
       card.innerHTML = '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">'+
@@ -1328,7 +1510,9 @@ function renderList(filtered){
         (hasImpactFigure(e) ? '<p style="margin:0 0 4px;font-size:12px;color:var(--3is-teal-deep)">'+t('impactLbl')+': '+impactSummary(e)+'</p>' : '')+
         (srcHtml ? '<p style="margin:0;font-size:11px">'+srcHtml+'</p>' : '');
       card.onclick = function(){
-        if (typeof e.lat === 'number' && typeof e.lon === 'number' && map) {
+        activeEventId = (activeEventId === e.id) ? null : e.id;
+        renderAll();
+        if (activeEventId && typeof e.lat === 'number' && typeof e.lon === 'number' && map) {
           map.setView([e.lat, e.lon], 8);
           L.popup().setLatLng([e.lat, e.lon]).setContent(eventPopupHtml(e)).openOn(map);
         }
@@ -1409,6 +1593,7 @@ function updateSubtitle(){
 function showTab(name){
   activeTab = TAB_HASH.hasOwnProperty(name) ? name : 'monitor';
   updateSubtitle();
+  updateDateRangeUI();
   document.getElementById('tabMonitor').hidden = (activeTab !== 'monitor');
   document.getElementById('tabForecast').hidden = (activeTab !== 'forecast');
   document.getElementById('tabClimate').hidden = (activeTab !== 'climate');
@@ -1634,7 +1819,9 @@ function renderReportButton(){
 }
 
 function renderAll(){
-  renderEventFilter();
+  validateActiveEventId();
+  updateEventFilterClearUI();
+  updateDateRangeUI();
   var filtered = getFiltered();
   renderCountryFilters();
   renderHazardFilters();
@@ -1661,6 +1848,7 @@ function buildLayersControl(){
   overlays[t('layerGlofas')] = glofasLayer;
   overlays[t('layerGwis')] = gwisLayer;
   overlays[t('layerCiifen')] = ciifenLayer;
+  overlays[t('layerGdacs')] = gdacsLayer;
   layersControl = L.control.layers(baseLayers, overlays, { position: 'topright', collapsed: true }).addTo(map);
 }
 
@@ -1684,6 +1872,14 @@ function loadBordersLayer(){
         interactive: false
       }).addTo(window.__bordersLayer);
       renderCountryHighlight();
+      // Progreso (25-11-2026): los candidatos GDACS sin coordenada puntual
+      // (FL/DR) dependen del centroide de COUNTRY_FEATURES para su marcador
+      // aproximado. Esta carga es asincrona e independiente del Promise.all
+      // inicial (que ya pudo haber llamado a renderGdacsLayer() antes de que
+      // COUNTRY_FEATURES estuviera listo) -- se vuelve a renderizar aqui para
+      // que esos candidatos no se queden sin marcador por una condicion de
+      // carrera.
+      renderGdacsLayer();
     })
     .catch(function(err){ console.error('Error cargando limites nacionales:', err); });
 }
@@ -1715,6 +1911,17 @@ function initMap(){
   map.getPane('countryHighlightPane').style.pointerEvents = 'none';
   countryHighlightLayer = L.layerGroup().addTo(map);
 
+  // Progreso (25-11-2026): pane propio para GLOFAS/GWIS/CIIFEN, por encima
+  // del mapa base (tilePane=200) pero por debajo del limite de la cuenca
+  // (basinPane=350), para poder recortarlas visualmente a la cuenca con un
+  // clip-path CSS sin tocar el mapa base ni las capas vectoriales.
+  map.createPane('externalWmsPane');
+  map.getPane('externalWmsPane').style.zIndex = 240;
+  ensureBasinClipDefs();
+  map.getPane('externalWmsPane').style.clipPath = 'url(#basinClipMask)';
+  map.getPane('externalWmsPane').style.webkitClipPath = 'url(#basinClipMask)';
+  map.on('moveend zoomend resize', updateBasinClipMask);
+
   newsLayer = L.layerGroup().addTo(map);
   // Canvas en vez de SVG: miles de focos de calor se dibujan mucho mas rapido.
   firmsRenderer = L.canvas({ padding: 0.5 });
@@ -1738,16 +1945,20 @@ function initMap(){
   // diferencia de SST que el usuario pidio explicitamente activada.
   glofasLayer = L.tileLayer.wms(GLOFAS_WMS_URL, {
     layers: GLOFAS_WMS_LAYER, format: 'image/png', transparent: true,
-    opacity: 0.65, attribution: 'Copernicus EMS / GloFAS'
+    opacity: 0.65, attribution: 'Copernicus EMS / GloFAS', pane: 'externalWmsPane'
   });
   gwisLayer = L.tileLayer.wms(GWIS_WMS_URL, {
     layers: GWIS_WMS_LAYER, format: 'image/png', transparent: true,
-    opacity: 0.65, attribution: 'Copernicus EMS / GWIS (ECMWF)'
+    opacity: 0.65, attribution: 'Copernicus EMS / GWIS (ECMWF)', pane: 'externalWmsPane'
   });
   ciifenLayer = L.tileLayer.wms(CIIFEN_WMS_URL, {
     layers: CIIFEN_WMS_LAYER, format: 'image/png', transparent: true,
-    opacity: 0.6, attribution: 'CIIFEN'
+    opacity: 0.6, attribution: 'CIIFEN', pane: 'externalWmsPane'
   });
+
+  // Progreso (25-11-2026): capa de candidatos GDACS sin verificar -- apagada
+  // por defecto, nunca agregada al mapa automaticamente.
+  gdacsLayer = L.layerGroup();
 
   buildLayersControl();
 }
@@ -1855,20 +2066,13 @@ function wireControls(){
     document.getElementById('dateTo').value = '';
     renderAll();
   });
+  document.getElementById('rollingWeekToggleBtn').addEventListener('click', function(){
+    rollingWeek = !rollingWeek;
+    renderAll();
+  });
   document.getElementById('exportCsvBtn').addEventListener('click', function(){
     exportEventsCsv();
     closeAllMenus();
-  });
-  document.getElementById('eventFilter').addEventListener('change', function(ev){
-    activeEventId = ev.target.value || null;
-    renderAll();
-    if (!map) return;
-    var sel = activeEventId ? EVENTS.filter(function(x){ return x.id === activeEventId; })[0] : null;
-    if (sel && typeof sel.lat === 'number' && typeof sel.lon === 'number') {
-      map.setView([sel.lat, sel.lon], 7);
-    } else {
-      zoomToFilteredEvents(activeCountry ? countryZoomBounds(activeCountry) : null);
-    }
   });
 }
 
@@ -1887,6 +2091,7 @@ function initDashboard(){
   wireControls();
   wireTabs();
   renderBasinLayer();
+  updateBasinClipMask();
   renderSstLayer();
   updateSstLegend();
   renderAll();
@@ -1938,10 +2143,13 @@ document.addEventListener('DOMContentLoaded', function(){
     fetch('./Reports/latest.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
     // IDEAM_Alerts/meta.json aporta su propio last_run_utc a computeLastUpdated
     // (ver nota arriba); tolerante a 404 igual que los demas archivos opcionales.
-    fetch('./IDEAM_Alerts/meta.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
+    fetch('./IDEAM_Alerts/meta.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
     // La capa ENSO/SST (SST_GIBS_TILE_URL, arriba) ya no depende de ningun
     // archivo propio -- es una tesela publica de NASA GIBS con URL fija,
     // asi que no hace falta pedirla aqui.
+    // GDACS_Candidates/candidates.json: candidatos GDACS sin verificar --
+    // ver fetch_gdacs_candidates.py; opcional/tolerante a 404 como los demas.
+    fetch('./GDACS_Candidates/candidates.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; })
   ]).then(function(results){
     // Normaliza el hazard a MAYUSCULAS_CON_GUION_BAJO para que siempre calce con
     // ICON_PATHS/HAZARD_ORDER, sin importar como venga escrito en events.json
@@ -1960,8 +2168,10 @@ document.addEventListener('DOMContentLoaded', function(){
     );
     AMAZON_BASIN_GEOJSON = results[3] || null;
     LATEST_REPORT = results[4] || null;
+    GDACS_CANDIDATES = (results[6] && results[6].candidates) || [];
     renderReportButton();
     initDashboard();
+    renderGdacsLayer();
   }).catch(function(err){
     console.error('Error cargando datos del monitor:', err);
     EVENTS = [];
@@ -1969,6 +2179,7 @@ document.addEventListener('DOMContentLoaded', function(){
     LAST_UPDATED = '';
     AMAZON_BASIN_GEOJSON = null;
     LATEST_REPORT = null;
+    GDACS_CANDIDATES = [];
     renderReportButton();
     initDashboard();
   });
