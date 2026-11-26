@@ -1,0 +1,14 @@
+{
+  "EVENT_ID": "AMZ-20261126-001",
+  "AS_OF_DATE": "2026-10-27",
+  "DEATHS": null,
+  "INJURIES": null,
+  "AFFECTED_PERSONS": null,
+  "AFFECTED_FAMILIES": 65,
+  "DISPLACED_PERSONS": null,
+  "EVACUATED_PERSONS": null,
+  "SCOPE": "PARTIAL",
+  "SOURCE": "GDACS (Sendai impact report, eventid 1104259, episodeid 10)",
+  "SOURCE_URL": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
+  "NOTES": "Cifra de familias/viviendas afectadas en el distrito de Kimbiri segun registro Sendai de GDACS (65 viviendas/familias afectadas, 65 viviendas danadas; 8 y 6 personas rescatadas en dos registros separados), sin confirmacion independiente de fuente oficial peruana. Medios (Canal N, 26-oct) reportan por separado 'al menos 30 viviendas destruidas' en los sectores Santa Virginia/Kimbiri Alto, cifra no necesariamente equivalente a la de GDACS. EDAN de Defensa Civil de Kimbiri en proceso al momento del reporte (27-oct); dos personas de la comunidad machiguena de Pomoreni reportadas como desaparecidas solo por autoridades comunales, no incluidas aqui por no ser cifra oficial."
+}
