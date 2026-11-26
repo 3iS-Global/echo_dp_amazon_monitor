@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T19:26:53Z",
+  "generated_at": "2026-11-26T11:38:08Z",
   "source": "GDACS (gdacs.org), API publica",
   "lookback_days": 90,
   "event_types_queried": [
@@ -8,7 +8,7 @@
     "VO"
   ],
   "readme": "Lista de candidatos NO verificados generada automaticamente. Nunca se escribe directamente en Events/ ni en Impacts/ desde este archivo: cada entrada requiere revision humana antes de usarse (confirmar fuente, ubicacion real y evitar duplicados), tal como exige el monitor. match_type=POSSIBLE_UPDATE sugiere enriquecer un EVENT_ID existente; POSSIBLE_NEW_EVENT sugiere evaluar si amerita un AMZ-ID nuevo. geo_basin_match=UNCERTAIN significa que no se pudo confirmar la ubicacion por nombre de region -- verificar manualmente antes de usar.",
-  "count": 92,
+  "count": 76,
   "candidates": [
     {
       "gdacs_eventtype": "FL",
@@ -549,7 +549,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -580,7 +580,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -611,7 +611,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -642,7 +642,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -673,7 +673,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -704,7 +704,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -735,7 +735,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -766,7 +766,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -797,7 +797,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -828,7 +828,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -859,7 +859,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -890,7 +890,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -921,7 +921,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -952,7 +952,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -983,7 +983,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -1014,7 +1014,7 @@
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -1040,12 +1040,12 @@
       "country": "Brazil",
       "iso3": "BRA",
       "hazard_type_guess": "Flood",
-      "region_reported": "Espírito Santo, Mato Grosso do Sul",
+      "region_reported": "Brazil",
       "geo_basin_match": "UNCERTAIN",
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-01T01:00:00",
-      "gdacs_todate": "2026-11-23T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
       "coordinates": {
         "lon": -54.6163,
         "lat": -20.464
@@ -1055,6 +1055,68 @@
         "sendainame": "houses damaged",
         "value": 30,
         "description": "30 [buildings] Buildings damaged in Cohab, Porto Murtinho, Mato Grosso do Sul, Brazil",
+        "onset_date": "2026-11-19T01:00:00",
+        "expires_date": "2026-11-21T01:00:00",
+        "suggested_impacts_field": "NOTES_ONLY"
+      },
+      "possible_matches": [],
+      "match_type": "POSSIBLE_NEW_EVENT",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104216&episodeid=17&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104216,
+      "gdacs_episodeid": 17,
+      "country": "Brazil",
+      "iso3": "BRA",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Porto Murtinho",
+      "geo_basin_match": "UNCERTAIN",
+      "event_name": "Flood in Brazil",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-10-01T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
+      "coordinates": {
+        "lon": -54.6163,
+        "lat": -20.464
+      },
+      "impact_report": {
+        "sendaitype": "B",
+        "sendainame": "displaced",
+        "value": 171,
+        "description": "171 [people] Evacuated in Porto Murtinho, Mato Grosso do Sul, Brazil",
+        "onset_date": "2026-11-19T01:00:00",
+        "expires_date": "2026-11-23T01:00:00",
+        "suggested_impacts_field": "EVACUATED_PERSONS"
+      },
+      "possible_matches": [],
+      "match_type": "POSSIBLE_NEW_EVENT",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104216&episodeid=17&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104216,
+      "gdacs_episodeid": 17,
+      "country": "Brazil",
+      "iso3": "BRA",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Espírito Santo, Mato Grosso do Sul",
+      "geo_basin_match": "UNCERTAIN",
+      "event_name": "Flood in Brazil",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-10-01T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
+      "coordinates": {
+        "lon": -54.6163,
+        "lat": -20.464
+      },
+      "impact_report": {
+        "sendaitype": "C",
+        "sendainame": "houses damaged",
+        "value": 50,
+        "description": "50 [buildings] Buildings damaged in Cohab, Porto Murtinho, Mato Grosso do Sul, Brazil",
         "onset_date": "2026-11-19T01:00:00",
         "expires_date": "2026-11-21T01:00:00",
         "suggested_impacts_field": "NOTES_ONLY"
@@ -1293,7 +1355,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1324,7 +1386,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1355,7 +1417,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1386,7 +1448,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1417,7 +1479,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1448,7 +1510,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1479,7 +1541,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1510,7 +1572,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1541,7 +1603,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1572,7 +1634,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1603,7 +1665,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1634,7 +1696,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1665,7 +1727,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1696,7 +1758,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1727,7 +1789,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1758,7 +1820,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1789,7 +1851,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1820,7 +1882,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1851,7 +1913,7 @@
       "event_name": "Flood in Ecuador",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-09-15T01:00:00",
-      "gdacs_todate": "2026-11-20T01:00:00",
+      "gdacs_todate": "2026-11-23T01:00:00",
       "coordinates": {
         "lon": -79.5542,
         "lat": -1.4941
@@ -1899,564 +1961,6 @@
       "possible_matches": [],
       "match_type": "POSSIBLE_NEW_EVENT",
       "source_url": "https://www.gdacs.org/report.aspx?eventid=1104245&episodeid=2&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Peru",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "affected",
-        "value": 70,
-        "description": "70 [households] Affected in Tarapoto District, Peru",
-        "onset_date": "2026-08-02T01:00:00",
-        "expires_date": "2026-08-04T01:00:00",
-        "suggested_impacts_field": "AFFECTED_FAMILIES"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "San Pedro de Pillao",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "displaced",
-        "value": 19,
-        "description": "19 [people] Evacuated in San Pedro de Pillao, Pasco, Peru",
-        "onset_date": "2026-08-10T01:00:00",
-        "expires_date": "2026-08-11T01:00:00",
-        "suggested_impacts_field": "EVACUATED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "San Pedro de Pillao",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 10,
-        "description": "10 [buildings] Buildings damaged in San Pedro de Pillao, Pasco, Peru",
-        "onset_date": "2026-08-10T01:00:00",
-        "expires_date": "2026-08-11T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Santo Tomas",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "displaced",
-        "value": 3,
-        "description": "3 [people] Evacuated in Santo Tomas, Amazonas, Peru",
-        "onset_date": "2026-08-06T01:00:00",
-        "expires_date": "2026-08-08T01:00:00",
-        "suggested_impacts_field": "EVACUATED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Santo Tomas",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 3,
-        "description": "3 [buildings] Buildings damaged in Santo Tomas, Amazonas, Peru",
-        "onset_date": "2026-08-06T01:00:00",
-        "expires_date": "2026-08-08T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Anchonga",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "displaced",
-        "value": 1,
-        "description": "1 [people] Evacuated in Anchonga, Peru",
-        "onset_date": "2026-08-15T01:00:00",
-        "expires_date": "2026-08-16T01:00:00",
-        "suggested_impacts_field": "EVACUATED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Anchonga",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "affected",
-        "value": 2,
-        "description": "2 [people] Affected in Anchonga, Peru",
-        "onset_date": "2026-08-15T01:00:00",
-        "expires_date": "2026-08-16T01:00:00",
-        "suggested_impacts_field": "AFFECTED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Anchonga",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 4,
-        "description": "4 [buildings] Buildings damaged in Anchonga, Peru",
-        "onset_date": "2026-08-15T01:00:00",
-        "expires_date": "2026-08-16T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Province of Tayacaja",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 15,
-        "description": "15 [buildings] Buildings damaged in Daniel Hernández District, Tayacaja Province, Peru",
-        "onset_date": "2026-08-10T01:00:00",
-        "expires_date": "2026-08-12T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Province of Tayacaja",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "displaced",
-        "value": 24,
-        "description": "24 [people] Evacuated in Daniel Hernández District, Tayacaja Province, Peru",
-        "onset_date": "2026-08-10T01:00:00",
-        "expires_date": "2026-08-12T01:00:00",
-        "suggested_impacts_field": "EVACUATED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Atico",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 100,
-        "description": "100 [buildings] Buildings damaged in Atico District, Peru",
-        "onset_date": "2026-08-15T01:00:00",
-        "expires_date": "2026-08-16T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Atico",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "affected",
-        "value": 300,
-        "description": "300 [people] Affected in Atico District, Peru",
-        "onset_date": "2026-08-15T01:00:00",
-        "expires_date": "2026-08-16T01:00:00",
-        "suggested_impacts_field": "AFFECTED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Peru",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "displaced",
-        "value": 16,
-        "description": "16 [people] Evacuated in Machupicchu District, Peru",
-        "onset_date": "2026-08-18T01:00:00",
-        "expires_date": "2026-08-18T01:00:00",
-        "suggested_impacts_field": "EVACUATED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Peru",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 3,
-        "description": "3 [buildings] Buildings damaged in Machupicchu District, Peru",
-        "onset_date": "2026-08-18T01:00:00",
-        "expires_date": "2026-08-18T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Villa el Salvador",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "displaced",
-        "value": 56,
-        "description": "56 [people] Evacuated in Villa el Salvador, Peru",
-        "onset_date": "2026-08-16T01:00:00",
-        "expires_date": "2026-08-17T01:00:00",
-        "suggested_impacts_field": "EVACUATED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Villa el Salvador",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 72,
-        "description": "72 [buildings] Buildings damaged in Villa el Salvador, Peru",
-        "onset_date": "2026-08-16T02:00:00",
-        "expires_date": "2026-08-18T02:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Villa María del Triunfo",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 6,
-        "description": "6 [buildings] Buildings damaged in Villa María del Triunfo, Peru",
-        "onset_date": "2026-08-16T02:00:00",
-        "expires_date": "2026-08-18T02:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104071,
-      "gdacs_episodeid": 9,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Villa el Salvador",
-      "geo_basin_match": "UNCERTAIN",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-08-02T01:00:00",
-      "gdacs_todate": "2026-08-27T01:00:00",
-      "coordinates": {
-        "lon": -70.4086,
-        "lat": -17.6749
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "affected",
-        "value": 386,
-        "description": "386 [people] Affected in Villa el Salvador, Peru",
-        "onset_date": "2026-08-16T02:00:00",
-        "expires_date": "2026-08-18T02:00:00",
-        "suggested_impacts_field": "AFFECTED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104071&episodeid=9&eventtype=FL",
       "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
     },
     {
