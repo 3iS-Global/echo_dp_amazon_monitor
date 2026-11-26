@@ -7,7 +7,7 @@
     "lon": -64.9,
     "status": "ONGOING",
     "firstDetected": "2026-08-01",
-    "lastUpdated": "2026-11-19",
+    "lastUpdated": "2026-11-26",
     "descEnPreview": "Bolivia is experiencing a wildfire season that had already surpassed the 2025 peak by 21 July (2,835 heat spots, versus 2,536 for all of 2025). CEJIS "
   },
   {
@@ -51,7 +51,7 @@
     "lon": -50.95,
     "status": "ONGOING",
     "firstDetected": "2026-09-09",
-    "lastUpdated": "2026-11-19",
+    "lastUpdated": "2026-11-26",
     "descEnPreview": "Amapá's state environment secretariat (Sema-AP), via the Painel do Fogo (using INPE and Ibama/ICMBio data), recorded 90 heat spots between August 1 an"
   },
   {
@@ -449,5 +449,16 @@
     "firstDetected": "2026-11-23",
     "lastUpdated": "2026-11-23",
     "descEnPreview": "On November 18, 2026, a landslide blocked the E45 Baeza-El Chaco road in the San Francisco de Borja-Cumandá sector (km 169), Quijos canton, Napo provi"
+  },
+  {
+    "id": "AMZ-20261126-001",
+    "country": "Peru",
+    "hazard": "Flood",
+    "lat": -12.6075,
+    "lon": -73.7566,
+    "status": "OBSERVED",
+    "firstDetected": "2026-11-26",
+    "lastUpdated": "2026-11-26",
+    "descEnPreview": "On October 26, 2026, at around 5:30 pm local time, intense rainfall linked to El Niño caused a sudden surge of the Kimbiri river in Kimbiri district, "
   }
 ]
