@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T11:38:08Z",
+  "generated_at": "2026-11-27T11:38:47Z",
   "source": "GDACS (gdacs.org), API publica",
   "lookback_days": 90,
   "event_types_queried": [
@@ -8,7 +8,7 @@
     "VO"
   ],
   "readme": "Lista de candidatos NO verificados generada automaticamente. Nunca se escribe directamente en Events/ ni en Impacts/ desde este archivo: cada entrada requiere revision humana antes de usarse (confirmar fuente, ubicacion real y evitar duplicados), tal como exige el monitor. match_type=POSSIBLE_UPDATE sugiere enriquecer un EVENT_ID existente; POSSIBLE_NEW_EVENT sugiere evaluar si amerita un AMZ-ID nuevo. geo_basin_match=UNCERTAIN significa que no se pudo confirmar la ubicacion por nombre de region -- verificar manualmente antes de usar.",
-  "count": 76,
+  "count": 77,
   "candidates": [
     {
       "gdacs_eventtype": "FL",
@@ -1102,7 +1102,7 @@
       "country": "Brazil",
       "iso3": "BRA",
       "hazard_type_guess": "Flood",
-      "region_reported": "Espírito Santo, Mato Grosso do Sul",
+      "region_reported": "Brazil",
       "geo_basin_match": "UNCERTAIN",
       "event_name": "Flood in Brazil",
       "gdacs_alertlevel": "Green",
@@ -1120,6 +1120,37 @@
         "onset_date": "2026-11-19T01:00:00",
         "expires_date": "2026-11-21T01:00:00",
         "suggested_impacts_field": "NOTES_ONLY"
+      },
+      "possible_matches": [],
+      "match_type": "POSSIBLE_NEW_EVENT",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104216&episodeid=17&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104216,
+      "gdacs_episodeid": 17,
+      "country": "Brazil",
+      "iso3": "BRA",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Porto Murtinho",
+      "geo_basin_match": "UNCERTAIN",
+      "event_name": "Flood in Brazil",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-10-01T01:00:00",
+      "gdacs_todate": "2026-11-25T01:00:00",
+      "coordinates": {
+        "lon": -54.6163,
+        "lat": -20.464
+      },
+      "impact_report": {
+        "sendaitype": "B",
+        "sendainame": "affected",
+        "value": 850,
+        "description": "850 [people] Affected in Porto Murtinho, Mato Grosso do Sul, Brazil",
+        "onset_date": "2026-11-19T01:00:00",
+        "expires_date": "2026-11-24T01:00:00",
+        "suggested_impacts_field": "AFFECTED_PERSONS"
       },
       "possible_matches": [],
       "match_type": "POSSIBLE_NEW_EVENT",
@@ -2027,194 +2058,8 @@
     },
     {
       "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104145,
-      "gdacs_episodeid": 4,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Soritor",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-09-05T01:00:00",
-      "gdacs_todate": "2026-09-20T01:00:00",
-      "coordinates": {
-        "lon": -74.4662,
-        "lat": -12.9155
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "affected",
-        "value": 15,
-        "description": "15 [people] Affected in Soritor, Moyobamba Province, San Martín, Peru",
-        "onset_date": "2026-09-14T01:00:00",
-        "expires_date": "2026-09-15T01:00:00",
-        "suggested_impacts_field": "AFFECTED_PERSONS"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104145&episodeid=4&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104145,
-      "gdacs_episodeid": 4,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Soritor",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-09-05T01:00:00",
-      "gdacs_todate": "2026-09-20T01:00:00",
-      "coordinates": {
-        "lon": -74.4662,
-        "lat": -12.9155
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 4,
-        "description": "4 [buildings] Buildings damaged in Soritor, Moyobamba Province, San Martín, Peru",
-        "onset_date": "2026-09-14T01:00:00",
-        "expires_date": "2026-09-15T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104145&episodeid=4&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
       "gdacs_eventid": 1104259,
-      "gdacs_episodeid": 10,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Kimbiri",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-10-26T01:00:00",
-      "gdacs_todate": "2026-11-18T01:00:00",
-      "coordinates": {
-        "lon": -77.6743,
-        "lat": -9.2913
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "rescued",
-        "value": 8,
-        "description": "8 [people] Rescued in Kimbiri District, La Convención Province, Cusco, Peru",
-        "onset_date": "2026-10-26T01:00:00",
-        "expires_date": "2026-10-26T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104259,
-      "gdacs_episodeid": 10,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Kimbiri",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-10-26T01:00:00",
-      "gdacs_todate": "2026-11-18T01:00:00",
-      "coordinates": {
-        "lon": -77.6743,
-        "lat": -9.2913
-      },
-      "impact_report": {
-        "sendaitype": "C",
-        "sendainame": "houses damaged",
-        "value": 65,
-        "description": "65 [buildings] Buildings damaged in Kimbiri District, La Convención Province, Cusco, Peru",
-        "onset_date": "2026-10-26T01:00:00",
-        "expires_date": "2026-10-26T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104259,
-      "gdacs_episodeid": 10,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Kimbiri",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-10-26T01:00:00",
-      "gdacs_todate": "2026-11-18T01:00:00",
-      "coordinates": {
-        "lon": -77.6743,
-        "lat": -9.2913
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "rescued",
-        "value": 6,
-        "description": "6 [people] Rescued in Kimbiri District, La Convención Province, Cusco, Peru",
-        "onset_date": "2026-10-26T01:00:00",
-        "expires_date": "2026-10-26T01:00:00",
-        "suggested_impacts_field": "NOTES_ONLY"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104259,
-      "gdacs_episodeid": 10,
-      "country": "Peru",
-      "iso3": "PER",
-      "hazard_type_guess": "Flood",
-      "region_reported": "Kimbiri",
-      "geo_basin_match": "LIKELY_INSIDE",
-      "event_name": "Flood in Peru",
-      "gdacs_alertlevel": "Green",
-      "gdacs_fromdate": "2026-10-26T01:00:00",
-      "gdacs_todate": "2026-11-18T01:00:00",
-      "coordinates": {
-        "lon": -77.6743,
-        "lat": -9.2913
-      },
-      "impact_report": {
-        "sendaitype": "B",
-        "sendainame": "affected",
-        "value": 65,
-        "description": "65 [households] Affected in Kimbiri District, La Convención Province, Cusco, Peru",
-        "onset_date": "2026-10-26T01:00:00",
-        "expires_date": "2026-10-27T01:00:00",
-        "suggested_impacts_field": "AFFECTED_FAMILIES"
-      },
-      "possible_matches": [],
-      "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
-      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
-    },
-    {
-      "gdacs_eventtype": "FL",
-      "gdacs_eventid": 1104259,
-      "gdacs_episodeid": 10,
+      "gdacs_episodeid": 11,
       "country": "Peru",
       "iso3": "PER",
       "hazard_type_guess": "Flood",
@@ -2223,10 +2068,10 @@
       "event_name": "Flood in Peru",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-26T01:00:00",
-      "gdacs_todate": "2026-11-18T01:00:00",
+      "gdacs_todate": "2026-11-24T01:00:00",
       "coordinates": {
-        "lon": -77.6743,
-        "lat": -9.2913
+        "lon": -80.3333,
+        "lat": -5.0
       },
       "impact_report": {
         "sendaitype": "B",
@@ -2239,13 +2084,13 @@
       },
       "possible_matches": [],
       "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=11&eventtype=FL",
       "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
     },
     {
       "gdacs_eventtype": "FL",
       "gdacs_eventid": 1104259,
-      "gdacs_episodeid": 10,
+      "gdacs_episodeid": 11,
       "country": "Peru",
       "iso3": "PER",
       "hazard_type_guess": "Flood",
@@ -2254,10 +2099,10 @@
       "event_name": "Flood in Peru",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-26T01:00:00",
-      "gdacs_todate": "2026-11-18T01:00:00",
+      "gdacs_todate": "2026-11-24T01:00:00",
       "coordinates": {
-        "lon": -77.6743,
-        "lat": -9.2913
+        "lon": -80.3333,
+        "lat": -5.0
       },
       "impact_report": {
         "sendaitype": "C",
@@ -2270,13 +2115,13 @@
       },
       "possible_matches": [],
       "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=11&eventtype=FL",
       "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
     },
     {
       "gdacs_eventtype": "FL",
       "gdacs_eventid": 1104259,
-      "gdacs_episodeid": 10,
+      "gdacs_episodeid": 11,
       "country": "Peru",
       "iso3": "PER",
       "hazard_type_guess": "Flood",
@@ -2285,10 +2130,10 @@
       "event_name": "Flood in Peru",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-26T01:00:00",
-      "gdacs_todate": "2026-11-18T01:00:00",
+      "gdacs_todate": "2026-11-24T01:00:00",
       "coordinates": {
-        "lon": -77.6743,
-        "lat": -9.2913
+        "lon": -80.3333,
+        "lat": -5.0
       },
       "impact_report": {
         "sendaitype": "C",
@@ -2301,13 +2146,13 @@
       },
       "possible_matches": [],
       "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=11&eventtype=FL",
       "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
     },
     {
       "gdacs_eventtype": "FL",
       "gdacs_eventid": 1104259,
-      "gdacs_episodeid": 10,
+      "gdacs_episodeid": 11,
       "country": "Peru",
       "iso3": "PER",
       "hazard_type_guess": "Flood",
@@ -2316,10 +2161,10 @@
       "event_name": "Flood in Peru",
       "gdacs_alertlevel": "Green",
       "gdacs_fromdate": "2026-10-26T01:00:00",
-      "gdacs_todate": "2026-11-18T01:00:00",
+      "gdacs_todate": "2026-11-24T01:00:00",
       "coordinates": {
-        "lon": -77.6743,
-        "lat": -9.2913
+        "lon": -80.3333,
+        "lat": -5.0
       },
       "impact_report": {
         "sendaitype": "B",
@@ -2332,7 +2177,7 @@
       },
       "possible_matches": [],
       "match_type": "POSSIBLE_NEW_EVENT",
-      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=10&eventtype=FL",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=11&eventtype=FL",
       "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
     },
     {
@@ -2364,6 +2209,228 @@
       "possible_matches": [],
       "match_type": "POSSIBLE_NEW_EVENT",
       "source_url": "https://www.gdacs.org/report.aspx?eventid=1104262&episodeid=1&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104145,
+      "gdacs_episodeid": 4,
+      "country": "Peru",
+      "iso3": "PER",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Soritor",
+      "geo_basin_match": "LIKELY_INSIDE",
+      "event_name": "Flood in Peru",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-09-05T01:00:00",
+      "gdacs_todate": "2026-09-20T01:00:00",
+      "coordinates": {
+        "lon": -74.4662,
+        "lat": -12.9155
+      },
+      "impact_report": {
+        "sendaitype": "B",
+        "sendainame": "affected",
+        "value": 15,
+        "description": "15 [people] Affected in Soritor, Moyobamba Province, San Martín, Peru",
+        "onset_date": "2026-09-14T01:00:00",
+        "expires_date": "2026-09-15T01:00:00",
+        "suggested_impacts_field": "AFFECTED_PERSONS"
+      },
+      "possible_matches": [
+        {
+          "event_id": "AMZ-20261126-001",
+          "distance_km": 84.2,
+          "event_status": "OBSERVED"
+        }
+      ],
+      "match_type": "POSSIBLE_UPDATE",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104145&episodeid=4&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104145,
+      "gdacs_episodeid": 4,
+      "country": "Peru",
+      "iso3": "PER",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Soritor",
+      "geo_basin_match": "LIKELY_INSIDE",
+      "event_name": "Flood in Peru",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-09-05T01:00:00",
+      "gdacs_todate": "2026-09-20T01:00:00",
+      "coordinates": {
+        "lon": -74.4662,
+        "lat": -12.9155
+      },
+      "impact_report": {
+        "sendaitype": "C",
+        "sendainame": "houses damaged",
+        "value": 4,
+        "description": "4 [buildings] Buildings damaged in Soritor, Moyobamba Province, San Martín, Peru",
+        "onset_date": "2026-09-14T01:00:00",
+        "expires_date": "2026-09-15T01:00:00",
+        "suggested_impacts_field": "NOTES_ONLY"
+      },
+      "possible_matches": [
+        {
+          "event_id": "AMZ-20261126-001",
+          "distance_km": 84.2,
+          "event_status": "OBSERVED"
+        }
+      ],
+      "match_type": "POSSIBLE_UPDATE",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104145&episodeid=4&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104259,
+      "gdacs_episodeid": 11,
+      "country": "Peru",
+      "iso3": "PER",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Kimbiri",
+      "geo_basin_match": "LIKELY_INSIDE",
+      "event_name": "Flood in Peru",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-10-26T01:00:00",
+      "gdacs_todate": "2026-11-24T01:00:00",
+      "coordinates": {
+        "lon": -80.3333,
+        "lat": -5.0
+      },
+      "impact_report": {
+        "sendaitype": "B",
+        "sendainame": "rescued",
+        "value": 8,
+        "description": "8 [people] Rescued in Kimbiri District, La Convención Province, Cusco, Peru",
+        "onset_date": "2026-10-26T01:00:00",
+        "expires_date": "2026-10-26T01:00:00",
+        "suggested_impacts_field": "NOTES_ONLY"
+      },
+      "possible_matches": [
+        {
+          "event_id": "AMZ-20261126-001",
+          "distance_km": 1112.2,
+          "event_status": "OBSERVED"
+        }
+      ],
+      "match_type": "POSSIBLE_UPDATE",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=11&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104259,
+      "gdacs_episodeid": 11,
+      "country": "Peru",
+      "iso3": "PER",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Kimbiri",
+      "geo_basin_match": "LIKELY_INSIDE",
+      "event_name": "Flood in Peru",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-10-26T01:00:00",
+      "gdacs_todate": "2026-11-24T01:00:00",
+      "coordinates": {
+        "lon": -80.3333,
+        "lat": -5.0
+      },
+      "impact_report": {
+        "sendaitype": "C",
+        "sendainame": "houses damaged",
+        "value": 65,
+        "description": "65 [buildings] Buildings damaged in Kimbiri District, La Convención Province, Cusco, Peru",
+        "onset_date": "2026-10-26T01:00:00",
+        "expires_date": "2026-10-26T01:00:00",
+        "suggested_impacts_field": "NOTES_ONLY"
+      },
+      "possible_matches": [
+        {
+          "event_id": "AMZ-20261126-001",
+          "distance_km": 1112.2,
+          "event_status": "OBSERVED"
+        }
+      ],
+      "match_type": "POSSIBLE_UPDATE",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=11&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104259,
+      "gdacs_episodeid": 11,
+      "country": "Peru",
+      "iso3": "PER",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Kimbiri",
+      "geo_basin_match": "LIKELY_INSIDE",
+      "event_name": "Flood in Peru",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-10-26T01:00:00",
+      "gdacs_todate": "2026-11-24T01:00:00",
+      "coordinates": {
+        "lon": -80.3333,
+        "lat": -5.0
+      },
+      "impact_report": {
+        "sendaitype": "B",
+        "sendainame": "rescued",
+        "value": 6,
+        "description": "6 [people] Rescued in Kimbiri District, La Convención Province, Cusco, Peru",
+        "onset_date": "2026-10-26T01:00:00",
+        "expires_date": "2026-10-26T01:00:00",
+        "suggested_impacts_field": "NOTES_ONLY"
+      },
+      "possible_matches": [
+        {
+          "event_id": "AMZ-20261126-001",
+          "distance_km": 1112.2,
+          "event_status": "OBSERVED"
+        }
+      ],
+      "match_type": "POSSIBLE_UPDATE",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=11&eventtype=FL",
+      "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
+    },
+    {
+      "gdacs_eventtype": "FL",
+      "gdacs_eventid": 1104259,
+      "gdacs_episodeid": 11,
+      "country": "Peru",
+      "iso3": "PER",
+      "hazard_type_guess": "Flood",
+      "region_reported": "Kimbiri",
+      "geo_basin_match": "LIKELY_INSIDE",
+      "event_name": "Flood in Peru",
+      "gdacs_alertlevel": "Green",
+      "gdacs_fromdate": "2026-10-26T01:00:00",
+      "gdacs_todate": "2026-11-24T01:00:00",
+      "coordinates": {
+        "lon": -80.3333,
+        "lat": -5.0
+      },
+      "impact_report": {
+        "sendaitype": "B",
+        "sendainame": "affected",
+        "value": 65,
+        "description": "65 [households] Affected in Kimbiri District, La Convención Province, Cusco, Peru",
+        "onset_date": "2026-10-26T01:00:00",
+        "expires_date": "2026-10-27T01:00:00",
+        "suggested_impacts_field": "AFFECTED_FAMILIES"
+      },
+      "possible_matches": [
+        {
+          "event_id": "AMZ-20261126-001",
+          "distance_km": 1112.2,
+          "event_status": "OBSERVED"
+        }
+      ],
+      "match_type": "POSSIBLE_UPDATE",
+      "source_url": "https://www.gdacs.org/report.aspx?eventid=1104259&episodeid=11&eventtype=FL",
       "notes": "Cifra de GDACS/Sendai sin verificar. Nunca escribir directamente en Events/ o Impacts/ sin confirmar la fuente primaria y, si es posible, una segunda fuente independiente (ver reglas de verificacion del proyecto)."
     }
   ]
